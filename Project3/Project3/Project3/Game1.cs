@@ -19,10 +19,18 @@ namespace Project3
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        World gameWorld;
+
+        private const int width = 960;
+        private const int height = 640;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = height;
+            graphics.PreferredBackBufferWidth = width;
+            
         }
 
         /// <summary>
@@ -34,8 +42,9 @@ namespace Project3
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            
             base.Initialize();
+            gameWorld = new World(this);
         }
 
         /// <summary>
@@ -71,7 +80,10 @@ namespace Project3
                 this.Exit();
 
             // TODO: Add your update logic here
-
+            if (gameWorld != null)
+            {
+                gameWorld.Update(gameTime);
+            }
             base.Update(gameTime);
         }
 
@@ -84,7 +96,10 @@ namespace Project3
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            if (gameWorld != null)
+            {
+                gameWorld.Draw(spriteBatch);
+            }
             base.Draw(gameTime);
         }
     }
