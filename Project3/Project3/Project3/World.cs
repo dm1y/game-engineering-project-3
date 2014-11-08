@@ -12,7 +12,42 @@ namespace Project3
         public Game1 game;
         //Two dimensional array of maptiles, so that we only have to check certain areas around the player
 
-        public Maptile[][] map;
+        /* (Goal for 11/12/2014)
+         *  Have player moving around town and able to cross into transition zones, which will
+         *  take the player to a new map. Since we're using a 2D data structure and the most number 
+         *  of blocks we'll be using is in the thousands, the system should be pretty straightforward
+         *  and efficient. 
+         *  
+         *  Implementation Ideas 
+         *  We first load up all the maptiles with a texture(I added a 32x32 texture called 'grass' into the content)
+         *  and assign them positions via coordinate system. The maptiles will handle the math and relative position to 
+         *  be drawn in(Already done!) For instance, if a maptile is created with coordinates (1, 3), then it will be at 
+         *  (32, 96) in real pixel coordinates. 
+         *  
+         *  William - Implementing how player will move around on the tiles. Player should only move roughly about
+         *            one block at a time(Pokemon style). Player's current direction should also be kept track of,
+         *            since during NPC checking, we only want the player to be able to interact with an NPC if they're 
+         *            facing it! Additionally, need to make sure that player is unable to move any other direction
+         *            mid-movement, or else player will end up out of bounds of the block collisions.
+         *            
+         *  Colin - Create three maps for the time being -- one is the "town" that the player spawns at. 
+         *          Then create the two other transition zones -- the red transition blocks(the texture is "transition_red")
+         *          go to a zone on the right side of town. The blue blocks(name is "transition_blue") take the player to an area south
+         *          of town. Each zone should be able to transition back to the zone that the player just came from.
+         *          
+         *          We can probably do this by giving maptiles a "isTransition" variable, which the player checks during collision
+         *          correction. We can give that block a transition state/path integer, which tells us where the player will load to
+         *          when they step on that block. The player will then probably call a method from the world that will switch up the
+         *          blocks to be loaded.
+         *          
+         *          Current suggestion is for TOWN to be 1, RED TRANSITION to be 2, and BLUE TRANSITION to be 3. 
+         *          
+         *          Note that we probably want to spawn the player 2-3 blocks away from the transition blocks so that they dont get stuck
+         *          in a loop(ie, player steps on transition red, lands on transition reds in zone 2, teleports back, and gets stuck in an
+         *          infinite loop)
+         *          
+         */
+        public Maptile[][] currentMap;
 
         public World(Game1 game)
         {
@@ -24,7 +59,12 @@ namespace Project3
         }
         public void Draw(SpriteBatch sb)
         { 
-
+            foreach (Maptile[] row in currentMap){
+                foreach (Maptile column in row)
+                {
+                    column.Draw(sb);
+                }
+            }
         }
     }
 }
