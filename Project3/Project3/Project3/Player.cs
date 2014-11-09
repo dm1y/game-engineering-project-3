@@ -49,7 +49,7 @@ namespace Project3
             currPosition = nextPosition;
         }
 
-        /* Movement Updates
+        /* Input Update Method
          * Rules: 
          *      If current position and next position are the same, then the player
          *      is allowed to move. Player will receive a keyboard command, which means that they will
@@ -63,34 +63,111 @@ namespace Project3
          *      
          *      Account for cases: Wall to left, right, top, below. Use IFS, not elifs! 
          */
-        public void Update(GameTime gameTime, KeyboardState keyboard)
+        public void UpdateInput(GameTime gameTime, KeyboardState keyboard)
         {
             //If current position is already at next position, player can move
-            if (currPosition == nextPosition)
+            if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
             {
-                if (keyboard.IsKeyDown(Keys.Right))
+                if (keyboard.IsKeyDown(Keys.W))
+                {
+                    moveUp();
+                }
+                if (keyboard.IsKeyDown(Keys.S))
+                {
+                    moveDown();
+                }
+                if (keyboard.IsKeyDown(Keys.A))
+                {
+                    moveLeft();
+                }
+                if (keyboard.IsKeyDown(Keys.D))
                 {
                     moveRight();
                 }
-
             }
         }
 
+        /* Player Position Update Method 
+         * 
+         * Updates the player's current position based off of where the next move is.
+         * Will be player.Y - nextMove.Y, and player.X - nextMove.X
+         * Difference guideline:
+         *      if Y-DIFFERENCE is positive, player needs to move up
+         *      if Y-DIFFERENCE is negative, player needs to move down
+         *      if X-DIFFERENCE is positive, player needs to move left
+         *      if X-DIFFERENCE is negative, player needs to move right
+         */
+        public void UpdatePosition(GameTime gameTime)
+        {
+            //TODO after dinner
+        }
+
+        //Orients the player right, then sets the next X position to +tilewidth, and adds 1 to the relative X. 
         private void moveRight()
         {
-
+            setFacingEast();
+            if (map[(int)currPositionCoord.Y][(int)currPositionCoord.X + 1].isCollidable == false)
+            {
+                currPositionCoord.X = currPositionCoord.X + 1;
+                nextPosition.X = nextPosition.X + playerNorth.Width;
+            }
         }
 
+        //Orients the player left, then sets the next X position to -tilewidth, and subtracts 1 from the relative X. 
         private void moveLeft()
         {
+            setFacingWest();
+            if (map[(int)currPositionCoord.Y][(int)currPositionCoord.X - 1].isCollidable == false)
+            {
+                currPositionCoord.X = currPositionCoord.X - 1;
+                nextPosition.X = nextPosition.X - playerNorth.Width;
+            }
         }
 
+        //Orients the player up, then sets the next Y position to -tilewidth, and subtracts 1 from relative Y. 
         private void moveUp()
         {
+            setFacingNorth();
+            if (map[(int)currPositionCoord.Y - 1][(int)currPositionCoord.X].isCollidable == false)
+            {
+                currPositionCoord.Y = currPositionCoord.Y - 1;
+                nextPosition.Y = nextPosition.Y - playerNorth.Width;
+            }
         }
 
+        //Orients the player down, then sets the next Y position to +tilewidth, and adds 1 to relative Y. 
         private void moveDown()
         {
+            setFacingSouth();
+            if (map[(int)currPositionCoord.Y + 1][(int)currPositionCoord.X].isCollidable == false)
+            {
+                currPositionCoord.Y = currPositionCoord.Y + 1;
+                nextPosition.Y = nextPosition.Y + playerNorth.Width;
+            }
+        }
+
+        private void setFacingEast()
+        {
+            facingEast = true;
+            facingNorth = facingSouth = facingWest = false;
+        }
+
+        private void setFacingWest()
+        {
+            facingWest = true;
+            facingNorth = facingSouth = facingEast = false;
+        }
+
+        private void setFacingNorth()
+        {
+            facingNorth = true;
+            facingSouth = facingEast = facingWest = false;
+        }
+
+        private void setFacingSouth()
+        {
+            facingSouth = true;
+            facingNorth = facingEast = facingWest = false;
         }
         public void ChangeMap(Maptile[][] map)
         {
