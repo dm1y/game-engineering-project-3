@@ -24,7 +24,11 @@ namespace Project3
         public Boolean facingWest;
         public Boolean facingEast;
 
-        private KeyboardState lastState;
+        public int dimension;
+        /* For deciding where the player is facing. 
+         * If north, (0, -1). If south, (0, 1). If west, (-1, 0). If east, (0, 1)
+         */
+        private Vector2 frontOfPlayer;
         private Vector2 nextPosition;
         private Vector2 currPosition;
         private Vector2 currPositionCoord;
@@ -43,11 +47,22 @@ namespace Project3
             facingWest = false;
             facingSouth = false;
 
+            frontOfPlayer = new Vector2(0, -1);
+            dimension = north.Height;
             this.map = map;
             currPositionCoord = spawnPosition;
-            nextPosition = new Vector2(spawnPosition.X * north.Width, spawnPosition.Y * north.Height);
+            nextPosition = new Vector2(spawnPosition.X * dimension, spawnPosition.Y * dimension);
             currPosition = nextPosition;
         }
+
+        /* Update order:
+         *      World calls update(), which calls player.UpdateInput(). Input is received and will only move if
+         *      currPosition = nextPosition. 
+         *      Movement is called, which sets player's orientation and sets their currPositionCoord one over
+         *      to the block they will move on.
+         *      World's update() then calls player.UpdatePosition(), which will move the player over 1 pixel per update.
+         *      This will keep happening until player reaches the nextPosition.
+         */
 
         /* Input Update Method
          * Rules: 
@@ -61,7 +76,11 @@ namespace Project3
          *      For instance, if the keyboard input is UP and the block UP is not walkable, then the
          *      next position will be the same as curr position. 
          *      
-         *      Account for cases: Wall to left, right, top, below. Use IFS, not elifs! 
+         *      Once player's currPosition and nextPosition are lined up, then we check the tile properties
+         *      and what to apply. 
+         *      
+         *      If player presses ENTER and they are lined up with an NPC in front of them(has to be 
+         *      in front relative to the player), then it will initiate conversation and/or shop.
          */
         public void UpdateInput(GameTime gameTime, KeyboardState keyboard)
         {
@@ -84,6 +103,13 @@ namespace Project3
                 {
                     moveRight();
                 }
+
+                if (keyboard.IsKeyDown(Keys.Enter))
+                {
+                    CheckInteract();
+                }
+
+                CheckTile();
             }
         }
 
@@ -99,17 +125,35 @@ namespace Project3
          */
         public void UpdatePosition(GameTime gameTime)
         {
-            //TODO after dinner
+            int yDifference = (int)(currPosition.Y - nextPosition.Y);
+            int xDifference = (int)(currPosition.X - nextPosition.X);
+            if (yDifference > 0)
+            {
+                currPosition.Y = currPosition.Y - 1;
+            }
+            if (yDifference < 0)
+            {
+                currPosition.Y = currPosition.Y + 1;
+            }
+            if (xDifference > 0)
+            {
+                currPosition.X = currPosition.X + 1;
+            }
+            if (xDifference < 0)
+            {
+                currPosition.X = currPosition.X - 1;
+            }
         }
 
         //Orients the player right, then sets the next X position to +tilewidth, and adds 1 to the relative X. 
         private void moveRight()
         {
             setFacingEast();
+            frontOfPlayer = new Vector2(0, 1);
             if (map[(int)currPositionCoord.Y][(int)currPositionCoord.X + 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X + 1;
-                nextPosition.X = nextPosition.X + playerNorth.Width;
+                nextPosition.X = nextPosition.X + dimension;
             }
         }
 
@@ -117,10 +161,11 @@ namespace Project3
         private void moveLeft()
         {
             setFacingWest();
+            frontOfPlayer = new Vector2(-1, 0);
             if (map[(int)currPositionCoord.Y][(int)currPositionCoord.X - 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X - 1;
-                nextPosition.X = nextPosition.X - playerNorth.Width;
+                nextPosition.X = nextPosition.X - dimension;
             }
         }
 
@@ -128,10 +173,11 @@ namespace Project3
         private void moveUp()
         {
             setFacingNorth();
+            frontOfPlayer = new Vector2(0, -1);
             if (map[(int)currPositionCoord.Y - 1][(int)currPositionCoord.X].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y - 1;
-                nextPosition.Y = nextPosition.Y - playerNorth.Width;
+                nextPosition.Y = nextPosition.Y - dimension;
             }
         }
 
@@ -139,10 +185,11 @@ namespace Project3
         private void moveDown()
         {
             setFacingSouth();
+            frontOfPlayer = new Vector2(0, 1);
             if (map[(int)currPositionCoord.Y + 1][(int)currPositionCoord.X].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y + 1;
-                nextPosition.Y = nextPosition.Y + playerNorth.Width;
+                nextPosition.Y = nextPosition.Y + dimension;
             }
         }
 
@@ -169,6 +216,19 @@ namespace Project3
             facingSouth = true;
             facingNorth = facingEast = facingWest = false;
         }
+
+        /* -- Interaction Methods -- */
+        /* CheckTile() is used to check the properties of any tile that the player is 
+         actually standing in. For instance, a player can actually stand in a transition tile,
+         or in tall grass/swamp/cave when looking for monsters. */
+        public void CheckTile()
+        {
+            Maptile tileToCheck = map[(int)currPositionCoord.Y][(int)currPositionCoord.X];
+            
+            //if tileToCheck is a transition, then we figure out where the player's transition goes to. Then we call
+            //load from world or something like that.
+        }
+
         public void ChangeMap(Maptile[][] map)
         {
             this.map = map;
@@ -179,10 +239,38 @@ namespace Project3
 
         }
 
+        /* Handles iteration with NPCs, Merchants, and Objects*/
+        /* CheckInteract() is used to check the properties of a tile that the player CAN'T
+         stand on top of, but can still interact with(ie, loot chests, or signs, or people)*/
+        public void CheckInteract()
+        {
+            Maptile tileToCheck = map[(int)(currPositionCoord.Y + frontOfPlayer.Y)][(int)(currPositionCoord.X + frontOfPlayer.X)];
+
+            //and then checking logic here
+        }
+
+        /* Basic Draw Method
+         * Note: Texture2Ds will be replaced with animations later.
+         */
         public void Draw(SpriteBatch spriteBatch)
         {
-            
-
+            Rectangle playerSpriteBox = new Rectangle((int)currPosition.X, (int)currPosition.Y, dimension,dimension);
+            if (facingNorth)
+            {
+                spriteBatch.Draw(playerNorth, playerSpriteBox, Color.White);
+            }
+            else if (facingEast)
+            {
+                spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
+            }
+            else if (facingSouth)
+            {
+                spriteBatch.Draw(playerSouth, playerSpriteBox, Color.White);
+            }
+            else if (facingWest)
+            {
+                spriteBatch.Draw(playerWest, playerSpriteBox, Color.White);
+            }
         }
     }
 }
