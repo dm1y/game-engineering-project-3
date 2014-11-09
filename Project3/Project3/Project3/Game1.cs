@@ -44,7 +44,6 @@ namespace Project3
             // TODO: Add your initialization logic here
             
             base.Initialize();
-            gameWorld = new World(this);
         }
 
         /// <summary>
@@ -55,7 +54,8 @@ namespace Project3
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            gameWorld = new World(this);
+            gameWorld.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 

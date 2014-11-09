@@ -1,9 +1,14 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
@@ -47,10 +52,28 @@ namespace Project3
          *          infinite loop)
          *          
          */
-        public Maptile[][] currentMap;
+        public Maptile[,] currentMap;
+        Texture2D grassText;
+        int size = 50;
 
         public World(Game1 game)
         {
+            this.game = game;
+        }
+
+        public void LoadContent(ContentManager Content)
+        {
+            Maptile newTile;
+            currentMap = new Maptile[size, size];
+            grassText = game.Content.Load<Texture2D>("grass");
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    newTile = new Maptile(grassText, new Vector2(x, y));
+                    currentMap[x, y] = newTile;
+                }
+            }
         }
 
         public void Update(GameTime gametime)
@@ -58,13 +81,24 @@ namespace Project3
 
         }
         public void Draw(SpriteBatch sb)
-        { 
-            foreach (Maptile[] row in currentMap){
-                foreach (Maptile column in row)
+        {
+            //foreach (Maptile[] row in currentMap)
+            //{
+            //    foreach (Maptile column in row)
+            //    {
+            //        column.Draw(sb);
+            //    }
+            //}
+
+            sb.Begin();
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
                 {
-                    column.Draw(sb);
+                    currentMap[x, y].Draw(sb);
                 }
             }
+            sb.End();
         }
     }
 }

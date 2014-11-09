@@ -1,0 +1,14 @@
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.csprojResolveAssemblyReference.cache
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\grass.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerdown.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerleft.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerright.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerup.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_blue.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_red.xnb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.exe
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.pdb
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.exe
+C:\Users\willi_000\Desktop\Project 3\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.pdb
