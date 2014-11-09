@@ -1,6 +1,0 @@
-C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.csprojResolveAssemblyReference.cache
-C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.exe
-C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.pdb
-C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.exe
-C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.pdb
