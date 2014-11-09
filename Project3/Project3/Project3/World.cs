@@ -53,7 +53,11 @@ namespace Project3
          *          
          */
         public Maptile[,] currentMap;
+        public Maptile[,] mapTwo;
+        public Maptile[,] mapThree;   //Not being used yet.
         Texture2D grassText;
+        Texture2D redTransition;
+        Texture2D blueTransition;
         int size = 50;
 
         public World(Game1 game)
@@ -61,18 +65,36 @@ namespace Project3
             this.game = game;
         }
 
+        //WORK IN PROGRESS
         public void LoadContent(ContentManager Content)
         {
             Maptile newTile;
             currentMap = new Maptile[size, size];
             grassText = game.Content.Load<Texture2D>("grass");
+            redTransition = game.Content.Load<Texture2D>("transition_red");
+            blueTransition = game.Content.Load<Texture2D>("transition_blue");
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
                 {
-                    newTile = new Maptile(grassText, new Vector2(x, y));
-                    currentMap[x, y] = newTile;
+                    if (x > size-32)
+                    {
+                        newTile = new Maptile(redTransition, new Vector2(x, y));
+                        currentMap[x, y] = newTile;
+                    }
+                    else if (y > size - 32)
+                    {
+                        newTile = new Maptile(blueTransition,new Vector2(x,y));
+                        currentMap[x, y] = newTile;
+                    }
+                    else
+                    {
+                        newTile = new Maptile(grassText, new Vector2(x, y));
+                        currentMap[x, y] = newTile;
+                    }
+                    
                 }
+                
             }
         }
 
@@ -82,13 +104,7 @@ namespace Project3
         }
         public void Draw(SpriteBatch sb)
         {
-            //foreach (Maptile[] row in currentMap)
-            //{
-            //    foreach (Maptile column in row)
-            //    {
-            //        column.Draw(sb);
-            //    }
-            //}
+
 
             sb.Begin();
             for (int x = 0; x < size; x++)
