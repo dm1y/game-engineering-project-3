@@ -1,9 +1,14 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
@@ -11,6 +16,7 @@ namespace Project3
     {
         public Game1 game;
         //Two dimensional array of maptiles, so that we only have to check certain areas around the player
+        
 
         /* (Goal for 11/12/2014)
          *  Have player moving around town and able to cross into transition zones, which will
@@ -47,11 +53,30 @@ namespace Project3
          *          infinite loop)
          *          
          */
-        public Maptile[][] currentMap;
+         int size = 50;
+         public Maptile[,] currentMap;
 
         public World(Game1 game)
         {
+            this.game = game;
         }
+
+        public void loadContent(ContentManager content)
+        {
+            Maptile newTile;
+            currentMap = new Maptile[size, size];
+            Texture2D grassText = game.Content.Load<Texture2D>("grass");
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    newTile = new Maptile(grassText, new Vector2(x, y));    //Creating new tiles.
+                    currentMap[x,y] = newTile;
+                }
+            }
+            
+        }
+
 
         public void Update(GameTime gametime)
         {
@@ -59,10 +84,18 @@ namespace Project3
         }
         public void Draw(SpriteBatch sb)
         { 
-            foreach (Maptile[] row in currentMap){
-                foreach (Maptile column in row)
+            
+            //foreach (Maptile[] row in currentMap){
+            //    foreach (Maptile column in row)
+            //    {
+            //        column.Draw(sb);
+            //    }
+            //}
+            for (int x = 0; x < size; x++)    //hard coded for now..trying to get working
+            {
+                for (int y = 0; y < size; y++)
                 {
-                    column.Draw(sb);
+                    currentMap[x, y].Draw(sb);
                 }
             }
         }
