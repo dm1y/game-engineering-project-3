@@ -59,6 +59,7 @@ namespace Project3
         Texture2D redTransition;
         Texture2D blueTransition;
         int size = 50;
+        Player player;
 
         public World(Game1 game)
         {
@@ -68,34 +69,74 @@ namespace Project3
         //WORK IN PROGRESS
         public void LoadContent(ContentManager Content)
         {
-            Maptile newTile;
+            
+            
             currentMap = new Maptile[size, size];
+            mapTwo = new Maptile[size, size];
+            mapThree = new Maptile[size, size];
             grassText = game.Content.Load<Texture2D>("grass");
             redTransition = game.Content.Load<Texture2D>("transition_red");
             blueTransition = game.Content.Load<Texture2D>("transition_blue");
+            LoadMap(2);
+
+            //for (int x = 0; x < size; x++)
+            //{
+            //    for (int y = 0; y < size; y++)
+            //    {
+            //        if (x > size-32)
+            //        {
+            //            newTile = new Maptile(redTransition, new Vector2(x, y));
+            //            currentMap[x, y] = newTile;
+            //        }
+            //        else if (y > size - 32)
+            //        {
+            //            newTile = new Maptile(blueTransition,new Vector2(x,y));
+            //            currentMap[x, y] = newTile;
+            //        }
+            //        else
+            //        {
+            //            newTile = new Maptile(grassText, new Vector2(x, y));
+            //            currentMap[x, y] = newTile;
+            //        }
+                    
+               // }
+                
+            //}
+        }
+        
+        //default sets to 1
+        public void LoadMap(int path = 1)
+        {
+            Maptile newTile;
+            Maptile [,] tempMap = new Maptile[size,size];
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
                 {
-                    if (x > size-32)
+                    switch (path)
                     {
-                        newTile = new Maptile(redTransition, new Vector2(x, y));
-                        currentMap[x, y] = newTile;
+                        case 1:
+                            newTile = new Maptile(grassText, new Vector2(x, y));
+                            tempMap[x, y] = newTile;
+
+                            break;
+                        case 2:
+                            newTile = new Maptile(redTransition, new Vector2(x, y));
+                            tempMap[x, y] = newTile;
+                            break;
+                        case 3:
+                            newTile = new Maptile(blueTransition, new Vector2(x, y));
+                            tempMap[x, y] = newTile;
+                            break;
+                        default:
+                            newTile = new Maptile(grassText,new Vector2(x, y));
+                            tempMap[x, y] = newTile;
+                            break;
                     }
-                    else if (y > size - 32)
-                    {
-                        newTile = new Maptile(blueTransition,new Vector2(x,y));
-                        currentMap[x, y] = newTile;
-                    }
-                    else
-                    {
-                        newTile = new Maptile(grassText, new Vector2(x, y));
-                        currentMap[x, y] = newTile;
-                    }
-                    
+                    currentMap = tempMap;
                 }
-                
             }
+           
         }
 
         public void Update(GameTime gametime)
@@ -111,10 +152,13 @@ namespace Project3
             {
                 for (int y = 0; y < size; y++)
                 {
+                    
                     currentMap[x, y].Draw(sb);
                 }
             }
+           
             sb.End();
+
         }
     }
 }
