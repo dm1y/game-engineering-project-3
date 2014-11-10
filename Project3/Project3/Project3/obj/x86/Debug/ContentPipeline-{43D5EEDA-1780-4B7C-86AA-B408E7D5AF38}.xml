@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\grass.xnb</Output>
-      <Time>2014-11-08T17:04:35.9629413-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\grass.xnb</Output>
+      <Time>2014-11-10T12:07:55.6217545-08:00</Time>
     </Item>
     <Item>
       <Source>playerdown.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerdown.xnb</Output>
-      <Time>2014-11-08T17:04:35.9719418-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerdown.xnb</Output>
+      <Time>2014-11-10T12:07:55.6267547-08:00</Time>
     </Item>
     <Item>
       <Source>playerleft.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerleft.xnb</Output>
-      <Time>2014-11-08T17:04:35.9719418-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerleft.xnb</Output>
+      <Time>2014-11-10T12:07:55.6277548-08:00</Time>
     </Item>
     <Item>
       <Source>playerright.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerright.xnb</Output>
-      <Time>2014-11-08T17:04:35.9729418-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerright.xnb</Output>
+      <Time>2014-11-10T12:07:55.6287549-08:00</Time>
     </Item>
     <Item>
       <Source>playerup.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerup.xnb</Output>
-      <Time>2014-11-08T17:04:35.9729418-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerup.xnb</Output>
+      <Time>2014-11-10T12:07:55.6297549-08:00</Time>
     </Item>
     <Item>
       <Source>transition.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition.xnb</Output>
-      <Time>2014-11-08T17:04:35.9739419-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition.xnb</Output>
+      <Time>2014-11-10T12:07:55.630755-08:00</Time>
     </Item>
     <Item>
       <Source>transition_blue.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_blue.xnb</Output>
-      <Time>2014-11-08T17:04:35.974942-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_blue.xnb</Output>
+      <Time>2014-11-10T12:07:55.630755-08:00</Time>
     </Item>
     <Item>
       <Source>transition_red.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_red.xnb</Output>
-      <Time>2014-11-08T17:04:35.974942-08:00</Time>
+      <Output>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_red.xnb</Output>
+      <Time>2014-11-10T12:07:55.631755-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -80,10 +80,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\ccclayton\Desktop\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -112,7 +112,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2014-09-02T01:23:05.5780876-07:00</Value>
+        <Value>2014-08-26T14:56:06.0260484-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

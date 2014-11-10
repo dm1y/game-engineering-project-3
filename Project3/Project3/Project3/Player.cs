@@ -33,9 +33,9 @@ namespace Project3
         private Vector2 currPosition;
         private Vector2 currPositionCoord;
 
-        public Maptile[][] map;
+        public Maptile[,] map;
         public Player(Texture2D north, Texture2D south, Texture2D west, Texture2D east, Vector2 spawnPosition, 
-            Maptile[][] map)
+            Maptile[,] map)
         {
             playerNorth = north;
             playerSouth = south;
@@ -127,21 +127,22 @@ namespace Project3
         {
             int yDifference = (int)(currPosition.Y - nextPosition.Y);
             int xDifference = (int)(currPosition.X - nextPosition.X);
+
             if (yDifference > 0)
             {
-                currPosition.Y = currPosition.Y - 1;
+                currPosition.Y = currPosition.Y - 4;
             }
             if (yDifference < 0)
             {
-                currPosition.Y = currPosition.Y + 1;
+                currPosition.Y = currPosition.Y + 4;
             }
             if (xDifference > 0)
             {
-                currPosition.X = currPosition.X + 1;
+                currPosition.X = currPosition.X - 4;
             }
             if (xDifference < 0)
             {
-                currPosition.X = currPosition.X - 1;
+                currPosition.X = currPosition.X + 4;
             }
         }
 
@@ -150,7 +151,7 @@ namespace Project3
         {
             setFacingEast();
             frontOfPlayer = new Vector2(0, 1);
-            if (map[(int)currPositionCoord.Y][(int)currPositionCoord.X + 1].isCollidable == false)
+            if (map[(int)currPositionCoord.Y,(int)currPositionCoord.X + 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X + 1;
                 nextPosition.X = nextPosition.X + dimension;
@@ -162,7 +163,7 @@ namespace Project3
         {
             setFacingWest();
             frontOfPlayer = new Vector2(-1, 0);
-            if (map[(int)currPositionCoord.Y][(int)currPositionCoord.X - 1].isCollidable == false)
+            if (map[(int)currPositionCoord.Y,(int)currPositionCoord.X - 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X - 1;
                 nextPosition.X = nextPosition.X - dimension;
@@ -174,7 +175,7 @@ namespace Project3
         {
             setFacingNorth();
             frontOfPlayer = new Vector2(0, -1);
-            if (map[(int)currPositionCoord.Y - 1][(int)currPositionCoord.X].isCollidable == false)
+            if (map[(int)currPositionCoord.Y - 1,(int)currPositionCoord.X].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y - 1;
                 nextPosition.Y = nextPosition.Y - dimension;
@@ -186,7 +187,7 @@ namespace Project3
         {
             setFacingSouth();
             frontOfPlayer = new Vector2(0, 1);
-            if (map[(int)currPositionCoord.Y + 1][(int)currPositionCoord.X].isCollidable == false)
+            if (map[(int)currPositionCoord.Y + 1,(int)currPositionCoord.X].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y + 1;
                 nextPosition.Y = nextPosition.Y + dimension;
@@ -223,13 +224,13 @@ namespace Project3
          or in tall grass/swamp/cave when looking for monsters. */
         public void CheckTile()
         {
-            Maptile tileToCheck = map[(int)currPositionCoord.Y][(int)currPositionCoord.X];
+            Maptile tileToCheck = map[(int)currPositionCoord.Y,(int)currPositionCoord.X];
             
             //if tileToCheck is a transition, then we figure out where the player's transition goes to. Then we call
             //load from world or something like that.
         }
 
-        public void ChangeMap(Maptile[][] map)
+        public void ChangeMap(Maptile[,] map)
         {
             this.map = map;
         }
@@ -244,7 +245,7 @@ namespace Project3
          stand on top of, but can still interact with(ie, loot chests, or signs, or people)*/
         public void CheckInteract()
         {
-            Maptile tileToCheck = map[(int)(currPositionCoord.Y + frontOfPlayer.Y)][(int)(currPositionCoord.X + frontOfPlayer.X)];
+            Maptile tileToCheck = map[(int)(currPositionCoord.Y + frontOfPlayer.Y),(int)(currPositionCoord.X + frontOfPlayer.X)];
 
             //and then checking logic here
         }

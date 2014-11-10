@@ -55,9 +55,22 @@ namespace Project3
         public Maptile[,] currentMap;
         public Maptile[,] mapTwo;
         public Maptile[,] mapThree;   //Not being used yet.
+
+        //Player Textures//
+        Texture2D playerup;
+        Texture2D playerdown;
+        Texture2D playerleft;
+        Texture2D playerright;
+
+        //Tile Textures
         Texture2D grassText;
         Texture2D redTransition;
         Texture2D blueTransition;
+
+        //// ---- MOVEMENT ---- //
+        KeyboardState currentKeyboardState;
+        KeyboardState previousKeyboardState;
+
         int size = 50;
         Player player;
 
@@ -77,7 +90,15 @@ namespace Project3
             grassText = game.Content.Load<Texture2D>("grass");
             redTransition = game.Content.Load<Texture2D>("transition_red");
             blueTransition = game.Content.Load<Texture2D>("transition_blue");
+
+            playerleft = game.Content.Load<Texture2D>("playerleft");
+            playerright = game.Content.Load<Texture2D>("playerright");
+            playerup = game.Content.Load<Texture2D>("playerup");
+            playerdown = game.Content.Load<Texture2D>("playerdown");
+
             LoadMap(2);
+
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap);
 
             //for (int x = 0; x < size; x++)
             //{
@@ -141,7 +162,16 @@ namespace Project3
 
         public void Update(GameTime gametime)
         {
+            currentKeyboardState = Keyboard.GetState();
 
+
+            /* Temporary for now to make it easier for debugging. 
+             Basically exits the game when the [ESCAPE] key is pressed. */
+            if (currentKeyboardState.IsKeyDown(Keys.Escape))
+                game.Exit();
+
+            player.UpdateInput(gametime, currentKeyboardState);
+            player.UpdatePosition(gametime);
         }
         public void Draw(SpriteBatch sb)
         {
@@ -156,7 +186,8 @@ namespace Project3
                     currentMap[x, y].Draw(sb);
                 }
             }
-           
+
+            player.Draw(sb);
             sb.End();
 
         }
