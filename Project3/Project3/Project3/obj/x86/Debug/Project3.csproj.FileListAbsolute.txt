@@ -40,3 +40,17 @@ C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project
 C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.exe
 C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.pdb
 C:\Users\William\Documents\Project 3\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.pdb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\grass.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerdown.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerleft.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerright.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\playerup.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_blue.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Content\transition_red.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.exe
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\bin\x86\Debug\Project3.pdb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.csprojResolveAssemblyReference.cache
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.exe
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project3\Project3\Project3\obj\x86\Debug\Project3.pdb

@@ -10,6 +10,9 @@ namespace Project3
 {
     class Player
     {
+
+        public World world; 
+
         /* - Directional Textures - 
          * Using the booleans, update() and draw() will handle
          * the cases for how the player moves in each direction.
@@ -29,14 +32,22 @@ namespace Project3
          * If north, (0, -1). If south, (0, 1). If west, (-1, 0). If east, (0, 1)
          */
         private Vector2 frontOfPlayer;
-        private Vector2 nextPosition;
-        private Vector2 currPosition;
-        private Vector2 currPositionCoord;
+        private Vector2 nextPosition;  /* Preemptive movement  */
+        private Vector2 currPosition; /* Position of player IN WORLD SPACE */
+        private Vector2 currPositionCoord; /* Position of player in MAP COORDINATE SPACE */
+
+        public Vector2 position
+        {
+            get { return currPosition; }
+        }
+
 
         public Maptile[,] map;
         public Player(Texture2D north, Texture2D south, Texture2D west, Texture2D east, Vector2 spawnPosition, 
-            Maptile[,] map)
+            Maptile[,] map, World world)
         {
+            this.world = world; 
+
             playerNorth = north;
             playerSouth = south;
             playerWest = west;
@@ -84,7 +95,7 @@ namespace Project3
          */
         public void UpdateInput(GameTime gameTime, KeyboardState keyboard)
         {
-            //If current position is already at next position, player can move
+            //If current position is already at next position, player can movei
             if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
             {
                 if (keyboard.IsKeyDown(Keys.W))
@@ -144,6 +155,30 @@ namespace Project3
             {
                 currPosition.X = currPosition.X + 4;
             }
+        }
+
+        private void StayWithinBounds()
+        {
+            /* TODO: Fill in later 
+             * 
+             * 
+             * LEFTBOUND: 
+             *    if x coordinate of the map that player is touching is less than or equal to the x position of player 
+             *    i.e. [0, whatever] 
+             *       have the player stay there at [0, y] if player is navigating towards the negatives in x axis
+             * TOPBOUND: 
+             *    if y coordinate of the map that player is touching is less than or equal to the y position of player 
+             *    i.e. [whatever, 0]
+             *       have the player stay there at [x, 0] if player is navigating towards the negatives in y axis
+             * RIGHTBOUND:
+             *    if x coordinate of the map that player is touching is greater than or equal to the x position of player 
+             *    i.e. [boundary.x, whatever]; 
+             *       have the player stay there at [boundary.x, y] if player is navigating towards out of range in x axis
+             * BOTTOMBOUND:
+             *    if x coordinate of the map that player is touching is greater than or equal to the x position of player 
+             *    i.e. [whatever, boundary.y]
+             *       have the player stay there at [x, boundary.y] if player is navigating towards out of range in y axis
+             */
         }
 
         //Orients the player right, then sets the next X position to +tilewidth, and adds 1 to the relative X. 
@@ -225,6 +260,19 @@ namespace Project3
         public void CheckTile()
         {
             Maptile tileToCheck = map[(int)currPositionCoord.Y,(int)currPositionCoord.X];
+
+
+            /* Hard coded for testing purposes, we can generalize this later once we get XMLs working */
+            /* If player hits the tile found in map[5,5] switch to the third map */
+            /* TODO: Generalize the code above instead of hard coding, so we need to detect 
+             * what our collisions will be that would cause the transition and the 
+             * location of where those objects will be placed in the map */
+            if (currPositionCoord.X == 5 && currPositionCoord.Y == 5)
+                world.TransitionMap(3);
+            /* If player hits the tile found in map[15,15] switch to the first map */
+            if (currPositionCoord.X == 15 && currPositionCoord.Y == 15)
+                world.TransitionMap(1);
+            
             
             //if tileToCheck is a transition, then we figure out where the player's transition goes to. Then we call
             //load from world or something like that.

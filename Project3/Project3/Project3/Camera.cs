@@ -34,7 +34,7 @@ namespace Project3
 
         public void setBoundaries(int x, int y)
         {
-            boundaries = new Vector2(x, y);
+            boundaries = new Vector2(50*30, 50*20);
 
         }
 
@@ -63,13 +63,13 @@ namespace Project3
 
         public void Update(GameTime gameTime, Player player)
         {
-//            playerPositionInWorldSpace = player.position;
+            playerPositionInWorldSpace = player.position;
 
-//            center = new Vector2(playerPositionInWorldSpace.X - view.Width / 2, playerPositionInWorldSpace.Y - view.Height / 2);
+            center = new Vector2(playerPositionInWorldSpace.X - view.Width / 2, playerPositionInWorldSpace.Y - view.Height / 2);
 
             if (view.Width < boundaries.X)
             {
-//                if (playerPositionInWorldSpace.X >= view.Width / 2)
+                if (playerPositionInWorldSpace.X >= view.Width / 2)
                 {
                     if (center.X < boundaries.X - view.Width)
                     {
@@ -77,10 +77,10 @@ namespace Project3
                     }
                 }
 //                else if (playerPositionInWorldSpace.Y <= boundaries.Y)
-                {
-                    ResetCamera();
+//                {
+//                    ResetCamera();
 
-                }
+//                }
             }
         }
 

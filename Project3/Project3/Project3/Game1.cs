@@ -20,6 +20,7 @@ namespace Project3
         SpriteBatch spriteBatch;
 
         World gameWorld;
+        Camera camera;
 
         private const int width = 960;
         private const int height = 640;
@@ -44,6 +45,8 @@ namespace Project3
             // TODO: Add your initialization logic here
             
             base.Initialize();
+            
+            
         }
 
         /// <summary>
@@ -54,7 +57,8 @@ namespace Project3
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            gameWorld = new World(this);
+            camera = new Camera(this.graphics.GraphicsDevice.Viewport);
+            gameWorld = new World(this, camera);
             gameWorld.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }

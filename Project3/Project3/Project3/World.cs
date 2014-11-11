@@ -15,6 +15,17 @@ namespace Project3
     class World
     {
         public Game1 game;
+        public Camera camera;
+
+        /* TODO: Create boundaries variable stating the map size 
+         * 
+         * Legend: Game Window is 960 x 640 
+         * Each tile window is a 30 x 20. 
+         * 
+         * So Map Size of 60 x 60 is 960*2 by 640*3. 
+         * That way we can keep track of player movements. 
+         */
+
         //Two dimensional array of maptiles, so that we only have to check certain areas around the player
 
         /* (Goal for 11/12/2014)
@@ -74,9 +85,10 @@ namespace Project3
         int size = 50;
         Player player;
 
-        public World(Game1 game)
+        public World(Game1 game, Camera c)
         {
             this.game = game;
+            camera = c;
         }
 
         //WORK IN PROGRESS
@@ -98,7 +110,7 @@ namespace Project3
 
             LoadMap(2);
 
-            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap);
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap, this);
 
             //for (int x = 0; x < size; x++)
             //{
@@ -124,12 +136,28 @@ namespace Project3
                 
             //}
         }
+
+        /* This method can be called from the player class using the world instance.
+         * TransitionMap (path depending on object interacted with). 
+         * 
+         * Refer to Player class -> CheckTile for example. 
+         */
+        public void TransitionMap(int path)
+        {
+            /* Clears the current map */
+            currentMap = null;
+
+            /* [Optional] TODO: Add cut scene here */
+
+            /* Loads new map */
+            LoadMap(path);
+        }
         
         //default sets to 1
         public void LoadMap(int path = 1)
         {
             Maptile newTile;
-            Maptile [,] tempMap = new Maptile[size,size];
+            Maptile [,] tempMap = new Maptile[size,size]; 
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
@@ -172,12 +200,16 @@ namespace Project3
 
             player.UpdateInput(gametime, currentKeyboardState);
             player.UpdatePosition(gametime);
+
+            camera.Update(gametime, player);
+
         }
         public void Draw(SpriteBatch sb)
         {
 
 
             sb.Begin();
+
             for (int x = 0; x < size; x++)
             {
                 for (int y = 0; y < size; y++)
