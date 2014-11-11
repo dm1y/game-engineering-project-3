@@ -260,7 +260,7 @@ namespace Project3
         public void CheckTile()
         {
             Maptile tileToCheck = map[(int)currPositionCoord.Y,(int)currPositionCoord.X];
-
+            
 
             /* Hard coded for testing purposes, we can generalize this later once we get XMLs working */
             /* If player hits the tile found in map[5,5] switch to the third map */

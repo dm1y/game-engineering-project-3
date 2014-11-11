@@ -26,6 +26,8 @@ namespace Project3
          * That way we can keep track of player movements. 
          */
 
+
+
         //Two dimensional array of maptiles, so that we only have to check certain areas around the player
 
         /* (Goal for 11/12/2014)
@@ -108,7 +110,7 @@ namespace Project3
             playerup = game.Content.Load<Texture2D>("playerup");
             playerdown = game.Content.Load<Texture2D>("playerdown");
 
-            LoadMap(2);
+            LoadMap(1);
 
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap, this);
 
@@ -152,7 +154,13 @@ namespace Project3
             /* Loads new map */
             LoadMap(path);
         }
-        
+
+
+        /*
+         *  TODO: 
+         *  Make the map data driven. 
+         *  
+         */
         //default sets to 1
         public void LoadMap(int path = 1)
         {
@@ -162,6 +170,18 @@ namespace Project3
             {
                 for (int y = 0; y < size; y++)
                 {
+//                    if (x % 5 == 0)
+//                        path = 2; 
+
+                    /* TODO 1: Make the map data driven by creating either an xml or ascii based level 
+                     * info loader thing */
+                    /* TODO 2: Instead of having the switch be path, set it to whatever the input file is
+                     *  to determine which tile to create and add to the tempMap */
+                    /* TODO 3: In the player class, check the collisions by seeing which tile the player is 
+                     currently interacting with. If it is a transition tile, transitions to the next map. 
+                     If it's an NPC , interact with NPC, and etc. If it's an enemy, transition to
+                     battle system. */
+                    
                     switch (path)
                     {
                         case 1:
@@ -183,6 +203,7 @@ namespace Project3
                             break;
                     }
                     currentMap = tempMap;
+                    path = 1;
                 }
             }
            
