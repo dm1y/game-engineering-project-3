@@ -102,15 +102,15 @@ namespace Project3
                 {
                     moveUp();
                 }
-                if (keyboard.IsKeyDown(Keys.S))
+                else if (keyboard.IsKeyDown(Keys.S))
                 {
                     moveDown();
                 }
-                if (keyboard.IsKeyDown(Keys.A))
+                else if (keyboard.IsKeyDown(Keys.A))
                 {
                     moveLeft();
                 }
-                if (keyboard.IsKeyDown(Keys.D))
+                else if (keyboard.IsKeyDown(Keys.D))
                 {
                     moveRight();
                 }
