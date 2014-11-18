@@ -26,7 +26,52 @@ namespace Project3
          * That way we can keep track of player movements. 
          */
 
-
+        /*
+         * HIERARCHY NOTES: 
+         * 
+         * Game1 -> Menu Screen 
+         * Menu Screen -> Transitions to World 
+         * World creates Player / Enemies / Maps / Quests based on XML stuff 
+         * **(Diana shall do data driven stuff soon I swear -- BY THIS WEEKEND PLS)
+         * Camera is independent for the most part but relies on position of player 
+         * 
+         * TODO: Create an Enemy class
+         * In world, create a List of enemies for each different map 
+         *  so when player encounters a tile that is an enemy tile (random generator implemented to determine if enemy is encountered or not)
+         *  go through list of enemies, randomly pick one, and pass it into battle system 
+         *  
+         * ** Alternative method, pass in the list of enemies to the battle system class instead and pick enemy randomly from there 
+         *  ** Might be better to do list so we can determine quantity and variety. 
+         *  ** constructor changes of enemy will be adding a quantity of enemies (1 for different types, 2 for total num of enemies)
+         * ** details on enemies should be in battle sys clss
+         *
+         * BattleSystem(player, enemy) -> Dialogue class
+         * TODO: Implement Battle System Class 
+         * ** see battle sys class for details 
+         * 
+         * TODO: Implement Quest class 
+         * Create a List of Quests in World (relies on map details + data driven stuff) 
+         * ** see quest class for details 
+         * ** if quest[i] is active/inprogress, set items to visible 
+         * ** if quest[i] is inactive/completed, set items to not visible
+         * ** is visible/not visible can be handled multiple ways, easier way can be found in quest class. 
+         * depends what ya'll want to do to implement
+         * 
+         * TODO: Dialogue screen (logic similar to menu screen done in class)
+         * 
+         * TODO: NPC class 
+         *      would probably have a type of NPC , it's own dialogue class, it's own shop thing 
+         * 
+         * NPC -> Shop 
+         * NPC -> Dialogue 
+         * TODO: Shop/Item class  : parameters (details found in shop class)
+         *          Dialogue class displays sell, shop, leave (maybe have a talk option) 
+         *          List of items to sell with prices 
+         *          
+         * TODO: Possibly an inventory class or we can just keep an arraylist of items the player has. 
+         *       need to somehow create some kind of overlay to display this information as well as a keystroke
+         * 
+         */
 
         //Two dimensional array of maptiles, so that we only have to check certain areas around the player
 
@@ -149,7 +194,7 @@ namespace Project3
             /* Clears the current map */
             currentMap = null;
 
-            /* [Optional] TODO: Add cut scene here */
+            /* [Optional] TODO:  Add cut scene here */
 
             /* Loads new map */
             LoadMap(path);
