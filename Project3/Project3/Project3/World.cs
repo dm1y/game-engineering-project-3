@@ -67,6 +67,7 @@ namespace Project3
          * TODO: Shop/Item class  : parameters (details found in shop class)
          *          Dialogue class displays sell, shop, leave (maybe have a talk option) 
          *          List of items to sell with prices 
+         *          details for items class found in shop class.
          *          
          * TODO: Possibly an inventory class or we can just keep an arraylist of items the player has. 
          *       need to somehow create some kind of overlay to display this information as well as a keystroke
