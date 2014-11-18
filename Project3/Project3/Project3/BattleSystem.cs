@@ -17,13 +17,15 @@ namespace Project3
          * ** Attack of player
          * ** Defense of player 
          * ** Optional: consumables 
+         * ** Current experience, level
          * ** List of techniques player has so player can select which attack to use
          * 
          * ** Health of enemy 
          * ** Attack of enemy 
          * ** Enemy resistance/defense 
+         * ** Experience gained 
          * ** List of techniques enemy has (randomized attacks depending on complexity of enemy)
-         * 
+         * ** Number of enemies
          */
 
         /*
@@ -86,6 +88,9 @@ namespace Project3
          * Have a random generator set up 
          * 
          * if enemy health is at 0
+         *   Add exp to player 
+         *   check if player levels up, 
+         *      if player levels up, increase attack points and defense 
          *   Randomly pick an item from the item drop list and return it 
          */
 
