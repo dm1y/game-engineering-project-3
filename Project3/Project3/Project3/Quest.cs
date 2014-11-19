@@ -22,6 +22,10 @@ namespace Project3
          * Boolean if quest has been completed 
          * List of rewards for completion (determined by random gen unless we want to hardcode a specific reward per quest, then no list is needed)
          */
+        public Quest(bool type, bool isActive, bool isInProgress, bool isCompleted)
+        {
+
+        }
 
         /*
          * 
@@ -39,6 +43,19 @@ namespace Project3
          *         // when quest is completed 
          */
 
+        public void Update(Gametime gametime)
+        {
+            //if quest has not been updated
+            //do nothing
+            //Otherwise, keep checking to see if counter is at 0
+
+            //if zero is reached, display message saying to go back to NPC to finish quest
+        }
+
+        public void EnableQuest()
+        {
+
+        }
         /*
          * Method to activate/deactivate quest 
          * 
@@ -58,6 +75,15 @@ namespace Project3
          *    
          */
 
+        public void DisableQuest()
+        {
+
+        }
+
+        public void CheckForCompletion()
+        {
+
+        }
         /*
          * method checking to see if quest has been completed 
          * 
@@ -70,6 +96,10 @@ namespace Project3
          * if this is a quest battle, then check the counter that's being passed in and etc. ) 
          */
 
+        public void Spawn()
+        {
+
+        }
         /*
          * method to spawn enemies / items 
          * 
