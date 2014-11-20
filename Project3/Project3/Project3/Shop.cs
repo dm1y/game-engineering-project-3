@@ -8,6 +8,25 @@ namespace Project3
     class Shop
     {
 
+        Player player;
+        List<Item> playerInventory;
+        List<Item> shopInventory;
+        Boolean isShopping;
+
+        public Shop(List<Item> shopInventory)
+        {
+            this.shopInventory = shopInventory;
+            isShopping = false;
+        }
+
+
+        public void PlayerShop(List<Item> playerInventory)
+        {
+            this.playerInventory = playerInventory;
+            isShopping = true;
+        }
+
+
         /*
          * TODO: 
          * Constructor : 
