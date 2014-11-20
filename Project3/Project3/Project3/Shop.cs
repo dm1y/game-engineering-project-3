@@ -9,18 +9,18 @@ namespace Project3
     {
 
         Player player;
-        List<Item> playerInventory;
-        List<Item> shopInventory;
+        Inventory playerInventory;
+        Inventory shopInventory;
         Boolean isShopping;
 
-        public Shop(List<Item> shopInventory)
+        public Shop(Inventory shopInventory)
         {
             this.shopInventory = shopInventory;
             isShopping = false;
         }
 
 
-        public void PlayerShop(List<Item> playerInventory)
+        public void PlayerShop(Inventory playerInventory)
         {
             this.playerInventory = playerInventory;
             isShopping = true;

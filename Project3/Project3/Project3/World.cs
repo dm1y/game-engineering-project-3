@@ -48,6 +48,8 @@ namespace Project3
          * BattleSystem(player, enemy) -> Dialogue class
          * TODO: Implement Battle System Class 
          * ** see battle sys class for details 
+         *       ---- HUD CLASS --- 
+         *          Note that we should reset the player's health back to max after a battle!
          * 
          * TODO: Implement Quest class 
          * Create a List of Quests in World (relies on map details + data driven stuff) 
@@ -72,6 +74,10 @@ namespace Project3
          * TODO: Possibly an inventory class or we can just keep an arraylist of items the player has. 
          *       need to somehow create some kind of overlay to display this information as well as a keystroke
          * 
+         * HEADS UP DISPLAY - 
+         *          Idea - Display $$$, exp, lvl
+         *          Near bottom right - display three boxes - Weapon, Shield, Potion. Pressing 1, 2, or 3 will
+         *                              switch up the weapon/shield/potion by iterating through player's inventory
          */
 
         //Two dimensional array of maptiles, so that we only have to check certain areas around the player
