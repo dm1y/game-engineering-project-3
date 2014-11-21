@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project3", "Project3\Projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project3Content", "Project3\Project3Content\Project3Content.contentproj", "{43D5EEDA-1780-4B7C-86AA-B408E7D5AF38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFiles", "WindowsGameLibrary2\DataFiles.csproj", "{7A7BD655-1662-4007-A88B-56FF9ECEF48F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,12 +23,6 @@ Global
 		{43D5EEDA-1780-4B7C-86AA-B408E7D5AF38}.Debug|x86.ActiveCfg = Debug|x86
 		{43D5EEDA-1780-4B7C-86AA-B408E7D5AF38}.Release|Any CPU.ActiveCfg = Release|x86
 		{43D5EEDA-1780-4B7C-86AA-B408E7D5AF38}.Release|x86.ActiveCfg = Release|x86
-		{7A7BD655-1662-4007-A88B-56FF9ECEF48F}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{7A7BD655-1662-4007-A88B-56FF9ECEF48F}.Debug|x86.ActiveCfg = Debug|x86
-		{7A7BD655-1662-4007-A88B-56FF9ECEF48F}.Debug|x86.Build.0 = Debug|x86
-		{7A7BD655-1662-4007-A88B-56FF9ECEF48F}.Release|Any CPU.ActiveCfg = Release|x86
-		{7A7BD655-1662-4007-A88B-56FF9ECEF48F}.Release|x86.ActiveCfg = Release|x86
-		{7A7BD655-1662-4007-A88B-56FF9ECEF48F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
