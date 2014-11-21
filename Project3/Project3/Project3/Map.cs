@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Level
+    class Map
     {
 
         /* TODO: Move level creation logic here instead of having it in World 
