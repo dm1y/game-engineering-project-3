@@ -99,6 +99,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\WindowsGameLibrary2\DataFiles.csproj">
+      <Project>{7a7bd655-1662-4007-a88b-56ff9ecef48f}</Project>
+      <Name>DataFiles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project3Content\Project3Content.contentproj">
       <Name>Project3Content</Name>
       <XnaReferenceType>Content</XnaReferenceType>

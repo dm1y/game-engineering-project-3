@@ -6,3 +6,4 @@ Content\playerup.xnb
 Content\transition.xnb
 Content\transition_blue.xnb
 Content\transition_red.xnb
+Content\DialogueFont.xnb

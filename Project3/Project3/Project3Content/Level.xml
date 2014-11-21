@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <!-- TODO: replace this Asset with your own XML asset data. -->
+  <Asset Type="Project3.Data[]">
+    <Item>
+      <texture>null</texture>
+      <position>1 0</position>
+      <isCollidable>false</isCollidable>
+      <isTransition>false</isTransition>
+      <isDangerous>false</isDangerous>
+      <isInteract>false</isInteract>
+    </Item>
+
+  </Asset>
+</XnaContent>
