@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,28 +24,18 @@ namespace Project3
         // May be used to set markers for where we want to pick up/leave off an NPC's dialogue. Optional(normal NPCs wouldn't use this, but questgivers would)
         // Consider this an ADVANCED CONCEPT. May not be even used in the final. 
         public int[] dialoguePoints;
-        SpriteFont font;
 
-        public Dialogue(SpriteFont font)
+        public Dialogue()
         {
-            this.font = font;
-
         }
 
-        public Dialogue(List<String> text, SpriteFont font)
+        public Dialogue(List<String> text)
         {
-            this.font = font;
             this.text = text;
         }
 
         public void AdvanceLine()
         {
-            currentLine++;
-        }
-
-        public void ResetDialogue()
-        {
-            currentLine = 0;
         }
 
         public void AddLine(String line)
@@ -54,22 +43,12 @@ namespace Project3
             text.Add(line);
         }
 
-        /* When player interacts with an interactable block, player will enter the isDialogue state. The player can only break out of it 
-         if they are at the end of the dialogue option with that NPC/whatever. 
-         
-         Logic: 
-         Player press enter in front of a interactable maptile, will check if maptile is interactable
-         If maptile is interactable, load the dialogue up(assumes all interactable maptiles will have dialogue options)
-         */
         public void Update() 
         {
-
         }
 
         public void Draw(SpriteBatch sb) 
         {
-            Vector2 position = new Vector2(0, 0);//still figuring where to draw this guy//
-            sb.DrawString(font, text.ElementAt(currentLine), position, Color.White);
         }
 
         /* ADVANCED CONCEPT -- MAY NOT HAVE TIME TO DO THIS! *
