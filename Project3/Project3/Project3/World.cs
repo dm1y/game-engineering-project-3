@@ -166,6 +166,8 @@ namespace Project3
 
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap, this);
 
+            
+
             //for (int x = 0; x < size; x++)
             //{
             //    for (int y = 0; y < size; y++)
