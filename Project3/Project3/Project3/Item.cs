@@ -18,6 +18,7 @@ namespace Project3
          damage - added to player's base damage when they attack*/
         int itemBuyPrice;
         int itemSellPrice;
+        int quantity;
         int block;
         int heal;
         int damage;
@@ -48,7 +49,7 @@ namespace Project3
                 damage = ItemGeneralEffect;
                 this.isWeapon = true;
             }
-
+            quantity = 1;
             this.itemName = itemName;
         }
 
@@ -67,6 +68,30 @@ namespace Project3
                 return "weapon";
             }
             return "misc";
+        }
+
+        public void AddQuantity()
+        {
+            this.quantity++;
+        }
+
+        public void RemoveQuantity()
+        {
+            this.quantity--;
+            if (this.quantity < 0)
+            {
+                this.quantity = 0;
+            }
+        }
+
+        public void HasNoneOf()
+        {
+            if (this.quantity == 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

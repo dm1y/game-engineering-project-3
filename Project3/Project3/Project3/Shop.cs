@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +13,120 @@ namespace Project3
         Player player;
         Inventory playerInventory;
         Inventory shopInventory;
-        Boolean isShopping;
+        Boolean isBuying;
+        Boolean isSelling;
+
+        String displayText;
+        int quantityOf;
+
+        /* Possible states: 
+            0 - Arrow is hovering over BUY
+            1 - Arrow is hovering over SELL
+            2 - Arrow is hovering over LEAVE*/
+        int currentState;
 
         public Shop(Inventory shopInventory)
         {
             this.shopInventory = shopInventory;
-            isShopping = false;
+            isBuying = false;
+            isSelling = false;
         }
 
 
         public void PlayerShop(Inventory playerInventory)
         {
             this.playerInventory = playerInventory;
-            isShopping = true;
+            currentState = 0;
         }
 
+        public void Update(KeyboardState keyboard)
+        {
+            // If player is notBuying and notSelling, then they must be in selection
+            if (!isBuying && !isSelling)
+            {
+                if (keyboard.IsKeyDown(Keys.W))
+                {
+                    currentState--;
+                    if (currentState < 0)
+                    {
+                        currentState = 0;
+                    }
+                }
+                else if (keyboard.IsKeyDown(Keys.S))
+                {
+                    currentState++;
+                    if (currentState > 2)
+                    {
+                        currentState = 2;
+                    }
+                }
+            }
+
+            //If the player hits enter during selection.
+            if (keyboard.IsKeyDown(Keys.Enter))
+            {
+                if (currentState == 2)
+                {
+                    //Quit the shop, probably by calling it from player. 
+                }
+                else if (currentState == 1)
+                {
+                    //Enter SELL MODE
+                    isSelling = true;
+                    isBuying = false;
+                }
+                else if (currentState == 0)
+                {
+                    //Enter BUY MODE
+                    isBuying = true;
+                    isSelling = false;
+                }
+            }
+
+            //If the player hits back during buy/sell, exit out of it.
+            if (keyboard.IsKeyDown(Keys.Back))
+            {
+                if (isSelling)
+                {
+                    isSelling = false;
+                }
+                else if (isBuying)
+                {
+                    isBuying = false;
+                }
+            }
+
+            if (isBuying)
+            {
+                HandlePurchases(keyboard);
+            }
+
+            else if (isSelling)
+            {
+                HandleSales(keyboard);
+            }
+        }
+
+        public void HandlePurchases(KeyboardState kb)
+        {
+
+        }
+
+        public void HandleSales(KeyboardState kb)
+        {
+
+        }
+
+
+        public void Draw(SpriteBatch sb)
+        {
+
+            // First want to draw the box underlays based on states. 
+            // If the player ISNT buying OR selling, then it is Buy/Sell/Leave draw.
+
+            // If it is buying OR selling, we draw the item selections, money
+            // Then the position of the selection arrow
+        }
 
         /*
          * TODO: 
