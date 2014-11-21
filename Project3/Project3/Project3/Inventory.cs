@@ -15,14 +15,12 @@ namespace Project3
 
         public int currentItemIndex;
         public Item currentItem;
-
         /* These attributes will *only* be used for PLAYER. It will technically
          be possible for a merchant to "equip" items, but it wont have any functionality. */
         public Item equippedShield;
         public Item equippedWeapon;
         public Item equippedPotion;
 
-        /* Need to handle duplicate items, ie multiple pigs feet or potions or whatever.*/
         public Inventory(List<Item> items)
         {
             currentItemIndex = 0;
