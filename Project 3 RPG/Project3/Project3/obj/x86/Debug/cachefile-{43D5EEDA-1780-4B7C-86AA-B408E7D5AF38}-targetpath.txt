@@ -1,0 +1,8 @@
+Content\grass.xnb
+Content\playerdown.xnb
+Content\playerleft.xnb
+Content\playerright.xnb
+Content\playerup.xnb
+Content\transition.xnb
+Content\transition_blue.xnb
+Content\transition_red.xnb
