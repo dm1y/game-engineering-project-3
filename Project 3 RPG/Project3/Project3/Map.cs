@@ -15,111 +15,89 @@ namespace Project3
 {
     public class Map
     {
-        Game1 game;
-        World world;
+        public Game1 game;
+
         
         /* Size of each map */
         public int width {get; private set;}
         public int height { get; private set; }
 
         /* Map Textures */
-        Texture2D grassText;
-        Texture2D redTransition;
-        Texture2D blueTransition;
+        public Texture2D grassText;
+        public Texture2D redTransition;
+        public Texture2D blueTransition;
 
-        public Maptile[,] currentMap;
+        public Maptile[,] currentMap { get; private set; }
 
-        public Map(Game1 g, World w)
+        public Map(Game1 g)
         {
             game = g;
-            world = w;
         }
 
         public void LoadContent(ContentManager Content)
         {
-            grassText = game.Content.Load<Texture2D>("MapTexture/grass");
+            grassText = game.Content.Load<Texture2D>("MapTexture/transition_red");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
             blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
 
         }
 
-        public void LoadMap(int i)
+        public void GenerateMap (int i)
         {
             List<string> lines = new List<string>();
-            using (StreamReader reader = new StreamReader(TitleContainer.OpenStream("Content/MapTexture/test" + i + ".txt")))
+
+            Stream stream = TitleContainer.OpenStream("Content/test" + i + ".txt");
+            using (StreamReader reader = new StreamReader(stream))
             {
                 string line = reader.ReadLine();
+                width = line.Length;
                 while (line != null)
                 {
                     lines.Add(line);
                 }
             }
-        }
-/*        * use the line.Count information to initialize the size of the grid 
-         * 
-         * use colin's nested for loop here, 
-         * but when reaching the switch statement, create a new tile based on the input of the ascii . 
-         * 
-         * also redo some logic for map tile that has "subclasses"/different types of tiles created
-         * 
-         * And this should populate the grid. 
-         * 
-         * Transitions will still remain the world class.
-         * 
-         * 
-            }*/
 
-        /*
- *  TODO: 
- *  Make the map data driven. 
- *  
- */
-        //default sets to 1
-        public void LoadMap(int path = 1)
-        {
+            height = lines.Count;
+
+            currentMap = new Maptile[width, height];
+
             Maptile newTile;
-            Maptile[,] tempMap = new Maptile[width, height];
-            for (int x = 0; x < width; x++)
+
+            for (int y = 0; y < height; y++)
             {
-                for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
                 {
-                    //                    if (x % 5 == 0)
-                    //                        path = 2; 
-
-                    /* TODO 1: Make the map data driven by creating either an xml or ascii based level 
-                     * info loader thing */
-                    /* TODO 2: Instead of having the switch be path, set it to whatever the input file is
-                     *  to determine which tile to create and add to the tempMap */
-                    /* TODO 3: In the player class, check the collisions by seeing which tile the player is 
-                     currently interacting with. If it is a transition tile, transitions to the next map. 
-                     If it's an NPC , interact with NPC, and etc. If it's an enemy, transition to
-                     battle system. */
-
-                    switch (path)
+                    char tileType = lines[y][x];
+                    
+                    switch (tileType)
+                    
                     {
-                        case 1:
-                            newTile = new Maptile(grassText, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
+                        case 'd':
+                            newTile = new Maptile(grassText, new Vector2(y, x));
+                            currentMap[y, x] = newTile;
 
                             break;
-                        case 2:
-                            newTile = new Maptile(redTransition, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
+                        case 'x':
+                            newTile = new Maptile(redTransition, new Vector2(y, x));
+                            currentMap[y, x] = newTile;
                             break;
-                        case 3:
+                        case 't':
                             newTile = new Maptile(blueTransition, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
+                            currentMap[x, y] = newTile;
                             break;
-                        default:
+                        case 'g':
                             newTile = new Maptile(grassText, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
+                            currentMap[x, y] = newTile;
                             break;
                     }
-                    currentMap = tempMap;
-                    path = 1;
+                }
+
                 }
             }
+    
 
-        }
+
+
+        
     }
 }

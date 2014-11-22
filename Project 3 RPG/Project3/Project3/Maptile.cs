@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Maptile
+    public class Maptile
     {
         //The only blocks that CANNOT be walked through are blocks which we may later designate
         //as background props(ie, houses, walls, wells, anything you'd normally see in an RPG game 

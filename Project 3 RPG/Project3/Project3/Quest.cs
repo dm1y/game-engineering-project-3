@@ -43,14 +43,14 @@ namespace Project3
          *         // when quest is completed 
          */
 
-        public void Update(Gametime gametime)
-        {
+        //public void Update(Gametime gametime)
+        //{
             //if quest has not been updated
             //do nothing
             //Otherwise, keep checking to see if counter is at 0
 
             //if zero is reached, display message saying to go back to NPC to finish quest
-        }
+        //}
 
         public void EnableQuest()
         {

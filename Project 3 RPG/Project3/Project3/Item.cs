@@ -88,10 +88,10 @@ namespace Project3
         {
             if (this.quantity == 0)
             {
-                return true;
+                //return true;
             }
 
-            return false;
+            //return false;
         }
     }
 }
