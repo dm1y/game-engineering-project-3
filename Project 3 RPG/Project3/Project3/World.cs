@@ -136,8 +136,10 @@ namespace Project3
         KeyboardState currentKeyboardState;
         KeyboardState previousKeyboardState;
 
-        int width;
-        int height;
+        int width = 50;
+        int height = 40;
+
+        Map map;
 
         Player player;
 
@@ -145,25 +147,27 @@ namespace Project3
         {
             this.game = game;
             camera = c;
+            map = new Map(game);
         }
 
         //WORK IN PROGRESS
         public void LoadContent(ContentManager Content)
-        {
-
-//            Map map = new Map(game);
-//            map.GenerateMap(0);
+        {            
+            //map.GenerateMap(0);
 
             //currentMap = map.currentMap;
 
 //            width = map.width;
 //            height = map.height;
-            currentMap = new Maptile[50, 50];
+            currentMap = new Maptile[width, height];
             grassText = game.Content.Load<Texture2D>("MapTexture/grass");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
             blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
 
+
+
             LoadMap(1);
+
             playerleft = game.Content.Load<Texture2D>("Player/playerleft");
             playerright = game.Content.Load<Texture2D>("Player/playerright");
             playerup = game.Content.Load<Texture2D>("Player/playerup");
@@ -191,30 +195,17 @@ namespace Project3
             LoadMap(path);
         }
 
-        int size = 50;
 
         public void LoadMap(int path = 1)
         {
             Maptile newTile;
             
-            Maptile[,] tempMap = new Maptile[size, size];
+            Maptile[,] tempMap = new Maptile[width, height];
             
-            for (int x = 0; x < size; x++)
+            for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < size; y++)
+                for (int y = 0; y < height; y++)
                 {
-                    //                    if (x % 5 == 0)
-                    //                        path = 2; 
-
-                    /* TODO 1: Make the map data driven by creating either an xml or ascii based level 
-                     * info loader thing */
-                    /* TODO 2: Instead of having the switch be path, set it to whatever the input file is
-                     *  to determine which tile to create and add to the tempMap */
-                    /* TODO 3: In the player class, check the collisions by seeing which tile the player is 
-                     currently interacting with. If it is a transition tile, transitions to the next map. 
-                     If it's an NPC , interact with NPC, and etc. If it's an enemy, transition to
-                     battle system. */
-
                     switch (path)
                     {
                         case 1:
@@ -236,7 +227,6 @@ namespace Project3
                             break;
                     }
                     currentMap = tempMap;
-                    path = 1;
                 }
             }
 
@@ -259,20 +249,19 @@ namespace Project3
 
         }
         public void Draw(SpriteBatch sb)
+
         {
-
-
             sb.Begin();
 
-            for (int x = 0; x < size; x++)
+            for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < size; y++)
+                for (int y = 0; y < height; y++)
                 {
                     
                     currentMap[x, y].Draw(sb);
                 }
             }
-
+            //map.Draw(sb);
             player.Draw(sb);
             sb.End();
 

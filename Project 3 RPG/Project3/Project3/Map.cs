@@ -54,6 +54,7 @@ namespace Project3
                 while (line != null)
                 {
                     lines.Add(line);
+                    line = reader.ReadLine();
                 }
             }
 
@@ -63,9 +64,9 @@ namespace Project3
 
             Maptile newTile;
 
-            for (int y = 0; y < height; y++)
+            for (int x = 0; x < width; x++)
             {
-                for (int x = 0; x < width; x++)
+                for (int y = 0; y < height; y++)
                 {
                     char tileType = lines[y][x];
                     
@@ -73,13 +74,13 @@ namespace Project3
                     
                     {
                         case 'd':
-                            newTile = new Maptile(grassText, new Vector2(y, x));
-                            currentMap[y, x] = newTile;
+                            newTile = new Maptile(grassText, new Vector2(x, y));
+                            currentMap[x, y] = newTile;
 
                             break;
                         case 'x':
-                            newTile = new Maptile(redTransition, new Vector2(y, x));
-                            currentMap[y, x] = newTile;
+                            newTile = new Maptile(redTransition, new Vector2(x, y));
+                            currentMap[x, y] = newTile;
                             break;
                         case 't':
                             newTile = new Maptile(blueTransition, new Vector2(x, y));
@@ -94,9 +95,20 @@ namespace Project3
 
                 }
             }
-    
 
 
+        public void Draw(SpriteBatch sb)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+
+                    currentMap[x, y].Draw(sb);
+                }
+            }
+
+        }
 
         
     }
