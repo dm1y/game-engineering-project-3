@@ -128,9 +128,9 @@ namespace Project3
         Texture2D playerright;
 
         //Tile Textures
-        Texture2D grassText;
-        Texture2D redTransition;
-        Texture2D blueTransition;
+//        Texture2D grassText;
+//        Texture2D redTransition;
+//        Texture2D blueTransition;
 
         //// ---- MOVEMENT ---- //
         KeyboardState currentKeyboardState;
@@ -148,47 +148,31 @@ namespace Project3
         //WORK IN PROGRESS
         public void LoadContent(ContentManager Content)
         {
-            
-            
-            currentMap = new Maptile[size, size];
-            mapTwo = new Maptile[size, size];
-            mapThree = new Maptile[size, size];
-            grassText = game.Content.Load<Texture2D>("MapTexture/grass");
-            redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
-            blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
+
+
+            //currentMap = new Maptile[size, size];
+            //mapTwo = new Maptile[size, size];
+            //mapThree = new Maptile[size, size];
+
+            Map map = new Map(game, this);
+
+//            grassText = game.Content.Load<Texture2D>("MapTexture/grass");
+//            redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
+//           blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
 
             playerleft = game.Content.Load<Texture2D>("Player/playerleft");
             playerright = game.Content.Load<Texture2D>("Player/playerright");
             playerup = game.Content.Load<Texture2D>("Player/playerup");
             playerdown = game.Content.Load<Texture2D>("Player/playerdown");
 
-            LoadMap(1);
-
+//            LoadMap(1);
+         //            This will be in World class: 
+         //string levelPath = "Content/Levels/ " + index of level specifying type of level ".txt"
+         //using (Stream file = TitleContainer.OpenStream(levelPath))
+         //       level = new Level(file, levelIndex);
+         
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap, this);
 
-            //for (int x = 0; x < size; x++)
-            //{
-            //    for (int y = 0; y < size; y++)
-            //    {
-            //        if (x > size-32)
-            //        {
-            //            newTile = new Maptile(redTransition, new Vector2(x, y));
-            //            currentMap[x, y] = newTile;
-            //        }
-            //        else if (y > size - 32)
-            //        {
-            //            newTile = new Maptile(blueTransition,new Vector2(x,y));
-            //            currentMap[x, y] = newTile;
-            //        }
-            //        else
-            //        {
-            //            newTile = new Maptile(grassText, new Vector2(x, y));
-            //            currentMap[x, y] = newTile;
-            //        }
-                    
-               // }
-                
-            //}
         }
 
         /* This method can be called from the player class using the world instance.
@@ -204,62 +188,10 @@ namespace Project3
             /* [Optional] TODO:  Add cut scene here */
 
             /* Loads new map */
-            LoadMap(path);
+//            LoadMap(path);
         }
 
 
-        /*
-         *  TODO: 
-         *  Make the map data driven. 
-         *  
-         */
-        //default sets to 1
-        public void LoadMap(int path = 1)
-        {
-            Maptile newTile;
-            Maptile [,] tempMap = new Maptile[size,size]; 
-            for (int x = 0; x < size; x++)
-            {
-                for (int y = 0; y < size; y++)
-                {
-//                    if (x % 5 == 0)
-//                        path = 2; 
-
-                    /* TODO 1: Make the map data driven by creating either an xml or ascii based level 
-                     * info loader thing */
-                    /* TODO 2: Instead of having the switch be path, set it to whatever the input file is
-                     *  to determine which tile to create and add to the tempMap */
-                    /* TODO 3: In the player class, check the collisions by seeing which tile the player is 
-                     currently interacting with. If it is a transition tile, transitions to the next map. 
-                     If it's an NPC , interact with NPC, and etc. If it's an enemy, transition to
-                     battle system. */
-                    
-                    switch (path)
-                    {
-                        case 1:
-                            newTile = new Maptile(grassText, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-
-                            break;
-                        case 2:
-                            newTile = new Maptile(redTransition, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-                            break;
-                        case 3:
-                            newTile = new Maptile(blueTransition, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-                            break;
-                        default:
-                            newTile = new Maptile(grassText,new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-                            break;
-                    }
-                    currentMap = tempMap;
-                    path = 1;
-                }
-            }
-           
-        }
 
         public void Update(GameTime gametime)
         {
