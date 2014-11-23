@@ -15,7 +15,10 @@ namespace Project3
         Inventory shopInventory;
         Boolean isBuying;
         Boolean isSelling;
-        
+
+        Boolean isConfirm;
+
+        Boolean isErrorState;
         String displayText;
         int quantityOf;
 
@@ -25,11 +28,14 @@ namespace Project3
             2 - Arrow is hovering over LEAVE*/
         int currentState;
 
+        int currentItemSelect;
+
         public Shop(Inventory shopInventory)
         {
             this.shopInventory = shopInventory;
             isBuying = false;
             isSelling = false;
+            isErrorState = false;
         }
 
 
@@ -39,6 +45,7 @@ namespace Project3
             currentState = 0;
         }
 
+        #region Update Handler
         public void Update(KeyboardState keyboard)
         {
             // If player is notBuying and notSelling, then they must be in selection
@@ -62,8 +69,8 @@ namespace Project3
                 }
             }
 
-            //If the player hits enter during selection.
-            if (keyboard.IsKeyDown(Keys.Enter))
+            //If the player hits enter during selection and it is NOT selling or buying
+            if (keyboard.IsKeyDown(Keys.Enter) && !isSelling && !isBuying)
             {
                 if (currentState == 2)
                 {
@@ -83,8 +90,8 @@ namespace Project3
                 }
             }
 
-            //If the player hits back during buy/sell, exit out of it.
-            if (keyboard.IsKeyDown(Keys.Back))
+            //If the player hits back during buy/sell and it is not a confirm state nor error, exit out of it.
+            if (keyboard.IsKeyDown(Keys.Back) && !isConfirm && !isErrorState)
             {
                 if (isSelling)
                 {
@@ -94,6 +101,9 @@ namespace Project3
                 {
                     isBuying = false;
                 }
+                currentItemSelect = 0;
+                quantityOf = 0;
+                displayText = "What will you be buying?";
             }
 
             if (isBuying)
@@ -106,27 +116,163 @@ namespace Project3
                 HandleSales(keyboard);
             }
         }
+        #endregion
 
+        #region Buying Items Region
+        //If player is in buying mode, if the player presses W, move up, and presses S, move down. 
+        //if press enter, inquire how much to buy, and if press enter again, calculates if player has
+        //enough money to buy. if so, player gets x quantity of that item added to inventory? 
         public void HandlePurchases(KeyboardState kb)
         {
+            if (!isErrorState)
+            {
+                if (kb.IsKeyDown(Keys.W) && !isConfirm)
+                {
+                    currentItemSelect--;
+                    if (currentItemSelect < 0)
+                    {
+                        currentItemSelect = 0;
+                    }
+                }
+                if (kb.IsKeyDown(Keys.S) && !isConfirm)
+                {
+                    currentItemSelect++;
+                    if (currentItemSelect > shopInventory.items.Count() - 1)
+                    {
+                        currentItemSelect = shopInventory.items.Count - 1;
+                    }
+                }
 
+                if (kb.IsKeyDown(Keys.Enter))
+                {
+                    isConfirm = true;
+                    quantityOf = 1;
+                }
+
+                if (isConfirm == true)
+                {
+                    if (kb.IsKeyDown(Keys.W))
+                    {
+                        quantityOf++;
+                    }
+                    if (kb.IsKeyDown(Keys.S))
+                    {
+                        quantityOf--;
+                        if (quantityOf < 1)
+                        {
+                            quantityOf = 1;
+                        }
+                    }
+                    if (kb.IsKeyDown(Keys.Back))
+                    {
+                        isConfirm = false;
+                    }
+                    if (kb.IsKeyDown(Keys.Enter))
+                    {
+                        Item itemBuy = shopInventory.items.ElementAt(currentItemSelect);
+                        //displayText = itemBuy.itemName + 
+                        int totalPrice = itemBuy.getBuyPrice() * quantityOf;
+                        int endAmount = playerInventory.money - totalPrice;
+                        if (endAmount < 0)
+                        {
+                            //Set display message to not enough money error
+
+                        }
+                        else if (endAmount > 0 && playerInventory.InventoryIsFull())
+                        {
+                            //Set display message to inventory full error
+
+                        }
+                        else
+                        {
+                            playerInventory.money = playerInventory.money - totalPrice;
+                            playerInventory.AddToInventory(itemBuy, quantityOf);
+                        }
+                    }
+                }
+            }
+            //Otherwise, it is in the error state, and the only thing the player can do is press enter to go back 
+            else
+            {
+                if (kb.IsKeyDown(Keys.Enter))
+                {
+                    isErrorState = false;
+                }
+            }
         }
+        #endregion
 
+        #region Selling Items Region
         public void HandleSales(KeyboardState kb)
         {
+            if (kb.IsKeyDown(Keys.W) && !isConfirm)
+            {
+                currentItemSelect--;
+                if (currentItemSelect < 0)
+                {
+                    currentItemSelect = 0;
+                }
+            }
+            if (kb.IsKeyDown(Keys.S) && !isConfirm)
+            {
+                currentItemSelect++;
+                if (currentItemSelect > playerInventory.items.Count() - 1)
+                {
+                    currentItemSelect = playerInventory.items.Count - 1;
+                }
+            }
 
+            if (kb.IsKeyDown(Keys.Enter))
+            {
+                isConfirm = true;
+                quantityOf = 1;
+            }
+
+            if (isConfirm == true)
+            {
+                Item itemSell = playerInventory.items.ElementAt(currentItemSelect);
+                if (kb.IsKeyDown(Keys.W))
+                {
+                    quantityOf++;
+                    if (quantityOf > itemSell.quantity)
+                    {
+                        quantityOf = itemSell.quantity;
+                    }
+                }
+                if (kb.IsKeyDown(Keys.S))
+                {
+                    quantityOf--;
+                    if (quantityOf < 1)
+                    {
+                        quantityOf = 1;
+                    }
+                }
+                if (kb.IsKeyDown(Keys.Back))
+                {
+                    isConfirm = false;
+                }
+                if (kb.IsKeyDown(Keys.Enter))
+                {
+                    //Selling logic -- since we handle item limitations, we can freely sell via integer quantity.
+                    int sellPrice = itemSell.getSellPrice();
+                    playerInventory.money = playerInventory.money + sellPrice;
+                    playerInventory.ConsumeFromInventory(itemSell, quantityOf);
+                }
+
+            }
         }
+        #endregion
 
-     
-        public void Draw(SpriteBatch sb) {
+        public void Draw(SpriteBatch sb)
+        {
 
             // First want to draw the box underlays based on states. 
             // If the player ISNT buying OR selling, then it is Buy/Sell/Leave draw.
-            
+
             // If it is buying OR selling, we draw the item selections, money
             // Then the position of the selection arrow
         }
-            
+
         /*
          * TODO: 
          * Constructor : 

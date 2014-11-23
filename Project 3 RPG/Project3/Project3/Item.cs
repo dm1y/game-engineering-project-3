@@ -18,7 +18,7 @@ namespace Project3
          damage - added to player's base damage when they attack*/
         int itemBuyPrice;
         int itemSellPrice;
-        int quantity;
+        public int quantity;
         int block;
         int heal;
         int damage;
@@ -26,7 +26,7 @@ namespace Project3
         Boolean isShield = false;
         Boolean isPotion = false;
         Boolean isWeapon = false;
-        String itemName;
+        public String itemName;
 
         public Item(Texture2D item, String itemName,
             int itemBuyPrice, int ItemGeneralEffect, Boolean isShield, Boolean isPotion, Boolean isWeapon)
@@ -70,9 +70,9 @@ namespace Project3
             return "misc";
         }
 
-        public void AddQuantity()
+        public void AddQuantity(int quant)
         {
-            this.quantity++;
+            this.quantity = this.quantity + quant;
         }
 
         public void RemoveQuantity()
@@ -84,14 +84,32 @@ namespace Project3
             }
         }
 
-        public void HasNoneOf()
+        public void RemoveQuantity(int quant)
+        {
+            this.quantity--;
+            if (this.quantity < 0)
+            {
+                this.quantity = 0;
+            }
+        }
+
+        public int getBuyPrice()
+        {
+            return itemBuyPrice;
+        }
+
+        public int getSellPrice()
+        {
+            return itemSellPrice;
+        }
+        public Boolean HasNoneOf()
         {
             if (this.quantity == 0)
             {
-                //return true;
+                return true;
             }
 
-            //return false;
+            return false;
         }
     }
 }
