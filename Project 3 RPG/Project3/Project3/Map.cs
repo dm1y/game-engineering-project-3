@@ -76,7 +76,6 @@ namespace Project3
                         case 'd':
                             newTile = new Maptile(grassText, new Vector2(x, y));
                             currentMap[x, y] = newTile;
-
                             break;
                         case 'x':
                             newTile = new Maptile(redTransition, new Vector2(x, y));

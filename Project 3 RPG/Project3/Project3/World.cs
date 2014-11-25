@@ -175,7 +175,7 @@ namespace Project3
 
 
 
-            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(10, 10), currentMap, this);
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
 
         }
 

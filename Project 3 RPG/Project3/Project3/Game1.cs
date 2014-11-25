@@ -22,8 +22,8 @@ namespace Project3
         World gameWorld;
         Camera camera;
 
-        private const int width = 960;
-        private const int height = 640;
+        private const int width = 480;
+        private const int height = 320;
 
         public Game1()
         {
@@ -31,6 +31,7 @@ namespace Project3
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferHeight = height;
             graphics.PreferredBackBufferWidth = width;
+            this.IsMouseVisible = true;
             
         }
 
