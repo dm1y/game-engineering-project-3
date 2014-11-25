@@ -34,7 +34,7 @@ namespace Project3
 
         public void setBoundaries(int x, int y)
         {
-            boundaries = new Vector2(50*30, 50*20);
+            boundaries = new Vector2(x, y);
 
         }
 
@@ -73,7 +73,7 @@ namespace Project3
                 {
                     if (center.X < boundaries.X - view.Width)
                     {
-                        Position = center * new Vector2(2, 0);
+                        Position = center * new Vector2(2, 1);
                     }
                 }
 //                else if (playerPositionInWorldSpace.Y <= boundaries.Y)

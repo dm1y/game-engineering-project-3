@@ -117,7 +117,7 @@ namespace Project3
          *          infinite loop)
          *          
          */
-        public Maptile[,] currentMap;
+        public Map currentMap;
         public Maptile[,] mapTwo;
         public Maptile[,] mapThree;   //Not being used yet.
 
@@ -156,25 +156,19 @@ namespace Project3
             map.LoadContent();
             map.GenerateMap(0);
             
-            currentMap = map.currentMap;
+            currentMap = map;
 
             width = map.width;
             height = map.height;
-            currentMap = new Maptile[width, height];
-            grassText = game.Content.Load<Texture2D>("MapTexture/grass");
-            redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
-            blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
 
-
-
-            //LoadMap(1);
+            camera.setBoundaries(width, height);
 
             playerleft = game.Content.Load<Texture2D>("Player/playerleft");
             playerright = game.Content.Load<Texture2D>("Player/playerright");
             playerup = game.Content.Load<Texture2D>("Player/playerup");
             playerdown = game.Content.Load<Texture2D>("Player/playerdown");
 
-            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), map, this);
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
 
         }
 
@@ -191,51 +185,14 @@ namespace Project3
             /* [Optional] TODO:  Add cut scene here */
 
             /* Loads new map */
-            LoadMap(path);
-        }
-
-
-        public void LoadMap(int path = 1)
-        {
-            Maptile newTile;
-            
-            Maptile[,] tempMap = new Maptile[width, height];
-            
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    switch (path)
-                    {
-                        case 1:
-                            newTile = new Maptile(grassText, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-
-                            break;
-                        case 2:
-                            newTile = new Maptile(redTransition, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-                            break;
-                        case 3:
-                            newTile = new Maptile(blueTransition, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-                            break;
-                        default:
-                            newTile = new Maptile(grassText, new Vector2(x, y));
-                            tempMap[x, y] = newTile;
-                            break;
-                    }
-                    currentMap = tempMap;
-                }
-            }
-
+            map.GenerateMap(path);
+//            LoadMap(path);
         }
 
         public void Update(GameTime gametime)
         {
             currentKeyboardState = Keyboard.GetState();
-
-
+        
             /* Temporary for now to make it easier for debugging. 
              Basically exits the game when the [ESCAPE] key is pressed. */
             if (currentKeyboardState.IsKeyDown(Keys.Escape))
@@ -247,23 +204,16 @@ namespace Project3
             camera.Update(gametime, player);
 
         }
-        public void Draw(SpriteBatch sb)
 
+        public void Draw(SpriteBatch sb)
         {
             sb.Begin();
 
-            //for (int x = 0; x < width; x++)
-            //{
-            //    for (int y = 0; y < height; y++)
-            //    {
-                    
-            //        currentMap[x, y].Draw(sb);
-            //    }
-            //}
             map.Draw(sb);
+            
             player.Draw(sb);
+            
             sb.End();
-
         }
     }
 }

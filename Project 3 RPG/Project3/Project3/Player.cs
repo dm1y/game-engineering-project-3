@@ -270,10 +270,10 @@ namespace Project3
              * what our collisions will be that would cause the transition and the 
              * location of where those objects will be placed in the map */
             if (currPositionCoord.X == 5 && currPositionCoord.Y == 5)
-                world.TransitionMap(3);
+                world.TransitionMap(1);
             /* If player hits the tile found in map[15,15] switch to the first map */
             if (currPositionCoord.X == 15 && currPositionCoord.Y == 15)
-                world.TransitionMap(1);
+                world.TransitionMap(0);
             
             
             //if tileToCheck is a transition, then we figure out where the player's transition goes to. Then we call

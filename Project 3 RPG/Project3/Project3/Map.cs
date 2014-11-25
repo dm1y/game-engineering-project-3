@@ -16,16 +16,16 @@ namespace Project3
     public class Map
     {
         public Game1 game;
-
         
         /* Size of each map */
         public int width {get; private set;}
         public int height { get; private set; }
 
         /* Map Textures */
-        public Texture2D grassText;
-        public Texture2D redTransition;
-        public Texture2D blueTransition;
+        private Texture2D grassText;
+        private Texture2D dirtText;
+        private Texture2D redTransition;
+        private Texture2D blueTransition;
 
         public Maptile[,] currentMap { get; private set; }
 
@@ -36,7 +36,8 @@ namespace Project3
 
         public void LoadContent()
         {
-            grassText = game.Content.Load<Texture2D>("MapTexture/transition_red");
+            grassText = game.Content.Load<Texture2D>("MapTexture/grass");
+            dirtText = game.Content.Load<Texture2D>("MapTexture/dirt");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
             blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
 
@@ -102,7 +103,6 @@ namespace Project3
             {
                 for (int y = 0; y < height; y++)
                 {
-
                     currentMap[x, y].Draw(sb);
                 }
             }
