@@ -58,17 +58,48 @@ namespace Project3
         public Texture2D texture;
         public Rectangle drawingRectangle;
 
-        public Maptile(Texture2D texture, Vector2 position, Boolean c, Boolean t, Boolean d, Boolean i)
+        public Maptile(Texture2D texture, Vector2 position, Boolean collide, Boolean transition, Boolean dangerous, Boolean interact)
         {
             this.texture = texture;
             this.coordPosition = position;
             this.truePosition = new Vector2(texture.Width * position.X, texture.Height * position.Y);
             drawingRectangle = new Rectangle((int)truePosition.X, (int)truePosition.Y, texture.Width, texture.Height);
-            isCollidable = c;
-            isTransition = t;
-            isDangerous = d;
-            isInteract = i;
+            isCollidable = collide;
+            isTransition = transition;
+            isDangerous = dangerous;
+            isInteract = interact;
 
+            if (isCollidable)
+                isCollidableTile();
+
+            if (isTransition)
+                isTransitionTile();
+
+            if (isDangerous)
+                isDangerousTile();
+
+            if (isInteract)
+                isInteractTile();
+        }
+
+        public void isTransitionTile()
+        { 
+            // TODO: Implement properties for isTransitionTile 
+        }
+
+        public void isDangerousTile()
+        { 
+            // TODO: Implement properties for dangerousTile 
+        }
+
+        public void isInteractTile() 
+        {
+            // TODO: Implement properties for interactTile
+        }
+
+        public void isCollidableTile()
+        { 
+            // TODO: Imeplement properties for collidableTile
         }
 
         public void Draw(SpriteBatch spritebatch)
