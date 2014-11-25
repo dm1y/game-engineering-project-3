@@ -46,6 +46,7 @@ namespace Project3
 
         public int transitionTo;
         public String enemySpawnType;
+
         /* - Positions -
          * coordPosition - gives the position of the maptile in coordinate form(ie, "4,7")
          * truePosition - gives the position of the maptile in actual pixel position(ie, "64,512")
@@ -57,12 +58,17 @@ namespace Project3
         public Texture2D texture;
         public Rectangle drawingRectangle;
 
-        public Maptile(Texture2D texture, Vector2 position)
+        public Maptile(Texture2D texture, Vector2 position, Boolean c, Boolean t, Boolean d, Boolean i)
         {
             this.texture = texture;
             this.coordPosition = position;
             this.truePosition = new Vector2(texture.Width * position.X, texture.Height * position.Y);
             drawingRectangle = new Rectangle((int)truePosition.X, (int)truePosition.Y, texture.Width, texture.Height);
+            isCollidable = c;
+            isTransition = t;
+            isDangerous = d;
+            isInteract = i;
+
         }
 
         public void Draw(SpriteBatch spritebatch)

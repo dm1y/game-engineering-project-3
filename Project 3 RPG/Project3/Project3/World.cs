@@ -161,7 +161,7 @@ namespace Project3
             width = map.width;
             height = map.height;
 
-            camera.setBoundaries(width, height);
+            camera.setBoundaries(width * 32, height * 32);
 
             playerleft = game.Content.Load<Texture2D>("Player/playerleft");
             playerright = game.Content.Load<Texture2D>("Player/playerright");

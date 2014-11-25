@@ -75,19 +75,19 @@ namespace Project3
                     
                     {
                         case 'd':
-                            newTile = new Maptile(grassText, new Vector2(x, y));
+                            newTile = new Maptile(grassText, new Vector2(x, y), false, false, false, false );
                             currentMap[x, y] = newTile;
                             break;
                         case 'x':
-                            newTile = new Maptile(redTransition, new Vector2(x, y));
+                            newTile = new Maptile(redTransition, new Vector2(x, y), false, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 't':
-                            newTile = new Maptile(blueTransition, new Vector2(x, y));
+                            newTile = new Maptile(blueTransition, new Vector2(x, y), false, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 'g':
-                            newTile = new Maptile(grassText, new Vector2(x, y));
+                            newTile = new Maptile(grassText, new Vector2(x, y), false, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                     }
