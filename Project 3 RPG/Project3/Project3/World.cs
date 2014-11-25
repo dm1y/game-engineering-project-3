@@ -152,13 +152,14 @@ namespace Project3
 
         //WORK IN PROGRESS
         public void LoadContent(ContentManager Content)
-        {            
-            //map.GenerateMap(0);
+        {
+            map.LoadContent();
+            map.GenerateMap(0);
+            
+            currentMap = map.currentMap;
 
-            //currentMap = map.currentMap;
-
-//            width = map.width;
-//            height = map.height;
+            width = map.width;
+            height = map.height;
             currentMap = new Maptile[width, height];
             grassText = game.Content.Load<Texture2D>("MapTexture/grass");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
@@ -166,16 +167,14 @@ namespace Project3
 
 
 
-            LoadMap(1);
+            //LoadMap(1);
 
             playerleft = game.Content.Load<Texture2D>("Player/playerleft");
             playerright = game.Content.Load<Texture2D>("Player/playerright");
             playerup = game.Content.Load<Texture2D>("Player/playerup");
             playerdown = game.Content.Load<Texture2D>("Player/playerdown");
 
-
-
-            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), map, this);
 
         }
 
@@ -253,15 +252,15 @@ namespace Project3
         {
             sb.Begin();
 
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
+            //for (int x = 0; x < width; x++)
+            //{
+            //    for (int y = 0; y < height; y++)
+            //    {
                     
-                    currentMap[x, y].Draw(sb);
-                }
-            }
-            //map.Draw(sb);
+            //        currentMap[x, y].Draw(sb);
+            //    }
+            //}
+            map.Draw(sb);
             player.Draw(sb);
             sb.End();
 

@@ -42,9 +42,10 @@ namespace Project3
         }
 
 
-        public Maptile[,] map;
+        //public Maptile[,] map;
+        public Map map;
         public Player(Texture2D north, Texture2D south, Texture2D west, Texture2D east, Vector2 spawnPosition, 
-            Maptile[,] map, World world)
+            Map map, World world)
         {
             this.world = world; 
 
@@ -186,7 +187,7 @@ namespace Project3
         {
             setFacingEast();
             frontOfPlayer = new Vector2(0, 1);
-            if (map[(int)currPositionCoord.Y,(int)currPositionCoord.X + 1].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.Y,(int)currPositionCoord.X + 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X + 1;
                 nextPosition.X = nextPosition.X + dimension;
@@ -196,9 +197,10 @@ namespace Project3
         //Orients the player left, then sets the next X position to -tilewidth, and subtracts 1 from the relative X. 
         private void moveLeft()
         {
+            //Console.WriteLine("Map Width" +  +  
             setFacingWest();
             frontOfPlayer = new Vector2(-1, 0);
-            if (map[(int)currPositionCoord.Y,(int)currPositionCoord.X - 1].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.Y,(int)currPositionCoord.X - 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X - 1;
                 nextPosition.X = nextPosition.X - dimension;
@@ -210,7 +212,7 @@ namespace Project3
         {
             setFacingNorth();
             frontOfPlayer = new Vector2(0, -1);
-            if (map[(int)currPositionCoord.Y - 1,(int)currPositionCoord.X].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.Y - 1,(int)currPositionCoord.X].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y - 1;
                 nextPosition.Y = nextPosition.Y - dimension;
@@ -222,7 +224,7 @@ namespace Project3
         {
             setFacingSouth();
             frontOfPlayer = new Vector2(0, 1);
-            if (map[(int)currPositionCoord.Y + 1,(int)currPositionCoord.X].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.Y + 1,(int)currPositionCoord.X].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y + 1;
                 nextPosition.Y = nextPosition.Y + dimension;
@@ -259,7 +261,7 @@ namespace Project3
          or in tall grass/swamp/cave when looking for monsters. */
         public void CheckTile()
         {
-            Maptile tileToCheck = map[(int)currPositionCoord.Y,(int)currPositionCoord.X];
+            Maptile tileToCheck = map.currentMap[(int)currPositionCoord.Y,(int)currPositionCoord.X];
             
 
             /* Hard coded for testing purposes, we can generalize this later once we get XMLs working */
@@ -278,7 +280,7 @@ namespace Project3
             //load from world or something like that.
         }
 
-        public void ChangeMap(Maptile[,] map)
+        public void ChangeMap(Map map)
         {
             this.map = map;
         }
@@ -293,7 +295,7 @@ namespace Project3
          stand on top of, but can still interact with(ie, loot chests, or signs, or people)*/
         public void CheckInteract()
         {
-            Maptile tileToCheck = map[(int)(currPositionCoord.Y + frontOfPlayer.Y),(int)(currPositionCoord.X + frontOfPlayer.X)];
+            Maptile tileToCheck = map.currentMap[(int)(currPositionCoord.Y + frontOfPlayer.Y),(int)(currPositionCoord.X + frontOfPlayer.X)];
 
             //and then checking logic here
         }

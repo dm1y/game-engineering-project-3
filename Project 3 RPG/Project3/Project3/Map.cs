@@ -34,7 +34,7 @@ namespace Project3
             game = g;
         }
 
-        public void LoadContent(ContentManager Content)
+        public void LoadContent()
         {
             grassText = game.Content.Load<Texture2D>("MapTexture/transition_red");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
