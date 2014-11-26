@@ -262,18 +262,12 @@ namespace Project3
         public void CheckTile()
         {
             Maptile tileToCheck = map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y];
-            
 
-            /* Hard coded for testing purposes, we can generalize this later once we get XMLs working */
-            /* If player hits the tile found in map[5,5] switch to the third map */
-            /* TODO: Generalize the code above instead of hard coding, so we need to detect 
-             * what our collisions will be that would cause the transition and the 
-             * location of where those objects will be placed in the map */
-            if (currPositionCoord.X == 5 && currPositionCoord.Y == 5)
+
+            /* Hard coded for testing purposes */
+            /* TransitionTile will define what to transition to depending on the type of texture */
+            if (tileToCheck.isTransition)
                 world.TransitionMap(1);
-            /* If player hits the tile found in map[15,15] switch to the first map */
-            if (currPositionCoord.X == 15 && currPositionCoord.Y == 15)
-                world.TransitionMap(0);
             
             
             //if tileToCheck is a transition, then we figure out where the player's transition goes to. Then we call

@@ -83,7 +83,7 @@ namespace Project3
                             currentMap[x, y] = newTile;
                             break;
                         case 't':
-                            newTile = new Maptile(blueTransition, new Vector2(x, y), false, false, false, false);
+                            newTile = new Maptile(blueTransition, new Vector2(x, y), false, true, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 'g':
