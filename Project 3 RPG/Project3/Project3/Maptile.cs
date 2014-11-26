@@ -45,7 +45,7 @@ namespace Project3
         public Boolean isInteract;
 
         public int transitionTo;
-        public String enemySpawnType;
+        public List<String> enemySpawnTypes;
 
         /* - Positions -
          * coordPosition - gives the position of the maptile in coordinate form(ie, "4,7")
@@ -64,10 +64,16 @@ namespace Project3
             this.coordPosition = position;
             this.truePosition = new Vector2(texture.Width * position.X, texture.Height * position.Y);
             drawingRectangle = new Rectangle((int)truePosition.X, (int)truePosition.Y, texture.Width, texture.Height);
+            
+            /* Differentiates between the different kinds of tiles */
             isCollidable = collide;
             isTransition = transition;
             isDangerous = dangerous;
             isInteract = interact;
+
+            /* Initializes other attributes that might not pertain to all tiles */
+            transitionTo = 0;
+            enemySpawnTypes = new List<String>();
 
             if (isCollidable)
                 isCollidableTile();
@@ -84,22 +90,30 @@ namespace Project3
 
         public void isTransitionTile()
         { 
-            // TODO: Implement properties for isTransitionTile 
+            // TODO: Implement properties for isTransitionTile
+            // should define which map it'll transition to depending on the texture 
+
+ 
         }
 
         public void isDangerousTile()
         { 
             // TODO: Implement properties for dangerousTile 
+            // take array of monsters that is being passed in, 
+            // depending on the type of tile, just hard code the string of monsters in 
+            // otherwise make it data driven 
         }
 
         public void isInteractTile() 
         {
             // TODO: Implement properties for interactTile
+            // this will rely on NPCs and items class , look into this later. 
         }
 
         public void isCollidableTile()
         { 
-            // TODO: Imeplement properties for collidableTile
+            // TODO: Implement properties for collidableTile
+            // not sure what this is supposed to do but perhaps create a border around the map to prevent out of bounds stuff 
         }
 
         public void Draw(SpriteBatch spritebatch)

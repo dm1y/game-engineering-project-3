@@ -187,7 +187,7 @@ namespace Project3
         {
             setFacingEast();
             frontOfPlayer = new Vector2(0, 1);
-            if (map.currentMap[(int)currPositionCoord.Y,(int)currPositionCoord.X + 1].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y + 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X + 1;
                 nextPosition.X = nextPosition.X + dimension;
@@ -200,7 +200,7 @@ namespace Project3
             //Console.WriteLine("Map Width" +  +  
             setFacingWest();
             frontOfPlayer = new Vector2(-1, 0);
-            if (map.currentMap[(int)currPositionCoord.Y,(int)currPositionCoord.X - 1].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y - 1].isCollidable == false)
             {
                 currPositionCoord.X = currPositionCoord.X - 1;
                 nextPosition.X = nextPosition.X - dimension;
@@ -212,7 +212,7 @@ namespace Project3
         {
             setFacingNorth();
             frontOfPlayer = new Vector2(0, -1);
-            if (map.currentMap[(int)currPositionCoord.Y - 1,(int)currPositionCoord.X].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.X - 1,(int)currPositionCoord.Y].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y - 1;
                 nextPosition.Y = nextPosition.Y - dimension;
@@ -224,7 +224,7 @@ namespace Project3
         {
             setFacingSouth();
             frontOfPlayer = new Vector2(0, 1);
-            if (map.currentMap[(int)currPositionCoord.Y + 1,(int)currPositionCoord.X].isCollidable == false)
+            if (map.currentMap[(int)currPositionCoord.X + 1,(int)currPositionCoord.Y].isCollidable == false)
             {
                 currPositionCoord.Y = currPositionCoord.Y + 1;
                 nextPosition.Y = nextPosition.Y + dimension;
@@ -261,7 +261,7 @@ namespace Project3
          or in tall grass/swamp/cave when looking for monsters. */
         public void CheckTile()
         {
-            Maptile tileToCheck = map.currentMap[(int)currPositionCoord.Y,(int)currPositionCoord.X];
+            Maptile tileToCheck = map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y];
             
 
             /* Hard coded for testing purposes, we can generalize this later once we get XMLs working */
