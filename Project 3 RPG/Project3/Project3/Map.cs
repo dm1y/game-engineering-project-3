@@ -75,18 +75,22 @@ namespace Project3
                     
                     {
                         case 'd':
-                            newTile = new Maptile(grassText, new Vector2(x, y), false, false, false, false );
+                            /* Creates a dirt tile*/
+                            newTile = new Maptile(dirtText, new Vector2(x, y), false, false, false, false );
                             currentMap[x, y] = newTile;
                             break;
                         case 'x':
+                            /* Creates a transition tile to battle automagically */
                             newTile = new Maptile(redTransition, new Vector2(x, y), false, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 't':
+                            /* Creates a normal transition tile to a different map */
                             newTile = new Maptile(blueTransition, new Vector2(x, y), false, true, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 'g':
+                            /* Creates a grass tile */
                             newTile = new Maptile(grassText, new Vector2(x, y), false, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
