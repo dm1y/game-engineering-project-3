@@ -7,6 +7,17 @@ Content\MapTexture\transition.xnb
 Content\MapTexture\transition_blue.xnb
 Content\MapTexture\transition_red.xnb
 Content\MapTexture\dirt.xnb
+Content\Overlays\arrow select.xnb
+Content\Overlays\battleoptions_160x128.xnb
+Content\Overlays\combatdialogue_224x128.xnb
+Content\Overlays\combat_enemybubble_160x32.xnb
+Content\Overlays\combat_recticle_32x32.xnb
+Content\Overlays\hud_maindisplay_96x96.xnb
+Content\Overlays\shop_main_224x224.xnb
+Content\Overlays\shop_menu_96x96.xnb
+Content\Overlays\speechbubble128x64.xnb
+Content\Overlays\speech_maindialogue_416x96.xnb
+Content\Overlays\speech_money_96x32.xnb
 Content\DialogueFont.xnb
 Content\test0.txt
 Content\test1.txt
