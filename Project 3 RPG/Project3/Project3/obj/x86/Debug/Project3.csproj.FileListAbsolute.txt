@@ -86,3 +86,4 @@ C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Proje
 C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.exe
 C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.pdb
+C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt

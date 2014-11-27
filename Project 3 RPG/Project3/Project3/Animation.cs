@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Animation
+    public class Animation
     {
     }
 }
