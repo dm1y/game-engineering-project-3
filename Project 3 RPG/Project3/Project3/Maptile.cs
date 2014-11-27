@@ -39,11 +39,13 @@ namespace Project3
          *              about how this will be implemented though, so don't bank too hard on this feature yet during the GUI
          *              I'm open to ideas!
          */
+
         public Boolean isCollidable;
         public Boolean isTransition;
         public Boolean isDangerous;
         public Boolean isInteract;
 
+        public NPC npc;
         public int transitionTo;
         public List<String> enemySpawnTypes;
 
@@ -76,19 +78,19 @@ namespace Project3
             enemySpawnTypes = new List<String>();
 
             if (isCollidable)
-                isCollidableTile();
+                createCollidableTile();
 
             if (isTransition)
-                isTransitionTile();
+                createTransitionTile();
 
             if (isDangerous)
-                isDangerousTile();
+                createDangerousTile();
 
             if (isInteract)
-                isInteractTile();
+                createInteractTile();
         }
 
-        public void isTransitionTile()
+        public void createTransitionTile()
         { 
             // TODO: Implement properties for isTransitionTile
             // should define which map it'll transition to depending on the texture 
@@ -96,7 +98,7 @@ namespace Project3
  
         }
 
-        public void isDangerousTile()
+        public void createDangerousTile()
         { 
             // TODO: Implement properties for dangerousTile 
             // take array of monsters that is being passed in, 
@@ -104,13 +106,13 @@ namespace Project3
             // otherwise make it data driven 
         }
 
-        public void isInteractTile() 
+        public void createInteractTile() 
         {
             // TODO: Implement properties for interactTile
             // this will rely on NPCs and items class , look into this later. 
         }
 
-        public void isCollidableTile()
+        public void createCollidableTile()
         { 
             // TODO: Implement properties for collidableTile
             // not sure what this is supposed to do but perhaps create a border around the map to prevent out of bounds stuff 

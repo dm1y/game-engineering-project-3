@@ -27,6 +27,9 @@ namespace Project3
         public Boolean facingWest;
         public Boolean facingEast;
 
+        public Boolean isInteracting;
+        public NPC currentNPC;
+
         public int dimension;
         /* For deciding where the player is facing. 
          * If north, (0, -1). If south, (0, 1). If west, (-1, 0). If east, (0, 1)
@@ -65,6 +68,8 @@ namespace Project3
             currPositionCoord = spawnPosition;
             nextPosition = new Vector2(spawnPosition.X * dimension, spawnPosition.Y * dimension);
             currPosition = nextPosition;
+
+            isInteracting = false;
         }
 
         /* Update order:
@@ -96,32 +101,49 @@ namespace Project3
          */
         public void UpdateInput(GameTime gameTime, KeyboardState keyboard)
         {
-            //If current position is already at next position, player can movei
-            if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
+            //If the player is interacting, delegate all keyboard commands into the NPC. 
+            if (isInteracting)
             {
-                if (keyboard.IsKeyDown(Keys.W))
+                if (currentNPC.isFinished)
                 {
-                    moveUp();
+                    isInteracting = false;
+                    currentNPC.isFinished = false;
                 }
-                else if (keyboard.IsKeyDown(Keys.S))
+                else
                 {
-                    moveDown();
+                    currentNPC.Update(keyboard);
                 }
-                else if (keyboard.IsKeyDown(Keys.A))
-                {
-                    moveLeft();
-                }
-                else if (keyboard.IsKeyDown(Keys.D))
-                {
-                    moveRight();
-                }
+            }
 
-                if (keyboard.IsKeyDown(Keys.Enter))
+            else
+            {
+                //If current position is already at next position, player can move
+                if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
                 {
-                    CheckInteract();
-                }
+                    if (keyboard.IsKeyDown(Keys.W))
+                    {
+                        moveUp();
+                    }
+                    else if (keyboard.IsKeyDown(Keys.S))
+                    {
+                        moveDown();
+                    }
+                    else if (keyboard.IsKeyDown(Keys.A))
+                    {
+                        moveLeft();
+                    }
+                    else if (keyboard.IsKeyDown(Keys.D))
+                    {
+                        moveRight();
+                    }
 
-                CheckTile();
+                    if (keyboard.IsKeyDown(Keys.Enter))
+                    {
+                        CheckInteract();
+                    }
+
+                    CheckTile();
+                }
             }
         }
 
@@ -291,6 +313,13 @@ namespace Project3
         {
             Maptile tileToCheck = map.currentMap[(int)(currPositionCoord.Y + frontOfPlayer.Y),(int)(currPositionCoord.X + frontOfPlayer.X)];
 
+            //if tile is interactable, override controls with isInteracting, then
+            //pull current reference to the NPC over
+            if (tileToCheck.isInteract)
+            {
+                isInteracting = true;
+                currentNPC = tileToCheck.npc;
+            }
             //and then checking logic here
         }
 
@@ -315,6 +344,11 @@ namespace Project3
             else if (facingWest)
             {
                 spriteBatch.Draw(playerWest, playerSpriteBox, Color.White);
+            }
+
+            if (isInteracting)
+            {
+                currentNPC.Draw(spriteBatch);
             }
         }
     }

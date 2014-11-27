@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,11 +62,26 @@ namespace Project3
          Player press enter in front of a interactable maptile, will check if maptile is interactable
          If maptile is interactable, load the dialogue up(assumes all interactable maptiles will have dialogue options)
          */
-        public void Update() 
+        public void Update(KeyboardState keyboard) 
         {
-
+            if (keyboard.IsKeyDown(Keys.Enter))
+            {
+                AdvanceLine();
+            }
         }
 
+        public Boolean isFinished()
+        {
+            if (currentLine >= text.Count())
+            {
+                ResetDialogue();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Draw(SpriteBatch sb) 
         {
             Vector2 position = new Vector2(0, 0);//still figuring where to draw this guy//

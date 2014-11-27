@@ -22,6 +22,7 @@ namespace Project3
         String displayText;
         int quantityOf;
 
+        public Boolean isFinished;
         /* Possible states: 
             0 - Arrow is hovering over BUY
             1 - Arrow is hovering over SELL
@@ -74,6 +75,7 @@ namespace Project3
             {
                 if (currentState == 2)
                 {
+                    isFinished = true;
                     //Quit the shop, probably by calling it from player. 
                 }
                 else if (currentState == 1)
