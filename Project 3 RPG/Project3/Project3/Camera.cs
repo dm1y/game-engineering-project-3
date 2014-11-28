@@ -35,14 +35,12 @@ namespace Project3
         public void setBoundaries(int x, int y)
         {
             boundaries = new Vector2(x, y);
-
         }
 
         public Matrix GetViewMatrix() //was Vector2 parallax
         {
             return Matrix.CreateTranslation(new Vector3(-Position * 0.5f, 0.0f)) *
                 Matrix.CreateTranslation(new Vector3(-Origin, 0.0f)) *
-                //Matrix.CreateRotationZ(Rotation) *   //Rotation don't think this is necessary
                 Matrix.CreateScale(Zoom, Zoom, 1) *
                 Matrix.CreateTranslation(new Vector3(Origin, 0.0f));
         }
@@ -63,27 +61,28 @@ namespace Project3
 
         public void Update(GameTime gameTime, Player player)
         {
+
             playerPositionInWorldSpace = player.position;
 
             center = new Vector2(playerPositionInWorldSpace.X - view.Width / 2, playerPositionInWorldSpace.Y - view.Height / 2);
 
-//            if (view.Width < boundaries.X)
-//            {
-                if (playerPositionInWorldSpace.X >= view.Width / 2)
-                {
-                    if (center.X < boundaries.X - view.Width)
-                    {
-                        Position = center * new Vector2(2, 1);
-                    }
-//                }
-//                else if (playerPositionInWorldSpace.Y <= boundaries.Y)
-//                {
-//                    ResetCamera();
+            transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-center.X, -center.Y, 0));
 
-//                }
-            }
+
+            //if (view.Width < boundaries.X)
+            //{
+            //    Console.WriteLine("player space " + playerPositionInWorldSpace.X);
+            //    Console.WriteLine("view width / 2 " + view.Width / 2);
+            //    if (playerPositionInWorldSpace.X >= view.Width / 2)
+            //    {
+            //        Console.WriteLine("hey is this hitting?");
+            //        if (center.X < boundaries.X - view.Width)
+            //        {
+            //            Console.WriteLine("hey is this hitting?3");
+            //            Position = center * new Vector2(2, 0);
+            //        }
+            //    }
+            //}
         }
-
-
     }
 }

@@ -103,6 +103,7 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
+
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)

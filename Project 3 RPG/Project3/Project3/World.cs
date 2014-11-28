@@ -207,7 +207,7 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Begin();
+            //sb.Begin();
 
             map.Draw(sb);
             
