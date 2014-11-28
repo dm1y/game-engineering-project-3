@@ -42,6 +42,7 @@ namespace Project3
      *          What to update in MapTile class if applicable 
      *              - If it's a different transition tile, specify which map it transitions to 
      *                by adjusting its transitionTo attribute and define it by its name 
+     *              - If it's an interactable tile, specify its attributes by its name 
      *              - TBC when we have more tiles.
      * 
      */

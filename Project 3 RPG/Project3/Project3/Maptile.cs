@@ -106,13 +106,29 @@ namespace Project3
             // TODO: Implement properties for dangerousTile 
             // take array of monsters that is being passed in, 
             // depending on the type of tile, just hard code the string of monsters in 
-            // otherwise make it data driven 
+            // otherwise make it data driven
+
+            //if (texture.Name == "easy")
+            //    pass in list of enemies that are easy
+
+            //if (texture.Name == "medium")
+            //    pass in list of enemies that are challenging
+
+            //if (texture.Name == "hard")
+            //    maybe give it a boss
+
         }
 
         public void createInteractTile() 
         {
             // TODO: Implement properties for interactTile
             // this will rely on NPCs and items class , look into this later. 
+
+            //if (texture.Name == "[type]NPC")
+            //    define its NPC attributes 
+
+            //if (texture.Name == "item")
+            //    define item attributes
         }
 
         public void createCollidableTile()
