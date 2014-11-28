@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Dialogue
+    public class Dialogue
     {
         /* Idea for General Dialogue Class */
         /* We read from the array of text just like a script. Index 0 

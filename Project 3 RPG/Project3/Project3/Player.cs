@@ -180,53 +180,38 @@ namespace Project3
             }
         }
 
-        private void StayWithinBounds()
-        {
-            /* TODO: Fill in later 
-             * 
-             * 
-             * LEFTBOUND: 
-             *    if x coordinate of the map that player is touching is less than or equal to the x position of player 
-             *    i.e. [0, whatever] 
-             *       have the player stay there at [0, y] if player is navigating towards the negatives in x axis
-             * TOPBOUND: 
-             *    if y coordinate of the map that player is touching is less than or equal to the y position of player 
-             *    i.e. [whatever, 0]
-             *       have the player stay there at [x, 0] if player is navigating towards the negatives in y axis
-             * RIGHTBOUND:
-             *    if x coordinate of the map that player is touching is greater than or equal to the x position of player 
-             *    i.e. [boundary.x, whatever]; 
-             *       have the player stay there at [boundary.x, y] if player is navigating towards out of range in x axis
-             * BOTTOMBOUND:
-             *    if x coordinate of the map that player is touching is greater than or equal to the x position of player 
-             *    i.e. [whatever, boundary.y]
-             *       have the player stay there at [x, boundary.y] if player is navigating towards out of range in y axis
-             */
-        }
-
         //Orients the player right, then sets the next X position to +tilewidth, and adds 1 to the relative X. 
         private void moveRight()
         {
             setFacingEast();
             frontOfPlayer = new Vector2(0, 1);
-            if (map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y + 1].isCollidable == false)
+
+            if ((int)currPositionCoord.X != map.width - 1)
             {
-                currPositionCoord.X = currPositionCoord.X + 1;
-                nextPosition.X = nextPosition.X + dimension;
+                if (map.currentMap[(int)currPositionCoord.X + 1, (int)currPositionCoord.Y].isCollidable == false)
+                {
+                    currPositionCoord.X = currPositionCoord.X + 1;
+                    nextPosition.X = nextPosition.X + dimension;
+                }
             }
         }
 
         //Orients the player left, then sets the next X position to -tilewidth, and subtracts 1 from the relative X. 
         private void moveLeft()
         {
-            //Console.WriteLine("Map Width" +  +  
             setFacingWest();
             frontOfPlayer = new Vector2(-1, 0);
-            if (map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y - 1].isCollidable == false)
+
+            if ((int)currPositionCoord.X != 0)
             {
-                currPositionCoord.X = currPositionCoord.X - 1;
-                nextPosition.X = nextPosition.X - dimension;
+                if (map.currentMap[(int)currPositionCoord.X - 1, (int)currPositionCoord.Y].isCollidable == false)
+                {
+                    currPositionCoord.X = currPositionCoord.X - 1;
+                    nextPosition.X = nextPosition.X - dimension;
+                }
             }
+
+
         }
 
         //Orients the player up, then sets the next Y position to -tilewidth, and subtracts 1 from relative Y. 
@@ -234,10 +219,14 @@ namespace Project3
         {
             setFacingNorth();
             frontOfPlayer = new Vector2(0, -1);
-            if (map.currentMap[(int)currPositionCoord.X - 1,(int)currPositionCoord.Y].isCollidable == false)
+
+            if ((int)currPositionCoord.Y != 0)
             {
-                currPositionCoord.Y = currPositionCoord.Y - 1;
-                nextPosition.Y = nextPosition.Y - dimension;
+                if (map.currentMap[(int)currPositionCoord.X, (int)currPositionCoord.Y - 1].isCollidable == false)
+                {
+                    currPositionCoord.Y = currPositionCoord.Y - 1;
+                    nextPosition.Y = nextPosition.Y - dimension;
+                }
             }
         }
 
@@ -246,10 +235,15 @@ namespace Project3
         {
             setFacingSouth();
             frontOfPlayer = new Vector2(0, 1);
-            if (map.currentMap[(int)currPositionCoord.X + 1,(int)currPositionCoord.Y].isCollidable == false)
+
+            /* Move if not on the border */
+            if ((int)currPositionCoord.Y != map.height - 1)
             {
-                currPositionCoord.Y = currPositionCoord.Y + 1;
-                nextPosition.Y = nextPosition.Y + dimension;
+                if (map.currentMap[(int)currPositionCoord.X, (int)currPositionCoord.Y + 1].isCollidable == false)
+                {
+                    currPositionCoord.Y = currPositionCoord.Y + 1;
+                    nextPosition.Y = nextPosition.Y + dimension;
+                }
             }
         }
 

@@ -7,7 +7,7 @@ namespace Project3
 {
     /* For displaying player inventory during gameplay. IE, if the player presses "i", they can 
      change what they have equipped.*/
-    class Inventory
+    public class Inventory
     {
         public List<Item> items;
 

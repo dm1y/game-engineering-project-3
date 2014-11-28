@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Item
+    public class Item
     {
         Texture2D itemTexture;
 

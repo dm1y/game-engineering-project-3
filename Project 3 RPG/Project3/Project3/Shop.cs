@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Shop
+    public class Shop
     {
 
         Player player;

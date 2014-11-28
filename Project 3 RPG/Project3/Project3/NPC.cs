@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Project3
 {
-    class NPC
+    public class NPC
     {
         /* NPC methods -
          General format
