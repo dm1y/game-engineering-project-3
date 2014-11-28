@@ -99,7 +99,8 @@ namespace Project3
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, gameWorld.camera.transform); 
+
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, gameWorld.camera.GetViewMatrix()); 
             // TODO: Add your drawing code here
             if (gameWorld != null)
             {

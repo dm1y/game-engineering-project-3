@@ -66,23 +66,26 @@ namespace Project3
 
             center = new Vector2(playerPositionInWorldSpace.X - view.Width / 2, playerPositionInWorldSpace.Y - view.Height / 2);
 
-            transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-center.X, -center.Y, 0));
-
-
-            //if (view.Width < boundaries.X)
-            //{
-            //    Console.WriteLine("player space " + playerPositionInWorldSpace.X);
-            //    Console.WriteLine("view width / 2 " + view.Width / 2);
-            //    if (playerPositionInWorldSpace.X >= view.Width / 2)
-            //    {
-            //        Console.WriteLine("hey is this hitting?");
-            //        if (center.X < boundaries.X - view.Width)
-            //        {
-            //            Console.WriteLine("hey is this hitting?3");
-            //            Position = center * new Vector2(2, 0);
-            //        }
-            //    }
-            //}
+            if (view.Width < boundaries.X)
+            {
+                if (playerPositionInWorldSpace.X >= view.Width / 2)
+                {
+                    if (center.X < boundaries.X - view.Width)
+                    {
+                        Position = center * new Vector2(2, 0);
+                    }
+                }
+            } 
+            else if (view.Height < boundaries.Y)
+            {
+                if (playerPositionInWorldSpace.Y >= view.Height / 2)
+                {
+                    if (center.Y < boundaries.Y - view.Height)
+                    {
+                        Position = center * new Vector2(0, 2);
+                    }
+                }
+            }
         }
     }
 }
