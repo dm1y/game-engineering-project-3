@@ -66,26 +66,31 @@ namespace Project3
 
             center = new Vector2(playerPositionInWorldSpace.X - view.Width / 2, playerPositionInWorldSpace.Y - view.Height / 2);
 
-            if (view.Width < boundaries.X)
-            {
-                if (playerPositionInWorldSpace.X >= view.Width / 2)
-                {
-                    if (center.X < boundaries.X - view.Width)
-                    {
-                        Position = center * new Vector2(2, 0);
-                    }
-                }
-            } 
-            else if (view.Height < boundaries.Y)
-            {
-                if (playerPositionInWorldSpace.Y >= view.Height / 2)
-                {
-                    if (center.Y < boundaries.Y - view.Height)
-                    {
-                        Position = center * new Vector2(0, 2);
-                    }
-                }
-            }
+            Position = center * new Vector2(2, 2);
+
+            //if (view.Width < boundaries.X && view.Height >= boundaries.Y)
+            //{
+            //    if (playerPositionInWorldSpace.X >= view.Width / 2)
+            //    {
+            //        if (center.X < boundaries.X - view.Width)
+            //        {
+            //            Position = center * new Vector2(2, 0);
+            //        }
+            //    }
+            //}
+            //else if (view.Height < boundaries.Y && view.Width >= boundaries.X)
+            //{
+            //    if (playerPositionInWorldSpace.Y >= view.Height / 2)
+            //    {
+            //        if (center.Y < boundaries.Y - view.Height)
+            //        {
+            //            Position = center * new Vector2(0, 2);
+            //        }
+            //    }
+            //}
+
+
+
         }
     }
 }
