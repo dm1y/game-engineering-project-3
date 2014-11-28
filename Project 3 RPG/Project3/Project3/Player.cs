@@ -280,14 +280,15 @@ namespace Project3
             Maptile tileToCheck = map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y];
 
 
-            /* Hard coded for testing purposes */
-            /* TransitionTile will define what to transition to depending on the type of texture */
+            /* Checks if the tile is a transition tile and transitions to the map defined by the tile */
             if (tileToCheck.isTransition)
-                world.TransitionMap(1);
+                world.TransitionMap(tileToCheck.transitionTo);
+
+            if (tileToCheck.isDangerous)
+            {
+                // TODO: Fill in. 
+            }
             
-            
-            //if tileToCheck is a transition, then we figure out where the player's transition goes to. Then we call
-            //load from world or something like that.
         }
 
         public void ChangeMap(Map map)

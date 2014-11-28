@@ -76,6 +76,7 @@ namespace Project3
             /* Initializes other attributes that might not pertain to all tiles */
             transitionTo = 0;
             enemySpawnTypes = new List<String>();
+            npc = null;
 
             if (isCollidable)
                 createCollidableTile();
@@ -95,7 +96,9 @@ namespace Project3
             // TODO: Implement properties for isTransitionTile
             // should define which map it'll transition to depending on the texture 
 
- 
+            /* If the texture is considered a "blue transition texture", go to map 1 */
+            if (texture.Name == "transition")
+                transitionTo = 1;
         }
 
         public void createDangerousTile()

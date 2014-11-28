@@ -118,8 +118,6 @@ namespace Project3
          *          
          */
         public Map currentMap;
-        public Maptile[,] mapTwo;
-        public Maptile[,] mapThree;   //Not being used yet.
 
         //Player Textures//
         Texture2D playerup;
@@ -186,7 +184,7 @@ namespace Project3
 
             /* Loads new map */
             map.GenerateMap(path);
-//            LoadMap(path);
+            player.ChangeMap(map);
         }
 
         public void Update(GameTime gametime)
@@ -207,8 +205,6 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
-            //sb.Begin();
-
             map.Draw(sb);
             
             player.Draw(sb);

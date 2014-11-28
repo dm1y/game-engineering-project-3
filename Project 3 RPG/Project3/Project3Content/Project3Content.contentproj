@@ -90,13 +90,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="test0.txt">
+    <None Include="Maps\test0.txt">
       <Name>test0</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="test1.txt">
+    <None Include="Maps\test1.txt">
       <Name>test1</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
