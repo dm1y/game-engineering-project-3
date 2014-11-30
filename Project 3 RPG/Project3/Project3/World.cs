@@ -125,6 +125,12 @@ namespace Project3
         Texture2D playerleft;
         Texture2D playerright;
 
+        // Player Animations //
+        //Animation playerup;
+        //Animation playerdown;
+        //Animation playerleft;
+        //Animation playerright;
+
         //Tile Textures
         Texture2D grassText;
         Texture2D redTransition;
@@ -161,10 +167,10 @@ namespace Project3
 
             camera.setBoundaries(width * 32, height * 32);
 
-            playerleft = game.Content.Load<Texture2D>("Player/playerleft");
-            playerright = game.Content.Load<Texture2D>("Player/playerright");
-            playerup = game.Content.Load<Texture2D>("Player/playerup");
-            playerdown = game.Content.Load<Texture2D>("Player/playerdown");
+            playerleft = game.Content.Load<Texture2D>("Player/player_walk_west");
+            playerright = game.Content.Load<Texture2D>("Player/player_walk_east");
+            playerup = game.Content.Load<Texture2D>("Player/player_walk_north");
+            playerdown = game.Content.Load<Texture2D>("Player/player_walk_south");
 
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
 

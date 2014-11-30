@@ -17,10 +17,10 @@ namespace Project3
          * Using the booleans, update() and draw() will handle
          * the cases for how the player moves in each direction.
          */
-        public Texture2D playerNorth;
-        public Texture2D playerSouth;
-        public Texture2D playerWest;
-        public Texture2D playerEast;
+        public Animation playerNorth;
+        public Animation playerSouth;
+        public Animation playerWest;
+        public Animation playerEast;
 
         public Boolean facingNorth;
         public Boolean facingSouth;
@@ -52,13 +52,18 @@ namespace Project3
         {
             this.world = world; 
 
-            playerNorth = north;
-            playerSouth = south;
-            playerWest = west;
-            playerEast = east;
+            playerNorth = new Animation();
+            playerSouth = new Animation();
+            playerWest = new Animation();
+            playerEast = new Animation();
 
-            facingNorth = true;
-            facingEast = false;
+            playerNorth.Initialize(north, currPosition, 32, 32, 3, 100, Color.White, 1, true, false);
+            playerSouth.Initialize(south, currPosition, 32, 32, 3, 100, Color.White, 1, true, false);
+            playerWest.Initialize(west, currPosition, 32, 32, 3, 100, Color.White, 1, true, false);
+            playerEast.Initialize(east, currPosition, 32, 32, 3, 100, Color.White, 1, true, false);
+
+            facingNorth = false;
+            facingEast = true;
             facingWest = false;
             facingSouth = false;
 
@@ -120,6 +125,7 @@ namespace Project3
                 //If current position is already at next position, player can move
                 if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
                 {
+
                     if (keyboard.IsKeyDown(Keys.W))
                     {
                         moveUp();
@@ -136,7 +142,9 @@ namespace Project3
                     {
                         moveRight();
                     }
-
+                    else {
+                        SetIdle();
+                    }
                     if (keyboard.IsKeyDown(Keys.Enter))
                     {
                         CheckInteract();
@@ -147,6 +155,21 @@ namespace Project3
             }
         }
 
+        public void UpdateAnimations(GameTime gametime)
+        {
+            playerNorth.Update(currPosition + new Vector2(16, 16), gametime);
+            playerSouth.Update(currPosition + new Vector2(16, 16), gametime);
+            playerWest.Update(currPosition + new Vector2(16, 16), gametime);
+            playerEast.Update(currPosition + new Vector2(16, 16), gametime);
+        }
+
+        public void SetIdle()
+        {
+            playerNorth.setFrame(0);
+            playerSouth.setFrame(0);
+            playerWest.setFrame(0);
+            playerEast.setFrame(0);
+        }
         /* Player Position Update Method 
          * 
          * Updates the player's current position based off of where the next move is.
@@ -165,19 +188,24 @@ namespace Project3
             if (yDifference > 0)
             {
                 currPosition.Y = currPosition.Y - 4;
+                UpdateAnimations(gameTime);
             }
             if (yDifference < 0)
             {
                 currPosition.Y = currPosition.Y + 4;
+                UpdateAnimations(gameTime);
             }
             if (xDifference > 0)
             {
                 currPosition.X = currPosition.X - 4;
+                UpdateAnimations(gameTime);
             }
             if (xDifference < 0)
             {
                 currPosition.X = currPosition.X + 4;
+                UpdateAnimations(gameTime);
             }
+
         }
 
         //Orients the player right, then sets the next X position to +tilewidth, and adds 1 to the relative X. 
@@ -306,7 +334,7 @@ namespace Project3
          stand on top of, but can still interact with(ie, loot chests, or signs, or people)*/
         public void CheckInteract()
         {
-            Maptile tileToCheck = map.currentMap[(int)(currPositionCoord.Y + frontOfPlayer.Y),(int)(currPositionCoord.X + frontOfPlayer.X)];
+            Maptile tileToCheck = map.currentMap[(int)(currPositionCoord.X + frontOfPlayer.X), (int)(currPositionCoord.Y + frontOfPlayer.Y)];
 
             //if tile is interactable, override controls with isInteracting, then
             //pull current reference to the NPC over
@@ -326,19 +354,25 @@ namespace Project3
             Rectangle playerSpriteBox = new Rectangle((int)currPosition.X, (int)currPosition.Y, dimension,dimension);
             if (facingNorth)
             {
-                spriteBatch.Draw(playerNorth, playerSpriteBox, Color.White);
+
+                playerNorth.Draw(spriteBatch);
+                //spriteBatch.Draw(playerNorth, playerSpriteBox, Color.White);
             }
             else if (facingEast)
             {
-                spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
+                Console.Write(true);
+                playerEast.Draw(spriteBatch);
+                //spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
             }
             else if (facingSouth)
             {
-                spriteBatch.Draw(playerSouth, playerSpriteBox, Color.White);
+                playerSouth.Draw(spriteBatch);
+                //spriteBatch.Draw(playerSouth, playerSpriteBox, Color.White);
             }
             else if (facingWest)
             {
-                spriteBatch.Draw(playerWest, playerSpriteBox, Color.White);
+                playerWest.Draw(spriteBatch);
+                //spriteBatch.Draw(playerWest, playerSpriteBox, Color.White);
             }
 
             if (isInteracting)

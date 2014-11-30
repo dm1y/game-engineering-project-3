@@ -133,12 +133,15 @@ namespace Project3
             (int)(FrameHeight * scale));
         }
 
+        public void setFrame(int i)
+        {
+            currentFrame = i;
+        }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (Active)
             {
-
                 spriteBatch.Draw(spriteStrip, destinationRect, sourceRect, color);
             }
         }

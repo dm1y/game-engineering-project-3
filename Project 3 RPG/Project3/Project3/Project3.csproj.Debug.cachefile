@@ -1,8 +1,4 @@
 Content\MapTexture\grass.xnb
-Content\Player\playerdown.xnb
-Content\Player\playerleft.xnb
-Content\Player\playerright.xnb
-Content\Player\playerup.xnb
 Content\MapTexture\transition.xnb
 Content\MapTexture\transition_blue.xnb
 Content\MapTexture\transition_red.xnb
@@ -18,6 +14,10 @@ Content\Overlays\shop_menu_96x96.xnb
 Content\Overlays\speechbubble128x64.xnb
 Content\Overlays\speech_maindialogue_416x96.xnb
 Content\Overlays\speech_money_96x32.xnb
+Content\Player\player_walk_south.xnb
+Content\Player\player_walk_west.xnb
+Content\Player\player_walk_north.xnb
+Content\Player\player_walk_east.xnb
 Content\DialogueFont.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
