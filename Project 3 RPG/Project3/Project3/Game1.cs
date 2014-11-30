@@ -61,6 +61,7 @@ namespace Project3
             camera = new Camera(this.graphics.GraphicsDevice.Viewport);
             gameWorld = new World(this, camera);
             gameWorld.LoadContent(Content);
+            
             // TODO: use this.Content to load your game content here
         }
 

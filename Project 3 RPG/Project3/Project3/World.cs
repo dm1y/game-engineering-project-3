@@ -146,6 +146,7 @@ namespace Project3
         Map map;
 
         Player player;
+        Display HUD;
 
         public World(Game1 game, Camera c)
         {
@@ -173,6 +174,8 @@ namespace Project3
             playerdown = game.Content.Load<Texture2D>("Player/player_walk_south");
 
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
+            HUD = new Display(player); //check
+            HUD.LoadContent(Content);
 
         }
 
@@ -214,6 +217,7 @@ namespace Project3
             map.Draw(sb);
             
             player.Draw(sb);
+            HUD.Draw(sb);
             
             sb.End();
         }
