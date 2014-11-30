@@ -182,6 +182,465 @@
       <Time>2014-11-29T16:28:59.9318617-08:00</Time>
     </Item>
     <Item>
+      <Source>Items\Junk\animal_skin.png</Source>
+      <Name>Items\Junk\animal_skin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\animal_skin.xnb</Output>
+      <Time>2014-11-29T18:42:18.0316844-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\broken_helmet.png</Source>
+      <Name>Items\Junk\broken_helmet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\broken_helmet.xnb</Output>
+      <Time>2014-11-29T18:42:18.0356845-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\fake_gold.png</Source>
+      <Name>Items\Junk\fake_gold</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\fake_gold.xnb</Output>
+      <Time>2014-11-29T18:42:18.0416851-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\fluff.png</Source>
+      <Name>Items\Junk\fluff</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\fluff.xnb</Output>
+      <Time>2014-11-29T18:42:18.0446854-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\frayed_belt.png</Source>
+      <Name>Items\Junk\frayed_belt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\frayed_belt.xnb</Output>
+      <Time>2014-11-29T18:42:18.0476858-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\gold_bracelet.png</Source>
+      <Name>Items\Junk\gold_bracelet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\gold_bracelet.xnb</Output>
+      <Time>2014-11-29T18:42:18.0566862-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\gold_nugget.png</Source>
+      <Name>Items\Junk\gold_nugget</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\gold_nugget.xnb</Output>
+      <Time>2014-11-29T18:42:18.0606863-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\green_gel_block.png</Source>
+      <Name>Items\Junk\green_gel_block</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\green_gel_block.xnb</Output>
+      <Time>2014-11-29T18:42:18.0666859-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\green_gel_drop.png</Source>
+      <Name>Items\Junk\green_gel_drop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\green_gel_drop.xnb</Output>
+      <Time>2014-11-29T18:42:18.0706865-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\horn.png</Source>
+      <Name>Items\Junk\horn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\horn.xnb</Output>
+      <Time>2014-11-29T18:42:18.0736868-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\ice_gel.png</Source>
+      <Name>Items\Junk\ice_gel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\ice_gel.xnb</Output>
+      <Time>2014-11-29T18:42:18.0766871-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\lump_of_something.png</Source>
+      <Name>Items\Junk\lump_of_something</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\lump_of_something.xnb</Output>
+      <Time>2014-11-29T18:42:18.0786882-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\old_hat.png</Source>
+      <Name>Items\Junk\old_hat</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_hat.xnb</Output>
+      <Time>2014-11-29T18:42:18.0836875-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\old_mitts.png</Source>
+      <Name>Items\Junk\old_mitts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_mitts.xnb</Output>
+      <Time>2014-11-29T18:42:18.0866883-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\old_mug.png</Source>
+      <Name>Items\Junk\old_mug</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_mug.xnb</Output>
+      <Time>2014-11-29T18:42:18.0896877-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\raw_hide.png</Source>
+      <Name>Items\Junk\raw_hide</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\raw_hide.xnb</Output>
+      <Time>2014-11-29T18:42:18.0916877-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\sack_of_gold.png</Source>
+      <Name>Items\Junk\sack_of_gold</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\sack_of_gold.xnb</Output>
+      <Time>2014-11-29T18:42:18.0936887-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\scales.png</Source>
+      <Name>Items\Junk\scales</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\scales.xnb</Output>
+      <Time>2014-11-29T18:42:18.1306913-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\silver_hoops.png</Source>
+      <Name>Items\Junk\silver_hoops</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\silver_hoops.xnb</Output>
+      <Time>2014-11-29T18:42:18.1326899-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\skull.png</Source>
+      <Name>Items\Junk\skull</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\skull.xnb</Output>
+      <Time>2014-11-29T18:42:18.1356902-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\smelly_shoes.png</Source>
+      <Name>Items\Junk\smelly_shoes</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\smelly_shoes.xnb</Output>
+      <Time>2014-11-29T18:42:18.1376912-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Junk\tooth.png</Source>
+      <Name>Items\Junk\tooth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\tooth.xnb</Output>
+      <Time>2014-11-29T18:42:18.1396912-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\absinthe.png</Source>
+      <Name>Items\Consumables\absinthe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\absinthe.xnb</Output>
+      <Time>2014-11-29T18:42:26.7087236-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\everclear.png</Source>
+      <Name>Items\Consumables\everclear</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\everclear.xnb</Output>
+      <Time>2014-11-29T18:42:26.7127242-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\moonshine.png</Source>
+      <Name>Items\Consumables\moonshine</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\moonshine.xnb</Output>
+      <Time>2014-11-29T18:42:26.715725-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\potion_red.png</Source>
+      <Name>Items\Consumables\potion_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\potion_red.xnb</Output>
+      <Time>2014-11-29T18:42:26.7187243-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\the_stuff.png</Source>
+      <Name>Items\Consumables\the_stuff</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\the_stuff.xnb</Output>
+      <Time>2014-11-29T18:42:26.7217241-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\vodka.png</Source>
+      <Name>Items\Consumables\vodka</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\vodka.xnb</Output>
+      <Time>2014-11-29T18:42:26.7277257-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\whiskey.png</Source>
+      <Name>Items\Consumables\whiskey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\whiskey.xnb</Output>
+      <Time>2014-11-29T18:42:26.7307256-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Consumables\wine.png</Source>
+      <Name>Items\Consumables\wine</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\wine.xnb</Output>
+      <Time>2014-11-29T18:42:26.7337249-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_blue.png</Source>
+      <Name>Items\Shields\shield_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_blue.xnb</Output>
+      <Time>2014-11-29T18:42:34.0518254-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_buckler.png</Source>
+      <Name>Items\Shields\shield_buckler</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_buckler.xnb</Output>
+      <Time>2014-11-29T18:42:34.0558255-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_leather.png</Source>
+      <Name>Items\Shields\shield_leather</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_leather.xnb</Output>
+      <Time>2014-11-29T18:42:34.059827-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_red.png</Source>
+      <Name>Items\Shields\shield_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_red.xnb</Output>
+      <Time>2014-11-29T18:42:34.0628264-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_standard.png</Source>
+      <Name>Items\Shields\shield_standard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_standard.xnb</Output>
+      <Time>2014-11-29T18:42:34.0658267-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_target.png</Source>
+      <Name>Items\Shields\shield_target</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_target.xnb</Output>
+      <Time>2014-11-29T18:42:34.068827-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_target_red.png</Source>
+      <Name>Items\Shields\shield_target_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_target_red.xnb</Output>
+      <Time>2014-11-29T18:42:34.0728271-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_tower_gray.png</Source>
+      <Name>Items\Shields\shield_tower_gray</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_tower_gray.xnb</Output>
+      <Time>2014-11-29T18:42:34.0758274-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_tower_green.png</Source>
+      <Name>Items\Shields\shield_tower_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_tower_green.xnb</Output>
+      <Time>2014-11-29T18:42:34.0788267-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Shields\shield_wooden.png</Source>
+      <Name>Items\Shields\shield_wooden</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_wooden.xnb</Output>
+      <Time>2014-11-29T18:42:34.081828-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\axe.png</Source>
+      <Name>Items\Weapons\axe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\axe.xnb</Output>
+      <Time>2014-11-29T18:42:58.0611984-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\axe_curved.png</Source>
+      <Name>Items\Weapons\axe_curved</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\axe_curved.xnb</Output>
+      <Time>2014-11-29T18:42:58.0641978-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\club.png</Source>
+      <Name>Items\Weapons\club</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\club.xnb</Output>
+      <Time>2014-11-29T18:42:58.0321956-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\dagger_curved.png</Source>
+      <Name>Items\Weapons\dagger_curved</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\dagger_curved.xnb</Output>
+      <Time>2014-11-29T18:42:58.0361957-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\dagger_small.png</Source>
+      <Name>Items\Weapons\dagger_small</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\dagger_small.xnb</Output>
+      <Time>2014-11-29T18:42:58.039196-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\flail.png</Source>
+      <Name>Items\Weapons\flail</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\flail.xnb</Output>
+      <Time>2014-11-29T18:42:58.0421963-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\katana.png</Source>
+      <Name>Items\Weapons\katana</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\katana.xnb</Output>
+      <Time>2014-11-29T18:42:58.0451966-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\longsword.png</Source>
+      <Name>Items\Weapons\longsword</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\longsword.xnb</Output>
+      <Time>2014-11-29T18:42:58.0481969-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\mace.png</Source>
+      <Name>Items\Weapons\mace</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\mace.xnb</Output>
+      <Time>2014-11-29T18:42:58.0521975-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\scimitar.png</Source>
+      <Name>Items\Weapons\scimitar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\scimitar.xnb</Output>
+      <Time>2014-11-29T18:42:58.0551978-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Weapons\stick.png</Source>
+      <Name>Items\Weapons\stick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\RPGFIX\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\stick.xnb</Output>
+      <Time>2014-11-29T18:42:58.0591974-08:00</Time>
+    </Item>
+    <Item>
       <Source>DialogueFont.spritefont</Source>
       <Name>DialogueFont</Name>
       <Importer>FontDescriptionImporter</Importer>

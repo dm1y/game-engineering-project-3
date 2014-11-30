@@ -361,6 +361,7 @@ namespace Project3
             else if (facingEast)
             {
                 Console.Write(true);
+                Console.Write(currPosition);
                 playerEast.Draw(spriteBatch);
                 //spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
             }

@@ -82,6 +82,7 @@
     <Compile Include="InstructionScreen.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemLoader.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Maptile.cs" />
     <Compile Include="NPC.cs" />
