@@ -47,6 +47,7 @@ namespace Project3
             isDialogueNPC = false;
             isFinished = false;
             shop.LoadTextures(world);
+            shop.PlayerShop(world.player.playerInventory);
         }
 
         public void Update(KeyboardState keyboard)

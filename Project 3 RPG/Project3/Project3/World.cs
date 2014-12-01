@@ -128,6 +128,8 @@ namespace Project3
         BattleSystem battleSystem;
         bool currBattle;
 
+        public SpriteFont font;
+
         public World(Game1 game, Camera c)
         {
             this.game = game;
@@ -157,6 +159,9 @@ namespace Project3
 
             loader = new ObjectLoader();
             loader.Initialize(this);
+
+            Console.WriteLine(player.playerInventory.money);
+            font = game.Content.Load<SpriteFont>("DialogueFont");
 
             camera.setBoundaries(width * 32, height * 32);
 

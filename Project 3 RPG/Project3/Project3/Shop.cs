@@ -13,6 +13,7 @@ namespace Project3
         Texture2D money;
         Texture2D shopmenu;
         Texture2D shopmain;
+        Texture2D select;
 
         public World world;
         Player player;
@@ -50,6 +51,7 @@ namespace Project3
             money = world.game.Content.Load<Texture2D>("Overlays/speech_money_96x32");
             shopmenu = world.game.Content.Load<Texture2D>("Overlays/shop_menu_96x96");
             shopmain = world.game.Content.Load<Texture2D>("Overlays/shop_main_224x224");
+            select = world.game.Content.Load<Texture2D>("Overlays/arrow select");
         }
         public void PlayerShop(Inventory playerInventory)
         {
@@ -278,15 +280,19 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
+            
 
             Vector2 money_pos = new Vector2(world.camera.Position.X / 2, world.camera.Position.Y / 2);
             sb.Draw(money, money_pos, Color.White);
-
+            
+            sb.DrawString(world.font, playerInventory.money.ToString(), money_pos + new Vector2(8, 6), Color.White);
             if (!isBuying && !isSelling)
             {
                 Vector2 menu_pos = new Vector2(world.camera.Position.X / 2 + 384, world.camera.Position.Y / 2);
+
                 sb.Draw(shopmenu, menu_pos, Color.White);
             }
+            
             // First want to draw the box underlays based on states. 
             // If the player ISNT buying OR selling, then it is Buy/Sell/Leave draw.
 

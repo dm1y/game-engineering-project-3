@@ -70,10 +70,9 @@ namespace Project3
                 sb.DrawString(font, "Level: " + level + "/", new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
                 sb.DrawString(font, "Money: $" + money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
-                
+                int offset = 20;
                 foreach(Item item in p.playerInventory.items)
                 {
-                    int offset = 20;
                     if (item.quantity > 0)
                     {
                         sb.Draw(item.itemTexture, new Vector2(p.world.camera.Position.X / 2 + 100 + offset, p.world.camera.Position.Y / 2 + 290 - item.itemTexture.Height), Color.White);

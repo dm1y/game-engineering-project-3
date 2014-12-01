@@ -27,22 +27,14 @@ namespace Project3
         // May be used to set markers for where we want to pick up/leave off an NPC's dialogue. Optional(normal NPCs wouldn't use this, but questgivers would)
         // Consider this an ADVANCED CONCEPT. May not be even used in the final. 
         public int[] dialoguePoints;
-        SpriteFont font;
-
-        public Dialogue(SpriteFont font)
-        {
-            this.font = font;
-        }
+       
 
         public Dialogue(World world)
         {
-            this.world = world;
-            font = world.game.Content.Load<SpriteFont>("DialogueFont");
-        }
+            this.world = world;        }
 
-        public Dialogue(List<String> text, SpriteFont font)
+        public Dialogue(List<String> text)
         {
-            this.font = font;
             this.text = text;
         }
 
@@ -99,7 +91,7 @@ namespace Project3
         {
             Vector2 position = new Vector2(world.camera.Position.X / 2 + 45, world.camera.Position.Y / 2 + 8);
 
-            sb.DrawString(font, text.ElementAt(currentLine), position, Color.White);
+            sb.DrawString(world.font, text.ElementAt(currentLine), position, Color.White);
         }
 
         /* ADVANCED CONCEPT -- MAY NOT HAVE TIME TO DO THIS! *
