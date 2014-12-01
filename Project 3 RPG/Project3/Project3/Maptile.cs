@@ -45,10 +45,7 @@ namespace Project3
         public Boolean isDangerous;
         public Boolean isInteract;
 
-        /* For William's NPC stuff*/
         public NPC npc;
-        public Texture2D npcTexture;
-
         public int transitionTo;
         public List<String> enemySpawnTypes;
 
@@ -143,10 +140,6 @@ namespace Project3
         public void Draw(SpriteBatch spritebatch)
         {
             spritebatch.Draw(texture, drawingRectangle, Color.White);
-            if (isInteract)
-            {
-                spritebatch.Draw(npcTexture, drawingRectangle, Color.White);
-            }
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Project3
 
         public Dialogue dialogue;
         public Shop shop;
-        Boolean canGo = false;
+
         public NPC(Dialogue dialogue)
         {
             this.dialogue = dialogue;
@@ -57,19 +57,11 @@ namespace Project3
             }
             else if (isDialogueNPC)
             {
-                if (keyboard.IsKeyUp(Keys.Enter) && dialogue.isFinished() && !dialogue.canContinue)
+                if (dialogue.isFinished())
                 {
-                    dialogue.canContinue = true;
-                    canGo = true;
-                }
-                if (keyboard.IsKeyDown(Keys.Enter) && dialogue.isFinished() && canGo)
-                {
-                    dialogue.ResetDialogue();
                     isFinished = true;
-                    canGo = false;
-                }
                     //set this one to finished, player gets the message, turns it's finished on, then turns this one back off
-                
+                }
                 else
                 {
                     //update

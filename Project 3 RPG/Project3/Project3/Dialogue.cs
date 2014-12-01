@@ -27,16 +27,11 @@ namespace Project3
         // Consider this an ADVANCED CONCEPT. May not be even used in the final. 
         public int[] dialoguePoints;
         SpriteFont font;
-        public Boolean canContinue = false;
 
         public Dialogue(SpriteFont font)
         {
             this.font = font;
-        }
 
-        public Dialogue(World world)
-        {
-            font = world.game.Content.Load<SpriteFont>("DialogueFont");
         }
 
         public Dialogue(List<String> text, SpriteFont font)
@@ -45,17 +40,9 @@ namespace Project3
             this.text = text;
         }
 
-        public void SetDialogue(List<String> lines)
-        {
-            this.text = lines;
-        }
         public void AdvanceLine()
         {
             currentLine++;
-            if (currentLine == text.Count)
-            {
-                currentLine = text.Count - 1;
-            }
         }
 
         public void ResetDialogue()
@@ -77,24 +64,17 @@ namespace Project3
          */
         public void Update(KeyboardState keyboard) 
         {
-            if (keyboard.IsKeyUp(Keys.Enter))
+            if (keyboard.IsKeyDown(Keys.Enter))
             {
-                canContinue = true;
-            }
-            if (keyboard.IsKeyDown(Keys.Enter) && canContinue)
-            {
-                if (!isFinished())
-                {
-                    AdvanceLine();
-                }
-                canContinue = false;
+                AdvanceLine();
             }
         }
 
         public Boolean isFinished()
         {
-            if (currentLine >= text.Count - 1)
+            if (currentLine >= text.Count())
             {
+                ResetDialogue();
                 return true;
             }
             else
@@ -105,7 +85,6 @@ namespace Project3
         public void Draw(SpriteBatch sb) 
         {
             Vector2 position = new Vector2(0, 0);//still figuring where to draw this guy//
-            //Console.WriteLine(currentLine);
             sb.DrawString(font, text.ElementAt(currentLine), position, Color.White);
         }
 

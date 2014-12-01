@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Project3
 {
-    public class Player
+    class Player
     {
 
         public World world; 
@@ -145,7 +145,6 @@ namespace Project3
                     else {
                         SetIdle();
                     }
-
                     if (keyboard.IsKeyDown(Keys.Enter))
                     {
                         CheckInteract();
@@ -341,11 +340,8 @@ namespace Project3
             //pull current reference to the NPC over
             if (tileToCheck.isInteract)
             {
+                isInteracting = true;
                 currentNPC = tileToCheck.npc;
-                if (currentNPC.isFinished == false)
-                {
-                    isInteracting = true;
-                }
             }
             //and then checking logic here
         }
@@ -364,6 +360,8 @@ namespace Project3
             }
             else if (facingEast)
             {
+                Console.Write(true);
+                Console.Write(currPosition);
                 playerEast.Draw(spriteBatch);
                 //spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
             }

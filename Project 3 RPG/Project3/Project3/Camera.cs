@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
-    public class Camera
+    class Camera
     {
         public Matrix transform { get; private set; }
         public Viewport view { get; set; }
