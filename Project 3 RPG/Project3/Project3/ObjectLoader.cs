@@ -50,7 +50,6 @@ namespace Project3
 
                 player_inv = new Inventory(player_items);
                 player_inv.money = 5;
-                world.player.SetInventory(player_inv);
             }
             stream_player.Close();
             #endregion

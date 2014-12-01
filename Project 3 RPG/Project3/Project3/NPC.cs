@@ -57,19 +57,32 @@ namespace Project3
             }
             else if (isDialogueNPC)
             {
-                if (keyboard.IsKeyUp(Keys.Enter) && dialogue.isFinished() && !dialogue.canContinue)
+                //if (keyboard.IsKeyUp(Keys.Enter) && dialogue.isFinished() && !dialogue.canContinue)
+                //{
+                //    dialogue.canContinue = true;
+                //    canGo = true;
+                //}
+                //if (keyboard.IsKeyDown(Keys.Enter) && dialogue.isFinished() && canGo)
+                //{
+                //    dialogue.ResetDialogue();
+                //    isFinished = true;
+                //    canGo = false;
+                //}
+                //set this one to finished, player gets the message, turns it's finished on, then turns this one back off
+
+                //if the dialogue is finished and enter is UP, then we have just hit enter onto the last line. make it possible
+                //to continue.
+                if (dialogue.isFinished() && !canGo && keyboard.IsKeyUp(Keys.Enter))
                 {
-                    dialogue.canContinue = true;
                     canGo = true;
                 }
-                if (keyboard.IsKeyDown(Keys.Enter) && dialogue.isFinished() && canGo)
+                //if enter is DOWN and we can go, we will reset the dialogue, set isFinished = true, and turn canGo off
+                if (keyboard.IsKeyDown(Keys.Enter) && canGo)
                 {
                     dialogue.ResetDialogue();
                     isFinished = true;
                     canGo = false;
                 }
-                //set this one to finished, player gets the message, turns it's finished on, then turns this one back off
-
                 else
                 {
                     //update

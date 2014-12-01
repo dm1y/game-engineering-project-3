@@ -105,7 +105,6 @@ namespace Project3
         public void Draw(SpriteBatch sb)
         {
             Vector2 position = new Vector2(0, 0);//still figuring where to draw this guy//
-            //Console.WriteLine(currentLine);
             sb.DrawString(font, text.ElementAt(currentLine), position, Color.White);
         }
 
