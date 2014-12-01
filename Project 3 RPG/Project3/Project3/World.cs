@@ -219,6 +219,7 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
+            sb.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.GetViewMatrix()); 
             map.Draw(sb);
             
             player.Draw(sb);

@@ -101,7 +101,7 @@ namespace Project3
         {
             GraphicsDevice.Clear(Color.Black);
 
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, gameWorld.camera.GetViewMatrix()); 
+            
             // TODO: Add your drawing code here
             if (gameWorld != null)
             {
