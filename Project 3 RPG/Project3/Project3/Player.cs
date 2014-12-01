@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Project3
 {
-    class Player
+    public class Player
     {
 
         public World world; 
