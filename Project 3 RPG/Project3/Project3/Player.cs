@@ -30,6 +30,10 @@ namespace Project3
         public Boolean isInteracting;
         public NPC currentNPC;
 
+        public int atk;
+        public int def;
+        public int speed; 
+
         public int dimension;
         /* For deciding where the player is facing. 
          * If north, (0, -1). If south, (0, 1). If west, (-1, 0). If east, (0, 1)
@@ -75,6 +79,11 @@ namespace Project3
             currPosition = nextPosition;
 
             isInteracting = false;
+
+            /* Default stats for battle system */
+            atk = 1;
+            def = 0;
+            speed = 5; 
         }
 
         /* Update order:
@@ -380,6 +389,18 @@ namespace Project3
             {
                 currentNPC.Draw(spriteBatch);
             }
+        }
+
+        // adjusts stats according to weapon item properties 
+        public void setAtk(Item item)
+        { 
+            // atk = item.damage; 
+        }
+
+        // adjusts stats according to defense item properties 
+        public void setDef(Item item)
+        { 
+            // def = item.block;
         }
     }
 }

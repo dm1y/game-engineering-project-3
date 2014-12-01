@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
@@ -56,6 +63,11 @@ namespace Project3
         public void Update()
         {
             // call backend methods after getting user selection implemented 
+            KeyboardState currentKeyboardState;
+            currentKeyboardState = Keyboard.GetState();
+            if (currentKeyboardState.IsKeyDown(Keys.F))
+            { 
+            }
 
             if (endOfBattle)
             {
@@ -74,6 +86,12 @@ namespace Project3
                 return true;
             else
                 return false;
+        }
+
+        
+        private void UseConsumable()
+        { 
+            // playerHealth += player.inventory?.item.heal;
         }
 
         private void Escape()
@@ -211,5 +229,12 @@ namespace Project3
             }
         }
 
+
+        public void Draw(SpriteBatch sb)
+        {
+            sb.Begin();
+
+            sb.End();
+        }
     }
 }

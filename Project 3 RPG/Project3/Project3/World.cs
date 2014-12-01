@@ -201,6 +201,11 @@ namespace Project3
             player.ChangeMap(map);
         }
 
+        public void TransitionBattle()
+        {
+ 
+        }
+
         public void Update(GameTime gametime)
         {
             currentKeyboardState = Keyboard.GetState();
