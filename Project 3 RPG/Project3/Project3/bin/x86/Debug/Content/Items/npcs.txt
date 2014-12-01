@@ -1,22 +1,23 @@
-5,3
+5,5
 3
 Have you heard?
-There's rumors of a legendary pub out in the wilderness.
-No one knows where it is, though. 
-7,9
+There's a legendary pub out there.
+Dunno where it is though. 
+5,7
 2
-I heard the Merchant has some good stuff.
-It's a bit pricey for me, though...
-3, 14
-3
-A lot of adventurers have been out into the wild lately.
-Not a lot of them have come back, however.
+I heard the Merchant has good stuff.
+It's a bit pricey for me...
+5,9
+4
+A lot of adventurers have gone
+out into the wild lately.
+Not a lot of them have come back. 
 Maybe the monsters ate them?
-7, 4
+5,11
 2
 I'm thinking of moving soon. 
 This town gives me the spooks. 
-7, 14
+5,13
 2
-I wish I was strong enough to fight monsters.
-Maybe I could earn a living for my family then. 
+I wish I was strong enough to 
+fight the monsters and beat them. 

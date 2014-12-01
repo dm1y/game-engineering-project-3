@@ -50,6 +50,7 @@ namespace Project3
 
                 player_inv = new Inventory(player_items);
                 player_inv.money = 5;
+                world.player.playerInventory = player_inv;
             }
             stream_player.Close();
             #endregion
@@ -109,10 +110,10 @@ namespace Project3
             NPC merchant = new NPC(merchant_shop);
 
             Texture2D merch_skin = world.game.Content.Load<Texture2D>("Items/merchant");
-            world.currentMap.currentMap[5, 5].isInteract = true;
-            world.currentMap.currentMap[5, 5].npc = merchant;
-            world.currentMap.currentMap[5, 5].npcTexture = merch_skin;
-            world.currentMap.currentMap[5, 5].isCollidable = true;
+            world.currentMap.currentMap[6, 6].isInteract = true;
+            world.currentMap.currentMap[6, 6].npc = merchant;
+            world.currentMap.currentMap[6, 6].npcTexture = merch_skin;
+            world.currentMap.currentMap[6, 6].isCollidable = true;
             stream_merchant.Close();
 
             #endregion

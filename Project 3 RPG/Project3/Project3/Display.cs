@@ -74,6 +74,7 @@ namespace Project3
                 sb.DrawString(font, "HP: " + HP + "/", new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
                 sb.DrawString(font, "Level: " + level + "/", new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
                 sb.DrawString(font, "Money: " + money + "/", new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+
                 Console.WriteLine(p.playerInventory.items.Count);
                 //for (int i = 0; i < p.playerInventory.items.Count; i++)
                 // {

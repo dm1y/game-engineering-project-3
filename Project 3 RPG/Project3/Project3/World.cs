@@ -148,17 +148,18 @@ namespace Project3
             width = map.width;
             height = map.height;
 
-            loader = new ObjectLoader();
-            loader.Initialize(this);
-            camera.setBoundaries(width * 32, height * 32);
-
             playerleft = game.Content.Load<Texture2D>("Player/player_walk_west");
             playerright = game.Content.Load<Texture2D>("Player/player_walk_east");
             playerup = game.Content.Load<Texture2D>("Player/player_walk_north");
             playerdown = game.Content.Load<Texture2D>("Player/player_walk_south");
 
-
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
+
+            loader = new ObjectLoader();
+            loader.Initialize(this);
+
+            camera.setBoundaries(width * 32, height * 32);
+
             HUD = new Display(player, game); //check
             HUD.LoadContent(Content);
 

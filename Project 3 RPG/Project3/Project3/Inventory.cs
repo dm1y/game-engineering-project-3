@@ -24,10 +24,10 @@ namespace Project3
 
         public int maxSize;
 
-        public Inventory(List<Item> items)
+        public Inventory(List<Item> others)
         {
+            this.items = others;
             currentItemIndex = 0;
-            this.items = items;
         }
 
         public Inventory()
@@ -36,6 +36,14 @@ namespace Project3
             items = new List<Item>();
         }
 
+        public Boolean HasItems()
+        {
+            if (items == null)
+            {
+                return false;
+            }
+            return true;
+        }
         /* Adds the reference of that item to the player's inventory list. Note that this method AUTOMATICALLY
          rejects the item if the inventory is full.
          

@@ -20,6 +20,7 @@ namespace Project3
         */
 
         // The array of dialogue that will be used.
+        public World world;
         public List<String> text;
         // The current line the dialogue is on.
         public int currentLine;
@@ -35,6 +36,7 @@ namespace Project3
 
         public Dialogue(World world)
         {
+            this.world = world;
             font = world.game.Content.Load<SpriteFont>("DialogueFont");
         }
 
@@ -95,7 +97,8 @@ namespace Project3
         }
         public void Draw(SpriteBatch sb)
         {
-            Vector2 position = new Vector2(0, 0);//still figuring where to draw this guy//
+            Vector2 position = new Vector2(world.camera.Position.X / 2 + 45, world.camera.Position.Y / 2 + 8);
+
             sb.DrawString(font, text.ElementAt(currentLine), position, Color.White);
         }
 

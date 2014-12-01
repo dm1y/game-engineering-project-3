@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace Project3
 {
     public class NPC
     {
+        Texture2D speechBubble;
+        //Texture2D 
         /* NPC methods -
          General format
             Two types of NPCs - Random Dialogue(talk) or Merchant(implements shop)
@@ -30,6 +33,7 @@ namespace Project3
             isDialogueNPC = true;
             isShopNPC = false;
             isFinished = false;
+            speechBubble = dialogue.world.game.Content.Load<Texture2D>("Overlays/speech_maindialogue_416x96");
         }
 
         public NPC(Shop shop)
@@ -90,6 +94,8 @@ namespace Project3
         {
             if (isDialogueNPC)
             {
+                Vector2 position = new Vector2(dialogue.world.camera.Position.X / 2 + 32, dialogue.world.camera.Position.Y / 2);
+                sb.Draw(speechBubble, position, Color.White);
                 dialogue.Draw(sb);
             }
             else if (isShopNPC)
