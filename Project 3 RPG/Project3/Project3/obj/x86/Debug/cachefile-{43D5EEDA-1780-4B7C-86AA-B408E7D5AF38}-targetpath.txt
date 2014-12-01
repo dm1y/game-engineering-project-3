@@ -72,6 +72,7 @@ Content\Items\Weapons\stick.xnb
 Content\Items\merchant.xnb
 Content\Items\npc.xnb
 Content\DialogueFont.xnb
+Content\Displayfont.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

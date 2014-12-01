@@ -24,10 +24,11 @@ namespace Project3
 
         //Will probably make a custom font
         public SpriteFont font;
-        
+
         public bool ShowHUD;
         //Background Texture
         public Texture2D HUDBackGround;
+        public List<Item> items;
 
         public Display(Player player, Game game)
         {
@@ -35,16 +36,20 @@ namespace Project3
             p = player;
             font = null;
             ShowHUD = true;
-            //Need a HP property for player
-            //HP = player.
-            //need to make money property for player
-            //money = 
-            //need to make level property
-            //level =
+            items = new List<Item>();
+            HP = 0;
+            level = 1;
+            money = 0;
+
         }
         public void LoadContent(ContentManager content)
         {
-            font = content.Load<SpriteFont>("DialogueFont");
+            //for (int i = 0; i < p.playerInventory.items.Count; i++)
+            //{
+            //    items[i] = p.playerInventory.items[i];
+            //}
+            // Console.WriteLine(items.Count);
+            font = content.Load<SpriteFont>("Displayfont");
             HUDBackGround = content.Load<Texture2D>("Overlays/hud_maindisplay_96x96");
         }
 
@@ -55,8 +60,7 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
-            //sb.End();
-            //sb.Begin(SpriteSortMode.Texture, BlendState.AlphaBlend, null, null, null, null, p.world.camera.transform);
+
             if (ShowHUD)
             {
                 // Initial draw state 
@@ -64,14 +68,20 @@ namespace Project3
                 // formula (p.world.camera.Position.X/2, p.world.camera.Position.Y/2)
                 // example here, offset for x is 0 since it's at the very left
                 // offset for y is the screen size height (320) - texture height 
-                sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X/2, p.world.camera.Position.Y/2 + 320 - HUDBackGround.Height), Color.White);
+                sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2, p.world.camera.Position.Y / 2 + 320 - HUDBackGround.Height), Color.White);
 
                 // for words, you'll have to adjust y coordinates manually 
-                sb.DrawString(font, "HP: " + "/", new Vector2(p.world.camera.Position.X/2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
-                sb.DrawString(font, "Level: " + "/", new Vector2(p.world.camera.Position.X/2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
-                sb.DrawString(font, "Money: " + "/", new Vector2(p.world.camera.Position.X/2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                sb.DrawString(font, "HP: " + HP + "/", new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
+                sb.DrawString(font, "Level: " + level + "/", new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
+                sb.DrawString(font, "Money: " + money + "/", new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                Console.WriteLine(p.playerInventory.items.Count);
+                //for (int i = 0; i < p.playerInventory.items.Count; i++)
+                // {
+                //  sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2 + 10, p.world.camera.Position.Y / 2 + 320 - HUDBackGround.Height), Color.White);
 
-                
+                //}
+
+
             }
         }
     }
