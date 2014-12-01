@@ -8,7 +8,7 @@ namespace Project3
 {
     public class Item
     {
-        Texture2D itemTexture;
+        public Texture2D itemTexture;
 
         /* Basic INTs for properties - 
          itemBuyPrice - self explanatory

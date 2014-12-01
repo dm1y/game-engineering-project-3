@@ -44,11 +44,6 @@ namespace Project3
         }
         public void LoadContent(ContentManager content)
         {
-            //for (int i = 0; i < p.playerInventory.items.Count; i++)
-            //{
-            //    items[i] = p.playerInventory.items[i];
-            //}
-            // Console.WriteLine(items.Count);
             font = content.Load<SpriteFont>("Displayfont");
             HUDBackGround = content.Load<Texture2D>("Overlays/hud_maindisplay_96x96");
         }
@@ -73,14 +68,18 @@ namespace Project3
                 // for words, you'll have to adjust y coordinates manually 
                 sb.DrawString(font, "HP: " + HP + "/", new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
                 sb.DrawString(font, "Level: " + level + "/", new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
-                sb.DrawString(font, "Money: " + money + "/", new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                sb.DrawString(font, "Money: $" + money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
-                Console.WriteLine(p.playerInventory.items.Count);
-                //for (int i = 0; i < p.playerInventory.items.Count; i++)
-                // {
-                //  sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2 + 10, p.world.camera.Position.Y / 2 + 320 - HUDBackGround.Height), Color.White);
-
-                //}
+                
+                foreach(Item item in p.playerInventory.items)
+                {
+                    int offset = 20;
+                    if (item.quantity > 0)
+                    {
+                        sb.Draw(item.itemTexture, new Vector2(p.world.camera.Position.X / 2 + 100 + offset, p.world.camera.Position.Y / 2 + 290 - item.itemTexture.Height), Color.White);
+                        offset += 50;
+                    }
+                }
 
 
             }
