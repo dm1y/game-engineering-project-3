@@ -293,6 +293,10 @@ C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\stick.xnb
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\merchant.xnb
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\npc.xnb
+C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_green_overlay.xnb
+C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_overlay.xnb
+C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_purple_overlay.xnb
+C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_teal_overlay.xnb
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\DialogueFont.xnb
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Displayfont.xnb
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Maps\test0.txt
@@ -303,6 +307,7 @@ C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\playerinventory.txt
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Project3.exe
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Project3.pdb
+C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.csprojResolveAssemblyReference.cache
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.exe
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.pdb
