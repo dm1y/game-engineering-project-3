@@ -179,7 +179,7 @@ namespace Project3
 
 
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
-            HUD = new Display(player); //check
+            HUD = new Display(player, game); //check
             HUD.LoadContent(Content);
 
         }

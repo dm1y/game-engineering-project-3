@@ -377,3 +377,10 @@ C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.exe
 C:\Users\willi_000\Desktop\RPGFIX\not swag\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.pdb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\merchant.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\npc.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\enemyloot.txt
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\merchant.txt
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\npcs.txt
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\playerinventory.txt
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.csprojResolveAssemblyReference.cache

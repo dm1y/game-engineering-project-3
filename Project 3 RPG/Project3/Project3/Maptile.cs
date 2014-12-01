@@ -110,7 +110,11 @@ namespace Project3
             // depending on the type of tile, just hard code the string of monsters in 
             // otherwise make it data driven
 
-            //if (texture.Name == "easy")
+            if (texture.Name == "danger")
+            {
+                Enemy e = new Enemy(); 
+                //enemySpawnTypes 
+            }
             //    pass in list of enemies that are easy
 
             //if (texture.Name == "medium")
