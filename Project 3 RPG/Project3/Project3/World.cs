@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
-    class World
+    public class World
     {
         public Game1 game;
         public Camera camera;
@@ -119,6 +119,8 @@ namespace Project3
          */
         public Map currentMap;
 
+        private ObjectLoader objects;
+
         //Player Textures//
         Texture2D playerup;
         Texture2D playerdown;
@@ -165,6 +167,9 @@ namespace Project3
 
             width = map.width;
             height = map.height;
+
+            objects = new ObjectLoader();
+            objects.Initialize(this);
 
             camera.setBoundaries(width * 32, height * 32);
 
