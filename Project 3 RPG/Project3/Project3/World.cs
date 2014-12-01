@@ -148,7 +148,7 @@ namespace Project3
         Map map;
         int currMapNum; 
 
-        Player player;
+        public Player player;
         Display HUD;
         BattleSystem battleSystem;
         bool currBattle;

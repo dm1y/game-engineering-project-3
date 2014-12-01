@@ -11,7 +11,9 @@ namespace Project3
     public class Player
     {
 
-        public World world; 
+        public World world;
+
+        public Inventory playerInventory;
 
         /* - Directional Textures - 
          * Using the booleans, update() and draw() will handle
@@ -85,6 +87,7 @@ namespace Project3
             def = 0;
             speed = 5; 
         }
+
 
         /* Update order:
          *      World calls update(), which calls player.UpdateInput(). Input is received and will only move if
@@ -338,6 +341,10 @@ namespace Project3
 
         }
 
+        public void SetInventory(Inventory inv)
+        {
+            this.playerInventory = inv;
+        }
         /* Handles iteration with NPCs, Merchants, and Objects*/
         /* CheckInteract() is used to check the properties of a tile that the player CAN'T
          stand on top of, but can still interact with(ie, loot chests, or signs, or people)*/
