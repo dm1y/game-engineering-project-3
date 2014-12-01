@@ -5,79 +5,93 @@ using System.Text;
 
 namespace Project3
 {
-    class BattleSystem
+    public class BattleSystem
     {
-        /*
-         * TODO (before we get into this): Create the enemy class. 
-         * Possibly create the HUD class / Weapon / Armory class (we can just hardcode for now?)
-         * 
-         * TODO: 
-         * In the constructor, pass in the Player and the Enemy so we can get the following attributes:
-         * ** Health of player 
-         * ** Attack of player
-         * ** Defense of player 
-         * ** Optional: consumables 
-         * ** Current experience, level
-         * ** List of techniques player has so player can select which attack to use
-         * 
-         * ** Health of enemy 
-         * ** Attack of enemy 
-         * ** Enemy resistance/defense 
-         * ** Experience gained 
-         * ** List of techniques enemy has (randomized attacks depending on complexity of enemy)
-         * ** Number of enemies
-         */
+        Display display;
+        Player player;
+        Enemy enemy;
+
+        int playerHealth;
+
+        /* Information needed: 
+            Player : attack power, defense power, speed, item consumable 
+            Enemy : need its health, attack power, defense power, speed, exp given
+            Display : need to adjust/set level / exp / money if it improves */
+        public BattleSystem(Player player, Enemy enemy, Display display)
+        {
+            this.player = player;
+            this.enemy = enemy;
+            this.display = display;
+
+            playerHealth = display.HP;
+        }
 
         /*
-         * TODO: 
-         * This method will implement the scrolling text. 
+         * TODO: [[Front end]]  
+         * implements the scrolling text dialogue stuff. 
          * 
          * Basically we'll use the logic of the menu we did in class for this part. 
          * This will display the options the user can choose from 
-         * ** Attack -> Techniques
+         * ** Attack -> transition to option of which enemy to attack
          * ** Defend 
-         * ** Consumable
+         * ** Consumable -> will disappear if player is only allowed to use one consumable, else chooses from list 
          * ** Escape 
-         * ** Optional: Special moves 
-         * 
-         * Depending on what course of action the player takes, the enemy will respond in kind 
-         * using a random generator. 
-         * 
-         * This method will also incorporate the following helper methods which are seen below.
-         * 
          */
 
-        /*
-         * TODO: 
-         * Method that randomizes enemy attacks
-         * Parameters: Enemy, possibly a range for the random generator but that can be 
-         *              incorporated into the enemy information
-         * 
-         * Implement a random generator using Random r = new Random(); 
-         * Depending on how we want the likelyhood of each attack/miss to be, we can change the range
-         * For now we can just use mod. If whatever number r is divisible by 2, attack -- else, miss. 
-         * 
-         * if r is divisble by 2
-         *    go through the list randomly, choose an attack and go to method below
-         * else 
-         *    display a message saying the enemy has missed
-         * 
-         */
+        // Random generator. 
+        // Might need to use a seed as a parameter 
+        public Boolean IsSuccessful() 
+        {
+            Random r = new Random();
+            int num = r.Next(99);
+
+            if (num % 2 == 0)
+                return true;
+            else
+                return false;
+        }
+
+        public void Escape()
+        {
+            if (IsSuccessful())
+            {
+                // end battle 
+                // "escape successful"
+                // transition to end screen displaying 0 exp/money rewarded and no items gained 
+            } 
+            // else, does nothing, makes no impact on battle except maybe display a message 
+            // saying escape was unsuccessful
+        }
 
         /*
-         * TODO: 
          * Method that actually subtracts the health and whatnot 
-         * Parameters: Player, Enemy
-         * 
-         * if player is attacking 
-         *    if player did not miss
-         *       subtract enemy health by player attack points - enemy defense/resistance
-         * 
-         * if enemy is attacking 
-         *    if enemy did not miss
-         *       subtract player health by enemy attack points - player shield 
-         * 
+         * Parameters it will change into: Player, Enemy
          */
+        public void Battle()
+        {
+            // Player needs a default speed. 
+
+            // if player speed is greater than enemy speed 
+            // player attacks first 
+                if (IsSuccessful())
+                {
+                    // currently there is one enemy so we just use enemy 
+                    enemy.HP = enemy.HP; // - player.atk + enemy.def; 
+
+                    // else we would use this instead 
+                    // for (Enemy e : enemyList) 
+                    //     if e == enemy selected by player 
+                            // enemy.HP -= player.atk 
+                }
+
+                // use a for loop like the above if we use enmylist instead of enemy 
+                // now enemy attacks 
+                if (IsSuccessful())
+                {
+                    playerHealth = playerHealth; //- currenemy.atk + player.def 
+                }
+            // else, do the same above but reverse the order so enemy attacks first 
+        }
 
         /*
          * TODO: 
@@ -93,20 +107,6 @@ namespace Project3
          *      if player levels up, increase attack points and defense 
          *   Randomly pick an item from the item drop list and return it 
          */
-
-        /**
-         * TODO: 
-         * Method for escape option 
-         * Returns a boolean 
-         * 
-         * Use a random generator
-         * Depending on range.
-         * 
-         * If  r % 2 == 0
-         *  return true -- escape successful
-         * else 
-         *  return false 
-         * /
 
         /*
          * TODO 

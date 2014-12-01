@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
-    class World
+    public class World
     {
         public Game1 game;
         public Camera camera;

@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
-    class Display
+    public class Display
     {
         Player p;
         public int HP { set; get; }
