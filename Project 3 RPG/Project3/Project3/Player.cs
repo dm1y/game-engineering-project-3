@@ -14,7 +14,7 @@ namespace Project3
         public World world;
 
         public Inventory playerInventory;
-
+        public Boolean mayContinue = false;
         /* - Directional Textures - 
          * Using the booleans, update() and draw() will handle
          * the cases for how the player moves in each direction.
@@ -121,6 +121,7 @@ namespace Project3
             //If the player is interacting, delegate all keyboard commands into the NPC. 
             if (isInteracting)
             {
+                //if current NPC is finished,
                 if (currentNPC.isFinished)
                 {
                     isInteracting = false;
@@ -128,7 +129,15 @@ namespace Project3
                 }
                 else
                 {
-                    currentNPC.Update(keyboard);
+                    if (keyboard.IsKeyDown(Keys.Enter) && mayContinue)
+                    {
+                        currentNPC.Update(keyboard);
+                        mayContinue = false;
+                    }
+                    else if (keyboard.IsKeyUp(Keys.Enter) && !mayContinue)
+                    {
+                        mayContinue = true;
+                    }
                 }
             }
 
@@ -157,7 +166,11 @@ namespace Project3
                     else {
                         SetIdle();
                     }
-                    if (keyboard.IsKeyDown(Keys.Enter))
+                    if (keyboard.IsKeyUp(Keys.Enter) && !mayContinue)
+                    {
+                        mayContinue = true;
+                    }
+                    if (keyboard.IsKeyDown(Keys.Enter) && mayContinue)
                     {
                         CheckInteract();
                     }
@@ -357,6 +370,7 @@ namespace Project3
             if (tileToCheck.isInteract)
             {
                 isInteracting = true;
+                mayContinue = false;
                 currentNPC = tileToCheck.npc;
             }
             //and then checking logic here
@@ -376,8 +390,6 @@ namespace Project3
             }
             else if (facingEast)
             {
-                Console.Write(true);
-                Console.Write(currPosition);
                 playerEast.Draw(spriteBatch);
                 //spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
             }

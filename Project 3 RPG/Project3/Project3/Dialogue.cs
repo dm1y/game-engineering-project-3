@@ -27,7 +27,6 @@ namespace Project3
         // Consider this an ADVANCED CONCEPT. May not be even used in the final. 
         public int[] dialoguePoints;
         SpriteFont font;
-        public Boolean canContinue = false;
 
         public Dialogue(SpriteFont font)
         {
@@ -77,18 +76,10 @@ namespace Project3
          */
         public void Update(KeyboardState keyboard)
         {
-            if (keyboard.IsKeyUp(Keys.Enter))
-            {
-                canContinue = true;
-            }
-            if (keyboard.IsKeyDown(Keys.Enter) && canContinue)
-            {
-                if (!isFinished())
+            if (!isFinished())
                 {
                     AdvanceLine();
                 }
-                canContinue = false;
-            }
         }
 
         public Boolean isFinished()

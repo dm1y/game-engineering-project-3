@@ -24,7 +24,6 @@ namespace Project3
 
         public Dialogue dialogue;
         public Shop shop;
-        Boolean canGo = false;
         public NPC(Dialogue dialogue)
         {
             this.dialogue = dialogue;
@@ -72,16 +71,11 @@ namespace Project3
 
                 //if the dialogue is finished and enter is UP, then we have just hit enter onto the last line. make it possible
                 //to continue.
-                if (dialogue.isFinished() && !canGo && keyboard.IsKeyUp(Keys.Enter))
-                {
-                    canGo = true;
-                }
                 //if enter is DOWN and we can go, we will reset the dialogue, set isFinished = true, and turn canGo off
-                if (keyboard.IsKeyDown(Keys.Enter) && canGo)
+                if (keyboard.IsKeyDown(Keys.Enter) && dialogue.isFinished())
                 {
                     dialogue.ResetDialogue();
                     isFinished = true;
-                    canGo = false;
                 }
                 else
                 {
