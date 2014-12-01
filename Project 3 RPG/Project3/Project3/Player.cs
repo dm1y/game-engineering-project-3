@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Project3
 {
-    public class Player
+    class Player
     {
 
         public World world; 
@@ -38,11 +38,6 @@ namespace Project3
         private Vector2 nextPosition;  /* Preemptive movement  */
         private Vector2 currPosition; /* Position of player IN WORLD SPACE */
         private Vector2 currPositionCoord; /* Position of player in MAP COORDINATE SPACE */
-
-        /* For Battle System */
-        public int atk;
-        public int def;
-        public int speed; 
 
         public Vector2 position
         {
@@ -385,18 +380,6 @@ namespace Project3
             {
                 currentNPC.Draw(spriteBatch);
             }
-        }
-
-        // used when player equips different item, changes attack & speed
-        public void setAttack(Item item)
-        { 
-            // set atk equal to the atk power of item 
-        }
-
-        // used when player equips different item, changes defense & speed 
-        public void setDefense(Item item)
-        { 
-            // set def equal to the def power of item
         }
     }
 }
