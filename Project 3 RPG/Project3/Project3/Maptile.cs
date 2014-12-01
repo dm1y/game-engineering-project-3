@@ -49,7 +49,7 @@ namespace Project3
         public Texture2D npcTexture;
 
         public int transitionTo;
-        public List<String> enemySpawnTypes;
+        public List<Enemy> enemySpawnTypes;
 
         /* - Positions -
          * coordPosition - gives the position of the maptile in coordinate form(ie, "4,7")
@@ -77,7 +77,7 @@ namespace Project3
 
             /* Initializes other attributes that might not pertain to all tiles */
             transitionTo = 0;
-            enemySpawnTypes = new List<String>();
+            enemySpawnTypes = new List<Enemy>();
             npc = null;
 
             if (isCollidable)

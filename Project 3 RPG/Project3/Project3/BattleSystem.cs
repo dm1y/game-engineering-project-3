@@ -29,14 +29,16 @@ namespace Project3
         int levelGained;
         int moneyGained;
 
+        List<Enemy> enemyList;
+
         /* Information needed: 
             Player : attack power, defense power, speed, item consumable 
             Enemy : need its health, attack power, defense power, speed, exp given
             Display : need to adjust/set level / exp / money if it improves */
-        public BattleSystem(Player player, Enemy enemy, Display display)
+        public BattleSystem(Player player, List<Enemy> list, Display display, int currentMap)
         {
             this.player = player;
-            this.enemy = enemy;
+            enemyList = list;
             this.display = display;
 
             playerHealth = display.HP;
@@ -45,6 +47,9 @@ namespace Project3
             lose = false;
         }
 
+        public BattleSystem()
+        {
+        }
         /*
          * TODO: [[Front end]] implements the scrolling text dialogue stuff. 
          * 
@@ -67,6 +72,7 @@ namespace Project3
             currentKeyboardState = Keyboard.GetState();
             if (currentKeyboardState.IsKeyDown(Keys.F))
             { 
+                // go back to world somehow 
             }
 
             if (endOfBattle)
@@ -232,9 +238,7 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Begin();
-
-            sb.End();
+            sb.Dispose();
         }
     }
 }

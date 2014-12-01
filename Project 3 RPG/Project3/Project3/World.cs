@@ -146,15 +146,19 @@ namespace Project3
         int height = 40;
 
         Map map;
+        int currMapNum; 
 
         Player player;
         Display HUD;
+        BattleSystem battleSystem;
+        bool currBattle;
 
         public World(Game1 game, Camera c)
         {
             this.game = game;
             camera = c;
             map = new Map(game);
+            currBattle = false;
         }
 
         //WORK IN PROGRESS
@@ -162,6 +166,7 @@ namespace Project3
         {
             map.LoadContent();
             map.GenerateMap(0);
+            currMapNum = 0;
             
             currentMap = map;
 
@@ -198,12 +203,21 @@ namespace Project3
 
             /* Loads new map */
             map.GenerateMap(path);
+            currMapNum = path;
             player.ChangeMap(map);
         }
 
-        public void TransitionBattle()
+        public void TransitionBattle(Maptile tile)
         {
- 
+            currBattle = true;
+            //battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum); 
+            battleSystem = new BattleSystem();
+        }
+
+        public void endBattle()
+        {
+            currBattle = false;
+            battleSystem = null;
         }
 
         public void Update(GameTime gametime)
@@ -229,7 +243,10 @@ namespace Project3
             
             player.Draw(sb);
             HUD.Draw(sb);
-            
+
+            if (currBattle)
+                battleSystem.Draw(sb);
+               
             sb.End();
         }
     }
