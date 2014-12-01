@@ -107,7 +107,7 @@ namespace Project3
                 merch_inv = new Inventory(merch_items);
             }
             Shop merchant_shop = new Shop(merch_inv);
-            NPC merchant = new NPC(merchant_shop);
+            NPC merchant = new NPC(merchant_shop, world);
 
             Texture2D merch_skin = world.game.Content.Load<Texture2D>("Items/merchant");
             world.currentMap.currentMap[6, 6].isInteract = true;
@@ -161,7 +161,7 @@ namespace Project3
                         isCoord = true;
                         npc_dialogue = new Dialogue(world);
                         npc_dialogue.SetDialogue(npc_lines);
-                        NPC townsperson = new NPC(npc_dialogue);
+                        NPC townsperson = new NPC(npc_dialogue, world);
 
                         world.currentMap.currentMap[(int)coord.X, (int)coord.Y].isInteract = true;
                         world.currentMap.currentMap[(int)coord.X, (int)coord.Y].npc = townsperson;

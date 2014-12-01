@@ -10,6 +10,8 @@ namespace Project3
 {
     public class NPC
     {
+        World world;
+
         Texture2D speechBubble;
         //Texture2D 
         /* NPC methods -
@@ -27,21 +29,24 @@ namespace Project3
 
         public Dialogue dialogue;
         public Shop shop;
-        public NPC(Dialogue dialogue)
+        public NPC(Dialogue dialogue, World world)
         {
+            this.world = world;
             this.dialogue = dialogue;
             isDialogueNPC = true;
             isShopNPC = false;
             isFinished = false;
-            speechBubble = dialogue.world.game.Content.Load<Texture2D>("Overlays/speech_maindialogue_416x96");
+            speechBubble = world.game.Content.Load<Texture2D>("Overlays/speech_maindialogue_416x96");
         }
 
-        public NPC(Shop shop)
+        public NPC(Shop shop, World world)
         {
+            this.world = world;
             this.shop = shop;
             isShopNPC = true;
             isDialogueNPC = false;
             isFinished = false;
+            shop.LoadTextures(world);
         }
 
         public void Update(KeyboardState keyboard)
