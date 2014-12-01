@@ -19,9 +19,10 @@ namespace Project3
         int itemBuyPrice;
         int itemSellPrice;
         public int quantity;
-        int block;
-        int heal;
-        int damage;
+        public int block { get; private set; }
+        public int heal { get; private set; }
+        public int damage { get; private set; }
+        public int weight { get; private set; }
 
         Boolean isShield = false;
         Boolean isPotion = false;
@@ -37,6 +38,7 @@ namespace Project3
             if (isShield)
             {
                 block = ItemGeneralEffect;
+                weight = 1;
                 this.isShield = true;
             }
             else if (isPotion)
@@ -47,6 +49,7 @@ namespace Project3
             else if (isWeapon)
             {
                 damage = ItemGeneralEffect;
+                weight = 2;
                 this.isWeapon = true;
             }
             quantity = 1;

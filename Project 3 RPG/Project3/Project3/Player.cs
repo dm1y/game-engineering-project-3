@@ -85,7 +85,7 @@ namespace Project3
             /* Default stats for battle system */
             atk = 1;
             def = 0;
-            speed = 5; 
+            speed = 10; 
         }
 
 
@@ -400,14 +400,16 @@ namespace Project3
 
         // adjusts stats according to weapon item properties 
         public void setAtk(Item item)
-        { 
-            // atk = item.damage; 
+        {
+            atk = item.damage;
+            speed -= item.weight;
         }
 
         // adjusts stats according to defense item properties 
         public void setDef(Item item)
-        { 
-            // def = item.block;
+        {
+            def = item.block;
+            speed -= item.weight;
         }
     }
 }

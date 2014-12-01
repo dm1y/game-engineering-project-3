@@ -17,36 +17,11 @@ namespace Project3
         public Game1 game;
         public Camera camera;
 
-        /* TODO: Create boundaries variable stating the map size 
-         * 
-         * Legend: Game Window is 960 x 640 
-         * Each tile window is a 30 x 20. 
-         * 
-         * So Map Size of 60 x 60 is 960*2 by 640*3. 
-         * That way we can keep track of player movements. 
-         */
-
         /*
          * HIERARCHY NOTES: 
          * 
-         * Game1 -> Menu Screen 
-         * Menu Screen -> Transitions to World 
-         * World creates Player / Enemies / Maps / Quests based on XML stuff 
-         * **(Diana shall do data driven stuff soon I swear -- BY THIS WEEKEND PLS)
-         * Camera is independent for the most part but relies on position of player 
-         * 
-         * TODO: Create an Enemy class
-         * In world, create a List of enemies for each different map 
-         *  so when player encounters a tile that is an enemy tile (random generator implemented to determine if enemy is encountered or not)
-         *  go through list of enemies, randomly pick one, and pass it into battle system 
-         *  
-         * ** Alternative method, pass in the list of enemies to the battle system class instead and pick enemy randomly from there 
-         *  ** Might be better to do list so we can determine quantity and variety. 
-         *  ** constructor changes of enemy will be adding a quantity of enemies (1 for different types, 2 for total num of enemies)
-         * ** details on enemies should be in battle sys clss
-         *
          * BattleSystem(player, enemy) -> Dialogue class
-         * TODO: Implement Battle System Class 
+         * TODO: SOMEHOW TRANSITION TO BATTLESYS CLASS 
          * ** see battle sys class for details 
          *       ---- HUD CLASS --- 
          *          Note that we should reset the player's health back to max after a battle!
@@ -207,12 +182,13 @@ namespace Project3
             player.ChangeMap(map);
         }
 
+        // not sure how to get things transitioned without enumerator, use this as a temp logic for now 
         public void TransitionBattle(Maptile tile)
         {
             currBattle = true;
-            //battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum); 
-            battleSystem = new BattleSystem();
+            battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum);
         }
+
 
         public void endBattle()
         {

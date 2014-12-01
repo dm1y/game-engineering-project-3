@@ -8,10 +8,11 @@ namespace Project3
 
     public class Enemy
     {
-        //Hit points that get docked off every time player hits enemy
+        // Hit points that get docked off every time player hits enemy
         public int HP { set; get; }
 
-        //public float enemySpeed { set; get; }
+        // Enemy speed 
+        public int enemySpeed { set; get; }
 
         // The amount of damage the enemy puts on the player 
         public int Damage { set; get; }
@@ -22,7 +23,7 @@ namespace Project3
         public Animation EnemyAnimation;
 
         //List of items that player can inherit from a dead enemy.
-         List <Item> EnemyItemsList = new List<Item>();
+        public List <Item> EnemyItemsList = new List<Item>();
 
         // The position of the enemy in relation to the top left of the screen
         public Vector2 Position;
@@ -30,16 +31,15 @@ namespace Project3
         // The current state of the Enemy 
         public bool Active { set; get; }
 
-        public Game1 game { set; get; }
 
-        public Enemy(Game1 game)
+        public Enemy(int hp, int speed, int atk, int exp, List<Item> list)
         {
-            this.game = game;
-        }
-
-        public Enemy()
-        {
-
+//            this.game = game;
+            HP = hp;
+            enemySpeed = speed;
+            Damage = atk;
+            Experience = exp;
+            EnemyItemsList = list;
         }
 
         public void Initialize(Animation animation, Vector2 position)
@@ -54,15 +54,15 @@ namespace Project3
             Active = true;
 
             // Enemy's health starts at 10
-            HP = 10;
+//            HP = 10;
 
             // The amount of damage the enemy can do to the player
-            Damage = 2;
+  //          Damage = 2;
 
             //enemySpeed = 5f;
 
             // Each enemy has 100 experience points which can be transferred to player.
-            Experience = 100;
+    //        Experience = 100;
         }
 
         public void Update(GameTime gameTime)

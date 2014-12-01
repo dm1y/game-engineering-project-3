@@ -16,7 +16,6 @@ namespace Project3
     {
         Display display;
         Player player;
-        Enemy enemy;
 
         int playerHealth;
 
@@ -24,12 +23,13 @@ namespace Project3
         bool win;
         bool lose;
 
-        Item itemGained;
+
         int expGained;
         int levelGained;
         int moneyGained;
 
         List<Enemy> enemyList;
+        List<Item> itemGained;
 
         /* Information needed: 
             Player : attack power, defense power, speed, item consumable 
@@ -40,6 +40,11 @@ namespace Project3
             this.player = player;
             enemyList = list;
             this.display = display;
+
+            expGained = 0;
+            levelGained = 0;
+            moneyGained = 0;
+            itemGained = new List<Item>();
 
             playerHealth = display.HP;
             endOfBattle = false;
@@ -67,7 +72,10 @@ namespace Project3
         // Update method 
         public void Update()
         {
-            // call backend methods after getting user selection implemented 
+            // call backend methods after getting user selection implemented
+ 
+            // for testing purposes to try and get map/battle sys transitions. 
+            //have no idea how this will work. 
             KeyboardState currentKeyboardState;
             currentKeyboardState = Keyboard.GetState();
             if (currentKeyboardState.IsKeyDown(Keys.F))
@@ -97,7 +105,9 @@ namespace Project3
         
         private void UseConsumable()
         { 
+            // depending on how you go about the inventory in UI 
             // playerHealth += player.inventory?.item.heal;
+            // remove item from player's inventory 
         }
 
         private void Escape()
@@ -118,28 +128,50 @@ namespace Project3
          */
         private void Battle()
         {
-            // Note: player needs a default speed. 
-
-            // if player speed is greater than enemy speed 
-            // player attacks first 
-                if (IsSuccessful())
+            foreach (Enemy e in enemyList)
+            {
+                if (player.speed > e.enemySpeed)
                 {
-                    // currently there is one enemy so we just use enemy 
-                    enemy.HP = enemy.HP; // - player.atk + enemy.def; 
+                    // tweak after UX/UI: if e is equal to the enemy the player wants to attack 
 
-                    // else we would use this instead 
-                    // for (Enemy e : enemyList) 
-                    //     if e == enemy selected by player 
-                            // enemy.HP -= player.atk 
+                    // if player does not miss, enemy HP goes down 
+                    if (IsSuccessful())
+                    {
+                        e.HP = e.HP - player.atk;
+                    }
+                    checkBattleWin(e);
+
+                    // if enemy isn't dead 
+                    if (e.HP != 0)
+                    {
+                        if (IsSuccessful())
+                        {
+                            playerHealth = playerHealth - e.Damage + player.def;
+                        }
+                    }
+
+                    checkBattleLose(playerHealth);
                 }
-
-                // use a for loop like the above if we use enmylist instead of enemy 
-                // now enemy attacks 
-                if (IsSuccessful())
+                else
                 {
-                    playerHealth = playerHealth - enemy.Damage; //+ player.def 
+                    // enemy does damage first 
+                    if (IsSuccessful())
+                    {
+                        playerHealth = playerHealth - e.Damage + player.def;
+                    }
+
+                    checkBattleLose(playerHealth);
+                    // TWEAK HERE WHEN UI/UX IS DONE: if e is equal to the enemy the player wants to attack 
+
+                    // if player does not miss, enemy HP goes down 
+                    if (IsSuccessful())
+                    {
+                        e.HP = e.HP - player.atk;
+                    }
+
+                    checkBattleWin(e);
                 }
-            // else, do the same above but reverse the order so enemy attacks first 
+            }
         }
 
         // parameter is either enemy or enemy list
@@ -148,34 +180,27 @@ namespace Project3
         {
             if (e.HP == 0)
             {
-                win = true;
-                // player wins so we have to recalculate player stats
                 expGained += e.Experience;
-
-                // if display.exp reaches % exp.threshold == 0
-                    // levelGained = display.Level++;
-                    // increase level and reset exp and increase threshold in Display class 
-                    // so something like setLevel() (basically an incrementor)
-                    //                   setExp() - (adds it if threshold isn't reached, sets to 0 if threshold reached and adds on remainder)
-                    //                   setThreshold() will be needed in display class to do these calculations and save them
-                    // note: threshold will not be viewable to users 
-                // increase display.money by monster worth (e.Worth)
-                    // moneyGained = e.Worth;
-                    // add this to current player money using setMoney() so it stays in Display class 
-
-                // call gainItemSpoils(e)  
-
-                transition();
+                gainItemSpoils();
+                enemyList.Remove(e);
             }
-            
-            // if its a list of enemies, duplicate a list in the initalization and call that checkEnemyList
-            // iterate through enemy list, checking HP health, if it's 0, add exp then from remove it 
-            // so basically for (enemy e in enemylist) 
-            //                      if (e.HP == 0)
-           //                            expGained += e.exp
-            //                           remove(e)
-            // outside for loop, have an if statement. if checkEnemyList is empty, then do the win logic found inside if (e.HP = 0). 
-            
+
+            if (enemyList.Count == 0)
+            {
+                transition();
+                win = true;
+                // if display.exp reaches % exp.threshold == 0
+                // levelGained = display.Level++;
+                // increase level and reset exp and increase threshold in Display class 
+                // so something like setLevel() (basically an incrementor)
+                //                   setExp() - (adds it if threshold isn't reached, sets to 0 if threshold reached and adds on remainder)
+                //                   setThreshold() will be needed in display class to do these calculations and save them
+                // note: threshold will not be viewable to users 
+                // increase display.money by monster worth (e.Worth)
+                // moneyGained = e.Worth;
+                // add this to current player money using setMoney() so it stays in Display class 
+            }
+                        
         }
         private void checkBattleLose(int health)
         {
@@ -186,15 +211,43 @@ namespace Project3
             }
         }
 
-        private void gainItemSpoils(Enemy e)
-        { 
-           // assumes enemy will have a list of items that can be dropped 
-           // Random r = new Random();
-           // int num = r.Next(list size - 1)
-           
-           // get the num index of the list of item 
-           // set it equal to itemGained. 
-           // add to player inventory 
+        private void gainItemSpoils()
+        {
+            Random r = new Random();
+
+            // If there is only one enemy 
+            if (enemyList.Count == 1)
+            {
+                if (enemyList[0].EnemyItemsList == null || enemyList[0].EnemyItemsList.Count == 0)
+                    return;
+                else
+                {
+                    int random = r.Next(enemyList[0].EnemyItemsList.Count);
+                    if (random != enemyList[0].EnemyItemsList.Count)
+                    {
+                        itemGained.Add(enemyList[0].EnemyItemsList[random]);
+                        player.playerInventory.AddToInventory(enemyList[0].EnemyItemsList[random], 1);
+                    }
+                }
+            }
+            
+            // If there are multiple 
+            else
+            {
+                int rand = r.Next(enemyList.Count);
+                if (enemyList[rand].EnemyItemsList == null || enemyList[rand].EnemyItemsList.Count == 0)
+                    return;
+                else
+                {
+                    int random = r.Next(enemyList[rand].EnemyItemsList.Count);
+                    if (random != enemyList[rand].EnemyItemsList.Count)
+                    {
+                        itemGained.Add(enemyList[rand].EnemyItemsList[random]);
+                        player.playerInventory.AddToInventory(enemyList[rand].EnemyItemsList[random], 1);
+                    }
+                }
+            }
+
         }
 
         private void transition()
@@ -217,7 +270,7 @@ namespace Project3
                     // display it 
                 // if (moneyGained > 0)
                     // display it 
-                // if (itemGained != null)
+                // if (itemGained.Count > 0)
                     // display it 
 
                 // hitting enter or spacebar to go back to map (?)
@@ -238,7 +291,6 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Dispose();
         }
     }
 }

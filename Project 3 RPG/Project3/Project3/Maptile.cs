@@ -110,10 +110,12 @@ namespace Project3
             // depending on the type of tile, just hard code the string of monsters in 
             // otherwise make it data driven
 
+            // easy run, 1 easy enemy 
             if (texture.Name == "danger")
             {
-                Enemy e = new Enemy(); 
-                //enemySpawnTypes 
+                // fill null in later once items are set 
+                Enemy e = new Enemy(10, 2, 2, 100, null);
+                enemySpawnTypes.Add(e);
             }
             //    pass in list of enemies that are easy
 
