@@ -71,6 +71,10 @@ Content\Items\Weapons\scimitar.xnb
 Content\Items\Weapons\stick.xnb
 Content\Items\merchant.xnb
 Content\Items\npc.xnb
+Content\Overlays\item_green_overlay.xnb
+Content\Overlays\item_overlay.xnb
+Content\Overlays\item_purple_overlay.xnb
+Content\Overlays\item_teal_overlay.xnb
 Content\DialogueFont.xnb
 Content\Displayfont.xnb
 Content\Maps\test0.txt
