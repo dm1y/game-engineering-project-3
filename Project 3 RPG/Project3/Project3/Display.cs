@@ -30,6 +30,8 @@ namespace Project3
         public bool ShowHUD;
         //Background Texture
         public Texture2D HUDBackGround;
+        public Texture2D HUDOverlay;
+        public Texture2D HUDTeal;
         public List<Item> items;
 
         public Display(Player player, Game game)
@@ -65,6 +67,9 @@ namespace Project3
         {
             font = content.Load<SpriteFont>("Displayfont");
             HUDBackGround = content.Load<Texture2D>("Overlays/hud_maindisplay_96x96");
+            HUDOverlay = content.Load<Texture2D>("Overlays/item_overlay");
+            HUDTeal = content.Load<Texture2D>("Overlays/item_teal_overlay");
+
         }
 
         public void Update(GameTime gametime)
@@ -90,15 +95,19 @@ namespace Project3
                 sb.DrawString(font, "Money: $" + money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
                 int offset = 20;
-                foreach(Item item in p.playerInventory.items)
+                for (int i = 0; i < 10; i++)
                 {
-                    if (item.quantity > 0)
+                    sb.Draw(HUDOverlay, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 290 - HUDOverlay.Height), Color.White);
+                    
+                    if (i < p.world.player.playerInventory.items.Count)
                     {
-                        sb.Draw(item.itemTexture, new Vector2(p.world.camera.Position.X / 2 + 100 + offset, p.world.camera.Position.Y / 2 + 290 - item.itemTexture.Height), Color.White);
-                        offset += 50;
-                    }
-                }
+                        sb.Draw(HUDTeal, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 290 - HUDTeal.Height), Color.White);
 
+                        sb.Draw(p.world.player.playerInventory.items[i].itemTexture, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 290 - p.world.player.playerInventory.items[i].itemTexture.Height), Color.White);
+
+                    }
+                    offset += 32;
+                }
 
             }
         }
