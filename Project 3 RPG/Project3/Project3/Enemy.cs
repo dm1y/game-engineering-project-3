@@ -20,6 +20,9 @@ namespace Project3
         //Experience that gets added to player's experience after enemy is killed.
         public int Experience { set; get; }
 
+        // Money left behind by killing enemy
+        public int bounty;
+
         public Animation EnemyAnimation;
 
         //List of items that player can inherit from a dead enemy.
@@ -32,13 +35,14 @@ namespace Project3
         public bool Active { set; get; }
 
 
-        public Enemy(int hp, int speed, int atk, int exp, List<Item> list)
+        public Enemy(int hp, int speed, int atk, int exp, int money, List<Item> list)
         {
 //            this.game = game;
             HP = hp;
             enemySpeed = speed;
             Damage = atk;
             Experience = exp;
+            bounty = money;
             EnemyItemsList = list;
         }
 

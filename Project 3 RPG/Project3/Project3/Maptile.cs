@@ -114,7 +114,7 @@ namespace Project3
             if (texture.Name == "danger")
             {
                 // fill null in later once items are set 
-                Enemy e = new Enemy(10, 2, 2, 100, null);
+                Enemy e = new Enemy(10, 2, 2, 100, 5, null);
                 enemySpawnTypes.Add(e);
             }
             //    pass in list of enemies that are easy

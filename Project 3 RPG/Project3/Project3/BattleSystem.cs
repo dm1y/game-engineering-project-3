@@ -14,7 +14,7 @@ namespace Project3
 {
     public class BattleSystem
     {
-        Display display;
+        Display HUD;
         Player player;
 
         int playerHealth;
@@ -39,7 +39,7 @@ namespace Project3
         {
             this.player = player;
             enemyList = list;
-            this.display = display;
+            this.HUD = display;
 
             expGained = 0;
             levelGained = 0;
@@ -181,6 +181,7 @@ namespace Project3
             if (e.HP == 0)
             {
                 expGained += e.Experience;
+                moneyGained += e.bounty;
                 gainItemSpoils();
                 enemyList.Remove(e);
             }
@@ -189,16 +190,26 @@ namespace Project3
             {
                 transition();
                 win = true;
-                // if display.exp reaches % exp.threshold == 0
-                // levelGained = display.Level++;
-                // increase level and reset exp and increase threshold in Display class 
-                // so something like setLevel() (basically an incrementor)
-                //                   setExp() - (adds it if threshold isn't reached, sets to 0 if threshold reached and adds on remainder)
-                //                   setThreshold() will be needed in display class to do these calculations and save them
-                // note: threshold will not be viewable to users 
-                // increase display.money by monster worth (e.Worth)
-                // moneyGained = e.Worth;
-                // add this to current player money using setMoney() so it stays in Display class 
+
+                int total = expGained + HUD.experience;
+
+                // Checks if it has reached above threshold 
+                if (total > HUD.threshold)
+                {
+                    // Increases level 
+                    HUD.increaseLevel();
+                    levelGained = HUD.level;
+
+                    // Increases threshold by 50
+                    HUD.increaseThreshold();
+                }
+
+                // Sets experience 
+                int remainder = total - HUD.threshold;
+                HUD.setExperience(remainder);
+
+                // Increases player money 
+                player.playerInventory.money += moneyGained;
             }
                         
         }

@@ -19,6 +19,8 @@ namespace Project3
         public int HP { set; get; }
         public int level { set; get; }
         public int money { set; get; }
+        public int experience { set; get; }
+        public int threshold { set; get; }
         //public int ScreenWidth;
         //public int ScreenHeight;
 
@@ -39,9 +41,26 @@ namespace Project3
             items = new List<Item>();
             HP = 0;
             level = 1;
-            money = 0;
-
+            money = player.playerInventory.money;
+            experience = 0;
+            threshold = 10;
         }
+
+        public void increaseLevel()
+        {
+            level++;
+        }
+
+        public void setExperience(int exp)
+        {
+            experience = exp;
+        }
+
+        public void increaseThreshold()
+        {
+            threshold += 50;
+        }
+
         public void LoadContent(ContentManager content)
         {
             font = content.Load<SpriteFont>("Displayfont");
