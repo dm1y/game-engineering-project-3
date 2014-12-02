@@ -332,7 +332,6 @@ namespace Project3
         {
             Maptile tileToCheck = map.currentMap[(int)currPositionCoord.X,(int)currPositionCoord.Y];
 
-
             /* Checks if the tile is a transition tile and transitions to the map defined by the tile */
             if (tileToCheck.isTransition)
                 world.TransitionMap(tileToCheck.transitionTo);
@@ -340,6 +339,9 @@ namespace Project3
             if (tileToCheck.isDangerous)
             {
                 // TODO: Fill in. 
+                // transition to battle sys map 
+                // or draw battle sys map 
+                // will fill in after the UX/UI is done for battle sys
             }
             
         }
