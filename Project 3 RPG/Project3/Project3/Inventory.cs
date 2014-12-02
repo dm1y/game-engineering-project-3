@@ -22,7 +22,7 @@ namespace Project3
         public Item equippedWeapon;
         public Item equippedPotion;
 
-        public int maxSize;
+        public int maxSize = 10;
 
         public Inventory(List<Item> others)
         {

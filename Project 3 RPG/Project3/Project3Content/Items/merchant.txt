@@ -9,6 +9,7 @@ Items/Consumables/everclear Everclear 100 100 false true false
 Items/Weapons/stick Sharp_Stick 6 2 false false true
 Items/Weapons/dagger_small Small_Dagger 20 3 false false true
 Items/Weapons/dagger_curved Curved_Dagger 30 4 false false true
+Items/Weapons/cudgel Cudgel 35 5 false false true
 Items/Weapons/axe Axe 50 6 false false true
 Items/Weapons/club Club 75 8 false false true
 Items/Weapons/longsword Long_Sword 120 12 false false true

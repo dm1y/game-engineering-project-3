@@ -11,12 +11,13 @@ namespace Project3
     public class Shop
     {
         Texture2D money;
-        Texture2D shopmenu;
-        Texture2D shopmain;
-        Texture2D select;
+        Texture2D selectionmenu;
+        Texture2D main;
+        Texture2D selectarrow;
+        Texture2D shopspeech;
 
         public World world;
-        Player player;
+        //Player player;
         Inventory playerInventory;
         Inventory shopInventory;
         Boolean isBuying;
@@ -25,7 +26,8 @@ namespace Project3
         Boolean isConfirm;
 
         Boolean isErrorState;
-        String displayText;
+        String displayText = "Welcome!";
+        String displayLine2 = "";
         int quantityOf;
 
         public Boolean isFinished;
@@ -49,22 +51,33 @@ namespace Project3
         {
             this.world = world;
             money = world.game.Content.Load<Texture2D>("Overlays/speech_money_96x32");
-            shopmenu = world.game.Content.Load<Texture2D>("Overlays/shop_menu_96x96");
-            shopmain = world.game.Content.Load<Texture2D>("Overlays/shop_main_224x224");
-            select = world.game.Content.Load<Texture2D>("Overlays/arrow select");
+
+            selectionmenu = world.game.Content.Load<Texture2D>("Overlays/shop_menu_96x96");
+            main = world.game.Content.Load<Texture2D>("Overlays/shop_main_224x224");
+            selectarrow = world.game.Content.Load<Texture2D>("Overlays/arrow select");
+            shopspeech = world.game.Content.Load<Texture2D>("Overlays/shop_speech"); 
         }
+
         public void PlayerShop(Inventory playerInventory)
         {
             this.playerInventory = playerInventory;
             currentState = 0;
         }
 
+        public void ResetShop()
+        {
+            currentItemSelect = 0;
+            currentState = 0;
+            displayText = "Welcome!";
+            isFinished = false;
+        }
         #region Update Handler
         public void Update(KeyboardState keyboard)
         {
             // If player is notBuying and notSelling, then they must be in selection
             if (!isBuying && !isSelling)
             {
+                
                 if (keyboard.IsKeyDown(Keys.W))
                 {
                     currentState--;
@@ -89,6 +102,7 @@ namespace Project3
                 if (currentState == 2)
                 {
                     isFinished = true;
+                    displayText = "See you later!";
                     //Quit the shop, probably by calling it from player. 
                 }
                 else if (currentState == 1)
@@ -96,12 +110,14 @@ namespace Project3
                     //Enter SELL MODE
                     isSelling = true;
                     isBuying = false;
+                    return;
                 }
                 else if (currentState == 0)
                 {
                     //Enter BUY MODE
                     isBuying = true;
                     isSelling = false;
+                    return;
                 }
             }
 
@@ -118,7 +134,8 @@ namespace Project3
                 }
                 currentItemSelect = 0;
                 quantityOf = 0;
-                displayText = "What will you be buying?";
+                displayText = "How can I help you?";
+                displayLine2 = "";
             }
 
             if (isBuying)
@@ -139,6 +156,7 @@ namespace Project3
         //enough money to buy. if so, player gets x quantity of that item added to inventory? 
         public void HandlePurchases(KeyboardState kb)
         {
+            displayLine2 = "";
             if (!isErrorState)
             {
                 if (kb.IsKeyDown(Keys.W) && !isConfirm)
@@ -158,19 +176,24 @@ namespace Project3
                     }
                 }
 
-                if (kb.IsKeyDown(Keys.Enter))
+                if (kb.IsKeyDown(Keys.Enter) && !isConfirm)
                 {
                     isConfirm = true;
                     quantityOf = 1;
+                    Item itemBuy = shopInventory.items.ElementAt(currentItemSelect);
+                    displayText = itemBuy.itemName + " x " + quantityOf + "?";
+                    displayLine2 = "That'll be " + itemBuy.getBuyPrice();
+                    return;
                 }
 
                 if (isConfirm == true)
                 {
-                    if (kb.IsKeyDown(Keys.W))
+                    if (kb.IsKeyDown(Keys.W) && kb.IsKeyUp(Keys.S))
                     {
                         quantityOf++;
+
                     }
-                    if (kb.IsKeyDown(Keys.S))
+                    else if (kb.IsKeyDown(Keys.S) && kb.IsKeyUp(Keys.W))
                     {
                         quantityOf--;
                         if (quantityOf < 1)
@@ -178,23 +201,33 @@ namespace Project3
                             quantityOf = 1;
                         }
                     }
+                    Item itemBuy = shopInventory.items.ElementAt(currentItemSelect);
+                    displayText = itemBuy.itemName + " x " + quantityOf + "?";
+                    int totalPrice = itemBuy.getBuyPrice() * quantityOf;
+                    displayLine2 = "That'll be " + totalPrice;
                     if (kb.IsKeyDown(Keys.Back))
                     {
                         isConfirm = false;
+                        displayText = "Anything else?";
+                        displayLine2 = "";
                     }
-                    if (kb.IsKeyDown(Keys.Enter))
+                    else if (kb.IsKeyDown(Keys.Enter))
                     {
-                        Item itemBuy = shopInventory.items.ElementAt(currentItemSelect);
                         //displayText = itemBuy.itemName + 
-                        int totalPrice = itemBuy.getBuyPrice() * quantityOf;
                         int endAmount = playerInventory.money - totalPrice;
                         if (endAmount < 0)
                         {
+                            isErrorState = true;
+                            displayText = "You need more cash!";
+                            displayLine2 = "";
                             //Set display message to not enough money error
 
                         }
                         else if (endAmount > 0 && playerInventory.InventoryIsFull())
                         {
+                            isErrorState = true;
+                            displayText = "Your bags are full!";
+                            displayLine2 = "";
                             //Set display message to inventory full error
 
                         }
@@ -211,7 +244,10 @@ namespace Project3
             {
                 if (kb.IsKeyDown(Keys.Enter))
                 {
+                    displayText = "Anything else?";
                     isErrorState = false;
+                    isConfirm = false;
+                    quantityOf = 0;
                 }
             }
         }
@@ -280,19 +316,86 @@ namespace Project3
 
         public void Draw(SpriteBatch sb)
         {
-            
+            //Speech Bubble - Left Side
+            Vector2 speech_pos = new Vector2(world.camera.Position.X / 2, world.camera.Position.Y / 2 + 32);
+            sb.Draw(shopspeech, speech_pos, Color.White);
 
+            //Money Display - Top Left
             Vector2 money_pos = new Vector2(world.camera.Position.X / 2, world.camera.Position.Y / 2);
             sb.Draw(money, money_pos, Color.White);
             
             sb.DrawString(world.font, playerInventory.money.ToString(), money_pos + new Vector2(8, 6), Color.White);
             if (!isBuying && !isSelling)
             {
-                Vector2 menu_pos = new Vector2(world.camera.Position.X / 2 + 384, world.camera.Position.Y / 2);
+                //Display speech default
+                sb.DrawString(world.shopDialogueFont, displayText, speech_pos + new Vector2(10, 8), Color.White);
 
-                sb.Draw(shopmenu, menu_pos, Color.White);
+                //Start menu selection
+                Vector2 menu_pos = new Vector2(world.camera.Position.X / 2 + 384, world.camera.Position.Y / 2);
+                Vector2 arrow_pos = menu_pos + new Vector2(8, 10 + currentState * 32);
+                sb.Draw(selectionmenu, menu_pos, Color.White);
+                sb.Draw(selectarrow, arrow_pos, Color.White);
+                sb.DrawString(world.font, "Buy", menu_pos + new Vector2(25, 10 + 0 * 32), Color.White);
+                sb.DrawString(world.font, "Sell", menu_pos + new Vector2(25, 7 + 1 * 32), Color.White);
+                sb.DrawString(world.font, "Leave", menu_pos + new Vector2(25, 5 + 2 * 32), Color.White);
             }
-            
+
+            else if (isBuying || isSelling)
+            {
+                Vector2 main_pos = new Vector2(world.camera.Position.X / 2 + 256, world.camera.Position.Y / 2);
+                sb.Draw(main, main_pos, Color.White);
+
+                if (isBuying)
+                {
+                    int[] pages = {5, 10, 15, 20, 25, 30};
+                    int currentpage = 1;
+                    Vector2 item_name_pos = main_pos + new Vector2(25, 10);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        int addToPage = i;
+                        if (currentItemSelect >= 5 && currentItemSelect < 10)
+                        {
+                            currentpage = 2;
+                            addToPage += 5;
+                        }
+                        if (currentItemSelect >= 10 && currentItemSelect < 15)
+                        {
+                            currentpage = 3;
+                            addToPage += 10;
+                        }
+                        if (currentItemSelect >= 15 && currentItemSelect < 20)
+                        {
+                            currentpage = 4;
+                            addToPage += 15;
+                        }
+                        if (currentItemSelect >= 20 && currentItemSelect < 25)
+                        {
+                            currentpage = 5;
+                            addToPage += 20;
+                        }
+                        if (currentItemSelect >= 25 && currentItemSelect < 30)
+                        {
+                            currentpage = 6;
+                            addToPage += 25;
+                        }
+                        sb.DrawString(world.font, shopInventory.items.ElementAt(addToPage).itemName, item_name_pos + new Vector2(0, 32 * i), Color.White);
+                    }
+                    sb.DrawString(world.font, "Page " + currentpage + "/6", main_pos + new Vector2(64, 192), Color.White);
+                    //if is buying, display first 5 items. if it goes past, "scroll" onto the next 5... etc
+                    //display brackets -- if currentItemSelect + 1 % 
+                    int offset = currentItemSelect % 5;
+                    Vector2 selectArrowPos = main_pos + new Vector2(10, 10 + 32 * offset);
+                    sb.Draw(selectarrow, selectArrowPos, Color.White);
+
+                    //Display npc dialogue on side
+                    sb.DrawString(world.shopDialogueFont, displayText, speech_pos + new Vector2(10, 8), Color.White);
+                    sb.DrawString(world.shopDialogueFont, displayLine2, speech_pos + new Vector2(10, 24), Color.White);
+                }
+                else if (isSelling)
+                {
+
+                }
+            }
             // First want to draw the box underlays based on states. 
             // If the player ISNT buying OR selling, then it is Buy/Sell/Leave draw.
 

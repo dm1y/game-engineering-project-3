@@ -79,6 +79,12 @@
       <Name>test0</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="ShopFont.spritefont">
+      <SubType>Designer</SubType>
+      <Name>ShopFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Maps\test1.txt">
@@ -474,6 +480,20 @@
     </Compile>
     <Compile Include="Overlays\item_teal_overlay.png">
       <Name>item_teal_overlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Items\Weapons\cudgel.png">
+      <Name>cudgel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Overlays\shop_speech.png">
+      <Name>shop_speech</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

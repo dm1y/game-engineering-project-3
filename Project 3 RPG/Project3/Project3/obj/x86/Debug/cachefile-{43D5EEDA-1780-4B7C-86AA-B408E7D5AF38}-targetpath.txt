@@ -75,8 +75,11 @@ Content\Overlays\item_green_overlay.xnb
 Content\Overlays\item_overlay.xnb
 Content\Overlays\item_purple_overlay.xnb
 Content\Overlays\item_teal_overlay.xnb
+Content\Items\Weapons\cudgel.xnb
+Content\Overlays\shop_speech.xnb
 Content\DialogueFont.xnb
 Content\Displayfont.xnb
+Content\ShopFont.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

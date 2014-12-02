@@ -36,7 +36,7 @@ namespace Project3
 
         public Display(Player player, Game game)
         {
-            game = this.game;
+         
             p = player;
             font = null;
             ShowHUD = true;
@@ -74,6 +74,7 @@ namespace Project3
 
         public void Update(GameTime gametime)
         {
+            money = p.playerInventory.money;
             KeyboardState keyState = Keyboard.GetState();
         }
 

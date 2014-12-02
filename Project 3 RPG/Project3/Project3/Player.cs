@@ -129,19 +129,21 @@ namespace Project3
                 }
                 else
                 {
-                    if (keyboard.IsKeyDown(Keys.Enter) && mayContinue)
+                    if ((keyboard.IsKeyDown(Keys.Enter) || (keyboard.IsKeyDown(Keys.W))
+                        || (keyboard.IsKeyDown(Keys.S)) || (keyboard.IsKeyDown(Keys.Back))) && mayContinue)
                     {
                         currentNPC.Update(keyboard);
                         mayContinue = false;
                     }
-                    else if (keyboard.IsKeyUp(Keys.Enter) && !mayContinue)
+                    else if (keyboard.IsKeyUp(Keys.Enter) && keyboard.IsKeyUp(Keys.W) && keyboard.IsKeyUp(Keys.S)
+                        && keyboard.IsKeyUp(Keys.Back) && !mayContinue)
                     {
                         mayContinue = true;
                     }
                 }
             }
 
-            else
+            if (!isInteracting)
             {
                 //If current position is already at next position, player can move
                 if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)

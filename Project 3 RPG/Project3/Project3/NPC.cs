@@ -57,6 +57,7 @@ namespace Project3
                 if (shop.isFinished)
                 {
                     isFinished = true;
+                    shop.ResetShop();
                     //set this npc to finish, player gets it, turns interaction w/ npc off, npc isFinished goes back to false
                 }
                 else
@@ -90,7 +91,10 @@ namespace Project3
                 else
                 {
                     //update
-                    dialogue.Update(keyboard);
+                    if (keyboard.IsKeyDown(Keys.Enter))
+                    {
+                        dialogue.Update(keyboard);
+                    }
                 }
 
             }

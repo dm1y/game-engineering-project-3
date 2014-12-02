@@ -129,6 +129,7 @@ namespace Project3
         bool currBattle;
 
         public SpriteFont font;
+        public SpriteFont shopDialogueFont;
 
         public World(Game1 game, Camera c)
         {
@@ -162,7 +163,7 @@ namespace Project3
 
             Console.WriteLine(player.playerInventory.money);
             font = game.Content.Load<SpriteFont>("DialogueFont");
-
+            shopDialogueFont = game.Content.Load<SpriteFont>("ShopFont");
             camera.setBoundaries(width * 32, height * 32);
 
             HUD = new Display(player, game); //check
