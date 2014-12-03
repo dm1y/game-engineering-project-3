@@ -32,9 +32,11 @@ namespace Project3
         public Boolean isInteracting;
         public NPC currentNPC;
 
+        /* For the battle system aspect */
         public int atk;
         public int def;
-        public int speed; 
+        public int speed;
+        public Item consumable;
 
         public int dimension;
         /* For deciding where the player is facing. 
@@ -435,6 +437,12 @@ namespace Project3
         {
             def = item.block;
             speed -= item.weight;
+        }
+
+        // sets the current equipped consumable to item being passed in 
+        public void setConsumable(Item item)
+        {
+            consumable = item;
         }
     }
 }

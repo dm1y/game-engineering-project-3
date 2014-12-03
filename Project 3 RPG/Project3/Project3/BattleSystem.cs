@@ -52,9 +52,6 @@ namespace Project3
             lose = false;
         }
 
-        public BattleSystem()
-        {
-        }
         /*
          * TODO: [[Front end]] implements the scrolling text dialogue stuff. 
          * 
@@ -104,10 +101,17 @@ namespace Project3
 
         
         private void UseConsumable()
-        { 
-            // depending on how you go about the inventory in UI 
-            // playerHealth += player.inventory?.item.heal;
-            // remove item from player's inventory 
+        {
+            if (player.consumable != null)
+            {
+                playerHealth += player.consumable.heal;
+                player.playerInventory.RemoveFromInventory(player.consumable);
+                player.consumable = null;
+            }
+            else
+            {
+                // output message saying that there are no consumnable items to use 
+            }
         }
 
         private void Escape()
