@@ -18,7 +18,7 @@ namespace Project3
         Player p;
         public int HP { set; get; }
         public int level { set; get; }
-        public int money { set; get; }
+        //public int money { set; get; }
         public int experience { set; get; }
         public int threshold { set; get; }
         //public int ScreenWidth;
@@ -43,7 +43,6 @@ namespace Project3
             items = new List<Item>();
             HP = 0;
             level = 1;
-            money = player.playerInventory.money;
             experience = 0;
             threshold = 10;
         }
@@ -74,7 +73,7 @@ namespace Project3
 
         public void Update(GameTime gametime)
         {
-            money = p.playerInventory.money;
+            //money = p.playerInventory.money;
             KeyboardState keyState = Keyboard.GetState();
         }
 
@@ -93,7 +92,7 @@ namespace Project3
                 // for words, you'll have to adjust y coordinates manually 
                 sb.DrawString(font, "HP: " + HP + "/", new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
                 sb.DrawString(font, "Level: " + level + "/", new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
-                sb.DrawString(font, "Money: $" + money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                sb.DrawString(font, "Money: $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
                 int offset = 20;
                 for (int i = 0; i < 10; i++)
