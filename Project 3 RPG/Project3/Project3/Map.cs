@@ -121,7 +121,7 @@ namespace Project3
                             break;
                         case 'x':
                             /* Creates a transition tile to battle automagically */
-                            newTile = new Maptile(redTransition, new Vector2(x, y), false, false, false, false);
+                            newTile = new Maptile(redTransition, new Vector2(x, y), false, false, true, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 't':

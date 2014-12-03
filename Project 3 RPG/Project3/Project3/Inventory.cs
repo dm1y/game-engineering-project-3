@@ -80,7 +80,7 @@ namespace Project3
 
         //Operates the exact same way for player using a consumable item OR selling it to a shop.
         //Decrements the quantity of that item -- if it hits 0, it automatically gets removed from the inventory.
-        public void ConsumeFromInventory(Item item, int quan = 1)
+        public void ConsumeFromInventory(Item item, int quan = 1)   
         {
             int itemIndex = 0;
             foreach (Item i in items)

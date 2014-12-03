@@ -45,6 +45,8 @@ namespace Project3
         private Vector2 currPosition; /* Position of player IN WORLD SPACE */
         private Vector2 currPositionCoord; /* Position of player in MAP COORDINATE SPACE */
 
+        public Boolean hasChecked;
+
         public Vector2 position
         {
             get { return currPosition; }
@@ -85,7 +87,8 @@ namespace Project3
             /* Default stats for battle system */
             atk = 1;
             def = 0;
-            speed = 10; 
+            speed = 10;
+            hasChecked = false;
         }
 
 
@@ -151,18 +154,22 @@ namespace Project3
 
                     if (keyboard.IsKeyDown(Keys.W))
                     {
+                        hasChecked = false;
                         moveUp();
                     }
                     else if (keyboard.IsKeyDown(Keys.S))
                     {
+                        hasChecked = false;
                         moveDown();
                     }
                     else if (keyboard.IsKeyDown(Keys.A))
                     {
+                        hasChecked = false;
                         moveLeft();
                     }
                     else if (keyboard.IsKeyDown(Keys.D))
                     {
+                        hasChecked = false;
                         moveRight();
                     }
                     else {
@@ -239,7 +246,7 @@ namespace Project3
         private void moveRight()
         {
             setFacingEast();
-            frontOfPlayer = new Vector2(0, 1);
+            frontOfPlayer = new Vector2(1, 0);
 
             if ((int)currPositionCoord.X != map.width - 1)
             {
@@ -338,8 +345,10 @@ namespace Project3
             if (tileToCheck.isTransition)
                 world.TransitionMap(tileToCheck.transitionTo);
 
-            if (tileToCheck.isDangerous)
+            if (tileToCheck.isDangerous && !hasChecked)
             {
+                hasChecked = true; 
+                    Console.WriteLine("im on a dangerous tile!");
                 // TODO: Fill in. 
                 // transition to battle sys map 
                 // or draw battle sys map 
