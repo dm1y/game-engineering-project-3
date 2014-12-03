@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass.xnb</Output>
-      <Time>2014-12-03T00:39:15.00623-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass.xnb</Output>
+      <Time>2014-11-30T18:14:50.0949756-08:00</Time>
     </Item>
     <Item>
       <Source>MapTexture\transition.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition.xnb</Output>
-      <Time>2014-12-03T00:39:15.0072297-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition.xnb</Output>
+      <Time>2014-11-30T18:14:50.0959763-08:00</Time>
     </Item>
     <Item>
       <Source>MapTexture\transition_blue.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition_blue.xnb</Output>
-      <Time>2014-12-03T00:39:15.0092596-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition_blue.xnb</Output>
+      <Time>2014-11-30T18:14:50.0979773-08:00</Time>
     </Item>
     <Item>
       <Source>MapTexture\transition_red.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition_red.xnb</Output>
-      <Time>2014-12-03T00:39:15.0102296-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition_red.xnb</Output>
+      <Time>2014-11-30T18:14:50.0989783-08:00</Time>
     </Item>
     <Item>
       <Source>MapTexture\dirt.jpg</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\dirt.xnb</Output>
-      <Time>2014-12-03T00:39:15.0042289-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\dirt.xnb</Output>
+      <Time>2014-11-30T18:14:50.0929739-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\arrow select.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\arrow select.xnb</Output>
-      <Time>2014-12-03T00:39:15.0132299-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\arrow select.xnb</Output>
+      <Time>2014-12-02T01:22:49.1285808-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\battleoptions_160x128.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\battleoptions_160x128.xnb</Output>
-      <Time>2014-12-03T00:39:15.0142301-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\battleoptions_160x128.xnb</Output>
+      <Time>2014-11-30T18:14:50.1079843-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\combatdialogue_224x128.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combatdialogue_224x128.xnb</Output>
-      <Time>2014-12-03T00:39:15.0172304-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combatdialogue_224x128.xnb</Output>
+      <Time>2014-11-30T18:14:50.1129877-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\combat_enemybubble_160x32.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_enemybubble_160x32.xnb</Output>
-      <Time>2014-12-03T00:39:15.0152363-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_enemybubble_160x32.xnb</Output>
+      <Time>2014-11-30T18:14:50.1099853-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\combat_recticle_32x32.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_recticle_32x32.xnb</Output>
-      <Time>2014-12-03T00:39:15.0162302-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_recticle_32x32.xnb</Output>
+      <Time>2014-11-30T18:14:50.1109863-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\hud_maindisplay_96x96.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\hud_maindisplay_96x96.xnb</Output>
-      <Time>2014-12-03T00:39:15.0182302-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\hud_maindisplay_96x96.xnb</Output>
+      <Time>2014-11-30T18:14:50.113988-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\shop_main_224x224.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_main_224x224.xnb</Output>
-      <Time>2014-12-03T00:39:15.0242304-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_main_224x224.xnb</Output>
+      <Time>2014-11-30T18:14:50.1159893-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\shop_menu_96x96.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_menu_96x96.xnb</Output>
-      <Time>2014-12-03T00:39:15.0252516-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_menu_96x96.xnb</Output>
+      <Time>2014-11-30T18:14:50.1179914-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\speechbubble128x64.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\speechbubble128x64.xnb</Output>
-      <Time>2014-12-03T00:39:15.0282304-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\speechbubble128x64.xnb</Output>
+      <Time>2014-11-30T18:14:50.123995-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\speech_maindialogue_416x96.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\speech_maindialogue_416x96.xnb</Output>
-      <Time>2014-12-03T00:39:15.0262304-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\speech_maindialogue_416x96.xnb</Output>
+      <Time>2014-11-30T18:14:50.1199924-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\speech_money_96x32.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\speech_money_96x32.xnb</Output>
-      <Time>2014-12-03T00:39:15.0272307-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\speech_money_96x32.xnb</Output>
+      <Time>2014-11-30T18:14:50.120993-08:00</Time>
     </Item>
     <Item>
       <Source>Player\player_walk_south.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_south.xnb</Output>
-      <Time>2014-12-03T00:39:15.0322423-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_south.xnb</Output>
+      <Time>2014-11-30T18:14:50.1289988-08:00</Time>
     </Item>
     <Item>
       <Source>Player\player_walk_west.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_west.xnb</Output>
-      <Time>2014-12-03T00:39:15.0332313-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_west.xnb</Output>
+      <Time>2014-11-30T18:14:50.1320004-08:00</Time>
     </Item>
     <Item>
       <Source>Player\player_walk_north.png</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_north.xnb</Output>
-      <Time>2014-12-03T00:39:15.030231-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_north.xnb</Output>
+      <Time>2014-11-30T18:14:50.1269967-08:00</Time>
     </Item>
     <Item>
       <Source>Player\player_walk_east.png</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_east.xnb</Output>
-      <Time>2014-12-03T00:39:15.0292307-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\player_walk_east.xnb</Output>
+      <Time>2014-11-30T18:14:50.125996-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\animal_skin.png</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\animal_skin.xnb</Output>
-      <Time>2014-12-03T00:39:14.9012234-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\animal_skin.xnb</Output>
+      <Time>2014-11-30T18:14:50.0302689-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\broken_helmet.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\broken_helmet.xnb</Output>
-      <Time>2014-12-03T00:39:14.9022227-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\broken_helmet.xnb</Output>
+      <Time>2014-11-30T18:14:50.0312695-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\fake_gold.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\fake_gold.xnb</Output>
-      <Time>2014-12-03T00:39:14.9042238-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\fake_gold.xnb</Output>
+      <Time>2014-11-30T18:14:50.0322706-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\fluff.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\fluff.xnb</Output>
-      <Time>2014-12-03T00:39:14.9062233-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\fluff.xnb</Output>
+      <Time>2014-11-30T18:14:50.0334698-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\frayed_belt.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\frayed_belt.xnb</Output>
-      <Time>2014-12-03T00:39:14.9072241-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\frayed_belt.xnb</Output>
+      <Time>2014-11-30T18:14:50.0343927-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\gold_bracelet.png</Source>
@@ -232,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\gold_bracelet.xnb</Output>
-      <Time>2014-12-03T00:39:14.9072241-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\gold_bracelet.xnb</Output>
+      <Time>2014-11-30T18:14:50.0353989-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\gold_nugget.png</Source>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\gold_nugget.xnb</Output>
-      <Time>2014-12-03T00:39:14.9082239-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\gold_nugget.xnb</Output>
+      <Time>2014-11-30T18:14:50.037401-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\green_gel_block.png</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\green_gel_block.xnb</Output>
-      <Time>2014-12-03T00:39:14.9092236-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\green_gel_block.xnb</Output>
+      <Time>2014-11-30T18:14:50.0383993-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\green_gel_drop.png</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\green_gel_drop.xnb</Output>
-      <Time>2014-12-03T00:39:14.9112242-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\green_gel_drop.xnb</Output>
+      <Time>2014-11-30T18:14:50.0394004-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\horn.png</Source>
@@ -268,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\horn.xnb</Output>
-      <Time>2014-12-03T00:39:14.9142255-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\horn.xnb</Output>
+      <Time>2014-11-30T18:14:50.0404007-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\ice_gel.png</Source>
@@ -277,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\ice_gel.xnb</Output>
-      <Time>2014-12-03T00:39:14.9152247-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\ice_gel.xnb</Output>
+      <Time>2014-11-30T18:14:50.041401-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\lump_of_something.png</Source>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\lump_of_something.xnb</Output>
-      <Time>2014-12-03T00:39:14.9152247-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\lump_of_something.xnb</Output>
+      <Time>2014-11-30T18:14:50.0424024-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\old_hat.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_hat.xnb</Output>
-      <Time>2014-12-03T00:39:14.916224-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_hat.xnb</Output>
+      <Time>2014-11-30T18:14:50.0434031-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\old_mitts.png</Source>
@@ -304,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_mitts.xnb</Output>
-      <Time>2014-12-03T00:39:14.9172243-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_mitts.xnb</Output>
+      <Time>2014-11-30T18:14:50.0444034-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\old_mug.png</Source>
@@ -313,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_mug.xnb</Output>
-      <Time>2014-12-03T00:39:14.9182241-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\old_mug.xnb</Output>
+      <Time>2014-11-30T18:14:50.0454044-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\raw_hide.png</Source>
@@ -322,8 +322,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\raw_hide.xnb</Output>
-      <Time>2014-12-03T00:39:14.9212244-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\raw_hide.xnb</Output>
+      <Time>2014-11-30T18:14:50.0464043-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\sack_of_gold.png</Source>
@@ -331,8 +331,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\sack_of_gold.xnb</Output>
-      <Time>2014-12-03T00:39:14.9232249-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\sack_of_gold.xnb</Output>
+      <Time>2014-11-30T18:14:50.0474058-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\scales.png</Source>
@@ -340,8 +340,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\scales.xnb</Output>
-      <Time>2014-12-03T00:39:14.9242247-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\scales.xnb</Output>
+      <Time>2014-11-30T18:14:50.048406-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\silver_hoops.png</Source>
@@ -349,8 +349,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\silver_hoops.xnb</Output>
-      <Time>2014-12-03T00:39:14.925225-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\silver_hoops.xnb</Output>
+      <Time>2014-11-30T18:14:50.0494063-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\skull.png</Source>
@@ -358,8 +358,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\skull.xnb</Output>
-      <Time>2014-12-03T00:39:14.9262257-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\skull.xnb</Output>
+      <Time>2014-11-30T18:14:50.0494063-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\smelly_shoes.png</Source>
@@ -367,8 +367,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\smelly_shoes.xnb</Output>
-      <Time>2014-12-03T00:39:14.9272255-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\smelly_shoes.xnb</Output>
+      <Time>2014-11-30T18:14:50.0514084-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Junk\tooth.png</Source>
@@ -376,8 +376,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\tooth.xnb</Output>
-      <Time>2014-12-03T00:39:14.9272255-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Junk\tooth.xnb</Output>
+      <Time>2014-11-30T18:14:50.0524087-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\absinthe.png</Source>
@@ -385,8 +385,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\absinthe.xnb</Output>
-      <Time>2014-12-03T00:39:14.8922225-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\absinthe.xnb</Output>
+      <Time>2014-11-30T18:14:50.0222635-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\everclear.png</Source>
@@ -394,8 +394,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\everclear.xnb</Output>
-      <Time>2014-12-03T00:39:14.8932228-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\everclear.xnb</Output>
+      <Time>2014-11-30T18:14:50.0232642-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\moonshine.png</Source>
@@ -403,8 +403,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\moonshine.xnb</Output>
-      <Time>2014-12-03T00:39:14.894223-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\moonshine.xnb</Output>
+      <Time>2014-11-30T18:14:50.0242656-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\potion_red.png</Source>
@@ -412,8 +412,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\potion_red.xnb</Output>
-      <Time>2014-12-03T00:39:14.8962231-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\potion_red.xnb</Output>
+      <Time>2014-11-30T18:14:50.0252655-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\the_stuff.png</Source>
@@ -421,8 +421,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\the_stuff.xnb</Output>
-      <Time>2014-12-03T00:39:14.8972234-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\the_stuff.xnb</Output>
+      <Time>2014-11-30T18:14:50.0262658-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\vodka.png</Source>
@@ -430,8 +430,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\vodka.xnb</Output>
-      <Time>2014-12-03T00:39:14.8982256-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\vodka.xnb</Output>
+      <Time>2014-11-30T18:14:50.0272669-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\whiskey.png</Source>
@@ -439,8 +439,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\whiskey.xnb</Output>
-      <Time>2014-12-03T00:39:14.8992234-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\whiskey.xnb</Output>
+      <Time>2014-11-30T18:14:50.0282671-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Consumables\wine.png</Source>
@@ -448,8 +448,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\wine.xnb</Output>
-      <Time>2014-12-03T00:39:14.9002232-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Consumables\wine.xnb</Output>
+      <Time>2014-11-30T18:14:50.0292694-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_blue.png</Source>
@@ -457,8 +457,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_blue.xnb</Output>
-      <Time>2014-12-03T00:39:14.9292255-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_blue.xnb</Output>
+      <Time>2014-11-30T18:14:50.0544104-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_buckler.png</Source>
@@ -466,8 +466,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_buckler.xnb</Output>
-      <Time>2014-12-03T00:39:14.9292255-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_buckler.xnb</Output>
+      <Time>2014-11-30T18:14:50.0554111-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_leather.png</Source>
@@ -475,8 +475,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_leather.xnb</Output>
-      <Time>2014-12-03T00:39:14.9682286-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_leather.xnb</Output>
+      <Time>2014-11-30T18:14:50.0574125-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_red.png</Source>
@@ -484,8 +484,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_red.xnb</Output>
-      <Time>2014-12-03T00:39:14.9732285-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_red.xnb</Output>
+      <Time>2014-11-30T18:14:50.0584131-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_standard.png</Source>
@@ -493,8 +493,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_standard.xnb</Output>
-      <Time>2014-12-03T00:39:14.975228-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_standard.xnb</Output>
+      <Time>2014-11-30T18:14:50.0594138-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_target.png</Source>
@@ -502,8 +502,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_target.xnb</Output>
-      <Time>2014-12-03T00:39:14.9762278-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_target.xnb</Output>
+      <Time>2014-11-30T18:14:50.0604145-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_target_red.png</Source>
@@ -511,8 +511,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_target_red.xnb</Output>
-      <Time>2014-12-03T00:39:14.9782279-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_target_red.xnb</Output>
+      <Time>2014-11-30T18:14:50.0614147-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_tower_gray.png</Source>
@@ -520,8 +520,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_tower_gray.xnb</Output>
-      <Time>2014-12-03T00:39:14.9792286-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_tower_gray.xnb</Output>
+      <Time>2014-11-30T18:14:50.0646686-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_tower_green.png</Source>
@@ -529,8 +529,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_tower_green.xnb</Output>
-      <Time>2014-12-03T00:39:14.9802318-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_tower_green.xnb</Output>
+      <Time>2014-11-30T18:14:50.0654135-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Shields\shield_wooden.png</Source>
@@ -538,8 +538,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_wooden.xnb</Output>
-      <Time>2014-12-03T00:39:14.9812282-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Shields\shield_wooden.xnb</Output>
+      <Time>2014-11-30T18:14:50.0664173-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\axe.png</Source>
@@ -547,8 +547,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\axe.xnb</Output>
-      <Time>2014-12-03T00:39:14.9822279-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\axe.xnb</Output>
+      <Time>2014-11-30T18:14:50.0809643-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\axe_curved.png</Source>
@@ -556,8 +556,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\axe_curved.xnb</Output>
-      <Time>2014-12-03T00:39:14.9832277-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\axe_curved.xnb</Output>
+      <Time>2014-11-30T18:14:50.0819677-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\club.png</Source>
@@ -565,8 +565,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\club.xnb</Output>
-      <Time>2014-12-03T00:39:14.984228-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\club.xnb</Output>
+      <Time>2014-11-30T18:14:50.0829676-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\dagger_curved.png</Source>
@@ -574,8 +574,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\dagger_curved.xnb</Output>
-      <Time>2014-12-03T00:39:14.986228-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\dagger_curved.xnb</Output>
+      <Time>2014-11-30T18:14:50.0839679-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\dagger_small.png</Source>
@@ -583,8 +583,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\dagger_small.xnb</Output>
-      <Time>2014-12-03T00:39:14.9882286-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\dagger_small.xnb</Output>
+      <Time>2014-11-30T18:14:50.0849686-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\flail.png</Source>
@@ -592,8 +592,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\flail.xnb</Output>
-      <Time>2014-12-03T00:39:14.9892283-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\flail.xnb</Output>
+      <Time>2014-11-30T18:14:50.0869707-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\katana.png</Source>
@@ -601,8 +601,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\katana.xnb</Output>
-      <Time>2014-12-03T00:39:14.9902286-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\katana.xnb</Output>
+      <Time>2014-11-30T18:14:50.0879706-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\longsword.png</Source>
@@ -610,8 +610,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\longsword.xnb</Output>
-      <Time>2014-12-03T00:39:14.9912279-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\longsword.xnb</Output>
+      <Time>2014-11-30T18:14:50.0889712-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\mace.png</Source>
@@ -619,8 +619,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\mace.xnb</Output>
-      <Time>2014-12-03T00:39:14.9922292-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\mace.xnb</Output>
+      <Time>2014-11-30T18:14:50.0899735-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\scimitar.png</Source>
@@ -628,8 +628,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\scimitar.xnb</Output>
-      <Time>2014-12-03T00:39:14.993228-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\scimitar.xnb</Output>
+      <Time>2014-11-30T18:14:50.090973-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\stick.png</Source>
@@ -637,8 +637,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\stick.xnb</Output>
-      <Time>2014-12-03T00:39:14.9942282-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\stick.xnb</Output>
+      <Time>2014-11-30T18:14:50.0919732-08:00</Time>
     </Item>
     <Item>
       <Source>Items\merchant.png</Source>
@@ -646,8 +646,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\merchant.xnb</Output>
-      <Time>2014-12-03T00:39:14.9972285-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\merchant.xnb</Output>
+      <Time>2014-11-30T18:50:18.1732848-08:00</Time>
     </Item>
     <Item>
       <Source>Items\npc.png</Source>
@@ -655,8 +655,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\npc.xnb</Output>
-      <Time>2014-12-03T00:39:14.9982425-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\npc.xnb</Output>
+      <Time>2014-11-30T18:50:18.1775989-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\item_green_overlay.png</Source>
@@ -664,8 +664,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_green_overlay.xnb</Output>
-      <Time>2014-12-03T00:39:15.019231-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_green_overlay.xnb</Output>
+      <Time>2014-12-01T12:08:33.2073033-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\item_overlay.png</Source>
@@ -673,8 +673,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_overlay.xnb</Output>
-      <Time>2014-12-03T00:39:15.0202312-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_overlay.xnb</Output>
+      <Time>2014-12-01T12:08:33.2096725-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\item_purple_overlay.png</Source>
@@ -682,8 +682,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_purple_overlay.xnb</Output>
-      <Time>2014-12-03T00:39:15.02123-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_purple_overlay.xnb</Output>
+      <Time>2014-12-01T12:08:33.212682-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\item_teal_overlay.png</Source>
@@ -691,8 +691,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_teal_overlay.xnb</Output>
-      <Time>2014-12-03T00:39:15.0222308-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\item_teal_overlay.xnb</Output>
+      <Time>2014-12-01T12:08:33.2148661-08:00</Time>
     </Item>
     <Item>
       <Source>Items\Weapons\cudgel.png</Source>
@@ -700,8 +700,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\cudgel.xnb</Output>
-      <Time>2014-12-03T00:39:14.9852283-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Weapons\cudgel.xnb</Output>
+      <Time>2014-12-02T01:22:49.125578-08:00</Time>
     </Item>
     <Item>
       <Source>Overlays\shop_speech.png</Source>
@@ -709,8 +709,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_speech.xnb</Output>
-      <Time>2014-12-03T00:39:15.0252516-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_speech.xnb</Output>
+      <Time>2014-12-02T01:22:49.1295787-08:00</Time>
     </Item>
     <Item>
       <Source>DialogueFont.spritefont</Source>
@@ -718,8 +718,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\DialogueFont.xnb</Output>
-      <Time>2014-12-03T00:39:14.8842218-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\DialogueFont.xnb</Output>
+      <Time>2014-11-30T18:14:50.0192619-08:00</Time>
     </Item>
     <Item>
       <Source>Displayfont.spritefont</Source>
@@ -727,8 +727,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Displayfont.xnb</Output>
-      <Time>2014-12-03T00:39:14.890222-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Displayfont.xnb</Output>
+      <Time>2014-11-30T23:47:49.1996493-08:00</Time>
     </Item>
     <Item>
       <Source>ShopFont.spritefont</Source>
@@ -736,8 +736,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\ShopFont.xnb</Output>
-      <Time>2014-12-03T00:39:15.0402307-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\ShopFont.xnb</Output>
+      <Time>2014-12-02T01:22:49.1325807-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -746,10 +746,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\willi_000\Desktop\Project 3 RPG\Bananas\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -777,8 +777,8 @@
         <Value>2011-09-01T16:22:30-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2014-09-28T12:43:42.961104-07:00</Value>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-08-20T19:48:32.1591695-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

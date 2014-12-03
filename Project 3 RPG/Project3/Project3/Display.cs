@@ -41,7 +41,7 @@ namespace Project3
             font = null;
             ShowHUD = true;
             items = new List<Item>();
-            HP = 0;
+            HP = 100;
             level = 1;
             experience = 0;
             threshold = 10;
@@ -50,6 +50,8 @@ namespace Project3
         public void increaseLevel()
         {
             level++;
+            HP += 10;
+            p.speed += 5;
         }
 
         public void setExperience(int exp)
@@ -90,9 +92,10 @@ namespace Project3
                 sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2, p.world.camera.Position.Y / 2 + 320 - HUDBackGround.Height), Color.White);
 
                 // for words, you'll have to adjust y coordinates manually 
-                sb.DrawString(font, "HP: " + HP + "/", new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
-                sb.DrawString(font, "Level: " + level + "/", new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
-                sb.DrawString(font, "Money: $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                sb.DrawString(font, "HP: " + HP, new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
+                sb.DrawString(font, "Level: " + level, new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
+                sb.DrawString(font, "Money: \n $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                //sb.DrawString(font, "$" + p.playerInventory.money, new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
                 int offset = 20;
                 for (int i = 0; i < 10; i++)
