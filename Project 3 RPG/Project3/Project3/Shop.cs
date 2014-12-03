@@ -55,7 +55,7 @@ namespace Project3
             selectionmenu = world.game.Content.Load<Texture2D>("Overlays/shop_menu_96x96");
             main = world.game.Content.Load<Texture2D>("Overlays/shop_main_224x224");
             selectarrow = world.game.Content.Load<Texture2D>("Overlays/arrow select");
-            shopspeech = world.game.Content.Load<Texture2D>("Overlays/shop_speech"); 
+            shopspeech = world.game.Content.Load<Texture2D>("Overlays/shop_speech");
         }
 
         public void PlayerShop(Inventory playerInventory)
@@ -77,7 +77,7 @@ namespace Project3
             // If player is notBuying and notSelling, then they must be in selection
             if (!isBuying && !isSelling)
             {
-                
+
                 if (keyboard.IsKeyDown(Keys.W))
                 {
                     currentState--;
@@ -273,41 +273,63 @@ namespace Project3
                 }
             }
 
-            if (kb.IsKeyDown(Keys.Enter))
+            Item itemSell = playerInventory.items.ElementAt(currentItemSelect);
+            if (kb.IsKeyDown(Keys.Enter) && !isConfirm)
             {
+                displayText = "I'll pay you " + itemSell.getSellPrice();
+                displayLine2 = "for a " + itemSell.itemName + ".";
                 isConfirm = true;
                 quantityOf = 1;
+                return;
             }
 
             if (isConfirm == true)
             {
-                Item itemSell = playerInventory.items.ElementAt(currentItemSelect);
-                if (kb.IsKeyDown(Keys.W))
-                {
-                    quantityOf++;
-                    if (quantityOf > itemSell.quantity)
-                    {
-                        quantityOf = itemSell.quantity;
-                    }
-                }
-                if (kb.IsKeyDown(Keys.S))
-                {
-                    quantityOf--;
-                    if (quantityOf < 1)
-                    {
-                        quantityOf = 1;
-                    }
-                }
+                //if (kb.IsKeyDown(Keys.W))
+                //{
+                //    quantityOf++;
+                //    if (quantityOf > itemSell.quantity)
+                //    {
+                //        quantityOf = itemSell.quantity;
+                //    }
+                //}
+                //if (kb.IsKeyDown(Keys.S))
+                //{
+                //    quantityOf--;
+                //    if (quantityOf < 1)
+                //    {
+                //        quantityOf = 1;
+                //    }
+                //}
                 if (kb.IsKeyDown(Keys.Back))
                 {
                     isConfirm = false;
                 }
                 if (kb.IsKeyDown(Keys.Enter))
                 {
+                    if (playerInventory.items.Count == 1)
+                    {
+                        displayText = "You can't have an ";
+                        displayLine2 = "empty inventory!";
+                        isConfirm = false;
+                        return;
+                    }
                     //Selling logic -- since we handle item limitations, we can freely sell via integer quantity.
                     int sellPrice = itemSell.getSellPrice();
                     playerInventory.money = playerInventory.money + sellPrice;
-                    playerInventory.ConsumeFromInventory(itemSell, quantityOf);
+
+                    if (itemSell.quantity == 1)
+                    {
+                        if (currentItemSelect != 0)
+                        {
+                            currentItemSelect--;
+                        }
+                    }
+                    playerInventory.ConsumeFromInventory(itemSell, 1);
+                    displayText = "Thank you!";
+                    displayLine2 = "";
+                    isConfirm = false;
+                    /* if */
                 }
 
             }
@@ -323,7 +345,7 @@ namespace Project3
             //Money Display - Top Left
             Vector2 money_pos = new Vector2(world.camera.Position.X / 2, world.camera.Position.Y / 2);
             sb.Draw(money, money_pos, Color.White);
-            
+
             sb.DrawString(world.font, playerInventory.money.ToString(), money_pos + new Vector2(8, 6), Color.White);
             if (!isBuying && !isSelling)
             {
@@ -347,7 +369,7 @@ namespace Project3
 
                 if (isBuying)
                 {
-                    int[] pages = {5, 10, 15, 20, 25, 30};
+                    int[] pages = { 5, 10, 15, 20, 25, 30 };
                     int currentpage = 1;
                     Vector2 item_name_pos = main_pos + new Vector2(25, 10);
                     for (int i = 0; i < 5; i++)
@@ -378,7 +400,9 @@ namespace Project3
                             currentpage = 6;
                             addToPage += 25;
                         }
-                        sb.DrawString(world.font, shopInventory.items.ElementAt(addToPage).itemName, item_name_pos + new Vector2(0, 32 * i), Color.White);
+                        sb.Draw(shopInventory.items.ElementAt(addToPage).itemTexture, item_name_pos + new Vector2(-5, 32 * i - 4), Color.White);
+                        sb.DrawString(world.shopDialogueFont, shopInventory.items.ElementAt(addToPage).itemName, item_name_pos + new Vector2(27, 32 * i), Color.White);
+                        
                     }
                     sb.DrawString(world.font, "Page " + currentpage + "/6", main_pos + new Vector2(64, 192), Color.White);
                     //if is buying, display first 5 items. if it goes past, "scroll" onto the next 5... etc
@@ -393,52 +417,80 @@ namespace Project3
                 }
                 else if (isSelling)
                 {
+                    int[] pages = { 5, 10 };
+                    int currentpage = 1;
+                    Vector2 item_name_pos = main_pos + new Vector2(25, 10);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        int addToPage = i;
+                        if (currentItemSelect >= 5 && currentItemSelect < 10)
+                        {
+                            currentpage = 2;
+                            addToPage += 5;
+                        }
+                        if (addToPage < playerInventory.items.Count)
+                        {
+                            sb.Draw(playerInventory.items.ElementAt(addToPage).itemTexture, item_name_pos + new Vector2(-5, 32 * i - 4), Color.White);
+                            sb.DrawString(world.shopDialogueFont, playerInventory.items.ElementAt(addToPage).itemName, item_name_pos + new Vector2(27, 32 * i), Color.White);
 
+                        }
+
+                    }
+                    sb.DrawString(world.font, "Page " + currentpage + "/6", main_pos + new Vector2(64, 192), Color.White);
+                    //if is buying, display first 5 items. if it goes past, "scroll" onto the next 5... etc
+                    //display brackets -- if currentItemSelect + 1 % 
+                    int offset = currentItemSelect % 5;
+                    Vector2 selectArrowPos = main_pos + new Vector2(10, 10 + 32 * offset);
+                    sb.Draw(selectarrow, selectArrowPos, Color.White);
+
+                    //Display npc dialogue on side
+                    sb.DrawString(world.shopDialogueFont, displayText, speech_pos + new Vector2(10, 8), Color.White);
+                    sb.DrawString(world.shopDialogueFont, displayLine2, speech_pos + new Vector2(10, 24), Color.White);
                 }
+                // First want to draw the box underlays based on states. 
+                // If the player ISNT buying OR selling, then it is Buy/Sell/Leave draw.
+
+                // If it is buying OR selling, we draw the item selections, money
+                // Then the position of the selection arrow
             }
-            // First want to draw the box underlays based on states. 
-            // If the player ISNT buying OR selling, then it is Buy/Sell/Leave draw.
 
-            // If it is buying OR selling, we draw the item selections, money
-            // Then the position of the selection arrow
+            /*
+             * TODO: 
+             * Constructor : 
+             * NPC (for type of shop_ , NPC's dialogue, Player, HUD (money) 
+             * list of items of things to sell
+             * 
+             * probably would be good to create an item class detailing price of each item 
+             * its effects and attributes and what not. item class can be like main class that will have
+             * sub class of types of items like potions/weapons/armory/etc.
+             * 
+             * item should have two prices
+             * value for buying
+             * value for selling
+             */
+
+            /*method ot buy stuff
+             * 
+             * ** use dialogue class to get player options , call his method if player decides to buy
+             *   if player selects object 
+             *     check to see if player has enough money to purchase
+             *       if enough, subt money & add item to player's inventory 
+             *     else 
+             *       display message saying not enough money to buy
+             */
+
+            /*
+             * method to sel stuff
+             * 
+             * use dialogue class to get player options, call if playe dceids to sell 
+             * 
+             *   bring up inventory
+             *   have player slect from list 
+             *   if player confirms sell
+             *      add $$ to hud according to items worth 
+             *      remove item from inventory 
+             * 
+             */
         }
-
-        /*
-         * TODO: 
-         * Constructor : 
-         * NPC (for type of shop_ , NPC's dialogue, Player, HUD (money) 
-         * list of items of things to sell
-         * 
-         * probably would be good to create an item class detailing price of each item 
-         * its effects and attributes and what not. item class can be like main class that will have
-         * sub class of types of items like potions/weapons/armory/etc.
-         * 
-         * item should have two prices
-         * value for buying
-         * value for selling
-         */
-
-        /*method ot buy stuff
-         * 
-         * ** use dialogue class to get player options , call his method if player decides to buy
-         *   if player selects object 
-         *     check to see if player has enough money to purchase
-         *       if enough, subt money & add item to player's inventory 
-         *     else 
-         *       display message saying not enough money to buy
-         */
-
-        /*
-         * method to sel stuff
-         * 
-         * use dialogue class to get player options, call if playe dceids to sell 
-         * 
-         *   bring up inventory
-         *   have player slect from list 
-         *   if player confirms sell
-         *      add $$ to hud according to items worth 
-         *      remove item from inventory 
-         * 
-         */
     }
 }
