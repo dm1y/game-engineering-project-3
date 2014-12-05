@@ -28,14 +28,16 @@ namespace Project3
         //List of items that player can inherit from a dead enemy.
         public List <Item> EnemyItemsList = new List<Item>();
 
+        public string enemyName;
 
         // The current state of the Enemy 
         public bool Active { set; get; }
 
 
-        public Enemy(Texture2D texture, int hp, int speed, int atk, int exp, int money, List<Item> list)
+        public Enemy(Texture2D texture, string name, int hp, int speed, int atk, int exp, int money, List<Item> list)
         {
 //            this.game = game;
+            this.enemyName = name;
             this.enemyTexture = texture;
             HP = hp;
             enemySpeed = speed;

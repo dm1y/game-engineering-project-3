@@ -713,6 +713,213 @@
       <Time>2014-12-03T23:39:53.5721151-08:00</Time>
     </Item>
     <Item>
+      <Source>Items\Enemy\ForestGuardian.png</Source>
+      <Name>Items\Enemy\ForestGuardian</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\ForestGuardian.xnb</Output>
+      <Time>2014-12-05T01:42:10.3179182-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\GhastlyShark.png</Source>
+      <Name>Items\Enemy\GhastlyShark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\GhastlyShark.xnb</Output>
+      <Time>2014-12-05T01:42:10.3229195-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Grubbie.png</Source>
+      <Name>Items\Enemy\Grubbie</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Grubbie.xnb</Output>
+      <Time>2014-12-05T01:42:10.3259198-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Haniwa.png</Source>
+      <Name>Items\Enemy\Haniwa</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Haniwa.xnb</Output>
+      <Time>2014-12-05T01:42:10.3279194-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Tusklet.png</Source>
+      <Name>Items\Enemy\Tusklet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Tusklet.xnb</Output>
+      <Time>2014-12-05T01:42:10.3309197-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\WoodDweller.png</Source>
+      <Name>Items\Enemy\WoodDweller</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\WoodDweller.xnb</Output>
+      <Time>2014-12-05T01:42:10.33392-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Bubbler.png</Source>
+      <Name>Items\Enemy\Bubbler</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Bubbler.xnb</Output>
+      <Time>2014-12-05T00:56:29.7655978-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Chompy.png</Source>
+      <Name>Items\Enemy\Chompy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Chompy.xnb</Output>
+      <Time>2014-12-05T00:56:29.7675983-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\CorruptGooey.png</Source>
+      <Name>Items\Enemy\CorruptGooey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\CorruptGooey.xnb</Output>
+      <Time>2014-12-05T00:56:29.7815996-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\FairyReaper.png</Source>
+      <Name>Items\Enemy\FairyReaper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\FairyReaper.xnb</Output>
+      <Time>2014-12-05T00:56:29.7835991-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\FireSquig.png</Source>
+      <Name>Items\Enemy\FireSquig</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\FireSquig.xnb</Output>
+      <Time>2014-12-05T00:56:29.7986002-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Gazer.png</Source>
+      <Name>Items\Enemy\Gazer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Gazer.xnb</Output>
+      <Time>2014-12-05T00:56:29.8156008-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Goblin.png</Source>
+      <Name>Items\Enemy\Goblin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Goblin.xnb</Output>
+      <Time>2014-12-05T00:56:29.834603-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Gooey.png</Source>
+      <Name>Items\Enemy\Gooey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Gooey.xnb</Output>
+      <Time>2014-12-05T00:56:29.8446032-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\OreSlug.png</Source>
+      <Name>Items\Enemy\OreSlug</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\OreSlug.xnb</Output>
+      <Time>2014-12-05T00:56:29.8786049-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\PeatDweller.png</Source>
+      <Name>Items\Enemy\PeatDweller</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\PeatDweller.xnb</Output>
+      <Time>2014-12-05T00:56:29.9126067-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Pluffer.png</Source>
+      <Name>Items\Enemy\Pluffer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Pluffer.xnb</Output>
+      <Time>2014-12-05T00:56:29.928608-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\PoisonBud.png</Source>
+      <Name>Items\Enemy\PoisonBud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\PoisonBud.xnb</Output>
+      <Time>2014-12-05T00:56:29.9436091-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Spooky.png</Source>
+      <Name>Items\Enemy\Spooky</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Spooky.xnb</Output>
+      <Time>2014-12-05T00:56:29.9516102-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Squiglet.png</Source>
+      <Name>Items\Enemy\Squiglet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Squiglet.xnb</Output>
+      <Time>2014-12-05T00:56:29.954612-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\SwampLizard.png</Source>
+      <Name>Items\Enemy\SwampLizard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\SwampLizard.xnb</Output>
+      <Time>2014-12-05T00:56:29.9646103-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Tanuki.png</Source>
+      <Name>Items\Enemy\Tanuki</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Tanuki.xnb</Output>
+      <Time>2014-12-05T00:56:29.976612-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Enemy\Thornball.png</Source>
+      <Name>Items\Enemy\Thornball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Thornball.xnb</Output>
+      <Time>2014-12-05T00:56:29.9956112-08:00</Time>
+    </Item>
+    <Item>
       <Source>DialogueFont.spritefont</Source>
       <Name>DialogueFont</Name>
       <Importer>FontDescriptionImporter</Importer>

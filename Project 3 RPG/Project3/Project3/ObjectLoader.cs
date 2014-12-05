@@ -37,6 +37,7 @@ namespace Project3
 
                     string[] p = line.Split(' ');
                     Texture2D texture = world.game.Content.Load<Texture2D>(p[0]);
+                    String name = p[1].Replace('_', ' ');
                     int price = int.Parse(p[2]);
                     int effect = int.Parse(p[3]);
                     Boolean shield = Boolean.Parse(p[4]);
@@ -46,11 +47,11 @@ namespace Project3
                     if (p.Count() == 8)
                     {
                         int weight = int.Parse(p[7]);
-                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon, weight);
+                        currItem = new Item(texture, name, price, effect, shield, potion, weapon, weight);
                     }
                     else
                     {
-                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                        currItem = new Item(texture, name, price, effect, shield, potion, weapon);
                     }
                     player_items.Add(currItem);
 
@@ -76,12 +77,13 @@ namespace Project3
                 {
                     string[] p = line.Split(' ');
                     Texture2D texture = world.game.Content.Load<Texture2D>(p[0]);
+                    String name = p[1].Replace('_', ' ');
                     int price = int.Parse(p[2]);
                     int effect = int.Parse(p[3]);
                     Boolean shield = Boolean.Parse(p[4]);
                     Boolean potion = Boolean.Parse(p[5]);
                     Boolean weapon = Boolean.Parse(p[6]);
-                    Item currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                    Item currItem = new Item(texture, name, price, effect, shield, potion, weapon);
                     enemy_loot.Add(currItem);
 
                     line = reader.ReadLine();
@@ -102,6 +104,7 @@ namespace Project3
                 {
                     string[] p = line.Split(' ');
                     Texture2D texture = world.game.Content.Load<Texture2D>(p[0]);
+                    String name = p[1].Replace('_', ' ');
                     int price = int.Parse(p[2]);
                     int effect = int.Parse(p[3]);
                     Boolean shield = Boolean.Parse(p[4]);
@@ -111,11 +114,11 @@ namespace Project3
                     if (p.Count() == 8)
                     {
                         int weight = int.Parse(p[7]);
-                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon, weight);
+                        currItem = new Item(texture, name, price, effect, shield, potion, weapon, weight);
                     }
                     else
                     {
-                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                        currItem = new Item(texture, name, price, effect, shield, potion, weapon);
                     }
                     merch_items.Add(currItem);
 
@@ -195,16 +198,54 @@ namespace Project3
             #endregion
 
             #region Load Enemies
-            Stream stream_enemies = TitleContainer.OpenStream("Content/Items/npcs.txt");
-            List<Enemy> easy;
-            List<Enemy> medium;
-            List<Enemy> hard;
-            using (StreamReader reader = new StreamReader(stream_npc))
+            Stream stream_enemies = TitleContainer.OpenStream("Content/Items/enemies.txt");
+            List<Enemy> easy = new List<Enemy>();
+            List<Enemy> medium = new List<Enemy>();
+            List<Enemy> hard = new List<Enemy>();
+            using (StreamReader reader = new StreamReader(stream_enemies))
             {
                 string line = reader.ReadLine();
                 while (line != null)
                 {
+                    string[] p = line.Split(' ');
+                    Texture2D texture = world.game.Content.Load<Texture2D>(p[0]);
+                    String name = p[1].Replace('_', ' ');
+                    int hp = int.Parse(p[2]);
+                    int speed = int.Parse(p[3]);
+                    int atk = int.Parse(p[4]);
+                    int exp = int.Parse(p[5]);
+                    int money = int.Parse(p[6]);
+                    String diff = p[7];
 
+                    Enemy enemy = new Enemy(texture, name, hp, speed, atk, exp, money, enemy_loot);
+
+                    if (diff.Equals("easy"))
+                    {
+                        easy.Add(enemy);
+                    }
+                    else if (diff.Equals("medium"))
+                    {
+                        medium.Add(enemy);
+                    }
+                    else if (diff.Equals("hard"))
+                    {
+                        hard.Add(enemy);
+                    }
+                    line = reader.ReadLine();
+                }
+            }
+
+            for (int i = 0; i < world.currentMap.width - 1; i++)
+            {
+                for (int j = 0; j < world.currentMap.height - 1; j++)
+                {
+                    Maptile tile = world.currentMap.currentMap[i, j];
+                    if (tile.isDangerous)
+                    {
+                        tile.easyEnemies = easy;
+                        tile.mediumEnemies = medium;
+                        tile.hardEnemies = hard;
+                    }
                 }
             }
             #endregion

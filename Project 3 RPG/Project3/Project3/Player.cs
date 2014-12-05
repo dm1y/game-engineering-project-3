@@ -92,9 +92,10 @@ namespace Project3
             isInteracting = false;
             isBattling = false;
             /* Default stats for battle system */
-            atk = 1;
-            def = 0;
-            speed = 10;
+            atk = 3;
+            def = 2;
+            //Don't let speed be less than 11 -- the max weight for a weapon/shield is 5(so player's slowest speed is 1);
+            speed = 11;
             hasChecked = false;
         }
 
@@ -388,7 +389,23 @@ namespace Project3
             {
                 hasChecked = true;
                 isBattling = true;
-                    Console.WriteLine("im on a dangerous tile!");
+                Console.WriteLine("Player is now in battle!");
+                Console.WriteLine("Easy Enemies: ");
+                foreach (Enemy e in tileToCheck.easyEnemies)
+                {
+                    Console.Write(e.enemyName + ", ");
+                }
+                Console.WriteLine("\nMedium Enemies: ");
+                foreach (Enemy e in tileToCheck.mediumEnemies)
+                {
+                    Console.Write(e.enemyName + ", ");
+                }
+                Console.WriteLine("\nHard Enemies: ");
+                foreach (Enemy e in tileToCheck.hardEnemies)
+                {
+                    Console.Write(e.enemyName + ", ");
+                }
+
                 // TODO: Fill in. 
                 // transition to battle sys map 
                 // or draw battle sys map 

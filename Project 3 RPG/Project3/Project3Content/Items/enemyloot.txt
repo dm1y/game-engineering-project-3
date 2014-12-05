@@ -1,11 +1,11 @@
-Items/Weapons/stick Sharp_Stick 10 3 false false true
-Items/Weapons/axe Axe 30 6 false false true
-Items/Weapons/club Club 45 8 false false true
-Items/Weapons/longsword Long_Sword 70 12 false false true
-Items/Weapons/mace Mace 55 9 false false true
-Items/Shields/shield_leather Leather_Shield 35 7 true false false
-Items/Shields/shield_buckler Buckler 80 9 true false false
-Items/Shields/shield_standard Kiteshield 110 11 true false false
+Items/Weapons/stick Sharp_Stick 10 3 false false true 1
+Items/Weapons/axe Axe 30 6 false false true 3
+Items/Weapons/club Club 45 8 false false true 3
+Items/Weapons/longsword Long_Sword 70 12 false false true 2
+Items/Weapons/mace Mace 55 9 false false true 3
+Items/Shields/shield_leather Leather_Shield 35 7 true false false 3
+Items/Shields/shield_buckler Buckler 80 9 true false false 3
+Items/Shields/shield_standard Kiteshield 110 11 true false false 3
 Items/Junk/animal_skin Animal_Skin 6 0 false false false
 Items/Junk/broken_helmet Broken_Helmet 8 0 false false false
 Items/Junk/fake_gold Fools_Gold 20 0 false false false

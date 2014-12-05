@@ -193,7 +193,9 @@ namespace Project3
         public void TransitionBattle(Maptile tile)
         {
             currBattle = true;
-            battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum);
+            //William -- I commented this line out for now, because all dangerous maptiles now have
+            //access to the three lists of enemies(easy, medium, hard)
+            //battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum);
         }
 
 

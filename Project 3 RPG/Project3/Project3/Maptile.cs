@@ -75,11 +75,12 @@ namespace Project3
             isCollidable = collide;
             isTransition = transition;
             isDangerous = dangerous;
+
             isInteract = interact;
 
             /* Initializes other attributes that might not pertain to all tiles */
             transitionTo = 0;
-            enemySpawnTypes = new List<Enemy>();
+            //enemySpawnTypes = new List<Enemy>();
             npc = null;
 
             if (isCollidable)
@@ -116,8 +117,8 @@ namespace Project3
             if (texture.Name == "danger")
             {
                 // fill null in later once items are set 
-                Enemy e = new Enemy(10, 2, 2, 100, 5, null);
-                enemySpawnTypes.Add(e);
+                //Enemy e = new Enemy(10, 2, 2, 100, 5, null);
+                //enemySpawnTypes.Add(e);
             }
             //    pass in list of enemies that are easy
 
