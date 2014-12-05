@@ -42,7 +42,16 @@ namespace Project3
                     Boolean shield = Boolean.Parse(p[4]);
                     Boolean potion = Boolean.Parse(p[5]);
                     Boolean weapon = Boolean.Parse(p[6]);
-                    Item currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                    Item currItem;
+                    if (p.Count() == 8)
+                    {
+                        int weight = int.Parse(p[7]);
+                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon, weight);
+                    }
+                    else
+                    {
+                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                    }
                     player_items.Add(currItem);
 
                     line = reader.ReadLine();
@@ -98,7 +107,16 @@ namespace Project3
                     Boolean shield = Boolean.Parse(p[4]);
                     Boolean potion = Boolean.Parse(p[5]);
                     Boolean weapon = Boolean.Parse(p[6]);
-                    Item currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                    Item currItem;
+                    if (p.Count() == 8)
+                    {
+                        int weight = int.Parse(p[7]);
+                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon, weight);
+                    }
+                    else
+                    {
+                        currItem = new Item(texture, p[1], price, effect, shield, potion, weapon);
+                    }
                     merch_items.Add(currItem);
 
                     line = reader.ReadLine();
@@ -174,6 +192,21 @@ namespace Project3
                 }
             }
             stream_npc.Close();
+            #endregion
+
+            #region Load Enemies
+            Stream stream_enemies = TitleContainer.OpenStream("Content/Items/npcs.txt");
+            List<Enemy> easy;
+            List<Enemy> medium;
+            List<Enemy> hard;
+            using (StreamReader reader = new StreamReader(stream_npc))
+            {
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+
+                }
+            }
             #endregion
 
         }

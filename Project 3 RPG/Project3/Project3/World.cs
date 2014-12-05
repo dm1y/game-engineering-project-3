@@ -125,7 +125,7 @@ namespace Project3
 
         public Player player;
         Display HUD;
-        BattleSystem battleSystem;
+        public BattleSystem battleSystem;
         bool currBattle;
 
         public SpriteFont font;

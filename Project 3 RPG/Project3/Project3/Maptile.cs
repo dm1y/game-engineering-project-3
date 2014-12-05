@@ -49,7 +49,9 @@ namespace Project3
         public Texture2D npcTexture;
 
         public int transitionTo;
-        public List<Enemy> enemySpawnTypes;
+        public List<Enemy> easyEnemies;
+        public List<Enemy> mediumEnemies;
+        public List<Enemy> hardEnemies;
 
         /* - Positions -
          * coordPosition - gives the position of the maptile in coordinate form(ie, "4,7")

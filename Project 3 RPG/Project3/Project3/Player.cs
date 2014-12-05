@@ -12,6 +12,9 @@ namespace Project3
     {
 
         public World world;
+        //public Texture2D;
+
+        //public BattleSystem battleSys;
 
         public Inventory playerInventory;
         public Boolean mayContinue = false;
@@ -30,6 +33,8 @@ namespace Project3
         public Boolean facingEast;
 
         public Boolean isInteracting;
+        public Boolean isBattling;
+
         public NPC currentNPC;
 
         /* For the battle system aspect */
@@ -85,7 +90,7 @@ namespace Project3
             currPosition = nextPosition;
 
             isInteracting = false;
-
+            isBattling = false;
             /* Default stats for battle system */
             atk = 1;
             def = 0;
@@ -123,6 +128,35 @@ namespace Project3
          */
         public void UpdateInput(GameTime gameTime, KeyboardState keyboard)
         {
+            //TODO: Colin -- Can check keyboard inputs for "1,2,3,4,5,6,7,8,9,0" to equip items.
+            //Note: Be sure to check type of item so that player doesn't end up equipping junk, 
+            //or items in the wrong area. Methods for equip are at the bottom(lines 430 and onwards)
+
+            #region Battle System Control
+            if (isBattling)
+            {
+
+                /* 
+                if (world.battleSystem.isFinished)
+                {
+                    isBattling = false;
+                }
+                */
+                if ((keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.W) || (keyboard.IsKeyDown(Keys.S))) && mayContinue)
+                {
+                    world.battleSystem.Update(keyboard);
+                    mayContinue = false;
+                }
+                else if (keyboard.IsKeyUp(Keys.Enter) && keyboard.IsKeyUp(Keys.W) && keyboard.IsKeyUp(Keys.S)
+                    && !mayContinue)
+                {
+                    mayContinue = true;
+                }
+                
+            }
+            #endregion
+
+            #region NPC Interaction region
             //If the player is interacting, delegate all keyboard commands into the NPC. 
             if (isInteracting)
             {
@@ -147,7 +181,9 @@ namespace Project3
                     }
                 }
             }
+#endregion
 
+            #region Player movement and Tile Check region
             if (!isInteracting)
             {
                 //If current position is already at next position, player can move
@@ -189,6 +225,7 @@ namespace Project3
                     CheckTile();
                 }
             }
+        #endregion
         }
 
         public void UpdateAnimations(GameTime gametime)
@@ -349,7 +386,8 @@ namespace Project3
 
             if (tileToCheck.isDangerous && !hasChecked)
             {
-                hasChecked = true; 
+                hasChecked = true;
+                isBattling = true;
                     Console.WriteLine("im on a dangerous tile!");
                 // TODO: Fill in. 
                 // transition to battle sys map 
@@ -379,16 +417,12 @@ namespace Project3
         public void CheckInteract()
         {
             Maptile tileToCheck = map.currentMap[(int)(currPositionCoord.X + frontOfPlayer.X), (int)(currPositionCoord.Y + frontOfPlayer.Y)];
-
-            //if tile is interactable, override controls with isInteracting, then
-            //pull current reference to the NPC over
             if (tileToCheck.isInteract)
             {
                 isInteracting = true;
                 mayContinue = false;
                 currentNPC = tileToCheck.npc;
             }
-            //and then checking logic here
         }
 
         /* Basic Draw Method
@@ -401,22 +435,22 @@ namespace Project3
             {
 
                 playerNorth.Draw(spriteBatch);
-                //spriteBatch.Draw(playerNorth, playerSpriteBox, Color.White);
+                
             }
             else if (facingEast)
             {
                 playerEast.Draw(spriteBatch);
-                //spriteBatch.Draw(playerEast, playerSpriteBox, Color.White);
+                
             }
             else if (facingSouth)
             {
                 playerSouth.Draw(spriteBatch);
-                //spriteBatch.Draw(playerSouth, playerSpriteBox, Color.White);
+                
             }
             else if (facingWest)
             {
                 playerWest.Draw(spriteBatch);
-                //spriteBatch.Draw(playerWest, playerSpriteBox, Color.White);
+                
             }
 
             if (isInteracting)

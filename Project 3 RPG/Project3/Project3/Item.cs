@@ -30,15 +30,16 @@ namespace Project3
         public String itemName;
 
         public Item(Texture2D item, String itemName,
-            int itemBuyPrice, int ItemGeneralEffect, Boolean isShield, Boolean isPotion, Boolean isWeapon)
+            int itemBuyPrice, int ItemGeneralEffect, Boolean isShield, Boolean isPotion, Boolean isWeapon, int weight = 0)
         {
+            this.weight = weight;
             itemTexture = item;
             this.itemBuyPrice = itemBuyPrice;
             itemSellPrice = (int)(itemBuyPrice * 0.60);
+
             if (isShield)
             {
                 block = ItemGeneralEffect;
-                weight = 1;
                 this.isShield = true;
             }
             else if (isPotion)
@@ -49,7 +50,6 @@ namespace Project3
             else if (isWeapon)
             {
                 damage = ItemGeneralEffect;
-                weight = 2;
                 this.isWeapon = true;
             }
             quantity = 1;

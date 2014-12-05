@@ -8,6 +8,8 @@ namespace Project3
 
     public class Enemy
     {
+        public Texture2D enemyTexture;
+
         // Hit points that get docked off every time player hits enemy
         public int HP { set; get; }
 
@@ -23,50 +25,24 @@ namespace Project3
         // Money left behind by killing enemy
         public int bounty;
 
-        public Animation EnemyAnimation;
-
         //List of items that player can inherit from a dead enemy.
         public List <Item> EnemyItemsList = new List<Item>();
 
-        // The position of the enemy in relation to the top left of the screen
-        public Vector2 Position;
 
         // The current state of the Enemy 
         public bool Active { set; get; }
 
 
-        public Enemy(int hp, int speed, int atk, int exp, int money, List<Item> list)
+        public Enemy(Texture2D texture, int hp, int speed, int atk, int exp, int money, List<Item> list)
         {
 //            this.game = game;
+            this.enemyTexture = texture;
             HP = hp;
             enemySpeed = speed;
             Damage = atk;
             Experience = exp;
             bounty = money;
             EnemyItemsList = list;
-        }
-
-        public void Initialize(Animation animation, Vector2 position)
-        {
-            // Loads the enemy texture
-            EnemyAnimation = animation;
-
-            // Sets the position of the enemy
-            Position = position;
-
-            // Enemy is initialized to active so that it will be updated
-            Active = true;
-
-            // Enemy's health starts at 10
-//            HP = 10;
-
-            // The amount of damage the enemy can do to the player
-  //          Damage = 2;
-
-            //enemySpeed = 5f;
-
-            // Each enemy has 100 experience points which can be transferred to player.
-    //        Experience = 100;
         }
 
         public void Update(GameTime gameTime)
@@ -93,10 +69,5 @@ namespace Project3
         //    enemy.enemySpeed = 5f;
         //}
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            // Draws the animation
-            EnemyAnimation.Draw(spriteBatch);
-        }
     }
 }

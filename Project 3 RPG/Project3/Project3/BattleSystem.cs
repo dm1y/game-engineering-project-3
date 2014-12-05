@@ -31,6 +31,22 @@ namespace Project3
         List<Enemy> enemyList;
         List<Item> itemGained;
 
+        /* William's suggestion - Very Important!*/
+        // Basically, in how our heirarchy is set up, the easiest way to give control between player and battle is to
+        // check it while we check for player's keyboard input. 
+        // Idea:
+        // Player toggles battle mode, which takes priority during the update call of player. During this, we constantly check
+        // if the player is still inBattle -- if the player is, then we check if the battle is finished. If it's finished, then
+        // from the player we switch the battle's battleIsFinished to FALSE, and on the next update, will turn the player's isBattling
+        // to false and battleIsFinished back to true. That way, when we battle again, it gets reset. 
+
+        // To see this in action, look at lines 161-168 in Player and 53-80 in NPC. 
+        // If you don't like this idea, feel free to shoot me an alternative -- it's seem to have worked so far.
+
+        public Boolean battleIsFinished;
+        // ^ Also, for this variable, I recommend putting it at the very end of battle, after we display the player's loss/win/whatever. 
+        // I expect you to figure a way to make states -- you're smart :)
+
         /* Information needed: 
             Player : attack power, defense power, speed, item consumable 
             Enemy : need its health, attack power, defense power, speed, exp given
@@ -67,18 +83,18 @@ namespace Project3
          */
 
         // Update method 
-        public void Update()
+        public void Update(KeyboardState keyboard)
         {
             // call backend methods after getting user selection implemented
  
             // for testing purposes to try and get map/battle sys transitions. 
             //have no idea how this will work. 
-            KeyboardState currentKeyboardState;
-            currentKeyboardState = Keyboard.GetState();
-            if (currentKeyboardState.IsKeyDown(Keys.F))
-            { 
-                // go back to world somehow 
-            }
+            //KeyboardState currentKeyboardState;
+            //currentKeyboardState = Keyboard.GetState();
+            //if (currentKeyboardState.IsKeyDown(Keys.F))
+            //{ 
+            //    // go back to world somehow 
+            //}
 
             if (endOfBattle)
             {
