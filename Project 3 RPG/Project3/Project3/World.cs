@@ -102,12 +102,6 @@ namespace Project3
         Texture2D playerleft;
         Texture2D playerright;
 
-        // Player Animations //
-        //Animation playerup;
-        //Animation playerdown;
-        //Animation playerleft;
-        //Animation playerright;
-
         //Tile Textures
         Texture2D grassText;
         Texture2D redTransition;
@@ -128,7 +122,9 @@ namespace Project3
         public BattleSystem battleSystem;
         bool currBattle;
 
+        
         public SpriteFont font;
+        public SpriteFont battleFont;
         public SpriteFont shopDialogueFont;
 
         public World(Game1 game, Camera c)
@@ -162,12 +158,16 @@ namespace Project3
             loader.Initialize(this);
 
             Console.WriteLine(player.playerInventory.money);
-            font = game.Content.Load<SpriteFont>("DialogueFont");
+            font = game.Content.Load<SpriteFont>("BattleFont");
             shopDialogueFont = game.Content.Load<SpriteFont>("ShopFont");
+            battleFont = game.Content.Load<SpriteFont>("BattleFont");
             camera.setBoundaries(width * 32, height * 32);
 
             HUD = new Display(player, game); //check
             HUD.LoadContent(Content);
+
+            battleSystem = new BattleSystem(player, HUD, this);
+            battleSystem.LoadTextures();
 
         }
 
@@ -198,13 +198,6 @@ namespace Project3
             //battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum);
         }
 
-
-        public void endBattle()
-        {
-            currBattle = false;
-            battleSystem = null;
-        }
-
         public void Update(GameTime gametime)
         {
             currentKeyboardState = Keyboard.GetState();
@@ -229,9 +222,10 @@ namespace Project3
             player.Draw(sb);
             HUD.Draw(sb);
 
-            if (currBattle)
+            if (player.isBattling)
+            {
                 battleSystem.Draw(sb);
-               
+            }
             sb.End();
         }
     }

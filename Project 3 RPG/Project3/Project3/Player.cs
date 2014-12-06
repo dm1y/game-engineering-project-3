@@ -37,6 +37,9 @@ namespace Project3
 
         public NPC currentNPC;
 
+        public int baseAtk;
+        public int basedef;
+
         /* For the battle system aspect */
         public int atk;
         public int def;
@@ -137,19 +140,18 @@ namespace Project3
             if (isBattling)
             {
 
-                /* 
-                if (world.battleSystem.isFinished)
+                if (world.battleSystem.exitBattle)
                 {
                     isBattling = false;
+                    world.battleSystem.ResetBattle();
                 }
-                */
-                if ((keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.W) || (keyboard.IsKeyDown(Keys.S))) && mayContinue)
+                if ((keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.W) || keyboard.IsKeyDown(Keys.S) || keyboard.IsKeyDown(Keys.Back)) && mayContinue)
                 {
                     world.battleSystem.Update(keyboard);
                     mayContinue = false;
                 }
                 else if (keyboard.IsKeyUp(Keys.Enter) && keyboard.IsKeyUp(Keys.W) && keyboard.IsKeyUp(Keys.S)
-                    && !mayContinue)
+                    && keyboard.IsKeyUp(Keys.Back) && !mayContinue)
                 {
                     mayContinue = true;
                 }
@@ -185,7 +187,7 @@ namespace Project3
 #endregion
 
             #region Player movement and Tile Check region
-            if (!isInteracting)
+            if (!isInteracting && !isBattling)
             {
                 //If current position is already at next position, player can move
                 if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
@@ -387,24 +389,28 @@ namespace Project3
 
             if (tileToCheck.isDangerous && !hasChecked)
             {
+                if (!isBattling)
+                {
+                    world.battleSystem.GenerateBattle(tileToCheck.easyEnemies);
+                }
                 hasChecked = true;
                 isBattling = true;
-                Console.WriteLine("Player is now in battle!");
-                Console.WriteLine("Easy Enemies: ");
-                foreach (Enemy e in tileToCheck.easyEnemies)
-                {
-                    Console.Write(e.enemyName + ", ");
-                }
-                Console.WriteLine("\nMedium Enemies: ");
-                foreach (Enemy e in tileToCheck.mediumEnemies)
-                {
-                    Console.Write(e.enemyName + ", ");
-                }
-                Console.WriteLine("\nHard Enemies: ");
-                foreach (Enemy e in tileToCheck.hardEnemies)
-                {
-                    Console.Write(e.enemyName + ", ");
-                }
+                //Console.WriteLine("Player is now in battle!");
+                //Console.WriteLine("Easy Enemies: ");
+                //foreach (Enemy e in tileToCheck.easyEnemies)
+                //{
+                //    Console.Write(e.enemyName + ", ");
+                //}
+                //Console.WriteLine("\nMedium Enemies: ");
+                //foreach (Enemy e in tileToCheck.mediumEnemies)
+                //{
+                //    Console.Write(e.enemyName + ", ");
+                //}
+                //Console.WriteLine("\nHard Enemies: ");
+                //foreach (Enemy e in tileToCheck.hardEnemies)
+                //{
+                //    Console.Write(e.enemyName + ", ");
+                //}
 
                 // TODO: Fill in. 
                 // transition to battle sys map 
@@ -479,14 +485,14 @@ namespace Project3
         // adjusts stats according to weapon item properties 
         public void setAtk(Item item)
         {
-            atk = item.damage;
+            atk = item.damage + baseAtk;
             speed -= item.weight;
         }
 
         // adjusts stats according to defense item properties 
         public void setDef(Item item)
         {
-            def = item.block;
+            def = item.block + basedef;
             speed -= item.weight;
         }
 

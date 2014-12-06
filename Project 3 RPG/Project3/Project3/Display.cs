@@ -50,8 +50,9 @@ namespace Project3
         public void increaseLevel()
         {
             level++;
+            p.baseAtk += 3;
+            p.basedef += 1;
             HP += 10;
-            p.speed += 5;
         }
 
         public void setExperience(int exp)
@@ -89,24 +90,24 @@ namespace Project3
                 // formula (p.world.camera.Position.X/2, p.world.camera.Position.Y/2)
                 // example here, offset for x is 0 since it's at the very left
                 // offset for y is the screen size height (320) - texture height 
-                sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2, p.world.camera.Position.Y / 2 + 320 - HUDBackGround.Height), Color.White);
+                sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2, p.world.camera.Position.Y / 2 + 352 - HUDBackGround.Height), Color.White);
 
                 // for words, you'll have to adjust y coordinates manually 
-                sb.DrawString(font, "HP: " + HP, new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 235), Color.Red);
-                sb.DrawString(font, "Level: " + level, new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 255), Color.Red);
-                sb.DrawString(font, "Money: \n $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
+                sb.DrawString(font, "HP: " + HP, new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 267), Color.Red);
+                sb.DrawString(font, "Level: " + level, new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 287), Color.Red);
+                sb.DrawString(font, "Money: \n $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 302), Color.Red);
                 //sb.DrawString(font, "$" + p.playerInventory.money, new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
                 int offset = 20;
                 for (int i = 0; i < 10; i++)
                 {
-                    sb.Draw(HUDOverlay, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 290 - HUDOverlay.Height), Color.White);
+                    sb.Draw(HUDOverlay, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - HUDOverlay.Height), Color.White);
                     
                     if (i < p.world.player.playerInventory.items.Count)
                     {
-                        sb.Draw(HUDTeal, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 290 - HUDTeal.Height), Color.White);
+                        sb.Draw(HUDTeal, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - HUDTeal.Height), Color.White);
 
-                        sb.Draw(p.world.player.playerInventory.items[i].itemTexture, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 290 - p.world.player.playerInventory.items[i].itemTexture.Height), Color.White);
+                        sb.Draw(p.world.player.playerInventory.items[i].itemTexture, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - p.world.player.playerInventory.items[i].itemTexture.Height), Color.White);
 
                     }
                     offset += 32;

@@ -606,7 +606,6 @@ C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RP
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\battleoptions_160x128.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combatdialogue_224x128.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_enemybubble_160x32.xnb
-C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_recticle_32x32.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\hud_maindisplay_96x96.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_main_224x224.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_menu_96x96.xnb
@@ -714,3 +713,14 @@ C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RP
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Thornball.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\enemies.txt
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\OreSlug.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\battlebg.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\target.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\background.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\battle_example.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\battle_example_withcoords.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\combattext.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\enemydisplay.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\options.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\playerbattlesprite.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\playerdisplay.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\BattleFont.xnb

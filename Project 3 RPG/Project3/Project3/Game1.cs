@@ -23,7 +23,7 @@ namespace Project3
         Camera camera;
 
         private const int width = 480;
-        private const int height = 320;
+        private const int height = 352;
 
         public Game1()
         {
