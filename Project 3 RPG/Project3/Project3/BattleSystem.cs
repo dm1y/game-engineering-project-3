@@ -111,14 +111,14 @@ namespace Project3
             enemyList.Add(e);
 
             combatHistory.Add("A " + e.enemyName + " appeared!");
-            if (IsSuccessful())
+            if (IsSuccessfulSmaller())
             {
                 num = r.Next(enemies.Count);
                 e = enemies.ElementAt(num);
                 enemyList.Add(e);
                 combatHistory.Add("A " + e.enemyName + " appeared!");
             }
-            if (IsSuccessful())
+            if (IsSuccessfulSmaller())
             {
                 num = r.Next(enemies.Count);
                 e = enemies.ElementAt(num);
@@ -221,42 +221,59 @@ namespace Project3
         private Boolean IsSuccessful()
         {
             Random r = new Random();
-            int num = r.Next(99);
+            int num = r.Next(10);
 
-            if (num % 2 == 0)
+            if (num < 7)
                 return true;
             else
                 return false;
         }
 
+        private Boolean IsSuccessfulSmaller()
+        {
+            Random r = new Random();
+            int num = r.Next(10);
+
+            if (num < 3)
+                return true;
+            else
+                return false;
+        }
         private void SelectEnemies(KeyboardState kb)
         {
             if (kb.IsKeyDown(Keys.Back))
             {
+                enemySelect = 0;
                 inEnemySelect = false;
+                inChoices = true;
                 return;
             }
 
             if (kb.IsKeyDown(Keys.W))
             {
-                if (enemySelect < 2)
+                
+                enemySelect++;
+                //Console.WriteLine(enemySelect);
+                if (enemySelect > 2)
                 {
-                    if (enemySelect != enemyList.Count - 1)
-                    {
-                        enemySelect++;
-                    }
+                    enemySelect = 2;
                 }
             }
-            else if (kb.IsKeyDown(Keys.S))
+            if (kb.IsKeyDown(Keys.S))
             {
-                if (enemySelect > 1)
+                enemySelect--;
+                //Console.WriteLine(enemySelect);
+                if (enemySelect < 0)
                 {
-                    enemySelect--;
+                    enemySelect = 0;
                 }
             }
-            else if (kb.IsKeyDown(Keys.Enter))
+            if (kb.IsKeyDown(Keys.Enter))
             {
                 inEnemySelect = false;
+                canFight = true;
+                combatHistory.Clear();
+                displayCounter = 0;
                 Battle();
             }
         }
@@ -306,39 +323,88 @@ namespace Project3
          */
         private void Battle()
         {
-            foreach (Enemy e in enemyList)
+            for (int i = 0; i < enemyList.Count; i++)
             {
-                if (player.speed > e.enemySpeed)
+                Enemy e = enemyList.ElementAt(i);
+                if (player.speed > e.enemySpeed && i == enemySelect)
                 {
-                    if (e.Equals(enemyList.ElementAt(enemySelect)) && canFight)
+                    //Faster player trying to hit. 
+                    if (canFight)
                     {
                         if (IsSuccessful())
                         {
-                            combatHistory.Add("You hit the " + e.enemyName + " for " + player.atk);
+                            combatHistory.Add("Hit " + e.enemyName + " for " + player.atk + ".");
                             e.HP = e.HP - player.atk;
+                        }
+                        else
+                        {
+                            combatHistory.Add("Missed the " + e.enemyName + "!");
+                        }
+                    }
+                    //Slower Enemy Trying to hit
+                    if (e.HP > 0)
+                    {
+                        if (IsSuccessful())
+                        {
+                            int damage = e.Damage - player.def;
+                            combatHistory.Add(e.enemyName + " hit you for " + damage + ".");
+                            playerHealth = playerHealth - damage;
+                        }
+                        else
+                        {
+                            combatHistory.Add(e.enemyName + " missed!");
                         }
                     }
                 }
+                else if (player.speed < e.enemySpeed && i == enemySelect) 
+                {
+                    //Faster Enemy hitting
+                    if (IsSuccessful())
+                    {
+                        int damage = e.Damage - player.def;
+                        combatHistory.Add(e.enemyName + " hit you for " + damage + ".");
+                        playerHealth = playerHealth - damage;
+                    }
+                    else
+                    {
+                        combatHistory.Add(e.enemyName + " missed!");
+                    }
+                    //Slower player hitting
+                    if (playerHealth > 0) 
+                    {
+                        if (canFight)
+                        {
+                            if (IsSuccessful())
+                            {
+                                combatHistory.Add("Hit " + e.enemyName + " for " + player.atk + ".");
+                                e.HP = e.HP - player.atk;
+                            }
+                            else
+                            {
+                                combatHistory.Add("Missed the " + e.enemyName + "!");
+                            }
+                        }
+                    }
+                }
+                    
                 else
                 {
                     if (IsSuccessful())
                     {
                         int damage = e.Damage - player.def;
+                        combatHistory.Add(e.enemyName + " hit you for " + damage + ".");
                         playerHealth = playerHealth - damage;
                     }
-
-                    if (e.Equals(enemyList.ElementAt(enemySelect)) && canFight)
+                    else
                     {
-                        if (IsSuccessful())
-                        {
-                            combatHistory.Add("You hit the " + e.enemyName + " for " + player.atk);
-                            e.HP = e.HP - player.atk;
-                        }
+                        combatHistory.Add(e.enemyName + " missed!");
                     }
                 }
             }
 
-            enemySelect = 0;
+
+            //Console.WriteLine("DisplayCounter: " + displayCounter);
+            //Console.WriteLine("Combat Lines: " + combatHistory.Count);
             checkOutcome();
         }
 
@@ -351,44 +417,57 @@ namespace Project3
             }
             else
             {
+                List<Enemy> toRemove = new List<Enemy>();
                 foreach (Enemy e in enemyList)
                 {
                     if (e.HP <= 0)
                     {
+                        combatHistory.Clear();
+                        displayCounter = 1;
+                        combatHistory.Add(e.enemyName + " was defeated!");
+
                         expGained += e.Experience;
                         moneyGained += e.bounty;
                         gainItemSpoils();
-                        enemyList.Remove(e);
-                    }
-
-                    if (enemyList.Count == 0)
-                    {
-                        win = true;
-                        endOfBattle = true;
-
-                        int total = expGained + HUD.experience;
-
-                        // Checks if it has reached above threshold 
-                        if (total > HUD.threshold)
-                        {
-                            // Increases level 
-                            HUD.increaseLevel();
-                            levelGained = HUD.level;
-
-                            // Increases threshold by 50
-                            HUD.increaseThreshold();
-                        }
-
-                        // Sets experience 
-                        int remainder = total - HUD.threshold;
-                        HUD.setExperience(remainder);
-
-                        // Increases player money 
-                        player.playerInventory.money += moneyGained;
+                        toRemove.Add(e);
                     }
                 }
+                foreach(Enemy e in toRemove) 
+                {
+                    enemyList.Remove(e);
+                }
+                if (enemyList.Count == 0)
+                {
+                    Console.WriteLine("i won!");
+                    combatHistory.Clear();
+                    displayCounter = 1;
+                    win = true;
+                    endOfBattle = true;
+
+                    int total = expGained + HUD.experience;
+
+                    // Checks if it has reached above threshold 
+                    if (total > HUD.threshold)
+                    {
+                        // Increases level 
+                        combatHistory.Add("You gained a level!");
+                        HUD.increaseLevel();
+                        levelGained = HUD.level;
+
+                        // Increases threshold by 50
+                        HUD.increaseThreshold();
+                    }
+
+                    // Sets experience 
+                    int remainder = total - HUD.threshold;
+                    HUD.setExperience(remainder);
+
+                    // Increases player money 
+                    player.playerInventory.money += moneyGained;
+                    combatHistory.Add("You won and found $" + moneyGained + ".");
+
+                }
             }
-            inChoices = true;
         }
 
         // parameter is either enemy or enemy list
@@ -555,17 +634,9 @@ namespace Project3
             //Combat History
             Vector2 combatpos = origin;
             sb.Draw(combattext, combatpos, Color.White);
-            //Player Display
-            Vector2 playerdisplaypos = origin + new Vector2(0, 128);
-            sb.Draw(playerdisplay, playerdisplaypos, Color.White);
             //Options
             Vector2 optionpos = origin + new Vector2(416, 0);
             sb.Draw(options, optionpos, Color.White);
-            //Enemy Name
-            Vector2 enemynamepos = origin + new Vector2(64, 320);
-            Vector2 enemydisplaypos = enemynamepos + new Vector2(192, 0);
-            sb.Draw(enemydisplay, enemynamepos, Color.White);
-            sb.Draw(enemydisplay, enemydisplaypos, Color.White);
             //Player Sprite
             Vector2 playerpos = origin + new Vector2(112, 224);
             sb.Draw(playersprite, playerpos, Color.White);
@@ -579,32 +650,77 @@ namespace Project3
             sb.Draw(arrow, optionSelPos, Color.White);
             #endregion
             #region Enemy Draw
+            Vector2 enemy1 = new Vector2();
+            Vector2 enemy2 = new Vector2();
+            Vector2 enemy3 = new Vector2();
             //Drawing Enemies
             if (enemyList.Count >= 1)
             {
-                Vector2 enemy1 = origin + new Vector2(256, 240);
+                enemy1 = origin + new Vector2(256, 240);
                 sb.Draw(enemyList.ElementAt(0).enemyTexture, enemy1, Color.White);
             }
             if (enemyList.Count >= 2)
             {
-                Vector2 enemy2 = origin + new Vector2(320, 256);
+                enemy2 = origin + new Vector2(320, 256);
                 sb.Draw(enemyList.ElementAt(1).enemyTexture, enemy2, Color.White);
             }
             if (enemyList.Count >= 3)
             {
-                Vector2 enemy3 = origin + new Vector2(384, 240);
+                enemy3 = origin + new Vector2(384, 240);
                 sb.Draw(enemyList.ElementAt(2).enemyTexture, enemy3, Color.White);
             }
             #endregion
 
             #region Combat Text Draw
-            Vector2 combatTextPos = origin + new Vector2(16, 16);
+            Vector2 combatTextPos = origin + new Vector2(12, 8);
             for (int i = 0; i < displayCounter; i++)
             {
                 Vector2 textPos = combatTextPos + new Vector2(0, i*16);
                 sb.DrawString(world.shopDialogueFont, combatHistory.ElementAt(i), textPos, Color.White);
             }
             #endregion
+
+            #region Player Properties Draw
+            //Player Display
+            Vector2 playerdisplaypos = origin + new Vector2(0, 128);
+            sb.Draw(playerdisplay, playerdisplaypos, Color.White);
+            Vector2 playerPropPos = playerdisplaypos + new Vector2(16, 16);
+
+            sb.DrawString(world.battleFont, "HP: " + playerHealth + "/" + HUD.HP, playerPropPos + new Vector2(0, 0), Color.White);
+            sb.DrawString(world.battleFont, "ATK: " + player.atk, playerPropPos + new Vector2(0, 16), Color.White);
+            sb.DrawString(world.battleFont, "DEF: " + player.def, playerPropPos + new Vector2(0, 32), Color.White);
+            #endregion
+
+            if (inEnemySelect)
+            {
+                //Enemy Name
+                Vector2 enemynamepos = origin + new Vector2(64, 320);
+                Vector2 enemydisplaypos = enemynamepos + new Vector2(192, 0);
+                sb.Draw(enemydisplay, enemynamepos, Color.White);
+                sb.Draw(enemydisplay, enemydisplaypos, Color.White);
+
+                Enemy e = enemyList.ElementAt(enemySelect);
+                int offset = (e.enemyName.Length * 8) / 2;
+                sb.DrawString(world.battleFont, e.enemyName, enemynamepos + new Vector2(80 - offset, 8), Color.White);
+                sb.DrawString(world.battleFont, "HP: " + e.HP + "      ATK: " + e.Damage, enemydisplaypos + new Vector2(16, 8), Color.White);
+
+                Vector2 targetPos = new Vector2();
+                if (enemySelect == 0)
+                {
+                    targetPos = enemy1 + new Vector2(16, 16);
+                }
+                if (enemySelect == 1)
+                {
+                    //Console.WriteLine("YES");
+                    targetPos = enemy2 + new Vector2(16, 16);
+                }
+                if (enemySelect == 2)
+                {
+                    //Console.WriteLine("FFFF");
+                    targetPos = enemy3 + new Vector2(16, 16);
+                }
+                sb.Draw(target, targetPos, Color.White);
+            }
         }
     }
 }

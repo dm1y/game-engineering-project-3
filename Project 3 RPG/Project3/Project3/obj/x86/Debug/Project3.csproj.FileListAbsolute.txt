@@ -724,3 +724,4 @@ C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RP
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\playerbattlesprite.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\playerdisplay.xnb
 C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\BattleFont.xnb
+C:\Users\willi_000\Desktop\Project 3 RPG\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.csprojResolveAssemblyReference.cache
