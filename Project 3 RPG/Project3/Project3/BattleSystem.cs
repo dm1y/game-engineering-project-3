@@ -286,12 +286,16 @@ namespace Project3
             if (IsSuccessful())
             {
                 //William added this -- sets endOfBattle to true, player neither lost or won. 
+                combatHistory.Clear();
+                combatHistory.Add("You successfully escaped!");
                 endOfBattle = true;
                 lose = false;
                 win = false;
             }
             else
             {
+                combatHistory.Clear();
+                combatHistory.Add("You failed to escape!");
                 canFight = false;
             }
         }
@@ -511,7 +515,6 @@ namespace Project3
                 expGained = 0;
                 levelGained = 0;
                 moneyGained = 0;
-                itemGained = null;
 
                 // displays 0 exp gained message ?
             }
