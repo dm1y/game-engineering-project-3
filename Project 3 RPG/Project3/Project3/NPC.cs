@@ -62,34 +62,45 @@ namespace Project3
                 }
                 else
                 {
+                    
                     shop.Update(keyboard);
+                    //world.talkToNPC.Play();
                 }
             }
             else if (isDialogueNPC)
             {
+
                 if (keyboard.IsKeyDown(Keys.Enter) && dialogue.isFinished())
                 {
+                    
                     dialogue.ResetDialogue();
                     isFinished = true;
                 }
                 else
                 {
+
                     //update
                     if (keyboard.IsKeyDown(Keys.Enter))
                     {
+                        
                         dialogue.Update(keyboard);
                     }
+
                 }
+
             }
+
         }
 
         public void Draw(SpriteBatch sb)
         {
             if (isDialogueNPC)
             {
+
                 Vector2 position = new Vector2(dialogue.world.camera.Position.X / 2 + 32, dialogue.world.camera.Position.Y / 2);
                 sb.Draw(speechBubble, position, Color.White);
                 dialogue.Draw(sb);
+
             }
             else if (isShopNPC)
             {

@@ -147,6 +147,7 @@ namespace Project3
                 }
                 if ((keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.W) || keyboard.IsKeyDown(Keys.S) || keyboard.IsKeyDown(Keys.Back)) && mayContinue)
                 {
+                    playSound(keyboard);
                     world.battleSystem.Update(keyboard);
                     mayContinue = false;
                 }
@@ -174,12 +175,15 @@ namespace Project3
                     if ((keyboard.IsKeyDown(Keys.Enter) || (keyboard.IsKeyDown(Keys.W))
                         || (keyboard.IsKeyDown(Keys.S)) || (keyboard.IsKeyDown(Keys.Back))) && mayContinue)
                     {
+                        playSound(keyboard);
+
                         currentNPC.Update(keyboard);
                         mayContinue = false;
                     }
                     else if (keyboard.IsKeyUp(Keys.Enter) && keyboard.IsKeyUp(Keys.W) && keyboard.IsKeyUp(Keys.S)
                         && keyboard.IsKeyUp(Keys.Back) && !mayContinue)
                     {
+                       // world.talkToNPC.Play();
                         mayContinue = true;
                     }
                 }
@@ -500,6 +504,32 @@ namespace Project3
         public void setConsumable(Item item)
         {
             consumable = item;
+        }
+
+        public void playSound(KeyboardState keyboard)    //CHECK!
+        {
+            if(keyboard.IsKeyDown(Keys.Enter))
+            {
+                if (world.player.currentNPC.isFinished)
+                {
+                    world.hitEnterSoundInstance.Stop();
+                }
+                world.hitEnterSoundInstance.Play();
+                
+            }
+            if(keyboard.IsKeyDown(Keys.Delete))
+            {
+                world.hitBackSpaceSound.Play();
+            }
+
+            if (keyboard.IsKeyDown(Keys.W))
+            {
+                world.menuSound.Play();
+            }
+            if (keyboard.IsKeyDown(Keys.S))
+            {
+                world.menuSound.Play();
+            }
         }
     }
 }

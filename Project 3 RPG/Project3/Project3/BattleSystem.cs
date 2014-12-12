@@ -153,11 +153,14 @@ namespace Project3
             //Else, if ENTER is down, we want to engage in whatever option was chosen.
             else if (keyboard.IsKeyDown(Keys.Enter) && !inEnemySelect && !exitBattle && inChoices)
             {
+                
                 //If it's 0, we want to fight. Enter enemy selection state.
                 if (currentSelect == 0)
                 {
+                    
                     inEnemySelect = true;
                     inChoices = false;
+                    
                 }
                 //If it's 1, we want to heal. Consume current healing item.
                 if (currentSelect == 1)
@@ -181,11 +184,14 @@ namespace Project3
             //Otherwise, if not in any of the above states, we must have computed battle 
             else
             {
+                
                 //Assumes that combat calculation has been done
                 if (keyboard.IsKeyDown(Keys.Enter) && !endOfBattle)
                 {
+                    
                     if (displayCounter < combatHistory.Count)
                     {
+                        
                         displayCounter++;
                     }
                     else
@@ -195,25 +201,31 @@ namespace Project3
                         displayCounter = 1;
                         inChoices = true;
                     }
+                    
+                    
                 }
                 else if (keyboard.IsKeyDown(Keys.Enter) && endOfBattle)
                 {
+
                     if (displayCounter < combatHistory.Count)
                     {
                         displayCounter++;
                     }
                     else
                     {
+
                         transition(keyboard);
                     }
+
                 }
                 //On every update, we check if the whole battle is over. If not, we continue as usual. 
                 //Note that you can only get endOfBattle to TRUE under three conditions:
                 //1. Kill all monsters
                 //2. Player dies
                 //3. Player runs
-
+                
             }
+
         }
 
         // Random generator. 
@@ -323,6 +335,8 @@ namespace Project3
          */
         private void Battle()
         {
+
+            //world.attackSound.Play();
             for (int i = 0; i < enemyList.Count; i++)
             {
                 Enemy e = enemyList.ElementAt(i);
@@ -401,7 +415,7 @@ namespace Project3
                     }
                 }
             }
-
+            world.attackSoundInstance.Stop();
 
             //Console.WriteLine("DisplayCounter: " + displayCounter);
             //Console.WriteLine("Combat Lines: " + combatHistory.Count);
@@ -600,6 +614,7 @@ namespace Project3
 
             if (keyboard.IsKeyDown(Keys.Enter))
             {
+                //world.menuSound.Play();
                 exitBattle = true;
                 //Now we can exit.
             }

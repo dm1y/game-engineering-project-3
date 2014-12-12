@@ -16,6 +16,19 @@ namespace Project3
     {
         public Game1 game;
         public Camera camera;
+        public Song gameMusic;
+        public SoundEffect menuSound;
+        public SoundEffectInstance menuSoundInstance;
+        public SoundEffect talkToNPC;
+        public SoundEffectInstance talkToNPCInstance;
+        public SoundEffect shopSound;
+        public SoundEffectInstance shopSoundInstance;
+        public SoundEffect attackSound;
+        public SoundEffectInstance attackSoundInstance;
+        public SoundEffect hitEnterSound;
+        public SoundEffectInstance hitEnterSoundInstance;
+        public SoundEffect hitBackSpaceSound;
+        public SoundEffectInstance hitBackSpaceSoundInstance;
 
         /*
          * HIERARCHY NOTES: 
@@ -152,6 +165,23 @@ namespace Project3
             playerup = game.Content.Load<Texture2D>("Player/player_walk_north");
             playerdown = game.Content.Load<Texture2D>("Player/player_walk_south");
 
+            // Load Music and Sound Effects
+            //-----------------------------------------------------------------------------
+            hitBackSpaceSound = Content.Load<SoundEffect>("return_button");
+            hitBackSpaceSoundInstance = hitBackSpaceSound.CreateInstance();
+            hitEnterSound = Content.Load<SoundEffect>("enter_sound");
+            hitEnterSoundInstance = hitEnterSound.CreateInstance();
+            gameMusic = Content.Load<Song>("8bit_game_music");
+            menuSound = Content.Load<SoundEffect>("Menu_sound");
+            menuSoundInstance = menuSound.CreateInstance();
+            talkToNPC = Content.Load<SoundEffect>("talk");
+            talkToNPCInstance = talkToNPC.CreateInstance();
+            shopSound = Content.Load<SoundEffect>("shop");
+            shopSoundInstance = shopSound.CreateInstance();
+            attackSound = Content.Load<SoundEffect>("battle_start");
+            attackSoundInstance = attackSound.CreateInstance();
+            //-----------------------------------------------------------------------------
+
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
 
             loader = new ObjectLoader();
@@ -163,8 +193,13 @@ namespace Project3
             battleFont = game.Content.Load<SpriteFont>("BattleFont");
             camera.setBoundaries(width * 32, height * 32);
 
-            HUD = new Display(player, game); //check
+            HUD = new Display(player, game); 
             HUD.LoadContent(Content);
+            // GAME MUSIC-------------------------------------------------------------------
+            MediaPlayer.Play(gameMusic);
+            MediaPlayer.Volume = 0.11f;
+            MediaPlayer.IsRepeating = true;
+            // GAME MUSIC-------------------------------------------------------------------
 
             battleSystem = new BattleSystem(player, HUD, this);
             battleSystem.LoadTextures();
