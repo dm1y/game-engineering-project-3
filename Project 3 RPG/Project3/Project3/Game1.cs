@@ -11,6 +11,12 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Project3
 {
+    public enum Screen
+    {
+        StartScreen,
+        World /* This will be the GamePlayScreen */
+    }
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -21,6 +27,8 @@ namespace Project3
 
         World gameWorld;
         Camera camera;
+        Screen currentScreen;
+        StartScreen startScreen;
 
         private const int width = 480;
         private const int height = 352;
@@ -46,7 +54,8 @@ namespace Project3
             // TODO: Add your initialization logic here
             
             base.Initialize();
-            
+            startScreen = new StartScreen(this);
+            currentScreen = Screen.StartScreen;
             
         }
 
@@ -59,8 +68,8 @@ namespace Project3
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             camera = new Camera(this.graphics.GraphicsDevice.Viewport);
-            gameWorld = new World(this, camera);
-            gameWorld.LoadContent(Content);
+            //gameWorld = new World(this, camera);
+            //gameWorld.LoadContent(Content);
             
             // TODO: use this.Content to load your game content here
         }
@@ -86,10 +95,18 @@ namespace Project3
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (gameWorld != null)
+            switch (currentScreen)
             {
-                gameWorld.Update(gameTime);
+                case Screen.StartScreen:
+                    if (startScreen != null)
+                        startScreen.Update();
+                    break;
+                case Screen.World:
+                    if (gameWorld != null)
+                        gameWorld.Update(gameTime);
+                    break;
             }
+
             base.Update(gameTime);
         }
 
@@ -100,14 +117,33 @@ namespace Project3
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
-            
             // TODO: Add your drawing code here
-            if (gameWorld != null)
+            switch (currentScreen)
             {
-                gameWorld.Draw(spriteBatch);
+                case Screen.StartScreen:
+                   if (startScreen != null)
+                        startScreen.Draw(spriteBatch);
+                    break;
+                case Screen.World:
+                    if (gameWorld != null)
+                    {
+                        gameWorld.Draw(spriteBatch);
+                    }
+                    break;
             }
+
             base.Draw(gameTime);
+        }
+
+        public void StartGame()
+        {
+            startScreen = null;
+
+            gameWorld = new World(this, camera);
+
+            gameWorld.LoadContent(this.Content);
+
+            currentScreen = Screen.World;
         }
     }
 }

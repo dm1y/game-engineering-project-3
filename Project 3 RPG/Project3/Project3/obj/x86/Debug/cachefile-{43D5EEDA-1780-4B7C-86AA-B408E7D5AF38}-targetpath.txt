@@ -121,6 +121,7 @@ Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
+Content\MenuFont.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

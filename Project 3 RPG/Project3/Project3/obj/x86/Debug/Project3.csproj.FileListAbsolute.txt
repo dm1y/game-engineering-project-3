@@ -419,7 +419,6 @@ C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\P
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\battleoptions_160x128.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combatdialogue_224x128.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_enemybubble_160x32.xnb
-C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\combat_recticle_32x32.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\hud_maindisplay_96x96.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_main_224x224.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\shop_menu_96x96.xnb
@@ -770,3 +769,47 @@ C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project
 C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.exe
 C:\Users\ccclayton\Documents\Game Development\game-engineering-project-3\Project 3 RPG\Project3\Project3\obj\x86\Debug\Project3.pdb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\target.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\ForestGuardian.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\GhastlyShark.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Grubbie.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Haniwa.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Tusklet.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\WoodDweller.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Bubbler.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Chompy.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\CorruptGooey.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\FairyReaper.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\FireSquig.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Gazer.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Goblin.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Gooey.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\OreSlug.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\PeatDweller.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Pluffer.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\PoisonBud.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Spooky.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Squiglet.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\SwampLizard.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Tanuki.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\Enemy\Thornball.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Overlays\battlebg.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\background.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\battle_example.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\battle_example_withcoords.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\combattext.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\enemydisplay.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\options.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\playerbattlesprite.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\playerdisplay.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\BattleFont.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\battle_start.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Menu_sound.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\talk.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\shop.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\enter_sound.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\return_button.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.wma
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\enemies.txt
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MenuFont.xnb
