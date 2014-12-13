@@ -25,11 +25,12 @@ namespace Project3
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        World gameWorld;
+        public World gameWorld;
         Camera camera;
         Screen currentScreen;
         StartScreen startScreen;
-
+        public SoundEffect menuSound;
+        public SoundEffectInstance menuSoundInstance;
         private const int width = 480;
         private const int height = 352;
 
@@ -68,6 +69,8 @@ namespace Project3
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             camera = new Camera(this.graphics.GraphicsDevice.Viewport);
+            menuSound = Content.Load<SoundEffect>("Menu_sound");
+            menuSoundInstance = menuSound.CreateInstance();
             //gameWorld = new World(this, camera);
             //gameWorld.LoadContent(Content);
             

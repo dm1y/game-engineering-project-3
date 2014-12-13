@@ -146,6 +146,7 @@ namespace Project3
             camera = c;
             map = new Map(game);
             currBattle = false;
+            
         }
 
         //WORK IN PROGRESS
@@ -197,7 +198,7 @@ namespace Project3
             HUD.LoadContent(Content);
             // GAME MUSIC-------------------------------------------------------------------
             MediaPlayer.Play(gameMusic);
-            MediaPlayer.Volume = 0.11f;
+            MediaPlayer.Volume = 0.08f;
             MediaPlayer.IsRepeating = true;
             // GAME MUSIC-------------------------------------------------------------------
 

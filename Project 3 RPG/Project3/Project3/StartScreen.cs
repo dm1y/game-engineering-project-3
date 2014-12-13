@@ -49,11 +49,17 @@ namespace Project3
 
             if (keyboardState.IsKeyDown(Keys.W))
             {
+                game.menuSoundInstance.Volume = 0.4f;
+                game.menuSoundInstance.Pan = 0.5f;
+                game.menuSoundInstance.Play();
                 selection = 0;
             }
 
             if (keyboardState.IsKeyDown(Keys.S))
             {
+                game.menuSoundInstance.Volume = 0.4f;
+                game.menuSoundInstance.Pan = 0.5f;
+                game.menuSoundInstance.Play();
                 selection = 1;
             }
 

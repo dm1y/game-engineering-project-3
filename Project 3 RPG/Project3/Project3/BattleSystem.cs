@@ -24,8 +24,8 @@ namespace Project3
         bool win;
         bool lose;
         Boolean canFight;
-        Boolean inEnemySelect;
-        Boolean inChoices;
+        public Boolean inEnemySelect;
+        public Boolean inChoices;
 
         int expGained;
         int levelGained;
@@ -415,7 +415,7 @@ namespace Project3
                     }
                 }
             }
-            world.attackSoundInstance.Stop();
+            //world.attackSoundInstance.Stop();
 
             //Console.WriteLine("DisplayCounter: " + displayCounter);
             //Console.WriteLine("Combat Lines: " + combatHistory.Count);

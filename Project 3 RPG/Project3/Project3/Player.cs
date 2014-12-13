@@ -183,7 +183,7 @@ namespace Project3
                     else if (keyboard.IsKeyUp(Keys.Enter) && keyboard.IsKeyUp(Keys.W) && keyboard.IsKeyUp(Keys.S)
                         && keyboard.IsKeyUp(Keys.Back) && !mayContinue)
                     {
-                       // world.talkToNPC.Play();
+                        playSound(keyboard);   //CHECK!
                         mayContinue = true;
                     }
                 }
@@ -506,30 +506,77 @@ namespace Project3
             consumable = item;
         }
 
-        public void playSound(KeyboardState keyboard)    //CHECK!
+        public void playSound(KeyboardState keyboard)    //CHECK NEEDS WORK!
         {
-            if(keyboard.IsKeyDown(Keys.Enter))
+            if ( isInteracting && !isBattling && !currentNPC.isFinished)
             {
-                if (world.player.currentNPC.isFinished)
+                if (keyboard.IsKeyDown(Keys.Enter))
                 {
-                    world.hitEnterSoundInstance.Stop();
+                    world.talkToNPCInstance.Volume = 0.5f;
+                    world.talkToNPCInstance.Pan = 0.5f;
+                    world.talkToNPCInstance.Play();
+                    
                 }
-                world.hitEnterSoundInstance.Play();
-                
-            }
-            if(keyboard.IsKeyDown(Keys.Delete))
-            {
-                world.hitBackSpaceSound.Play();
+
+                if (keyboard.IsKeyDown(Keys.Back))
+                {
+                    world.hitBackSpaceSoundInstance.Volume = 0.2f;
+                    world.hitBackSpaceSoundInstance.Pan = 0.2f;
+                    world.hitBackSpaceSoundInstance.Play();
+                }
+
+                if (keyboard.IsKeyDown(Keys.W))
+                {
+                    world.menuSoundInstance.Volume = 0.3f;
+                    world.menuSoundInstance.Pan = 0.5f;
+                    world.menuSoundInstance.Play();
+                }
+                if (keyboard.IsKeyDown(Keys.S))
+                {
+                    world.menuSoundInstance.Volume = 0.3f;
+                    world.menuSoundInstance.Pan = 0.5f;
+                    world.menuSoundInstance.Play();
+                }
             }
 
-            if (keyboard.IsKeyDown(Keys.W))
+            else if (isBattling && !world.battleSystem.inEnemySelect && !world.battleSystem.exitBattle && world.battleSystem.inChoices)
             {
-                world.menuSound.Play();
+                if (world.battleSystem.currentSelect == 0)
+                {
+                    if (keyboard.IsKeyDown(Keys.Enter))
+                    {
+                        world.attackSoundInstance.Volume = 0.8f;
+                        world.attackSoundInstance.Pan = 0.9f;
+                        world.attackSoundInstance.Play();
+                    }
+
+
+                    if (keyboard.IsKeyDown(Keys.Delete))
+                    {
+                        world.hitBackSpaceSoundInstance.Volume = 0.2f;
+                        world.hitBackSpaceSoundInstance.Pan = 0.2f;
+                        world.hitBackSpaceSoundInstance.Play();
+                    }
+
+                    if (keyboard.IsKeyDown(Keys.W))
+                    {
+                        world.menuSoundInstance.Volume = 0.3f;
+                        world.menuSoundInstance.Pan = 0.5f;
+                        world.menuSoundInstance.Play();
+                    }
+                    if (keyboard.IsKeyDown(Keys.S))
+                    {
+                        world.menuSoundInstance.Volume = 0.3f;
+                        world.menuSoundInstance.Pan = 0.5f;
+                        world.menuSoundInstance.Play();
+                    }
+                }
+
+
             }
-            if (keyboard.IsKeyDown(Keys.S))
-            {
-                world.menuSound.Play();
-            }
+            
+           
         }
+        
     }
 }
