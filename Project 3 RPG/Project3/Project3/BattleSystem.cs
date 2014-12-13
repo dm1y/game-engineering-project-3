@@ -51,6 +51,7 @@ namespace Project3
         Texture2D enemydisplay;
         Texture2D arrow;
 
+        Random r;
         /* Information needed: 
             Player : attack power, defense power, speed, item consumable 
             Enemy : need its health, attack power, defense power, speed, exp given
@@ -74,6 +75,8 @@ namespace Project3
             displayCounter = 0;
             exitBattle = false;
             inChoices = false;
+
+            r = new Random();
         }
 
         public void LoadTextures()
@@ -107,21 +110,21 @@ namespace Project3
             playerHealth = HUD.HP;
             Random r = new Random();
             int num = r.Next(enemies.Count);
-            Enemy e = enemies.ElementAt(num);
+            Enemy e = new Enemy(enemies.ElementAt(num));
             enemyList.Add(e);
 
             combatHistory.Add("A " + e.enemyName + " appeared!");
             if (IsSuccessfulSmaller())
             {
                 num = r.Next(enemies.Count);
-                e = enemies.ElementAt(num);
+                e = new Enemy(enemies.ElementAt(num));
                 enemyList.Add(e);
                 combatHistory.Add("A " + e.enemyName + " appeared!");
             }
             if (IsSuccessfulSmaller())
             {
                 num = r.Next(enemies.Count);
-                e = enemies.ElementAt(num);
+                e = new Enemy(enemies.ElementAt(num));
                 enemyList.Add(e);
                 combatHistory.Add("A " + e.enemyName + " appeared!");
             }
@@ -232,9 +235,9 @@ namespace Project3
         // Might need to use a seed as a parameter 
         private Boolean IsSuccessful()
         {
-            Random r = new Random();
             int num = r.Next(10);
 
+            Console.WriteLine(num);
             if (num < 7)
                 return true;
             else
@@ -243,7 +246,6 @@ namespace Project3
 
         private Boolean IsSuccessfulSmaller()
         {
-            Random r = new Random();
             int num = r.Next(10);
 
             if (num < 3)
@@ -266,9 +268,9 @@ namespace Project3
                 
                 enemySelect++;
                 //Console.WriteLine(enemySelect);
-                if (enemySelect > 2)
+                if (enemySelect > enemyList.Count - 1)
                 {
-                    enemySelect = 2;
+                    enemySelect = enemyList.Count - 1;
                 }
             }
             if (kb.IsKeyDown(Keys.S))
@@ -326,6 +328,7 @@ namespace Project3
                 combatHistory.Clear();
                 combatHistory.Add("You failed to escape!");
                 canFight = false;
+                Battle();
             }
         }
 
@@ -478,7 +481,21 @@ namespace Project3
 
                     // Increases player money 
                     player.playerInventory.money += moneyGained;
-                    combatHistory.Add("You won and found $" + moneyGained + ".");
+                    combatHistory.Add("You won and got $" + moneyGained + ".");
+
+                    foreach (Item i in itemGained)
+                    {
+                        if (player.playerInventory.items.Count < player.playerInventory.maxSize)
+                        {
+                            combatHistory.Add("Found a " + i.itemName + ".");
+                            player.playerInventory.AddToInventory(i, 1);
+                        }
+                        else
+                        {
+                            combatHistory.Add("Your bags are full!");
+                            break;
+                        }
+                    }
 
                 }
             }
@@ -534,40 +551,45 @@ namespace Project3
 
         private void gainItemSpoils()
         {
-            Random r = new Random();
+            int num = r.Next(10);
 
-            // If there is only one enemy 
-            if (enemyList.Count == 1)
+            if (num < 4)
             {
-                if (enemyList[0].EnemyItemsList == null || enemyList[0].EnemyItemsList.Count == 0)
-                    return;
-                else
-                {
-                    int random = r.Next(enemyList[0].EnemyItemsList.Count);
-                    if (random != enemyList[0].EnemyItemsList.Count)
-                    {
-                        itemGained.Add(enemyList[0].EnemyItemsList[random]);
-                        player.playerInventory.AddToInventory(enemyList[0].EnemyItemsList[random], 1);
-                    }
-                }
+                int randomize = r.Next(enemyList[0].EnemyItemsList.Count);
+                itemGained.Add(enemyList[0].EnemyItemsList[randomize]);
             }
+            //// If there is only one enemy 
+            //if (enemyList.Count == 1)
+            //{
+            //    if (enemyList[0].EnemyItemsList == null || enemyList[0].EnemyItemsList.Count == 0)
+            //        return;
+            //    else
+            //    {
+            //        int random = r.Next(enemyList[0].EnemyItemsList.Count);
+            //        if (random != enemyList[0].EnemyItemsList.Count)
+            //        {
+            //            itemGained.Add(enemyList[0].EnemyItemsList[random]);
+            //            player.playerInventory.AddToInventory(enemyList[0].EnemyItemsList[random], 1);
+            //        }
+            //    }
+            //}
 
-            // If there are multiple 
-            else
-            {
-                int rand = r.Next(enemyList.Count);
-                if (enemyList[rand].EnemyItemsList == null || enemyList[rand].EnemyItemsList.Count == 0)
-                    return;
-                else
-                {
-                    int random = r.Next(enemyList[rand].EnemyItemsList.Count);
-                    if (random != enemyList[rand].EnemyItemsList.Count)
-                    {
-                        itemGained.Add(enemyList[rand].EnemyItemsList[random]);
-                        player.playerInventory.AddToInventory(enemyList[rand].EnemyItemsList[random], 1);
-                    }
-                }
-            }
+            //// If there are multiple 
+            //else
+            //{
+            //    int rand = r.Next(enemyList.Count);
+            //    if (enemyList[rand].EnemyItemsList == null || enemyList[rand].EnemyItemsList.Count == 0)
+            //        return;
+            //    else
+            //    {
+            //        int random = r.Next(enemyList[rand].EnemyItemsList.Count);
+            //        if (random != enemyList[rand].EnemyItemsList.Count)
+            //        {
+            //            itemGained.Add(enemyList[rand].EnemyItemsList[random]);
+            //            player.playerInventory.AddToInventory(enemyList[rand].EnemyItemsList[random], 1);
+            //        }
+            //    }
+            //}
 
         }
 

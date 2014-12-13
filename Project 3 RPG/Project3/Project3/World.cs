@@ -189,7 +189,7 @@ namespace Project3
             loader.Initialize(this);
 
             Console.WriteLine(player.playerInventory.money);
-            font = game.Content.Load<SpriteFont>("BattleFont");
+            font = game.Content.Load<SpriteFont>("DialogueFont");
             shopDialogueFont = game.Content.Load<SpriteFont>("ShopFont");
             battleFont = game.Content.Load<SpriteFont>("BattleFont");
             camera.setBoundaries(width * 32, height * 32);

@@ -12,7 +12,7 @@ namespace Project3
     {
 
         public World world;
-        //public Texture2D;
+        public Texture2D inv;
 
         //public BattleSystem battleSys;
 
@@ -34,7 +34,8 @@ namespace Project3
 
         public Boolean isInteracting;
         public Boolean isBattling;
-
+        public Boolean isDisplayInventory;
+        
         public NPC currentNPC;
 
         public int baseAtk;
@@ -44,6 +45,9 @@ namespace Project3
         public int atk;
         public int def;
         public int speed;
+
+        public Item weapon;
+        public Item shield;
         public Item consumable;
 
         public int dimension;
@@ -94,12 +98,15 @@ namespace Project3
 
             isInteracting = false;
             isBattling = false;
+            isDisplayInventory = false;
             /* Default stats for battle system */
             atk = 3;
             def = 2;
             //Don't let speed be less than 11 -- the max weight for a weapon/shield is 5(so player's slowest speed is 1);
             speed = 11;
             hasChecked = false;
+
+            inv = world.game.Content.Load<Texture2D>("Overlays/inventorybg");
         }
 
 
@@ -190,8 +197,22 @@ namespace Project3
             }
 #endregion
 
+            #region Inventory Manipulation 
+            if (isDisplayInventory)
+            {
+                if (keyboard.IsKeyDown(Keys.I) && mayContinue)
+                {
+                    isDisplayInventory = false;
+                }
+                if (keyboard.IsKeyUp(Keys.I) && !mayContinue)
+                {
+                    mayContinue = true;
+                }
+                //Currently will just display what the player has equipped
+            }
+            #endregion
             #region Player movement and Tile Check region
-            if (!isInteracting && !isBattling)
+            if (!isInteracting && !isBattling && !isDisplayInventory)
             {
                 //If current position is already at next position, player can move
                 if (currPosition.X == nextPosition.X && currPosition.Y == nextPosition.Y)
@@ -220,11 +241,17 @@ namespace Project3
                     else {
                         SetIdle();
                     }
-                    if (keyboard.IsKeyUp(Keys.Enter) && !mayContinue)
+                    
+                    if (keyboard.IsKeyUp(Keys.Enter) && keyboard.IsKeyUp(Keys.I) && !mayContinue)
                     {
                         mayContinue = true;
                     }
-                    if (keyboard.IsKeyDown(Keys.Enter) && mayContinue)
+                    if (keyboard.IsKeyDown(Keys.I) && mayContinue)
+                    {
+                        isDisplayInventory = true;
+                        mayContinue = false;
+                    }
+                    if (keyboard.IsKeyDown(Keys.Enter) && mayContinue && !isDisplayInventory )
                     {
                         CheckInteract();
                     }
@@ -395,7 +422,7 @@ namespace Project3
             {
                 if (!isBattling)
                 {
-                    world.battleSystem.GenerateBattle(tileToCheck.easyEnemies);
+                    world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies);
                 }
                 hasChecked = true;
                 isBattling = true;
@@ -457,6 +484,7 @@ namespace Project3
          */
         public void Draw(SpriteBatch spriteBatch)
         {
+
             Rectangle playerSpriteBox = new Rectangle((int)currPosition.X, (int)currPosition.Y, dimension,dimension);
             if (facingNorth)
             {
@@ -480,6 +508,26 @@ namespace Project3
                 
             }
 
+            if (isDisplayInventory)
+            {
+
+                Vector2 overall = new Vector2(world.camera.Position.X / 2, world.camera.Position.Y / 2);
+
+                spriteBatch.Draw(inv, overall, Color.White);
+
+                Vector2 wep = overall + new Vector2(8, 8);
+                Vector2 shield = overall + new Vector2(8, 32);
+                Vector2 consumable = overall + new Vector2(8, 56);
+
+                spriteBatch.DrawString(world.shopDialogueFont, "Weapon: ", wep, Color.White);
+                spriteBatch.DrawString(world.shopDialogueFont, "Shield: ", shield, Color.White);
+                spriteBatch.DrawString(world.shopDialogueFont, "Consumable: ", consumable, Color.White);
+
+                //Draw a small display box, with
+                //Weapon: <Item Name>, Dmg: <Item Dmg>
+                //Shield: <Item Name>, Def: <Item def>
+                //Consumable: <Item Name>, Heals: <Item heal>
+            }
             if (isInteracting)
             {
                 currentNPC.Draw(spriteBatch);
@@ -489,6 +537,7 @@ namespace Project3
         // adjusts stats according to weapon item properties 
         public void setAtk(Item item)
         {
+            weapon = item;
             atk = item.damage + baseAtk;
             speed -= item.weight;
         }
@@ -496,6 +545,7 @@ namespace Project3
         // adjusts stats according to defense item properties 
         public void setDef(Item item)
         {
+            shield = item;
             def = item.block + basedef;
             speed -= item.weight;
         }

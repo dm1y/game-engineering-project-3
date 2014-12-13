@@ -47,6 +47,17 @@ namespace Project3
             EnemyItemsList = list;
         }
 
+        public Enemy(Enemy e)
+        {
+            this.enemyName = e.enemyName;
+            this.enemyTexture = e.enemyTexture;
+            this.HP = e.HP;
+            this.enemySpeed = e.enemySpeed;
+            this.Damage = e.Damage;
+            this.Experience = e.Experience;
+            this.bounty = e.bounty;
+            this.EnemyItemsList = e.EnemyItemsList;
+        }
         public void Update(GameTime gameTime)
         {
             
