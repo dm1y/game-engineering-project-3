@@ -44,8 +44,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapTexture\transition_blue.png">
-      <Name>transition_blue</Name>
+    <Compile Include="MapTexture\dirttransition.png">
+      <Name>dirttransition</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -741,6 +741,20 @@
   <ItemGroup>
     <Compile Include="Overlays\inventorybg2.png">
       <Name>inventorybg2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapTexture\treetexture.png">
+      <Name>treetexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapTexture\treeondirt.png">
+      <Name>treeondirt</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

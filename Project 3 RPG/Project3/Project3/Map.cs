@@ -30,6 +30,7 @@ namespace Project3
      * x = danger tile 
      * t - transition tile 
      * g = grass tile 
+     * h = tree tile 
      * 
      * If you add more tiles, update this and the MapTile class:
      *          What to update here: 
@@ -59,6 +60,8 @@ namespace Project3
         private Texture2D dirtText;
         private Texture2D redTransition;
         private Texture2D blueTransition;
+        private Texture2D treeText;
+        private Texture2D dirtTreeText; 
 
         public Maptile[,] currentMap { get; private set; }
 
@@ -73,11 +76,11 @@ namespace Project3
             grassText = game.Content.Load<Texture2D>("MapTexture/grass");
             dirtText = game.Content.Load<Texture2D>("MapTexture/dirt");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
-            blueTransition = game.Content.Load<Texture2D>("MapTexture/transition_blue");
+            blueTransition = game.Content.Load<Texture2D>("MapTexture/dirttransition");
+            treeText = game.Content.Load<Texture2D>("MapTexture/treetexture");
+            dirtTreeText = game.Content.Load<Texture2D>("MapTexture/treeondirt");
 
             /* Gives textures names used to different special attributes if applicable */
-            grassText.Name = "grass";
-            dirtText.Name = "dirt";
             redTransition.Name = "danger";
             blueTransition.Name = "transition";
         }
@@ -125,13 +128,23 @@ namespace Project3
                             currentMap[x, y] = newTile;
                             break;
                         case 't':
-                            /* Creates a normal transition tile to a different map */
+                            /* Creates a normal transition tile to a different map containing dirt */
                             newTile = new Maptile(blueTransition, new Vector2(x, y), false, true, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 'g':
                             /* Creates a grass tile */
                             newTile = new Maptile(grassText, new Vector2(x, y), false, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'h':
+                            /* Creates a tree on grass tile */
+                            newTile = new Maptile(treeText, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'p':
+                            /* Creates a tree on dirt tile */
+                            newTile = new Maptile(dirtTreeText, new Vector2(x, y), true, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                     }

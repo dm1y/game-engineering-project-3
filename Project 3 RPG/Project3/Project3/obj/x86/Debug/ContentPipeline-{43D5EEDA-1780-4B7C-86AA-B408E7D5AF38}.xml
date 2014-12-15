@@ -20,15 +20,6 @@
       <Time>2014-11-30T18:14:50.0959763-08:00</Time>
     </Item>
     <Item>
-      <Source>MapTexture\transition_blue.png</Source>
-      <Name>MapTexture\transition_blue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\transition_blue.xnb</Output>
-      <Time>2014-11-30T18:14:50.0979773-08:00</Time>
-    </Item>
-    <Item>
       <Source>MapTexture\transition_red.png</Source>
       <Name>MapTexture\transition_red</Name>
       <Importer>TextureImporter</Importer>
@@ -1126,6 +1117,33 @@
       <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.xnb</Output>
       <Extra>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.wma</Extra>
       <Time>2014-12-12T08:00:26.8111336-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\treetexture.png</Source>
+      <Name>MapTexture\treetexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\treetexture.xnb</Output>
+      <Time>2014-12-15T03:13:51.3293296-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\treeondirt.png</Source>
+      <Name>MapTexture\treeondirt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\treeondirt.xnb</Output>
+      <Time>2014-12-15T03:39:15.8695612-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\dirttransition.png</Source>
+      <Name>MapTexture\dirttransition</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\dirttransition.xnb</Output>
+      <Time>2014-12-15T03:48:49.4334593-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

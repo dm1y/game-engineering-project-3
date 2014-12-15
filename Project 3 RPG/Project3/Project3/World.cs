@@ -223,6 +223,8 @@ namespace Project3
             map.GenerateMap(path);
             currMapNum = path;
             player.ChangeMap(map);
+            Vector2 pos = player.position;
+            player.SpawnPlayerAt(new Vector2(pos.X, pos.Y * -1));
         }
 
         // not sure how to get things transitioned without enumerator, use this as a temp logic for now 

@@ -83,9 +83,6 @@ namespace Project3
             //enemySpawnTypes = new List<Enemy>();
             npc = null;
 
-            if (isCollidable)
-                createCollidableTile();
-
             if (isTransition)
                 createTransitionTile();
 
@@ -140,12 +137,6 @@ namespace Project3
 
             //if (texture.Name == "item")
             //    define item attributes
-        }
-
-        public void createCollidableTile()
-        { 
-            // TODO: Implement properties for collidableTile
-            // not sure what this is supposed to do but perhaps create a border around the map to prevent out of bounds stuff 
         }
 
         public void Draw(SpriteBatch spritebatch)

@@ -1,6 +1,5 @@
 Content\MapTexture\grass.xnb
 Content\MapTexture\transition.xnb
-Content\MapTexture\transition_blue.xnb
 Content\MapTexture\transition_red.xnb
 Content\MapTexture\dirt.xnb
 Content\Overlays\arrow select.xnb
@@ -124,6 +123,9 @@ Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
+Content\MapTexture\treetexture.xnb
+Content\MapTexture\treeondirt.xnb
+Content\MapTexture\dirttransition.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

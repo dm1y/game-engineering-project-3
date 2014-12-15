@@ -1,6 +1,5 @@
 Content\MapTexture\grass.xnb
 Content\MapTexture\transition.xnb
-Content\MapTexture\transition_blue.xnb
 Content\MapTexture\transition_red.xnb
 Content\MapTexture\dirt.xnb
 Content\Overlays\arrow select.xnb
@@ -123,6 +122,9 @@ Content\shop.xnb
 Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
+Content\MapTexture\treetexture.xnb
+Content\MapTexture\treeondirt.xnb
+Content\MapTexture\dirttransition.xnb
 Content\8bit_game_music.wma
 Content\Maps\test0.txt
 Content\Maps\test1.txt
