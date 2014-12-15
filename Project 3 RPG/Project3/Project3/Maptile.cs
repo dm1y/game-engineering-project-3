@@ -95,12 +95,13 @@ namespace Project3
 
         public void createTransitionTile()
         { 
-            // TODO: Implement properties for isTransitionTile
-            // should define which map it'll transition to depending on the texture 
 
             /* If the texture is considered a "blue transition texture", go to map 1 */
             if (texture.Name == "transition")
                 transitionTo = 1;
+
+            if (texture.Name == "return")
+                transitionTo = 0;
         }
 
         public void createDangerousTile()

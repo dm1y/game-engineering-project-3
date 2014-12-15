@@ -110,6 +110,10 @@ Content\Battle\playerbattlesprite.xnb
 Content\Battle\playerdisplay.xnb
 Content\Overlays\inventorybg.xnb
 Content\Overlays\inventorybg2.xnb
+Content\MapTexture\treetexture.xnb
+Content\MapTexture\caveopening.xnb
+Content\MapTexture\wood.xnb
+Content\MapTexture\cavetexture.xnb
 Content\DialogueFont.xnb
 Content\Displayfont.xnb
 Content\ShopFont.xnb
@@ -123,9 +127,8 @@ Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
-Content\MapTexture\treetexture.xnb
-Content\MapTexture\treeondirt.xnb
-Content\MapTexture\dirttransition.xnb
+Content\MapTexture\rock.xnb
+Content\MapTexture\caveopening2.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

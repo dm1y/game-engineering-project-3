@@ -28,9 +28,11 @@ namespace Project3
      * 
      * d = dirt tile
      * x = danger tile 
-     * t - transition tile 
+     * t - transition tile / caves 
      * g = grass tile 
      * h = tree tile 
+     * w = log tile
+     * c = cave tile
      * 
      * If you add more tiles, update this and the MapTile class:
      *          What to update here: 
@@ -60,8 +62,11 @@ namespace Project3
         private Texture2D dirtText;
         private Texture2D redTransition;
         private Texture2D blueTransition;
+        private Texture2D transition;
         private Texture2D treeText;
-        private Texture2D dirtTreeText; 
+        private Texture2D woodText;
+        private Texture2D caveTile;
+        private Texture2D rockTile;
 
         public Maptile[,] currentMap { get; private set; }
 
@@ -76,13 +81,17 @@ namespace Project3
             grassText = game.Content.Load<Texture2D>("MapTexture/grass");
             dirtText = game.Content.Load<Texture2D>("MapTexture/dirt");
             redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
-            blueTransition = game.Content.Load<Texture2D>("MapTexture/dirttransition");
+            blueTransition = game.Content.Load<Texture2D>("MapTexture/caveopening");
+            transition = game.Content.Load<Texture2D>("MapTexture/caveopening2");
             treeText = game.Content.Load<Texture2D>("MapTexture/treetexture");
-            dirtTreeText = game.Content.Load<Texture2D>("MapTexture/treeondirt");
+            woodText = game.Content.Load<Texture2D>("MapTexture/wood");
+            caveTile = game.Content.Load<Texture2D>("MapTexture/cavetexture");
+            rockTile = game.Content.Load<Texture2D>("MapTexture/rock");
 
             /* Gives textures names used to different special attributes if applicable */
             redTransition.Name = "danger";
             blueTransition.Name = "transition";
+            transition.Name = "return";
         }
 
         public void GenerateMap (int i)
@@ -142,9 +151,24 @@ namespace Project3
                             newTile = new Maptile(treeText, new Vector2(x, y), true, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
-                        case 'p':
-                            /* Creates a tree on dirt tile */
-                            newTile = new Maptile(dirtTreeText, new Vector2(x, y), true, false, false, false);
+                        case 'w':
+                            /* Creates a logs on grass tile */
+                            newTile = new Maptile(woodText, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'c':
+                            /* Creates a cave opening on grass tile */
+                            newTile = new Maptile(caveTile, new Vector2(x, y), false, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'r':
+                            /* Creates a cave tile */
+                            newTile = new Maptile(rockTile, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'e':
+                            /* Creates a cave tile */
+                            newTile = new Maptile(transition, new Vector2(x, y), false, true, false, false);
                             currentMap[x, y] = newTile;
                             break;
                     }

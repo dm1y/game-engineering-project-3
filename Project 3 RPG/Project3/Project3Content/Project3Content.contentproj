@@ -44,11 +44,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapTexture\dirttransition.png">
-      <Name>dirttransition</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="MapTexture\transition_red.png">
       <Name>transition_red</Name>
       <Importer>TextureImporter</Importer>
@@ -753,8 +748,36 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapTexture\treeondirt.png">
-      <Name>treeondirt</Name>
+    <Compile Include="MapTexture\caveopening.png">
+      <Name>caveopening</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapTexture\wood.png">
+      <Name>wood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapTexture\cavetexture.png">
+      <Name>cavetexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapTexture\rock.png">
+      <Name>rock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapTexture\caveopening2.png">
+      <Name>caveopening2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -1010,6 +1010,42 @@
       <Time>2014-12-15T00:41:42.2007017-08:00</Time>
     </Item>
     <Item>
+      <Source>MapTexture\treetexture.png</Source>
+      <Name>MapTexture\treetexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\treetexture.xnb</Output>
+      <Time>2014-12-15T03:13:51.3293296-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\caveopening.png</Source>
+      <Name>MapTexture\caveopening</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\caveopening.xnb</Output>
+      <Time>2014-12-15T04:14:18.5798053-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\wood.png</Source>
+      <Name>MapTexture\wood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\wood.xnb</Output>
+      <Time>2014-12-15T04:19:29.3358328-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\cavetexture.png</Source>
+      <Name>MapTexture\cavetexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\cavetexture.xnb</Output>
+      <Time>2014-12-15T04:34:22.2126632-08:00</Time>
+    </Item>
+    <Item>
       <Source>DialogueFont.spritefont</Source>
       <Name>DialogueFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -1119,31 +1155,22 @@
       <Time>2014-12-12T08:00:26.8111336-08:00</Time>
     </Item>
     <Item>
-      <Source>MapTexture\treetexture.png</Source>
-      <Name>MapTexture\treetexture</Name>
+      <Source>MapTexture\rock.png</Source>
+      <Name>MapTexture\rock</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\treetexture.xnb</Output>
-      <Time>2014-12-15T03:13:51.3293296-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\rock.xnb</Output>
+      <Time>2014-12-15T04:42:24.3963112-08:00</Time>
     </Item>
     <Item>
-      <Source>MapTexture\treeondirt.png</Source>
-      <Name>MapTexture\treeondirt</Name>
+      <Source>MapTexture\caveopening2.png</Source>
+      <Name>MapTexture\caveopening2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\treeondirt.xnb</Output>
-      <Time>2014-12-15T03:39:15.8695612-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MapTexture\dirttransition.png</Source>
-      <Name>MapTexture\dirttransition</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\dirttransition.xnb</Output>
-      <Time>2014-12-15T03:48:49.4334593-08:00</Time>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\caveopening2.xnb</Output>
+      <Time>2014-12-15T04:50:50.4922442-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
