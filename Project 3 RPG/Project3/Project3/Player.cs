@@ -108,6 +108,8 @@ namespace Project3
             setAtk(NoneItem);
             setDef(NoneItem);
             /* Default stats for battle system */
+            baseAtk = 3;
+            basedef = 2;
             atk = 3;
             def = 2;
             //Don't let speed be less than 11 -- the max weight for a weapon/shield is 5(so player's slowest speed is 1);
