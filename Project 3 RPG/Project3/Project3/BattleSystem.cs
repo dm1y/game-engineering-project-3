@@ -114,6 +114,7 @@ namespace Project3
             enemyList.Add(e);
 
             combatHistory.Add("A " + e.enemyName + " appeared!");
+
             if (IsSuccessfulSmaller())
             {
                 num = r.Next(enemies.Count);
@@ -121,6 +122,7 @@ namespace Project3
                 enemyList.Add(e);
                 combatHistory.Add("A " + e.enemyName + " appeared!");
             }
+
             if (IsSuccessfulSmaller())
             {
                 num = r.Next(enemies.Count);
@@ -128,8 +130,10 @@ namespace Project3
                 enemyList.Add(e);
                 combatHistory.Add("A " + e.enemyName + " appeared!");
             }
+
             inChoices = false;
         }
+
         // Update method 
         public void Update(KeyboardState keyboard)
         {
@@ -143,6 +147,7 @@ namespace Project3
                 }
                 return;
             }
+
             //Otherwise, if 'S' is down, we want to move the selection arrow down. IE, from "HEAL" to "RUN"
             else if (keyboard.IsKeyDown(Keys.S) && !inEnemySelect && !exitBattle && inChoices)
             {
@@ -153,6 +158,7 @@ namespace Project3
                 }
                 return;
             }
+
             //Else, if ENTER is down, we want to engage in whatever option was chosen.
             else if (keyboard.IsKeyDown(Keys.Enter) && !inEnemySelect && !exitBattle && inChoices)
             {
@@ -178,6 +184,7 @@ namespace Project3
                     inChoices = false;
                 }
             }
+
             //If we are in enemy selection, delegate control to SelectEnemies()
             else if (inEnemySelect)
             {
@@ -221,6 +228,7 @@ namespace Project3
                     }
 
                 }
+
                 //On every update, we check if the whole battle is over. If not, we continue as usual. 
                 //Note that you can only get endOfBattle to TRUE under three conditions:
                 //1. Kill all monsters

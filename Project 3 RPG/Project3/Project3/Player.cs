@@ -260,6 +260,10 @@ namespace Project3
                 }
             }
         #endregion
+
+            // Equips the item 
+            EquipItem(keyboard);
+
         }
 
         public void UpdateAnimations(GameTime gametime)
@@ -627,6 +631,84 @@ namespace Project3
             
            
         }
-        
+
+        #region Equipping of items
+        private void EquipItem(KeyboardState keyboard)
+        {
+            if (keyboard.IsKeyDown(Keys.NumPad1) || keyboard.IsKeyDown(Keys.D1))
+            {
+                Equip(0);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad2) || keyboard.IsKeyDown(Keys.D2))
+            {
+                Equip(1);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad3) || keyboard.IsKeyDown(Keys.D3))
+            {
+                Equip(2);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad4) || keyboard.IsKeyDown(Keys.D4))
+            {
+                Equip(3);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad5) || keyboard.IsKeyDown(Keys.D5))
+            {
+                Equip(4);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad6) || keyboard.IsKeyDown(Keys.D6))
+            {
+                Equip(5);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad7) || keyboard.IsKeyDown(Keys.D7))
+            {
+                Equip(6);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad8) || keyboard.IsKeyDown(Keys.D8))
+            {
+                Equip(7);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad9) || keyboard.IsKeyDown(Keys.D9))
+            {
+                Equip(8);
+            }
+
+            if (keyboard.IsKeyDown(Keys.NumPad0) || keyboard.IsKeyDown(Keys.D0))
+            {
+                Equip(9);
+            }
+        }
+
+        private void Equip(int i)
+        {
+            if (playerInventory.items[i] != null)
+            {
+                if (playerInventory.items[i].isPotion)
+                {
+                    setConsumable(playerInventory.items[i]);
+                    // TODO: Update display of equipped consumable item 
+                }
+
+                if (playerInventory.items[i].isShield)
+                {
+                    setDef(playerInventory.items[i]);
+                    // TODO: Update display of defense item/shield if applicable 
+                }
+
+                if (playerInventory.items[i].isWeapon)
+                {
+                    setAtk(playerInventory.items[i]);
+                    // TODO: Update player's equipped weapon
+                }
+            }
+        }
+        #endregion
     }
 }

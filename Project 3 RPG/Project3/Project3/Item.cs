@@ -24,9 +24,9 @@ namespace Project3
         public int damage { get; private set; }
         public int weight { get; private set; }
 
-        Boolean isShield = false;
-        Boolean isPotion = false;
-        Boolean isWeapon = false;
+        public Boolean isShield = false;
+        public Boolean isPotion = false;
+        public Boolean isWeapon = false;
         public String itemName;
 
         public Item(Texture2D item, String itemName,
