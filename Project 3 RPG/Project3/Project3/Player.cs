@@ -426,7 +426,14 @@ namespace Project3
             {
                 if (!isBattling)
                 {
-                    world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies);
+                    if (tileToCheck.battleType == "easy") 
+                        world.battleSystem.GenerateBattle(tileToCheck.easyEnemies);
+
+                    if (tileToCheck.battleType == "medium")
+                        world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies);
+
+                    if (tileToCheck.battleType == "hard")
+                        world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies);
                 }
                 hasChecked = true;
                 isBattling = true;

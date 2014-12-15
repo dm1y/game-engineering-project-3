@@ -68,29 +68,9 @@ namespace Project3
 
             Position = center * new Vector2(2, 2);
 
-            // still a work in progress, max/min currently hardcoded for first map until i can figure out math part 
             Position.X = MathHelper.Clamp(Position.X, 0, boundaries.X + view.Width - 32*4);
-            Position.Y = MathHelper.Clamp(Position.Y, 0, boundaries.Y - view.Height/2 + 35);
-            //if (view.Width < boundaries.X && view.Height >= boundaries.Y)
-            //{
-            //    if (playerPositionInWorldSpace.X >= view.Width / 2)
-            //    {
-            //        if (center.X < boundaries.X - view.Width)
-            //        {
-            //            Position = center * new Vector2(2, 0);
-            //        }
-            //    }
-            //}
-            //else if (view.Height < boundaries.Y && view.Width >= boundaries.X)
-            //{
-            //    if (playerPositionInWorldSpace.Y >= view.Height / 2)
-            //    {
-            //        if (center.Y < boundaries.Y - view.Height)
-            //        {
-            //            Position = center * new Vector2(0, 2);
-            //        }
-            //    }
-            //}
+            Position.Y = MathHelper.Clamp(Position.Y, 0, boundaries.Y - view.Height/2 + 48);
+
         }
     }
 }

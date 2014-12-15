@@ -52,6 +52,7 @@ namespace Project3
         public List<Enemy> easyEnemies;
         public List<Enemy> mediumEnemies;
         public List<Enemy> hardEnemies;
+        public String battleType;
 
         /* - Positions -
          * coordPosition - gives the position of the maptile in coordinate form(ie, "4,7")
@@ -80,7 +81,7 @@ namespace Project3
 
             /* Initializes other attributes that might not pertain to all tiles */
             transitionTo = 0;
-            //enemySpawnTypes = new List<Enemy>();
+
             npc = null;
 
             if (isTransition)
@@ -88,9 +89,6 @@ namespace Project3
 
             if (isDangerous)
                 createDangerousTile();
-
-            if (isInteract)
-                createInteractTile();
         }
 
         public void createTransitionTile()
@@ -105,39 +103,8 @@ namespace Project3
         }
 
         public void createDangerousTile()
-        { 
-            // TODO: Implement properties for dangerousTile 
-            // take array of monsters that is being passed in, 
-            // depending on the type of tile, just hard code the string of monsters in 
-            // otherwise make it data driven
-
-            // easy run, 1 easy enemy 
-            if (texture.Name == "danger")
-            {
-                // fill null in later once items are set 
-                //Enemy e = new Enemy(10, 2, 2, 100, 5, null);
-                //enemySpawnTypes.Add(e);
-            }
-            //    pass in list of enemies that are easy
-
-            //if (texture.Name == "medium")
-            //    pass in list of enemies that are challenging
-
-            //if (texture.Name == "hard")
-            //    maybe give it a boss
-
-        }
-
-        public void createInteractTile() 
         {
-            // TODO: Implement properties for interactTile
-            // this will rely on NPCs and items class , look into this later. 
-
-            //if (texture.Name == "[type]NPC")
-            //    define its NPC attributes 
-
-            //if (texture.Name == "item")
-            //    define item attributes
+            battleType = texture.Name;
         }
 
         public void Draw(SpriteBatch spritebatch)

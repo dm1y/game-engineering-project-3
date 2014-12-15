@@ -14,25 +14,22 @@ using System.IO;
 namespace Project3
 {
     /*
-     * Notes: Maps are generated via text files and are found in the Maps folder of Content. 
-     * 
-     * It doesn't matter what size it is, but keep it consistent so that each line contains the same 
-     * number of characters. Short example: 
-     *                                             xxxxxxxxxxxxxxxxxxx
-     *                                             xxxdddddddddddddxxx
-     *                                             txxgggggggggggggxxt
+     * Notes: Maps are generated via text files and are found in the Maps folder of Content.
      * 
      * More examples can be seen in the text files.
      * 
      * Current legend: 
      * 
      * d = dirt tile
-     * x = danger tile 
-     * t - transition tile / caves 
+     * x = battle tile [difficulty == hard. texture == cave tile] 
+     * y = battle tile [difficulty == medium. texture == cave tile]
+     * z = battle tile [difficulty == easy. texture = grass tile]
+     * t = transition tile to get into the caves 
+     * e = transition tile to get out of the caves 
      * g = grass tile 
      * h = tree tile 
      * w = log tile
-     * c = cave tile
+     * c = cave tiles 
      * 
      * If you add more tiles, update this and the MapTile class:
      *          What to update here: 
@@ -67,6 +64,8 @@ namespace Project3
         private Texture2D woodText;
         private Texture2D caveTile;
         private Texture2D rockTile;
+        private Texture2D easy;
+        private Texture2D medium;
 
         public Maptile[,] currentMap { get; private set; }
 
@@ -80,16 +79,23 @@ namespace Project3
             /* Loads textures */
             grassText = game.Content.Load<Texture2D>("MapTexture/grass");
             dirtText = game.Content.Load<Texture2D>("MapTexture/dirt");
-            redTransition = game.Content.Load<Texture2D>("MapTexture/transition_red");
+            caveTile = game.Content.Load<Texture2D>("MapTexture/cavetexture");
+
+            redTransition = game.Content.Load<Texture2D>("MapTexture/hard");
+            medium = game.Content.Load<Texture2D>("MapTexture/medium");
+            easy = game.Content.Load<Texture2D>("MapTexture/easy");
+            
             blueTransition = game.Content.Load<Texture2D>("MapTexture/caveopening");
             transition = game.Content.Load<Texture2D>("MapTexture/caveopening2");
+            
             treeText = game.Content.Load<Texture2D>("MapTexture/treetexture");
             woodText = game.Content.Load<Texture2D>("MapTexture/wood");
-            caveTile = game.Content.Load<Texture2D>("MapTexture/cavetexture");
             rockTile = game.Content.Load<Texture2D>("MapTexture/rock");
 
             /* Gives textures names used to different special attributes if applicable */
-            redTransition.Name = "danger";
+            redTransition.Name = "hard";
+            easy.Name = "easy";
+            medium.Name = "medium";
             blueTransition.Name = "transition";
             transition.Name = "return";
         }
@@ -132,8 +138,18 @@ namespace Project3
                             currentMap[x, y] = newTile;
                             break;
                         case 'x':
-                            /* Creates a transition tile to battle automagically */
+                            /* Creates a transition tile to battle automagically [hard] */
                             newTile = new Maptile(redTransition, new Vector2(x, y), false, false, true, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'y':
+                            /* Creates a transition tile to battle automagically [medium] */
+                            newTile = new Maptile(medium, new Vector2(x, y), false, false, true, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'z':
+                            /* Creates a transition tile to battle automagically [easy] */
+                            newTile = new Maptile(easy, new Vector2(x, y), false, false, true, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 't':
@@ -162,12 +178,12 @@ namespace Project3
                             currentMap[x, y] = newTile;
                             break;
                         case 'r':
-                            /* Creates a cave tile */
+                            /* Creates a rock tile */
                             newTile = new Maptile(rockTile, new Vector2(x, y), true, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                         case 'e':
-                            /* Creates a cave tile */
+                            /* Creates a cave opening on cave tile */
                             newTile = new Maptile(transition, new Vector2(x, y), false, true, false, false);
                             currentMap[x, y] = newTile;
                             break;

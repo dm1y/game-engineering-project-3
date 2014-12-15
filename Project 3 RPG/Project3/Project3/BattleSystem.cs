@@ -91,19 +91,6 @@ namespace Project3
             target = g.Content.Load<Texture2D>("Battle/target");
             enemydisplay = g.Content.Load<Texture2D>("Battle/enemydisplay");
         }
-        /*
-         * TODO: [[Front end]] implements the scrolling text dialogue stuff. 
-         * 
-         * Basically we'll use the logic of the menu we did in class for this part. 
-         * This will display the options the user can choose from 
-         * ** Attack -> transition to option of which enemy to attack
-         * ** Defend 
-         * ** Consumable -> will disappear if player is only allowed to use one consumable, else chooses from list 
-         * ** Escape 
-         * 
-         * logic of battle sys is found below, most still in pseudo code form since player/display/enemy classes 
-         * do not have those added yet (will add soon after laying out all the logic so its easier to implement)
-         */
 
         public void GenerateBattle(List<Enemy> enemies)
         {

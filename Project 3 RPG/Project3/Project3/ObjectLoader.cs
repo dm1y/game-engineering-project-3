@@ -10,15 +10,24 @@ namespace Project3
 {
     public class ObjectLoader
     {
+        World world;
+        List<Enemy> easy;
+        List<Enemy> medium;
+        List<Enemy> hard;
+
         /* Not the best for encapsulation, but works. Loads up the items that exist in the game and stores references.
          * Will load basic gear for player(sword, shield, 3 potions) and basic money
          Will then load enemy drop table, shopkeeper's inventory.
          */
-        public ObjectLoader()
+        public ObjectLoader(World w)
         {
+            world = w;
+            easy = new List<Enemy>();
+            medium = new List<Enemy>();
+            hard = new List<Enemy>();
         }
 
-        public void Initialize(World world)
+        public void Initialize()
         {
             List<string> lines = new List<string>();
 
@@ -199,9 +208,6 @@ namespace Project3
 
             #region Load Enemies
             Stream stream_enemies = TitleContainer.OpenStream("Content/Items/enemies.txt");
-            List<Enemy> easy = new List<Enemy>();
-            List<Enemy> medium = new List<Enemy>();
-            List<Enemy> hard = new List<Enemy>();
             using (StreamReader reader = new StreamReader(stream_enemies))
             {
                 string line = reader.ReadLine();
@@ -235,11 +241,19 @@ namespace Project3
                 }
             }
 
-            for (int i = 0; i < world.currentMap.width - 1; i++)
+
+            #endregion
+
+        }
+
+        public void setEnemies()
+        {
+            for (int i = 0; i < world.player.map.width - 1; i++)
             {
-                for (int j = 0; j < world.currentMap.height - 1; j++)
+                for (int j = 0; j < world.player.map.height - 1; j++)
                 {
-                    Maptile tile = world.currentMap.currentMap[i, j];
+                    Maptile tile = world.player.map.currentMap[i, j];
+
                     if (tile.isDangerous)
                     {
                         tile.easyEnemies = easy;
@@ -248,8 +262,6 @@ namespace Project3
                     }
                 }
             }
-            #endregion
-
         }
     }
 }

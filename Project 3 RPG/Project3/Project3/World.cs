@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -185,8 +186,9 @@ namespace Project3
 
             player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
 
-            loader = new ObjectLoader();
-            loader.Initialize(this);
+            loader = new ObjectLoader(this);
+            loader.Initialize();
+            loader.setEnemies();
 
             Console.WriteLine(player.playerInventory.money);
             font = game.Content.Load<SpriteFont>("DialogueFont");
@@ -221,20 +223,16 @@ namespace Project3
 
             /* Loads new map */
             map.GenerateMap(path);
+            currentMap = map;
             currMapNum = path;
             player.ChangeMap(map);
-            Vector2 pos = player.position;
-            player.SpawnPlayerAt(new Vector2(pos.X, pos.Y * -1));
+            loader.setEnemies();
         }
 
-        // not sure how to get things transitioned without enumerator, use this as a temp logic for now 
-        public void TransitionBattle(Maptile tile)
-        {
-            currBattle = true;
-            //William -- I commented this line out for now, because all dangerous maptiles now have
-            //access to the three lists of enemies(easy, medium, hard)
-            //battleSystem = new BattleSystem(player, tile.enemySpawnTypes, HUD, currMapNum);
-        }
+
+
+
+
 
         public void Update(GameTime gametime)
         {

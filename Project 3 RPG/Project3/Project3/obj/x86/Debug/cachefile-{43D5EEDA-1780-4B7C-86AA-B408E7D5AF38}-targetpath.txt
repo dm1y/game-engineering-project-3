@@ -129,6 +129,9 @@ Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
 Content\MapTexture\rock.xnb
 Content\MapTexture\caveopening2.xnb
+Content\MapTexture\easy.xnb
+Content\MapTexture\hard.xnb
+Content\MapTexture\medium.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

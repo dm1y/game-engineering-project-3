@@ -128,6 +128,9 @@ Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\MapTexture\rock.xnb
 Content\MapTexture\caveopening2.xnb
+Content\MapTexture\easy.xnb
+Content\MapTexture\hard.xnb
+Content\MapTexture\medium.xnb
 Content\8bit_game_music.wma
 Content\Maps\test0.txt
 Content\Maps\test1.txt
