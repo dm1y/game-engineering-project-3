@@ -49,6 +49,7 @@ namespace Project3
         public Item weapon;
         public Item shield;
         public Item consumable;
+        public Item NoneItem;
 
         public int dimension;
         /* For deciding where the player is facing. 
@@ -60,6 +61,7 @@ namespace Project3
         private Vector2 currPositionCoord; /* Position of player in MAP COORDINATE SPACE */
 
         public Boolean hasChecked;
+        public Boolean canEquip;
 
         public Vector2 position
         {
@@ -72,6 +74,8 @@ namespace Project3
         public Player(Texture2D north, Texture2D south, Texture2D west, Texture2D east, Vector2 spawnPosition, 
             Map map, World world)
         {
+            Texture2D noneTexture = world.game.Content.Load<Texture2D>("Items/none");
+            NoneItem = new Item(noneTexture, "None", 0, 0, false, false, false);
             this.world = world; 
 
             playerNorth = new Animation();
@@ -99,6 +103,10 @@ namespace Project3
             isInteracting = false;
             isBattling = false;
             isDisplayInventory = false;
+
+            setConsumable(NoneItem);
+            setAtk(NoneItem);
+            setDef(NoneItem);
             /* Default stats for battle system */
             atk = 3;
             def = 2;
@@ -107,6 +115,7 @@ namespace Project3
             hasChecked = false;
 
             inv = world.game.Content.Load<Texture2D>("Overlays/inventorybg");
+            canEquip = true;
         }
 
 
@@ -199,9 +208,11 @@ namespace Project3
             #region Inventory Manipulation 
             if (isDisplayInventory)
             {
+                //Console.WriteLine("i am here");
                 if (keyboard.IsKeyDown(Keys.I) && mayContinue)
                 {
                     isDisplayInventory = false;
+                    mayContinue = false;
                 }
                 if (keyboard.IsKeyUp(Keys.I) && !mayContinue)
                 {
@@ -256,6 +267,23 @@ namespace Project3
                     }
 
                     CheckTile();
+                }
+            }
+
+            if (!canEquip)
+            {
+                if (keyboard.IsKeyUp(Keys.NumPad1) && keyboard.IsKeyUp(Keys.D1) &&
+                    keyboard.IsKeyUp(Keys.NumPad2) && keyboard.IsKeyUp(Keys.D2) &&
+                    keyboard.IsKeyUp(Keys.NumPad3) && keyboard.IsKeyUp(Keys.D3) &&
+                    keyboard.IsKeyUp(Keys.NumPad4) && keyboard.IsKeyUp(Keys.D4) &&
+                    keyboard.IsKeyUp(Keys.NumPad5) && keyboard.IsKeyUp(Keys.D5) &&
+                    keyboard.IsKeyUp(Keys.NumPad6) && keyboard.IsKeyUp(Keys.D6) &&
+                    keyboard.IsKeyUp(Keys.NumPad7) && keyboard.IsKeyUp(Keys.D7) &&
+                    keyboard.IsKeyUp(Keys.NumPad8) && keyboard.IsKeyUp(Keys.D8) &&
+                    keyboard.IsKeyUp(Keys.NumPad9) && keyboard.IsKeyUp(Keys.D9) &&
+                    keyboard.IsKeyUp(Keys.NumPad0) && keyboard.IsKeyUp(Keys.D0))
+                {
+                    canEquip = true;
                 }
             }
         #endregion
@@ -525,13 +553,29 @@ namespace Project3
 
                 spriteBatch.Draw(inv, overall, Color.White);
 
-                Vector2 wep = overall + new Vector2(8, 8);
-                Vector2 shield = overall + new Vector2(8, 32);
-                Vector2 consumable = overall + new Vector2(8, 56);
+                Vector2 weppos = overall + new Vector2(8, 8);
+                Vector2 shieldpos = overall + new Vector2(8, 32);
+                Vector2 consumablepos = overall + new Vector2(8, 56);
 
-                spriteBatch.DrawString(world.shopDialogueFont, "Weapon: ", wep, Color.White);
-                spriteBatch.DrawString(world.shopDialogueFont, "Shield: ", shield, Color.White);
-                spriteBatch.DrawString(world.shopDialogueFont, "Consumable: ", consumable, Color.White);
+                Vector2 weppic = weppos + new Vector2(45, 0);
+                Vector2 shieldpic = shieldpos + new Vector2(45, 0);
+                Vector2 consumablepic = consumablepos + new Vector2(70, 0);
+
+                Vector2 wepstat = weppic + new Vector2(30, 0);
+                Vector2 shieldstat = shieldpic + new Vector2(30, 0);
+                Vector2 consumablestat = consumablepic + new Vector2(30, 0);
+
+                spriteBatch.Draw(weapon.itemTexture, weppic - new Vector2(0, 3), Color.White);
+                spriteBatch.Draw(shield.itemTexture, shieldpic - new Vector2(0, 3), Color.White);
+                spriteBatch.Draw(consumable.itemTexture, consumablepic - new Vector2(0, 3) , Color.White);
+
+                spriteBatch.DrawString(world.shopDialogueFont, "Weapon: " , weppos, Color.White);
+                spriteBatch.DrawString(world.shopDialogueFont, "Shield: ", shieldpos, Color.White);
+                spriteBatch.DrawString(world.shopDialogueFont, "Consumable: ", consumablepos, Color.White);
+
+                spriteBatch.DrawString(world.shopDialogueFont, weapon.itemName + " ATK: " + weapon.damage, wepstat, Color.White);
+                spriteBatch.DrawString(world.shopDialogueFont, shield.itemName + " DEF: " + shield.block, shieldstat, Color.White);
+                spriteBatch.DrawString(world.shopDialogueFont, consumable.itemName + " HEAL: " + consumable.heal, consumablestat, Color.White);
 
                 //Draw a small display box, with
                 //Weapon: <Item Name>, Dmg: <Item Dmg>
@@ -641,54 +685,68 @@ namespace Project3
         #region Equipping of items
         private void EquipItem(KeyboardState keyboard)
         {
-            if (keyboard.IsKeyDown(Keys.NumPad1) || keyboard.IsKeyDown(Keys.D1))
+            if (canEquip)
             {
-                Equip(0);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad1) || keyboard.IsKeyDown(Keys.D1))
+                {
+                    canEquip = false;
+                    Equip(0);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad2) || keyboard.IsKeyDown(Keys.D2))
-            {
-                Equip(1);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad2) || keyboard.IsKeyDown(Keys.D2))
+                {
+                    canEquip = false;
+                    Equip(1);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad3) || keyboard.IsKeyDown(Keys.D3))
-            {
-                Equip(2);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad3) || keyboard.IsKeyDown(Keys.D3))
+                {
+                    canEquip = false;
+                    Equip(2);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad4) || keyboard.IsKeyDown(Keys.D4))
-            {
-                Equip(3);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad4) || keyboard.IsKeyDown(Keys.D4))
+                {
+                    canEquip = false;
+                    Equip(3);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad5) || keyboard.IsKeyDown(Keys.D5))
-            {
-                Equip(4);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad5) || keyboard.IsKeyDown(Keys.D5))
+                {
+                    canEquip = false;
+                    Equip(4);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad6) || keyboard.IsKeyDown(Keys.D6))
-            {
-                Equip(5);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad6) || keyboard.IsKeyDown(Keys.D6))
+                {
+                    canEquip = false;
+                    Equip(5);
 
-            if (keyboard.IsKeyDown(Keys.NumPad7) || keyboard.IsKeyDown(Keys.D7))
-            {
-                Equip(6);
-            }
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad8) || keyboard.IsKeyDown(Keys.D8))
-            {
-                Equip(7);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad7) || keyboard.IsKeyDown(Keys.D7))
+                {
+                    canEquip = false;
+                    Equip(6);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad9) || keyboard.IsKeyDown(Keys.D9))
-            {
-                Equip(8);
-            }
+                if (keyboard.IsKeyDown(Keys.NumPad8) || keyboard.IsKeyDown(Keys.D8))
+                {
+                    canEquip = false;
+                    Equip(7);
+                }
 
-            if (keyboard.IsKeyDown(Keys.NumPad0) || keyboard.IsKeyDown(Keys.D0))
-            {
-                Equip(9);
+                if (keyboard.IsKeyDown(Keys.NumPad9) || keyboard.IsKeyDown(Keys.D9))
+                {
+                    canEquip = false;
+                    Equip(8);
+                }
+
+                if (keyboard.IsKeyDown(Keys.NumPad0) || keyboard.IsKeyDown(Keys.D0))
+                {
+                    canEquip = false;
+                    Equip(9);
+                }
             }
         }
 
@@ -696,21 +754,44 @@ namespace Project3
         {
             if (playerInventory.items[i] != null)
             {
-                if (playerInventory.items[i].isPotion)
+                Item thisItem = playerInventory.items[i];
+
+                if (thisItem.isPotion)
                 {
-                    setConsumable(playerInventory.items[i]);
+                    if (thisItem == consumable)
+                    {
+                        setConsumable(NoneItem);
+                    }
+                    else
+                    {
+                        setConsumable(playerInventory.items[i]);
+                    }
                     // TODO: Update display of equipped consumable item 
                 }
 
-                if (playerInventory.items[i].isShield)
+                if (thisItem.isShield)
                 {
-                    setDef(playerInventory.items[i]);
+                    if (thisItem == shield)
+                    {
+                        setDef(NoneItem);
+                    }
+                    else
+                    {
+                        setDef(playerInventory.items[i]);
+                    }
                     // TODO: Update display of defense item/shield if applicable 
                 }
 
-                if (playerInventory.items[i].isWeapon)
+                if (thisItem.isWeapon)
                 {
-                    setAtk(playerInventory.items[i]);
+                    if (thisItem == weapon)
+                    {
+                        setAtk(NoneItem);
+                    }
+                    else
+                    {
+                        setAtk(playerInventory.items[i]);
+                    }
                     // TODO: Update player's equipped weapon
                 }
             }

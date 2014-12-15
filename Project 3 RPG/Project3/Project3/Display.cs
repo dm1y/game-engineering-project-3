@@ -32,6 +32,7 @@ namespace Project3
         public Texture2D HUDBackGround;
         public Texture2D HUDOverlay;
         public Texture2D HUDTeal;
+        public Texture2D HUDpurple;
         public List<Item> items;
 
         public Display(Player player, Game game)
@@ -71,6 +72,7 @@ namespace Project3
             HUDBackGround = content.Load<Texture2D>("Overlays/hud_maindisplay_96x96");
             HUDOverlay = content.Load<Texture2D>("Overlays/item_overlay");
             HUDTeal = content.Load<Texture2D>("Overlays/item_teal_overlay");
+            HUDpurple = content.Load<Texture2D>("Overlays/item_purple_overlay");
 
         }
 
@@ -105,7 +107,16 @@ namespace Project3
                     
                     if (i < p.world.player.playerInventory.items.Count)
                     {
-                        sb.Draw(HUDTeal, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - HUDTeal.Height), Color.White);
+                        Item current = p.playerInventory.items[i];
+                        if (current == p.weapon || current == p.shield || current == p.consumable)
+                        {
+                            sb.Draw(HUDpurple, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - HUDTeal.Height), Color.White);
+                        }
+                        else
+                        {
+                            sb.Draw(HUDTeal, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - HUDTeal.Height), Color.White);
+                        }
+                       
 
                         sb.Draw(p.world.player.playerInventory.items[i].itemTexture, new Vector2(p.world.camera.Position.X / 2 + 75 + offset, p.world.camera.Position.Y / 2 + 322 - p.world.player.playerInventory.items[i].itemTexture.Height), Color.White);
 

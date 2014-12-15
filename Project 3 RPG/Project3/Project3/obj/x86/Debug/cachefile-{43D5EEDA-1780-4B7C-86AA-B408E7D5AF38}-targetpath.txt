@@ -119,6 +119,7 @@ Content\MapTexture\caveopening2.xnb
 Content\MapTexture\easy.xnb
 Content\MapTexture\hard.xnb
 Content\MapTexture\medium.xnb
+Content\Items\none.xnb
 Content\DialogueFont.xnb
 Content\Displayfont.xnb
 Content\ShopFont.xnb
