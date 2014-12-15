@@ -1046,6 +1046,51 @@
       <Time>2014-12-15T04:34:22.2126632-08:00</Time>
     </Item>
     <Item>
+      <Source>MapTexture\rock.png</Source>
+      <Name>MapTexture\rock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\rock.xnb</Output>
+      <Time>2014-12-15T04:42:24.3963112-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\caveopening2.png</Source>
+      <Name>MapTexture\caveopening2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\caveopening2.xnb</Output>
+      <Time>2014-12-15T04:50:50.4922442-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\easy.png</Source>
+      <Name>MapTexture\easy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\easy.xnb</Output>
+      <Time>2014-12-15T05:42:03.8570971-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\hard.png</Source>
+      <Name>MapTexture\hard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\hard.xnb</Output>
+      <Time>2014-12-15T05:42:03.8600983-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTexture\medium.png</Source>
+      <Name>MapTexture\medium</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\medium.xnb</Output>
+      <Time>2014-12-15T05:42:03.8924535-08:00</Time>
+    </Item>
+    <Item>
       <Source>DialogueFont.spritefont</Source>
       <Name>DialogueFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -1153,51 +1198,6 @@
       <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.xnb</Output>
       <Extra>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.wma</Extra>
       <Time>2014-12-12T08:00:26.8111336-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MapTexture\rock.png</Source>
-      <Name>MapTexture\rock</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\rock.xnb</Output>
-      <Time>2014-12-15T04:42:24.3963112-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MapTexture\caveopening2.png</Source>
-      <Name>MapTexture\caveopening2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\caveopening2.xnb</Output>
-      <Time>2014-12-15T04:50:50.4922442-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MapTexture\easy.png</Source>
-      <Name>MapTexture\easy</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\easy.xnb</Output>
-      <Time>2014-12-15T05:42:03.8570971-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MapTexture\hard.png</Source>
-      <Name>MapTexture\hard</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\hard.xnb</Output>
-      <Time>2014-12-15T05:42:03.8600983-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MapTexture\medium.png</Source>
-      <Name>MapTexture\medium</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\medium.xnb</Output>
-      <Time>2014-12-15T05:42:03.8924535-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

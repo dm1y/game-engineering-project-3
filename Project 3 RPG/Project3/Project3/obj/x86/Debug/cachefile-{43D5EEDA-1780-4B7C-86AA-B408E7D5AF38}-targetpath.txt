@@ -114,6 +114,11 @@ Content\MapTexture\treetexture.xnb
 Content\MapTexture\caveopening.xnb
 Content\MapTexture\wood.xnb
 Content\MapTexture\cavetexture.xnb
+Content\MapTexture\rock.xnb
+Content\MapTexture\caveopening2.xnb
+Content\MapTexture\easy.xnb
+Content\MapTexture\hard.xnb
+Content\MapTexture\medium.xnb
 Content\DialogueFont.xnb
 Content\Displayfont.xnb
 Content\ShopFont.xnb
@@ -127,11 +132,6 @@ Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
-Content\MapTexture\rock.xnb
-Content\MapTexture\caveopening2.xnb
-Content\MapTexture\easy.xnb
-Content\MapTexture\hard.xnb
-Content\MapTexture\medium.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

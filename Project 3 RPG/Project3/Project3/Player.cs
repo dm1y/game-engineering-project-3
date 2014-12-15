@@ -139,7 +139,6 @@ namespace Project3
          */
         public void UpdateInput(GameTime gameTime, KeyboardState keyboard)
         {
-            //TODO: Colin -- Can check keyboard inputs for "1,2,3,4,5,6,7,8,9,0" to equip items.
             //Note: Be sure to check type of item so that player doesn't end up equipping junk, 
             //or items in the wrong area. Methods for equip are at the bottom(lines 430 and onwards)
 

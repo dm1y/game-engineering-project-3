@@ -188,6 +188,7 @@ namespace Project3
 
             loader = new ObjectLoader(this);
             loader.Initialize();
+            loader.SetMerchantsNPCs();
             loader.setEnemies();
 
             Console.WriteLine(player.playerInventory.money);
@@ -219,13 +220,17 @@ namespace Project3
             /* Clears the current map */
             currentMap = null;
 
-            /* [Optional] TODO:  Add cut scene here */
-
             /* Loads new map */
             map.GenerateMap(path);
             currentMap = map;
             currMapNum = path;
+
+            /* Reloads the NPCs */
+            if (currMapNum == 0)
+                loader.SetMerchantsNPCs();
+
             player.ChangeMap(map);
+
             loader.setEnemies();
         }
 

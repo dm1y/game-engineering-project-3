@@ -101,6 +101,50 @@ namespace Project3
             stream_loot.Close();
             #endregion
 
+            #region Load Enemies
+            Stream stream_enemies = TitleContainer.OpenStream("Content/Items/enemies.txt");
+            using (StreamReader reader = new StreamReader(stream_enemies))
+            {
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    string[] p = line.Split(' ');
+                    Texture2D texture = world.game.Content.Load<Texture2D>(p[0]);
+                    String name = p[1].Replace('_', ' ');
+                    int hp = int.Parse(p[2]);
+                    int speed = int.Parse(p[3]);
+                    int atk = int.Parse(p[4]);
+                    int exp = int.Parse(p[5]);
+                    int money = int.Parse(p[6]);
+                    String diff = p[7];
+
+                    Enemy enemy = new Enemy(texture, name, hp, speed, atk, exp, money, enemy_loot);
+
+                    if (diff.Equals("easy"))
+                    {
+                        easy.Add(enemy);
+                    }
+                    else if (diff.Equals("medium"))
+                    {
+                        medium.Add(enemy);
+                    }
+                    else if (diff.Equals("hard"))
+                    {
+                        hard.Add(enemy);
+                    }
+                    line = reader.ReadLine();
+                }
+            }
+
+
+            #endregion
+
+        }
+
+        public void SetMerchantsNPCs()
+        {
+            List<string> lines = new List<string>();
+
             #region Load Merchant
             /* Loads merchant inventory & places it on the map*/
             Inventory merch_inv;
@@ -205,45 +249,6 @@ namespace Project3
             }
             stream_npc.Close();
             #endregion
-
-            #region Load Enemies
-            Stream stream_enemies = TitleContainer.OpenStream("Content/Items/enemies.txt");
-            using (StreamReader reader = new StreamReader(stream_enemies))
-            {
-                string line = reader.ReadLine();
-                while (line != null)
-                {
-                    string[] p = line.Split(' ');
-                    Texture2D texture = world.game.Content.Load<Texture2D>(p[0]);
-                    String name = p[1].Replace('_', ' ');
-                    int hp = int.Parse(p[2]);
-                    int speed = int.Parse(p[3]);
-                    int atk = int.Parse(p[4]);
-                    int exp = int.Parse(p[5]);
-                    int money = int.Parse(p[6]);
-                    String diff = p[7];
-
-                    Enemy enemy = new Enemy(texture, name, hp, speed, atk, exp, money, enemy_loot);
-
-                    if (diff.Equals("easy"))
-                    {
-                        easy.Add(enemy);
-                    }
-                    else if (diff.Equals("medium"))
-                    {
-                        medium.Add(enemy);
-                    }
-                    else if (diff.Equals("hard"))
-                    {
-                        hard.Add(enemy);
-                    }
-                    line = reader.ReadLine();
-                }
-            }
-
-
-            #endregion
-
         }
 
         public void setEnemies()
