@@ -11,9 +11,11 @@ The monsters here are tough.
 Press I to view your inventory,
 and use the 1-0 keys to equip stuff.
 31,4
-2
+4
 I heard the Merchant has good stuff.
 It's a bit pricey for me...
+His shop is at the southwest part 
+of town by the river.
 8,14
 4
 A lot of heroes have gone into
