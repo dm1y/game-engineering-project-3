@@ -40,7 +40,7 @@ namespace Project3
             font = null;
             ShowHUD = true;
             items = new List<Item>();
-            HP = 100;
+            HP = 50;
             level = 1;
             experience = 0;
             threshold = 10;
