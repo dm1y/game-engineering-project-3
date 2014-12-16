@@ -129,6 +129,12 @@ Content\MapTexture\house1.xnb
 Content\MapTexture\house2.xnb
 Content\MapTexture\house3.xnb
 Content\MapTexture\house4.xnb
+Content\MapTexture\forest.xnb
+Content\MapTexture\grass1.xnb
+Content\MapTexture\grass2.xnb
+Content\MapTexture\grass3.xnb
+Content\MapTexture\plains.xnb
+Content\Player\playerinitial.xnb
 Content\DialogueFont.xnb
 Content\Displayfont.xnb
 Content\ShopFont.xnb
@@ -142,12 +148,6 @@ Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
-Content\MapTexture\forest.xnb
-Content\MapTexture\grass1.xnb
-Content\MapTexture\grass2.xnb
-Content\MapTexture\grass3.xnb
-Content\MapTexture\plains.xnb
-Content\Player\playerinitial.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

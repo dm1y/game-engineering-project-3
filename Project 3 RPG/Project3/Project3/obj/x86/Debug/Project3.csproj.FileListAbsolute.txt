@@ -1039,3 +1039,9 @@ C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG
 C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass3.xnb
 C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\plains.xnb
 C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\playerinitial.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\forest.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass1.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass2.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass3.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\plains.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\playerinitial.xnb
