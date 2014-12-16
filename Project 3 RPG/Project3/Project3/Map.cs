@@ -25,11 +25,13 @@ namespace Project3
      * y = battle tile [difficulty == medium. texture == cave tile]
      * z = battle tile [difficulty == easy. texture = grass tile]
      * t = transition tile to get into the caves 
-     * e = transition tile to get out of the caves 
+     * v = transition tile to get out of the caves 
      * g = grass tile 
      * h = tree tile 
      * w = log tile
      * c = cave tiles 
+     * f/e = fence tiles (begin/end respectively)
+     * k = water tile 
      * 
      * If you add more tiles, update this and the MapTile class:
      *          What to update here: 
@@ -60,12 +62,21 @@ namespace Project3
         private Texture2D redTransition;
         private Texture2D blueTransition;
         private Texture2D transition;
-        private Texture2D treeText;
-        private Texture2D woodText;
         private Texture2D caveTile;
-        private Texture2D rockTile;
         private Texture2D easy;
         private Texture2D medium;
+
+        /* Map Texture Objects */
+        private Texture2D rockTile;
+        private Texture2D treeText;
+        private Texture2D woodText;
+        private Texture2D fenceText;
+        private Texture2D fenceEnd;
+        private Texture2D waterText;
+        private Texture2D houseText1;
+        private Texture2D houseText2;
+        private Texture2D houseText3;
+        private Texture2D houseText4;
 
         public Maptile[,] currentMap { get; private set; }
 
@@ -91,6 +102,14 @@ namespace Project3
             treeText = game.Content.Load<Texture2D>("MapTexture/treetexture");
             woodText = game.Content.Load<Texture2D>("MapTexture/wood");
             rockTile = game.Content.Load<Texture2D>("MapTexture/rock");
+            fenceEnd = game.Content.Load<Texture2D>("MapTexture/fenseend");
+            fenceText = game.Content.Load<Texture2D>("MapTexture/fencebegin");
+            waterText = game.Content.Load<Texture2D>("MapTexture/water");
+            
+            houseText1 = game.Content.Load<Texture2D>("MapTexture/house1");
+            houseText2 = game.Content.Load<Texture2D>("MapTexture/house2");
+            houseText3 = game.Content.Load<Texture2D>("MapTexture/house3");
+            houseText4 = game.Content.Load<Texture2D>("MapTexture/house4");
 
             /* Gives textures names used to different special attributes if applicable */
             redTransition.Name = "hard";
@@ -182,9 +201,44 @@ namespace Project3
                             newTile = new Maptile(rockTile, new Vector2(x, y), true, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
-                        case 'e':
+                        case 'v':
                             /* Creates a cave opening on cave tile */
                             newTile = new Maptile(transition, new Vector2(x, y), false, true, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'f':
+                            /* Creates a fence tile */
+                            newTile = new Maptile(fenceText, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'e':
+                            /* Creates a fence tile that closes fence */
+                            newTile = new Maptile(fenceEnd, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case 'k':
+                            /* Creates a fence tile that closes fence */
+                            newTile = new Maptile(waterText, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case '1':
+                            /* Creates a part of house tile */
+                            newTile = new Maptile(houseText1, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case '2':
+                            /* Creates a part of house tile */
+                            newTile = new Maptile(houseText2, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case '3':
+                            /* Creates a part of house tile */
+                            newTile = new Maptile(houseText3, new Vector2(x, y), true, false, false, false);
+                            currentMap[x, y] = newTile;
+                            break;
+                        case '4':
+                            /* Creates a part of house tile */
+                            newTile = new Maptile(houseText4, new Vector2(x, y), true, false, false, false);
                             currentMap[x, y] = newTile;
                             break;
                     }

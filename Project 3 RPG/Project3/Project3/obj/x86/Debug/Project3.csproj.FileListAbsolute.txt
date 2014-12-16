@@ -1019,3 +1019,10 @@ C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\P
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Items\none.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\cavebg.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\plainsbg.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\fencebegin.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\fenseend.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\water.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house1.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house2.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house3.xnb
+C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house4.xnb

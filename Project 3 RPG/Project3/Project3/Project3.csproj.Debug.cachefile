@@ -134,6 +134,13 @@ Content\shop.xnb
 Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
+Content\MapTexture\fencebegin.xnb
+Content\MapTexture\fenseend.xnb
+Content\MapTexture\water.xnb
+Content\MapTexture\house1.xnb
+Content\MapTexture\house2.xnb
+Content\MapTexture\house3.xnb
+Content\MapTexture\house4.xnb
 Content\8bit_game_music.wma
 Content\Maps\test0.txt
 Content\Maps\test1.txt

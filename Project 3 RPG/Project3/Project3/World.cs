@@ -105,7 +105,7 @@ namespace Project3
             attackSoundInstance = attackSound.CreateInstance();
             //-----------------------------------------------------------------------------
 
-            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(1, 1), currentMap, this);
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(width/2, height/2), currentMap, this);
 
             loader = new ObjectLoader(this);
             loader.Initialize();

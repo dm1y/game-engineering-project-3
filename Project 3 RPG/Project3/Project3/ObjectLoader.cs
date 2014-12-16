@@ -184,10 +184,10 @@ namespace Project3
             NPC merchant = new NPC(merchant_shop, world);
 
             Texture2D merch_skin = world.game.Content.Load<Texture2D>("Items/merchant");
-            world.currentMap.currentMap[6, 6].isInteract = true;
-            world.currentMap.currentMap[6, 6].npc = merchant;
-            world.currentMap.currentMap[6, 6].npcTexture = merch_skin;
-            world.currentMap.currentMap[6, 6].isCollidable = true;
+            world.currentMap.currentMap[36, 14].isInteract = true;
+            world.currentMap.currentMap[36, 14].npc = merchant;
+            world.currentMap.currentMap[36, 14].npcTexture = merch_skin;
+            world.currentMap.currentMap[36, 14].isCollidable = true;
             stream_merchant.Close();
 
             #endregion
