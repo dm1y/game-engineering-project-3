@@ -30,7 +30,7 @@ namespace Project3
         int expGained;
         int levelGained;
         int moneyGained;
-
+        string typeBG;
         int displayCounter;
 
         List<Enemy> enemyList;
@@ -42,7 +42,9 @@ namespace Project3
         public int currentSelect;
         public int enemySelect;
 
-        Texture2D background;
+        Texture2D field;
+        Texture2D forest;
+        Texture2D cave;
         Texture2D playersprite;
         Texture2D combattext;
         Texture2D options;
@@ -75,7 +77,7 @@ namespace Project3
             displayCounter = 0;
             exitBattle = false;
             inChoices = false;
-
+            typeBG = "";
             r = new Random();
         }
 
@@ -83,7 +85,9 @@ namespace Project3
         {
             Game1 g = world.game;
             arrow = g.Content.Load<Texture2D>("Overlays/arrow select");
-            background = g.Content.Load<Texture2D>("Battle/background");
+            field = g.Content.Load<Texture2D>("Battle/plainsbg");
+            forest = g.Content.Load<Texture2D>("Battle/forest");
+            cave = g.Content.Load<Texture2D>("Battle/cavebg");
             playersprite = g.Content.Load<Texture2D>("Battle/playerbattlesprite");
             combattext =  g.Content.Load<Texture2D>("Battle/combattext");
             options = g.Content.Load<Texture2D>("Battle/options");
@@ -92,8 +96,9 @@ namespace Project3
             enemydisplay = g.Content.Load<Texture2D>("Battle/enemydisplay");
         }
 
-        public void GenerateBattle(List<Enemy> enemies)
+        public void GenerateBattle(List<Enemy> enemies, String type)
         {
+            typeBG = type;
             playerHealth = HUD.HP;
             Random r = new Random();
             int num = r.Next(enemies.Count);
@@ -288,13 +293,18 @@ namespace Project3
         }
         private void UseConsumable()
         {
-            if (player.consumable != null)
+            if (player.consumable != null && !player.consumable.itemName.Equals("None"))
             {
+                combatHistory.Clear();
                 playerHealth += player.consumable.heal;
+                if (playerHealth > HUD.HP)
+                {
+                    playerHealth = HUD.HP;
+                }
+                combatHistory.Add("Used " + player.consumable.itemName + " and healed " + player.consumable.heal); 
                 player.playerInventory.RemoveFromInventory(player.consumable);
                 player.consumable = null;
                 canFight = false;
-                combatHistory.Add("You used " + player.consumable.itemName + " and healed for " + player.consumable.heal); 
                 Battle();
             }
             else
@@ -359,6 +369,10 @@ namespace Project3
                         if (IsSuccessful())
                         {
                             int damage = e.Damage - player.def;
+                            if (damage < 0)
+                            {
+                                damage = 0;
+                            }
                             combatHistory.Add(e.enemyName + " hit you for " + damage + ".");
                             playerHealth = playerHealth - damage;
                         }
@@ -374,6 +388,10 @@ namespace Project3
                     if (IsSuccessful())
                     {
                         int damage = e.Damage - player.def;
+                        if (damage < 0)
+                        {
+                            damage = 0;
+                        }
                         combatHistory.Add(e.enemyName + " hit you for " + damage + ".");
                         playerHealth = playerHealth - damage;
                     }
@@ -404,6 +422,10 @@ namespace Project3
                     if (IsSuccessful())
                     {
                         int damage = e.Damage - player.def;
+                        if (damage < 0)
+                        {
+                            damage = 0;
+                        }
                         combatHistory.Add(e.enemyName + " hit you for " + damage + ".");
                         playerHealth = playerHealth - damage;
                     }
@@ -413,19 +435,21 @@ namespace Project3
                     }
                 }
             }
-            //world.attackSoundInstance.Stop();
-
-            //Console.WriteLine("DisplayCounter: " + displayCounter);
-            //Console.WriteLine("Combat Lines: " + combatHistory.Count);
             checkOutcome();
         }
 
         private void checkOutcome()
         {
+            enemySelect = 0;
             if (playerHealth <= 0)
             {
                 lose = true;
                 endOfBattle = true;
+                combatHistory.Clear();
+                combatHistory.Add("You were defeated in battle.");
+                int lost = (int)(player.playerInventory.money * 0.2);
+                combatHistory.Add("You lost $" + lost);
+                player.playerInventory.money -= lost;
             }
             else
             {
@@ -434,7 +458,6 @@ namespace Project3
                 {
                     if (e.HP <= 0)
                     {
-                        combatHistory.Clear();
                         displayCounter = 1;
                         combatHistory.Add(e.enemyName + " was defeated!");
 
@@ -450,8 +473,6 @@ namespace Project3
                 }
                 if (enemyList.Count == 0)
                 {
-                    Console.WriteLine("i won!");
-                    combatHistory.Clear();
                     displayCounter = 1;
                     win = true;
                     endOfBattle = true;
@@ -553,73 +574,13 @@ namespace Project3
                 int randomize = r.Next(enemyList[0].EnemyItemsList.Count);
                 itemGained.Add(enemyList[0].EnemyItemsList[randomize]);
             }
-            //// If there is only one enemy 
-            //if (enemyList.Count == 1)
-            //{
-            //    if (enemyList[0].EnemyItemsList == null || enemyList[0].EnemyItemsList.Count == 0)
-            //        return;
-            //    else
-            //    {
-            //        int random = r.Next(enemyList[0].EnemyItemsList.Count);
-            //        if (random != enemyList[0].EnemyItemsList.Count)
-            //        {
-            //            itemGained.Add(enemyList[0].EnemyItemsList[random]);
-            //            player.playerInventory.AddToInventory(enemyList[0].EnemyItemsList[random], 1);
-            //        }
-            //    }
-            //}
-
-            //// If there are multiple 
-            //else
-            //{
-            //    int rand = r.Next(enemyList.Count);
-            //    if (enemyList[rand].EnemyItemsList == null || enemyList[rand].EnemyItemsList.Count == 0)
-            //        return;
-            //    else
-            //    {
-            //        int random = r.Next(enemyList[rand].EnemyItemsList.Count);
-            //        if (random != enemyList[rand].EnemyItemsList.Count)
-            //        {
-            //            itemGained.Add(enemyList[rand].EnemyItemsList[random]);
-            //            player.playerInventory.AddToInventory(enemyList[rand].EnemyItemsList[random], 1);
-            //        }
-            //    }
-            //}
-
         }
 
 
         private void transition(KeyboardState keyboard)
         {
-            if (lose)
-            {
-                combatHistory.Clear();
 
-                //Display's Player's loss
-                // really depends on our game play / how we want to handle this 
-            }
-            else if (win)
-            {
-                // what will be displayed in the transition: gains 
-                // so if it's only experienced gained, display that 
-                // if level, show a level up
-                // if item, do that.. or all three? 
-
-                // so code wise:
-                // if (expGained > 0)
-                // display it 
-                // if (levelGained > 0)
-                // display it 
-                // if (moneyGained > 0)
-                // display it 
-                // if (itemGained.Count > 0)
-                // display it 
-
-                // hitting enter or spacebar to go back to map (?)
-                // insert function to transition back to map here 
-            }
-
-            else if (!lose && !win)
+            if (!lose && !win)
             {
                 // only reaches here if player decides to escape and is successful
                 expGained = 0;
@@ -661,8 +622,18 @@ namespace Project3
         {
             Vector2 origin = new Vector2(world.camera.Position.X / 2, world.camera.Position.Y / 2);
 
-            //Background forest
-            sb.Draw(background, origin, Color.White);
+            if (typeBG.Equals("field"))
+            {
+                sb.Draw(field, origin, Color.White);
+            }
+            if (typeBG.Equals("forest"))
+            {
+                sb.Draw(forest, origin, Color.White);
+            }
+            if (typeBG.Equals("cave"))
+            {
+                sb.Draw(cave, origin, Color.White);
+            }
             //Combat History
             Vector2 combatpos = origin;
             sb.Draw(combattext, combatpos, Color.White);

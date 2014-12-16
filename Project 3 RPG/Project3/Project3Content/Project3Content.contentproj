@@ -636,8 +636,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Battle\background.png">
-      <Name>background</Name>
+    <Compile Include="Battle\forest.png">
+      <Name>forest</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -802,6 +802,18 @@
   <ItemGroup>
     <Compile Include="Items\none.png">
       <Name>none</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Battle\cavebg.png">
+      <Name>cavebg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Battle\plainsbg.png">
+      <Name>plainsbg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

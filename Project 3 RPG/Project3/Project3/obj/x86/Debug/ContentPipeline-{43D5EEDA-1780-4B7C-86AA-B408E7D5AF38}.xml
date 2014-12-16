@@ -920,15 +920,6 @@
       <Time>2014-12-06T13:43:14.2406646-08:00</Time>
     </Item>
     <Item>
-      <Source>Battle\background.png</Source>
-      <Name>Battle\background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\background.xnb</Output>
-      <Time>2014-12-06T13:43:14.1986622-08:00</Time>
-    </Item>
-    <Item>
       <Source>Battle\battle_example.png</Source>
       <Name>Battle\battle_example</Name>
       <Importer>TextureImporter</Importer>
@@ -1207,6 +1198,33 @@
       <Output>C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.xnb</Output>
       <Extra>C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\8bit_game_music.wma</Extra>
       <Time>2014-12-13T01:17:18.6486282-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battle\forest.png</Source>
+      <Name>Battle\forest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\forest.xnb</Output>
+      <Time>2014-12-06T13:43:14.1986622-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battle\cavebg.png</Source>
+      <Name>Battle\cavebg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\cavebg.xnb</Output>
+      <Time>2014-12-15T19:09:27.7653756-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battle\plainsbg.png</Source>
+      <Name>Battle\plainsbg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Battle\plainsbg.xnb</Output>
+      <Time>2014-12-15T19:09:27.7653756-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

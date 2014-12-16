@@ -100,7 +100,6 @@ Content\Items\Enemy\SwampLizard.xnb
 Content\Items\Enemy\Tanuki.xnb
 Content\Items\Enemy\Thornball.xnb
 Content\Overlays\battlebg.xnb
-Content\Battle\background.xnb
 Content\Battle\battle_example.xnb
 Content\Battle\battle_example_withcoords.xnb
 Content\Battle\combattext.xnb
@@ -133,6 +132,9 @@ Content\enter_sound.xnb
 Content\return_button.xnb
 Content\8bit_game_music.xnb
 Content\8bit_game_music.wma
+Content\Battle\forest.xnb
+Content\Battle\cavebg.xnb
+Content\Battle\plainsbg.xnb
 Content\Maps\test0.txt
 Content\Maps\test1.txt
 Content\Items\enemyloot.txt

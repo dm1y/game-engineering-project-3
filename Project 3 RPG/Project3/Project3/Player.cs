@@ -456,13 +456,13 @@ namespace Project3
                 if (!isBattling)
                 {
                     if (tileToCheck.battleType == "easy") 
-                        world.battleSystem.GenerateBattle(tileToCheck.easyEnemies);
+                        world.battleSystem.GenerateBattle(tileToCheck.easyEnemies, "field");
 
                     if (tileToCheck.battleType == "medium")
-                        world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies);
+                        world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies, "forest");
 
                     if (tileToCheck.battleType == "hard")
-                        world.battleSystem.GenerateBattle(tileToCheck.mediumEnemies);
+                        world.battleSystem.GenerateBattle(tileToCheck.hardEnemies, "cave");
                 }
                 hasChecked = true;
                 isBattling = true;
