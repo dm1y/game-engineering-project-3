@@ -466,27 +466,6 @@ namespace Project3
                 }
                 hasChecked = true;
                 isBattling = true;
-                //Console.WriteLine("Player is now in battle!");
-                //Console.WriteLine("Easy Enemies: ");
-                //foreach (Enemy e in tileToCheck.easyEnemies)
-                //{
-                //    Console.Write(e.enemyName + ", ");
-                //}
-                //Console.WriteLine("\nMedium Enemies: ");
-                //foreach (Enemy e in tileToCheck.mediumEnemies)
-                //{
-                //    Console.Write(e.enemyName + ", ");
-                //}
-                //Console.WriteLine("\nHard Enemies: ");
-                //foreach (Enemy e in tileToCheck.hardEnemies)
-                //{
-                //    Console.Write(e.enemyName + ", ");
-                //}
-
-                // TODO: Fill in. 
-                // transition to battle sys map 
-                // or draw battle sys map 
-                // will fill in after the UX/UI is done for battle sys
             }
             
         }
@@ -496,15 +475,11 @@ namespace Project3
             this.map = map;
         }
 
-        public void SpawnPlayerAt(Vector2 position)
-        {
-
-        }
-
         public void SetInventory(Inventory inv)
         {
             this.playerInventory = inv;
         }
+
         /* Handles iteration with NPCs, Merchants, and Objects*/
         /* CheckInteract() is used to check the properties of a tile that the player CAN'T
          stand on top of, but can still interact with(ie, loot chests, or signs, or people)*/
@@ -579,11 +554,8 @@ namespace Project3
                 spriteBatch.DrawString(world.shopDialogueFont, shield.itemName + " DEF: " + shield.block, shieldstat, Color.White);
                 spriteBatch.DrawString(world.shopDialogueFont, consumable.itemName + " HEAL: " + consumable.heal, consumablestat, Color.White);
 
-                //Draw a small display box, with
-                //Weapon: <Item Name>, Dmg: <Item Dmg>
-                //Shield: <Item Name>, Def: <Item def>
-                //Consumable: <Item Name>, Heals: <Item heal>
             }
+
             if (isInteracting)
             {
                 currentNPC.Draw(spriteBatch);
@@ -670,6 +642,7 @@ namespace Project3
                         world.menuSoundInstance.Pan = 0.5f;
                         world.menuSoundInstance.Play();
                     }
+
                     if (keyboard.IsKeyDown(Keys.S))
                     {
                         world.menuSoundInstance.Volume = 0.3f;
@@ -677,11 +650,7 @@ namespace Project3
                         world.menuSoundInstance.Play();
                     }
                 }
-
-
             }
-            
-           
         }
 
         #region Equipping of items
@@ -723,7 +692,6 @@ namespace Project3
                 {
                     canEquip = false;
                     Equip(5);
-
                 }
 
                 if (keyboard.IsKeyDown(Keys.NumPad7) || keyboard.IsKeyDown(Keys.D7))
@@ -768,7 +736,6 @@ namespace Project3
                     {
                         setConsumable(playerInventory.items[i]);
                     }
-                    // TODO: Update display of equipped consumable item 
                 }
 
                 if (thisItem.isShield)
@@ -781,7 +748,6 @@ namespace Project3
                     {
                         setDef(playerInventory.items[i]);
                     }
-                    // TODO: Update display of defense item/shield if applicable 
                 }
 
                 if (thisItem.isWeapon)
@@ -794,7 +760,6 @@ namespace Project3
                     {
                         setAtk(playerInventory.items[i]);
                     }
-                    // TODO: Update player's equipped weapon
                 }
             }
         }

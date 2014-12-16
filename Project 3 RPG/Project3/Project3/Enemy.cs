@@ -30,13 +30,9 @@ namespace Project3
 
         public string enemyName;
 
-        // The current state of the Enemy 
-        public bool Active { set; get; }
-
 
         public Enemy(Texture2D texture, string name, int hp, int speed, int atk, int exp, int money, List<Item> list)
         {
-//            this.game = game;
             this.enemyName = name;
             this.enemyTexture = texture;
             HP = hp;
@@ -58,29 +54,5 @@ namespace Project3
             this.bounty = e.bounty;
             this.EnemyItemsList = e.EnemyItemsList;
         }
-        public void Update(GameTime gameTime)
-        {
-            
-            //Position.X -= enemySpeed;
-
-            // Enemy's position is updated
-            //EnemyAnimation.Position = Position;
-
-
-            //EnemyAnimation.Update(gameTime);
-
-            // If the enemy goes past the game screen or it's health becomes 0, the enemy is no longer active
-            //if (Position.X < -Width || (Health <= 0))
-            //{
-            //    // This results in the enemy being removed
-            //    Active = false;
-            //}
-        }
-
-        //public  void Update_EnemySpeed(GameTime gameTime, Player player, Enemy enemy)
-        //{
-        //    enemy.enemySpeed = 5f;
-        //}
-
     }
 }

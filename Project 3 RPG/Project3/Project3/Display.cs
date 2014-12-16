@@ -16,13 +16,11 @@ namespace Project3
     {
         Game game;
         Player p;
+
         public int HP { set; get; }
         public int level { set; get; }
-        //public int money { set; get; }
         public int experience { set; get; }
         public int threshold { set; get; }
-        //public int ScreenWidth;
-        //public int ScreenHeight;
 
         //Will probably make a custom font
         public SpriteFont font;
@@ -37,7 +35,6 @@ namespace Project3
 
         public Display(Player player, Game game)
         {
-         
             p = player;
             font = null;
             ShowHUD = true;
@@ -73,12 +70,10 @@ namespace Project3
             HUDOverlay = content.Load<Texture2D>("Overlays/item_overlay");
             HUDTeal = content.Load<Texture2D>("Overlays/item_teal_overlay");
             HUDpurple = content.Load<Texture2D>("Overlays/item_purple_overlay");
-
         }
 
         public void Update(GameTime gametime)
         {
-            //money = p.playerInventory.money;
             KeyboardState keyState = Keyboard.GetState();
         }
 
@@ -98,7 +93,6 @@ namespace Project3
                 sb.DrawString(font, "HP: " + HP, new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 267), Color.Red);
                 sb.DrawString(font, "Level: " + level, new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 287), Color.Red);
                 sb.DrawString(font, "Money: \n $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 302), Color.Red);
-                //sb.DrawString(font, "$" + p.playerInventory.money, new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 275), Color.Red);
 
                 int offset = 20;
                 for (int i = 0; i < 10; i++)

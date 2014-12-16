@@ -54,10 +54,7 @@ namespace Project3
         Texture2D arrow;
 
         Random r;
-        /* Information needed: 
-            Player : attack power, defense power, speed, item consumable 
-            Enemy : need its health, attack power, defense power, speed, exp given
-            Display : need to adjust/set level / exp / money if it improves */
+
         public BattleSystem(Player player, Display display, World world)
         {
             this.world = world;
@@ -232,12 +229,10 @@ namespace Project3
         }
 
         // Random generator. 
-        // Might need to use a seed as a parameter 
         private Boolean IsSuccessful()
         {
             int num = r.Next(10);
 
-            Console.WriteLine(num);
             if (num < 7)
                 return true;
             else
@@ -253,6 +248,7 @@ namespace Project3
             else
                 return false;
         }
+
         private void SelectEnemies(KeyboardState kb)
         {
             if (kb.IsKeyDown(Keys.Back))
@@ -267,21 +263,22 @@ namespace Project3
             {
                 
                 enemySelect++;
-                //Console.WriteLine(enemySelect);
                 if (enemySelect > enemyList.Count - 1)
                 {
                     enemySelect = enemyList.Count - 1;
                 }
             }
+
             if (kb.IsKeyDown(Keys.S))
             {
                 enemySelect--;
-                //Console.WriteLine(enemySelect);
+
                 if (enemySelect < 0)
                 {
                     enemySelect = 0;
                 }
             }
+
             if (kb.IsKeyDown(Keys.Enter))
             {
                 inEnemySelect = false;
@@ -297,10 +294,12 @@ namespace Project3
             {
                 combatHistory.Clear();
                 playerHealth += player.consumable.heal;
+                
                 if (playerHealth > HUD.HP)
                 {
                     playerHealth = HUD.HP;
                 }
+                
                 combatHistory.Add("Used " + player.consumable.itemName + " and healed " + player.consumable.heal); 
                 player.playerInventory.RemoveFromInventory(player.consumable);
                 player.consumable = null;
@@ -312,8 +311,6 @@ namespace Project3
                 combatHistory.Clear();
                 combatHistory.Add("You're out of healing items!");
                 displayCounter = 1;
-
-                // output message saying that there are no consumnable items to use 
             }
         }
 
@@ -321,7 +318,7 @@ namespace Project3
         {
             if (IsSuccessful())
             {
-                //William added this -- sets endOfBattle to true, player neither lost or won. 
+                //Sets endOfBattle to true, player neither lost or won. 
                 combatHistory.Clear();
                 combatHistory.Add("You successfully escaped!");
                 endOfBattle = true;
@@ -339,7 +336,6 @@ namespace Project3
 
         /*
          * Method that actually subtracts the health and whatnot 
-         * Parameters might change into: Player, Enemy
          */
         private void Battle()
         {
@@ -586,8 +582,6 @@ namespace Project3
                 expGained = 0;
                 levelGained = 0;
                 moneyGained = 0;
-
-                // displays 0 exp gained message ?
             }
 
             if (keyboard.IsKeyDown(Keys.Enter))
@@ -714,12 +708,10 @@ namespace Project3
                 }
                 if (enemySelect == 1)
                 {
-                    //Console.WriteLine("YES");
                     targetPos = enemy2 + new Vector2(16, 16);
                 }
                 if (enemySelect == 2)
                 {
-                    //Console.WriteLine("FFFF");
                     targetPos = enemy3 + new Vector2(16, 16);
                 }
                 sb.Draw(target, targetPos, Color.White);
