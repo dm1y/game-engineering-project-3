@@ -26,6 +26,7 @@ namespace Project3
         public SpriteFont font;
 
         public bool ShowHUD;
+        
         //Background Texture
         public Texture2D HUDBackGround;
         public Texture2D HUDOverlay;
@@ -90,9 +91,9 @@ namespace Project3
                 sb.Draw(HUDBackGround, new Vector2(p.world.camera.Position.X / 2, p.world.camera.Position.Y / 2 + 352 - HUDBackGround.Height), Color.White);
 
                 // for words, you'll have to adjust y coordinates manually 
-                sb.DrawString(font, "HP: " + HP, new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 267), Color.Red);
-                sb.DrawString(font, "Level: " + level, new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 287), Color.Red);
-                sb.DrawString(font, "Money: \n $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 302), Color.Red);
+                sb.DrawString(font, "HP: " + HP, new Vector2(p.world.camera.Position.X / 2 + 9, p.world.camera.Position.Y / 2 + 267), Color.White);
+                sb.DrawString(font, "Level: " + level, new Vector2(p.world.camera.Position.X / 2 + 7, p.world.camera.Position.Y / 2 + 287), Color.White);
+                sb.DrawString(font, "Money: \n $" + p.playerInventory.money , new Vector2(p.world.camera.Position.X / 2 + 8, p.world.camera.Position.Y / 2 + 308), Color.White);
 
                 int offset = 20;
                 for (int i = 0; i < 10; i++)
