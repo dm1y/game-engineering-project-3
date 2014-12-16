@@ -1,23 +1,43 @@
-5,5
-3
-Have you heard?
-There's a legendary pub out there.
-Dunno where it is though. 
-5,7
+2,1
+4
+You're new aren't you?
+Use WASD to move around,
+and you can interact with other NPCs
+with Enter and Backspace!
+2,2
+4
+Don't walk around unarmed.
+The monsters here are tough.
+Press I to view your inventory,
+and use the 1-0 keys to equip stuff.
+2,3
 2
 I heard the Merchant has good stuff.
 It's a bit pricey for me...
-5,9
+2,4
 4
-A lot of adventurers have gone
-out into the wild lately.
+A lot of heroes have gone into
+the forests and the caves lately.
 Not a lot of them have come back. 
 Maybe the monsters ate them?
-5,11
+2,5
 2
 I'm thinking of moving soon. 
 This town gives me the spooks. 
-5,13
+2,6
 2
 I wish I was strong enough to 
 fight the monsters and beat them. 
+2,7
+3
+When you die, you lose money. 
+You'll revive at the your last spot.
+Does death even matter in this life?
+2,8
+2
+You should invest in a nice shield.
+The best offense is a good defense.
+2,9
+2
+A sharp blade is your best bet.
+The best defense is a good offense.
