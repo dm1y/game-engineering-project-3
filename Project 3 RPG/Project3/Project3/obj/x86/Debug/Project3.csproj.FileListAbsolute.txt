@@ -1026,3 +1026,16 @@ C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\P
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house2.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house3.xnb
 C:\Users\Diana\Documents\GitHub\cs420\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house4.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\fencebegin.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\fenseend.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\water.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house1.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house2.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house3.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\house4.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\forest.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass1.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass2.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\grass3.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\MapTexture\plains.xnb
+C:\Users\William\Documents\PROJECT TRES\game-engineering-project-3\Project 3 RPG\Project3\Project3\bin\x86\Debug\Content\Player\playerinitial.xnb

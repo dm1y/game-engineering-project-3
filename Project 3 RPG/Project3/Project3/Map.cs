@@ -78,6 +78,12 @@ namespace Project3
         private Texture2D houseText3;
         private Texture2D houseText4;
 
+        private Texture2D easyplains;
+        private Texture2D mediumforest;
+        private Texture2D grass1;
+        private Texture2D grass2;
+        private Texture2D grass3;
+
         public Maptile[,] currentMap { get; private set; }
 
         public Map(Game1 g)
@@ -93,8 +99,8 @@ namespace Project3
             caveTile = game.Content.Load<Texture2D>("MapTexture/cavetexture");
 
             redTransition = game.Content.Load<Texture2D>("MapTexture/hard");
-            medium = game.Content.Load<Texture2D>("MapTexture/medium");
-            easy = game.Content.Load<Texture2D>("MapTexture/easy");
+            medium = game.Content.Load<Texture2D>("MapTexture/forest");
+            easy = game.Content.Load<Texture2D>("MapTexture/plains");
             
             blueTransition = game.Content.Load<Texture2D>("MapTexture/caveopening");
             transition = game.Content.Load<Texture2D>("MapTexture/caveopening2");
@@ -111,6 +117,12 @@ namespace Project3
             houseText3 = game.Content.Load<Texture2D>("MapTexture/house3");
             houseText4 = game.Content.Load<Texture2D>("MapTexture/house4");
 
+            easyplains = game.Content.Load<Texture2D>("MapTexture/plains");
+            mediumforest = game.Content.Load<Texture2D>("MapTexture/forest");
+
+            grass1 = game.Content.Load<Texture2D>("MapTexture/grass1");
+            grass2 = game.Content.Load<Texture2D>("MapTexture/grass2");
+            grass3 = game.Content.Load<Texture2D>("MapTexture/grass3");
             /* Gives textures names used to different special attributes if applicable */
             redTransition.Name = "hard";
             easy.Name = "easy";
@@ -121,6 +133,7 @@ namespace Project3
 
         public void GenerateMap (int i)
         {
+            Random r = new Random();
             List<string> lines = new List<string>();
 
             Stream stream = TitleContainer.OpenStream("Content/Maps/test" + i + ".txt");
@@ -178,7 +191,19 @@ namespace Project3
                             break;
                         case 'g':
                             /* Creates a grass tile */
-                            newTile = new Maptile(grassText, new Vector2(x, y), false, false, false, false);
+                            int randy = r.Next(10);
+                            if (randy > 0 && randy < 4)
+                            {
+                                newTile = new Maptile(grass1, new Vector2(x, y), false, false, false, false);
+                            }
+                            else if (randy >= 4 && randy < 7)
+                            {
+                                newTile = new Maptile(grass2, new Vector2(x, y), false, false, false, false);
+                            }
+                            else
+                            {
+                                newTile = new Maptile(grass3, new Vector2(x, y), false, false, false, false);
+                            }
                             currentMap[x, y] = newTile;
                             break;
                         case 'h':

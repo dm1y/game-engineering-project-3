@@ -41,6 +41,7 @@ namespace Project3
         Texture2D playerdown;
         Texture2D playerleft;
         Texture2D playerright;
+        public Texture2D initial;
 
         //Tile Textures
         Texture2D grassText;
@@ -83,6 +84,7 @@ namespace Project3
             width = map.width;
             height = map.height;
 
+            initial = game.Content.Load<Texture2D>("Player/playerinitial");
             playerleft = game.Content.Load<Texture2D>("Player/player_walk_west");
             playerright = game.Content.Load<Texture2D>("Player/player_walk_east");
             playerup = game.Content.Load<Texture2D>("Player/player_walk_north");
@@ -105,7 +107,7 @@ namespace Project3
             attackSoundInstance = attackSound.CreateInstance();
             //-----------------------------------------------------------------------------
 
-            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(width/2, height/2), currentMap, this);
+            player = new Player(playerup, playerdown, playerleft, playerright, new Vector2(width/2 - 4, height/2 - 1), currentMap, this);
 
             loader = new ObjectLoader(this);
             loader.Initialize();

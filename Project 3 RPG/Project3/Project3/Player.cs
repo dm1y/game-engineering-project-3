@@ -13,7 +13,7 @@ namespace Project3
 
         public World world;
         public Texture2D inv;
-
+        public Texture2D start;
         //public BattleSystem battleSys;
 
         public Inventory playerInventory;
@@ -62,7 +62,8 @@ namespace Project3
 
         public Boolean hasChecked;
         public Boolean canEquip;
-
+        public Boolean hasMoved;
+        
         public Vector2 position
         {
             get { return currPosition; }
@@ -75,9 +76,11 @@ namespace Project3
             Map map, World world)
         {
             Texture2D noneTexture = world.game.Content.Load<Texture2D>("Items/none");
+            start = world.initial;
             NoneItem = new Item(noneTexture, "None", 0, 0, false, false, false);
-            this.world = world; 
+            this.world = world;
 
+            hasMoved = true;
             playerNorth = new Animation();
             playerSouth = new Animation();
             playerWest = new Animation();
@@ -115,7 +118,7 @@ namespace Project3
             //Don't let speed be less than 11 -- the max weight for a weapon/shield is 5(so player's slowest speed is 1);
             speed = 11;
             hasChecked = false;
-
+            hasMoved = false;
             inv = world.game.Content.Load<Texture2D>("Overlays/inventorybg");
             canEquip = true;
         }
@@ -232,21 +235,25 @@ namespace Project3
 
                     if (keyboard.IsKeyDown(Keys.W))
                     {
+                        hasMoved = true;
                         hasChecked = false;
                         moveUp();
                     }
                     else if (keyboard.IsKeyDown(Keys.S))
                     {
+                        hasMoved = true;
                         hasChecked = false;
                         moveDown();
                     }
                     else if (keyboard.IsKeyDown(Keys.A))
                     {
+                        hasMoved = true;
                         hasChecked = false;
                         moveLeft();
                     }
                     else if (keyboard.IsKeyDown(Keys.D))
                     {
+                        hasMoved = true;
                         hasChecked = false;
                         moveRight();
                     }
@@ -500,28 +507,37 @@ namespace Project3
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            Rectangle playerSpriteBox = new Rectangle((int)currPosition.X, (int)currPosition.Y, dimension,dimension);
-            if (facingNorth)
+            if (!hasMoved)
             {
+                Vector2 pos = new Vector2((int)currPosition.X, (int)currPosition.Y);
+                spriteBatch.Draw(start, pos, Color.White);
+            }
+            else
+            {
+                Rectangle playerSpriteBox = new Rectangle((int)currPosition.X, (int)currPosition.Y, dimension, dimension);
+                if (facingNorth)
+                {
 
-                playerNorth.Draw(spriteBatch);
-                
+                    playerNorth.Draw(spriteBatch);
+
+                }
+                else if (facingEast)
+                {
+                    playerEast.Draw(spriteBatch);
+
+                }
+                else if (facingSouth)
+                {
+                    playerSouth.Draw(spriteBatch);
+
+                }
+                else if (facingWest)
+                {
+                    playerWest.Draw(spriteBatch);
+
+                }
             }
-            else if (facingEast)
-            {
-                playerEast.Draw(spriteBatch);
-                
-            }
-            else if (facingSouth)
-            {
-                playerSouth.Draw(spriteBatch);
-                
-            }
-            else if (facingWest)
-            {
-                playerWest.Draw(spriteBatch);
-                
-            }
+           
 
             if (isDisplayInventory)
             {
@@ -590,30 +606,32 @@ namespace Project3
             {
                 if (keyboard.IsKeyDown(Keys.Enter))
                 {
-                    world.talkToNPCInstance.Volume = 0.5f;
+                    world.talkToNPCInstance.Volume = 1f;
                     world.talkToNPCInstance.Pan = 0.5f;
                     world.talkToNPCInstance.Play();
                     
                 }
+                if (currentNPC.isShopNPC)
+                {
+                    if (keyboard.IsKeyDown(Keys.Back))
+                    {
+                        world.hitBackSpaceSoundInstance.Volume = 0.5f;
+                        world.hitBackSpaceSoundInstance.Pan = 0.5f;
+                        world.hitBackSpaceSoundInstance.Play();
+                    }
 
-                if (keyboard.IsKeyDown(Keys.Back))
-                {
-                    world.hitBackSpaceSoundInstance.Volume = 0.2f;
-                    world.hitBackSpaceSoundInstance.Pan = 0.2f;
-                    world.hitBackSpaceSoundInstance.Play();
-                }
-
-                if (keyboard.IsKeyDown(Keys.W))
-                {
-                    world.menuSoundInstance.Volume = 0.3f;
-                    world.menuSoundInstance.Pan = 0.5f;
-                    world.menuSoundInstance.Play();
-                }
-                if (keyboard.IsKeyDown(Keys.S))
-                {
-                    world.menuSoundInstance.Volume = 0.3f;
-                    world.menuSoundInstance.Pan = 0.5f;
-                    world.menuSoundInstance.Play();
+                    if (keyboard.IsKeyDown(Keys.W))
+                    {
+                        world.menuSoundInstance.Volume = 0.5f;
+                        world.menuSoundInstance.Pan = 0.5f;
+                        world.menuSoundInstance.Play();
+                    }
+                    if (keyboard.IsKeyDown(Keys.S))
+                    {
+                        world.menuSoundInstance.Volume = 0.5f;
+                        world.menuSoundInstance.Pan = 0.5f;
+                        world.menuSoundInstance.Play();
+                    }
                 }
             }
 
